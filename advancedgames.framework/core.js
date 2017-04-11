@@ -1,6 +1,5 @@
 var ADCore = ADCore || {};
 
-
  /**
  * 'Initialize'
  */
