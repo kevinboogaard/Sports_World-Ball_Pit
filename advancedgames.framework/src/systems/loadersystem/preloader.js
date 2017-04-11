@@ -30,8 +30,9 @@ ADCore.Preloader = (function(){
 
     /**
      * 'Initialize'
+     * @private
      */
-    p.Initialize = function(){
+    p._initialize = function(){
         this._load = this._phaser.load;        
         this._load.onFileComplete.add( this._onFileComplete.bind( this ), this );
         this._load.onFileError.add( this._onFileError.bind( this ), this );

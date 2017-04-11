@@ -28,7 +28,6 @@
 		"array-bracket-spacing": [
 			"error", 
 			"always"
-		],
-        "extends": 0
+		]
     }
 }
