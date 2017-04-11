@@ -15,6 +15,7 @@ ADCore.Sceneloader = (function () {
      * @param {scene} 'scene'
      */
     p.Load = function(scene){
+        if (typeof scene === "undefined") throw new Error("Scene doesn't exist: " + scene);
         this.current = new scene();
     };
 

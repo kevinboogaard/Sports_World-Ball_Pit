@@ -40,7 +40,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputDown = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_DOWN, this, { }, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_DOWN, this, event, false);
     };
 
     /**
@@ -50,7 +50,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputUp = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_UP, this, { }, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_UP, this, event, false);
     };
 
     /**
@@ -60,7 +60,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputTap = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, { }, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, event, false);
     };
 
     /**
@@ -70,7 +70,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputHold = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_HOLD, this, { }, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_HOLD, this, event, false);
     };
 
     /**
