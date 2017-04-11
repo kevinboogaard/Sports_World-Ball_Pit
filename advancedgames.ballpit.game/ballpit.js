@@ -2,30 +2,41 @@ var ballpit = ballpit || {};
 
 ballpit.Core = ( function () {
 
+    /**
+     * 'Core'
+     */
     function Core() {
         
     }
     var p = Core.prototype;
 
-    p.start = function () {
-        sceneLoader.load(scene.Gridscene);
-    }
+    /**
+     * 'start'
+     */
+    p.Start = function () {
+        sceneLoader.Load(scene.Gridscene);
+    };
 
-    p.update = function ( deltaTime ) {
+    /**
+     * 'Update'
+     */
+    p.Update = function ( deltaTime ) {
         var currentScene = sceneLoader.current;
         if ( currentScene && currentScene.update ) {
-            currentScene.update( deltaTime );
+            currentScene.Update( deltaTime );
         }
-    }
+    };
 
-    p.render = function () {
+    /**
+     * 'Render'
+     */
+    p.Render = function () {
         var currentScene = sceneLoader.current;
 
         if ( currentScene && currentScene.render ) {
-            currentScene.render();
+            currentScene.Render();
         }
-    }
-
+    };
 
     return Core;
 }());

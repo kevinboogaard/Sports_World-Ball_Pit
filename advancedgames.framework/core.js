@@ -1,16 +1,20 @@
 var ADCore = ADCore || {};
 
-function initialize() {
+
+ /**
+ * 'Initialize'
+ */
+function Initialize() {
     /**
      * Create the phaser: 'Heart of the game'. The framework creates the renderer for the game. ( http://phaser.io/docs/2.4.4/Phaser.Game.html )
      * Once the heart has been made, the game will preload using the 'preload' method.
      * The create function will be called once the preloader has finished preloading.
      */   
     ADCore.phaser = new Phaser.Game(Config.Core.Dimensions.width, Config.Core.Dimensions.height, Config.Core.Renderer, Config.Core.Parent, {
-        preload: preload.bind(this), 
-        create: create.bind(this),
-        update: update.bind(this),
-        render: render.bind(this)
+        preload: _preload.bind(this), 
+        create: _create.bind(this),
+        update: _update.bind(this),
+        render: _render.bind(this)
     });
 
     // Initialize the main of the game.
@@ -21,23 +25,43 @@ function initialize() {
     this.preloader = new ADCore.Preloader(ADCore.phaser);
 }
 
-function preload () {
-    this.preloader.initialize();
+ /**
+ * 'Preload'
+ * @private
+ * Called by Phaser on Preload.
+ */
+function _preload () {
+    this.preloader.Initialize();
 }
 
-function create () {
+ /**
+ * 'Create'
+ * @private
+ * Called by Phaser after preload..
+ */
+function _create () {
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
 
     setTimeout(function () {
-        this.main.start();
+        this.main.Start();
     }.bind(this), 1);
 }
 
-function update () {
-    this.main.update();
+ /**
+ * 'Update'
+ * @private
+ * Called by Phaser on Update call.
+ */
+function _update () {
+    this.main.Update();
 }
 
-function render () {
-    this.main.render();
+ /**
+ * 'Render'
+ * @private
+ * Called by Phaser on Render.
+ */
+function _render () {
+    this.main.Render();
 }

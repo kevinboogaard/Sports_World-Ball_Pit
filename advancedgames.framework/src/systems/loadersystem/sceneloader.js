@@ -11,26 +11,26 @@ ADCore.Sceneloader = (function () {
     var p = Sceneloader.prototype;
     
     /**
-     * 'load'
+     * 'Load'
      * @param {scene} 'scene'
      */
-    p.load = function(scene){
+    p.Load = function(scene){
         this.current = new scene();
     };
 
     /**
-     * 'switch'
+     * 'Switch'
      * @param {scene} 'scene'
      */
-    p.switch = function(scene) {
+    p.Switch = function(scene) {
         this.disposeCurrent();
         this.load(scene);
     };
 
     /**
-     * 'disposeCurrent'
+     * 'DisposeCurrent'
      */
-    p.disposeCurrent = function(){
+    p.DisposeCurrent = function(){
         this.current.dispose();
         this.current = null;
     };
