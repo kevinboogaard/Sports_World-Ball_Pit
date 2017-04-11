@@ -30,7 +30,7 @@ ADCore.Preloader = (function(){
 
     /**
      * 'Initialize'
-     * { if private } @private
+     * @private
      */
     p._initialize = function(){
         this._load = this._phaser.load;        
