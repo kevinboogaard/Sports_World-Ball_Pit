@@ -13,7 +13,6 @@ ADCore.Sceneloader = (function () {
     /**
      * 'load'
      * @param {scene} 'scene'
-     * 
      */
     p.load = function(scene){
         this.current = new scene();
@@ -22,7 +21,6 @@ ADCore.Sceneloader = (function () {
     /**
      * 'switch'
      * @param {scene} 'scene'
-     * 
      */
     p.switch = function(scene) {
         this.disposeCurrent();
