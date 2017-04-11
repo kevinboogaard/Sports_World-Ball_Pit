@@ -23,7 +23,6 @@
 		],
 		"no-sequences": "error",
 		"no-unused-expressions": "error",
-		"no-undefined": "error",
 		"brace-style": "error",
 		"block-spacing": "error",
 		"array-bracket-spacing": [
