@@ -1,12 +1,7 @@
 {
-    "base_path": "advancedgames.ballpit.game/assets/",
+    "base_path": "assets/",
     "type": "image", 
     "resources": {
-        "ball_bowlingball":{
-            "path": "ball_bowlingball_1.png",
-            "dimensions": {"width":90, "height":90},
-            "anchor":{"x":0.5,"y":0.5},
-            "offset":{"x": 0, "y":0}
-        }
+    
     }
 }

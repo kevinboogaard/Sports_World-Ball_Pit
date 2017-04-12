@@ -13,7 +13,6 @@ Config.Core.Parent = "Container";
 
 Config.ResourceLists = {
     "GENERIC": [
-        { "key":"images", "type": "resourcelist", "path":"advancedgames.ballpit.settings/resources/generic/images.json"}
     ],
     "LEVELS": [
         [

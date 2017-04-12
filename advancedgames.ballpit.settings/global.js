@@ -1,6 +1,6 @@
 var Global = {};
 
 Global.Loaded = {
-    "generic": {},
-    "level": {}
+    "GENERIC": {},
+    "LEVEL": {}
 };
