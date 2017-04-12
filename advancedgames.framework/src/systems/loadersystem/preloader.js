@@ -48,7 +48,7 @@ ADCore.Preloader = (function(){
         if (!this.initialized) throw new Error("Preloader hasn't been initialized yet.");
 
         // If category is level, make a new object. We don't need the old level data because we're on a new one!
-        if(category === ADCore.PreloadCategory.LEVEL) Global.Loaded.LEVEL = {};
+        if(category === ADCore.PreloadCategory.LEVEL) Global.Loaded.level = {};
         // Reset the Phaser Load since we're preloading new things.
         this._load.reset(); 
 
@@ -163,14 +163,11 @@ ADCore.Preloader = (function(){
         if ( data.groupkey ) Global.Loaded[data.loadedtype][data.groupkey][data.filekey] = resource;
         else Global.Loaded[data.loadedtype][data.filekey] = resource;
         
-        if ( data.type === "image" ) {
-            var cachemap = this._phaser.cache._cacheMap;
-            var imagemap = cachemap[Phaser.Cache.IMAGE];
+        var cachemap = this._phaser.cache._cacheMap;
+        var map = cachemap[phaserExtension.CacheTypeToNumber(data.type)];
 
-            // Set savekey to json_key.
-            imagemap[data.filekey] = imagemap[savekey];
-            delete imagemap[savekey];
-        }
+         map[data.filekey] = map[savekey];
+         delete map[savekey];
     };
 
     /**

@@ -1,0 +1,30 @@
+{ "height":7,
+ "layers":[
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":7,
+         "name":"Tilelayer",
+         "opacity":1,
+         "properties":
+            {
+             "main":true
+            },
+         "propertytypes":
+            {
+             "main":"bool"
+            },
+         "type":"tilelayer",
+         "visible":true,
+         "width":7,
+         "x":0,
+         "y":0
+        }],
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tileheight":90,
+ "tilesets":[],
+ "tilewidth":90,
+ "version":1,
+ "width":7
+}
