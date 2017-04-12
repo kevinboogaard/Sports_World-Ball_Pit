@@ -25,7 +25,7 @@ ballpit.Core = ( function () {
      */
     p.Update = function ( deltaTime ) {
         var currentScene = sceneLoader.current;
-        if ( currentScene && currentScene.update ) {
+        if ( currentScene && currentScene.Update ) {
             currentScene.Update( deltaTime );
         }
     };
@@ -36,7 +36,7 @@ ballpit.Core = ( function () {
     p.Render = function () {
         var currentScene = sceneLoader.current;
 
-        if ( currentScene && currentScene.render ) {
+        if ( currentScene && currentScene.Render ) {
             currentScene.Render();
         }
     };

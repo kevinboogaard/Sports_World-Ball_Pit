@@ -7,12 +7,17 @@ ADCore.Display = (function () {
      * 
      * @param {entity} 'model'
      */
-    function Display(model) {
+    function Display(model, key) {
+        Phaser.Sprite.call(this, ADCore.phaser, model.x, model.y, key);
+        
         this.model = model;
         this.anchor = new Vector2();
         this.offset = new Vector2();
+        
         this.disposed = false;
     }
+    Display.prototype = Object.create(Phaser.Sprite.prototype);
+    Display.prototype.constructor = Display;
     var p = Display.prototype;
 
     /**
