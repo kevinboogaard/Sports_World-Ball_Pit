@@ -218,7 +218,3 @@ ADCore.Preloader = (function(){
 
     return Preloader;
 })();
-
-Phaser.Loader.prototype.resourcelist = function ( key, url, overwrite ) { 
-    return this.addToFileList( "json", key, url, undefined, overwrite, ".json" );
- };
