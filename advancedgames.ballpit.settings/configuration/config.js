@@ -10,3 +10,13 @@ Config.Core = {};
 Config.Core.Dimensions = { width: 720, height: 1280 };
 Config.Core.Renderer = 0;
 Config.Core.Parent = "Container";
+
+Config.ResourceLists = {
+    "GENERIC": [
+    ],
+    "LEVELS": [
+        [
+
+        ]
+    ]
+};

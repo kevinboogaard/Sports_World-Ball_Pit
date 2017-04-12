@@ -6,15 +6,18 @@ ballpit.Core = ( function () {
      * 'Core'
      */
     function Core() {
-        
+        this.levelLoader = new ballpit.LevelLoader();
     }
     var p = Core.prototype;
 
     /**
-     * 'start'
+     * 'Start'
      */
     p.Start = function () {
-        sceneLoader.Load(scene.Gridscene);
+        this.levelLoader.Initialize();
+
+        this.levelLoader.level = 0;
+        this.levelLoader.LoadLevel();
     };
 
     /**
