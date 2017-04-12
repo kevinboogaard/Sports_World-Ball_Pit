@@ -22,11 +22,11 @@ ADCore.ViewContainer = (function () {
         this.addChild( this._lowerviews );
         this.addChild( this._views );
 
-        Listener.Add( ADCore.Event.ON_MODEL_ADD, this, this._onModelAdd.bind( this ) );
-        Listener.Add( ADCore.Event.ON_MODEL_REMOVE, this, this._onModelRemove.bind( this ) );
+        Listener.Listen( ADCore.Event.ON_MODEL_ADD, this, this._onModelAdd.bind( this ) );
+        Listener.Listen( ADCore.Event.ON_MODEL_REMOVE, this, this._onModelRemove.bind( this ) );
 
-        Listener.Add( ADCore.Event.ON_LOWER_MODEL_ADD, this, this._onLowerModelAdd.bind( this ) );
-        Listener.Add( ADCore.Event.ON_LOWER_MODEL_REMOVE, this, this._onLowerModelRemove.bind( this ) );
+        Listener.Listen( ADCore.Event.ON_LOWER_MODEL_ADD, this, this._onLowerModelAdd.bind( this ) );
+        Listener.Listen( ADCore.Event.ON_LOWER_MODEL_REMOVE, this, this._onLowerModelRemove.bind( this ) );
     }
     ViewContainer.prototype = Object.create(Phaser.Group.prototype);
     ViewContainer.prototype.constructor = ViewContainer;
