@@ -3,9 +3,8 @@ ballpit.EntityFactory = {};
 
 /**'
  * 'AddBall '
-ballpit.EntityFactory.AddBall = function(position,type){
- *  * @param {balltype} 'type'
- *  * @param {vector2} 'position'
+ * @param {balltype} 'type'
+ * @param {vector2} 'position'
  */
 ballpit.EntityFactory.AddBall = function(position,type){
     var model = new ballpit.BallModel(position,type);
@@ -35,7 +34,7 @@ ballpit.EntityFactory.AddBall = function(position,type){
         default:
             throw new Error("Type not known");
     }
-
+ 
     Listener.Dispatch(ADCore.Event.ON_MODEL_ADD, this, { "model": model, "key": key, "viewtype": ADCore.Display});
     return model;
 };

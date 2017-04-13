@@ -9,16 +9,25 @@ ADCore.Display = (function () {
      */
     function Display(model, key) {
         Phaser.Sprite.call(this, ADCore.phaser, model.x, model.y, key);
-        
+
         this.model = model;
-        this.anchor = new Vector2();
-        this.offset = new Vector2();
+        
+        var spriteData = Global.Loaded.generic.images[key];
+        if ( typeof spriteData === "undefined" ) spriteData = Global.Loaded.level.images[key];
+
+        this.anchor.set(spriteData.anchor.x, spriteData.anchor.y);
+        this.offset = spriteData.offset;
         
         this.disposed = false;
     }
     Display.prototype = Object.create(Phaser.Sprite.prototype);
     Display.prototype.constructor = Display;
     var p = Display.prototype;
+
+    p.render = function () {
+        this.x = this.model.x;
+        this.y = this.model.y;
+    };
 
     /**
      * 'Dispose'

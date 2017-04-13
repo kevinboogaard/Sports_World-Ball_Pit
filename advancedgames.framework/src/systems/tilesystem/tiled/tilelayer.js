@@ -3,7 +3,6 @@ ADCore.Tiled = ADCore.Tiled || {};
 
 ADCore.Tiled.LayerTypes = ADCore.Tiled.LayerTypes || {};
 ADCore.Tiled.LayerTypes.TILE = "tilelayer";
-ADCore.Tiled.LayerTypes.OBJECT = "objectgroup";
 
 ADCore.Tiled.TileLayer = ( function () {
 
@@ -20,8 +19,8 @@ ADCore.Tiled.TileLayer = ( function () {
 
         this.visible = data.visible;
 
-        this.x = data.x;
-        this.y = data.y;
+        this.x = data.offsetx;
+        this.y = data.offsety;
 
         this.parent = parent;
 
@@ -42,7 +41,7 @@ ADCore.Tiled.TileLayer = ( function () {
      *  @private
      */
     p._initialize = function () {
-        var spawn_position = new Vector2();
+        var tile_position = new Vector2();
 
         var row = [];
         var columns = [];
@@ -50,23 +49,25 @@ ADCore.Tiled.TileLayer = ( function () {
         var tiledata_len = this.tiledata.length;
         for ( var tiledata_i = 0; tiledata_i < tiledata_len; tiledata_i++ ) {
             var gid = this.tiledata[tiledata_i];
+            var tile = null;
 
-            if ( gid !== 0 ) {
-                throw new Error("Need an EntityFactory for special tiles!");
+            var position = this.TilePositionToPosition(tile_position);
+            var dimensions = new Vector2(this.parent.tilewidth, this.parent.tileheight);
 
-                //var tileset = this.parent.GetTilesetByGid( gid );
-                //var tile = ADCore.EntityFactory.AddTile( spawn_position, tileset.key, gid, tileset.properties );
-
-                //row.push( tile );
+            if (gid !== 0) {
+                var tileset = this.parent.GetTilesetByGid( gid );
+                tile = ADCore.EntityFactory.AddTile( position, tile_position, tileset.key, gid, dimensions, tileset.properties  );
             } else {
-                row.push( null );
+                tile = ADCore.EntityFactory.AddTile( position, tile_position, null, gid, dimensions, null );
             }
+            
+            row.push( tile );
  
-            spawn_position.x++;
-            if ( spawn_position.x === this.width ) {
+            tile_position.x++;
+            if ( tile_position.x === this.width ) {
                 columns.push( row );
-                spawn_position.x = 0;
-                spawn_position.y++;
+                tile_position.x = 0;
+                tile_position.y++;
                 row = [];
             }
         }
@@ -74,10 +75,10 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
-     *  GetTileByPosition
-     * @param {Vector2} position;
+     *  GetTileByTilePosition
+     * @param {Vector2} tileposition;
      */
-    p.GetTileByPosition = function ( position ) {
+    p.GetTileByTilePosition = function ( tileposition ) {
         var columns = this.tiledata;
         var columns_len = columns.length;
         for ( var i = 0; i < columns_len; i++ ) {
@@ -88,7 +89,30 @@ ADCore.Tiled.TileLayer = ( function () {
                 var tile = rows[j];
                 if ( !tile ) continue;
 
-                var inBounds = tile.InBounds( position );
+                var inBounds = tile.TileBounds( tileposition );
+                if ( inBounds ) return tile;
+            }
+        }
+
+        return null;
+    };
+
+    /**
+     *  GetTileByScreenPosition
+     * @param {Vector2} position;
+     */
+    p.GetTileByScreenPosition = function ( position ) {
+        var columns = this.tiledata;
+        var columns_len = columns.length;
+        for ( var i = 0; i < columns_len; i++ ) {
+            var rows = columns[i];
+            var rows_len = rows.length;
+
+            for ( var j = 0; j < rows_len; j++ ) {
+                var tile = rows[j];
+                if ( !tile ) continue;
+
+                var inBounds = tile.ScreenBounds( position );
                 if ( inBounds ) return tile;
             }
         }
@@ -124,7 +148,17 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
-     *  Finalize
+     * 'TilePoisitionToPosition'
+     * @param {Vector2} vector
+     */
+    p.TilePositionToPosition = function ( vector ) {
+        var translatedPosition = new Vector2( vector.x * this.parent.tilewidth, vector.y * this.parent.tileheight );
+        translatedPosition.Add(new Vector2(this.x, this.y));
+        return translatedPosition;
+    };
+
+    /**
+     * 'Finalize'
      */
     p.Finalize = function () {
         var columns = this.tiledata;
@@ -142,11 +176,39 @@ ADCore.Tiled.TileLayer = ( function () {
                     occupied_tile.occupier = tile;
                 }
                 
-                var neighbours = this.__findTileNeighbours(tile)
+                var neighbours = this._findTileNeighbours(tile);
 
                 tile.neighbours = neighbours;
             }
         }
+    };
+
+    /**
+     * 'FindTileNeighbours'
+     * @private
+     */
+     p._findTileNeighbours = function (tile) {
+        var neighbours = [];
+
+        for ( var x = -1; x <= 1; x++ ) {
+            var position = new Vector2( tile.tileposition.x + x, tile.tileposition.y );
+            var neighbour = this.GetTileByTilePosition( position );
+
+             if ( neighbour ) {
+                 neighbours.push( neighbour );
+             }
+        }
+
+        for ( var y = -1; y <= 1; y++ ) {
+            var position = new Vector2( tile.tileposition.x, tile.tileposition.y + y );
+            var neighbour = this.GetTileByTilePosition( position );
+
+            if ( neighbour ) {
+                neighbours.push( neighbour );
+            }
+        }
+
+        return neighbours;
     };
 
     /**

@@ -5,31 +5,37 @@
         "asset_bowlingball":{
             "path": "asset_bowlingball.png",
             "dimensions": {"width":90, "height":90},
-            "anchor":{"x":0.5,"y":0.5},
+            "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
         "asset_basketball":{
             "path": "asset_basketball.png",
             "dimensions": {"width":90, "height":90},
-            "anchor":{"x":0.5,"y":0.5},
+            "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "asset_soccerball":{
             "path": "asset_soccerball.png",
             "dimensions": {"width":90, "height":90},
-            "anchor":{"x":0.5,"y":0.5},
+            "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "asset_tennisball":{
             "path": "asset_tennisball.png",
             "dimensions": {"width":90, "height":90},
-            "anchor":{"x":0.5,"y":0.5},
+            "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "asset_baseball":{
             "path": "asset_baseball.png",
             "dimensions": {"width":90, "height":90},
-            "anchor":{"x":0.5,"y":0.5},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "asset_background":{
+            "path": "asset_background.png",
+            "dimensions": {"width": 720, "height": 1080},
+            "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         }
     }

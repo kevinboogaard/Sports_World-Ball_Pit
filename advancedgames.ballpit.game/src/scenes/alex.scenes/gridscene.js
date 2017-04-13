@@ -8,21 +8,50 @@ scene.Gridscene = (function () {
     function Gridscene() {
         Phaser.Group.call(this, ADCore.phaser, null, "Gridscene");
         console.log("Entering Gridscene");
-        
-        this.tilemap = new Tilemap(Global.Loaded.level.level1_map);
 
-        var layer = this.tilemap.mainLayer;
-        var columns = layer.tiledata;
-        for (var x = 0; x < columns.length ; x++) {
-            var row = columns[x];
-            for (var y = 0; y < row.length; y++) {
-                Debug.DrawCircle(new Vector2(x * 90, y * 90), 20, "rgba(255, 0, 0, 1)", false);
-            }
-        }
+        this.viewContainer = new ADCore.ViewContainer();
+        this.addChild(this.viewContainer);
+        
+        this.tilemap = new Tilemap(Global.Loaded.level.map);
+
+        this.ballContainer = new ballpit.BallContainer();
+        this.ballController = new ballpit.BallController(this.tilemap, this.ballContainer);
+
+        this.ballController.Initialize();
+
+        this.swipePositions = { start: null, end: null };
+
+        Listener.Listen(ADCore.InputEvent.ON_DOWN, this, this._onDown.bind(this));
+        Listener.Listen(ADCore.InputEvent.ON_UP, this, this._onUp.bind(this));
     }
     Gridscene.prototype = Object.create(Phaser.Group.prototype);
     Gridscene.prototype.constructor = Gridscene; 
     var p = Gridscene.prototype;
+
+    p.update = function () {
+        if (this.swipePositions.start && !this.swipePositions.end) {
+            Debug.DrawLine(this.swipePositions.start, inputSystem.inputPosition, "#FF0000", false);
+        }
+    };
+
+    p.render = function () {
+        this.viewContainer.render();
+    };
+
+     p._onDown = function (caller, params) {
+         this.swipePositions.start = params.position.Clone();
+    };
+
+    p._onUp = function (caller, params) {
+        this.swipePositions.end = params.position.Clone();
+
+        if (this.ballController.PositionsOnGridByScreenposition( this.swipePositions.start, this.swipePositions.end)) {
+            this.ballController.SwapBallsByScreenPositions( this.swipePositions.start, this.swipePositions.end );
+        }
+
+        this.swipePositions.start = null;
+        this.swipePositions.end = null;
+    };
 
     p.dispose = function () {
     

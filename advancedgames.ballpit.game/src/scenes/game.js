@@ -19,7 +19,7 @@ scene.Game = (function () {
      */
     p.dispose = function () {
         
-    }
+    };
 
     return Game;
 }());
