@@ -27,8 +27,8 @@ ADCore.TileView = (function () {
     /**
      * 'Dispose'
      */
-    p.__display_dispose = p.dispose;
-    p.dispose = function () {
+    p.__display_dispose = p.Dispose;
+    p.Dispose = function () {
         this.__display_dispose();
     };
 

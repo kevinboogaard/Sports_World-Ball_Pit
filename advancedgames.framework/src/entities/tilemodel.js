@@ -93,8 +93,8 @@ ADCore.TileModel = (function () {
     /**
      * 'Dispose'
      */
-    p.__entity_dispose = p.dispose;
-    p.dispose = function () {
+    p.__entity_dispose = p.Dispose;
+    p.Dispose = function () {
         this.__entity_dispose();
     };
 

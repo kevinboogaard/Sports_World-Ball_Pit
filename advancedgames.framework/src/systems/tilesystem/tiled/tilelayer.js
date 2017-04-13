@@ -156,6 +156,25 @@ ADCore.Tiled.TileLayer = ( function () {
         translatedPosition.Add(new Vector2(this.x, this.y));
         return translatedPosition;
     };
+    
+    /**
+     * 'GetNeighbourFromTileByDirection'
+     * @returns {BallModel}
+     * @param {TileModel} 'tile'
+     * @param {Vector2} 'direction'
+     */
+    p.GetNeighbourFromTileByDirection = function ( tile, direction ) {
+        var neighbours = tile.neighbours;
+        var len = neighbours.length;
+        for ( var i = 0; i < len; i++) {
+            var neighbour = neighbours[i];
+            
+            if (neighbour.tileposition.x === (tile.tileposition.x + direction.x) && neighbour.tileposition.y === (tile.tileposition.y + direction.y) ) {
+                return neighbour;
+            }
+        }
+        return null;
+    };
 
     /**
      * 'Finalize'

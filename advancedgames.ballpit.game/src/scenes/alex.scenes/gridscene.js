@@ -45,7 +45,7 @@ scene.Gridscene = (function () {
     p._onUp = function (caller, params) {
         this.swipePositions.end = params.position.Clone();
 
-        this.ballController.SwapBallsBySwipe(this.swipePositions.start, this.swipePositions.end);
+        this.ballController.Swap(this.swipePositions.start, this.swipePositions.end);
 
         this.swipePositions.start = null;
         this.swipePositions.end = null;

@@ -45,7 +45,6 @@ Math.toDegrees = function ( radians ) {
     return radians * 180 / Math.PI;
 };
 
-
 /**
  * 'Shuffle'
  * This method allows the programmer to shuffle the array.

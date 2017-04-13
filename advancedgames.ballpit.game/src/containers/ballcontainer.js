@@ -9,6 +9,7 @@ ballpit.BallContainer = (function () {
         this.balls = [];
     }
     var p = BallContainer.prototype;
+    
     /**'
      * 'AddBall'
      * @param {vector2} 'position'
@@ -40,7 +41,7 @@ ballpit.BallContainer = (function () {
         this.balls.splice(index, 1);
 
         Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball});
-        ball.dispose();
+        ball.Dispose();
     };
 
     return BallContainer;

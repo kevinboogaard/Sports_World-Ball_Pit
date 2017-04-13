@@ -34,8 +34,10 @@ ballpit.BallModel = (function () {
     /**'
     * 'dispose '
     */
-    p.dispose = function () {
+    p.__entity_dispose = p.Dispose;
+    p.Dispose = function () {
         delete this.balltype;
+        this.__entity_dispose();
     };
 
     return BallModel;
