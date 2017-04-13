@@ -194,7 +194,7 @@ ADCore.Tiled.TileLayer = ( function () {
             var position = new Vector2( tile.tileposition.x + x, tile.tileposition.y );
             var neighbour = this.GetTileByTilePosition( position );
 
-             if ( neighbour ) {
+             if ( neighbour && neighbour !== tile ) {
                  neighbours.push( neighbour );
              }
         }
@@ -203,7 +203,7 @@ ADCore.Tiled.TileLayer = ( function () {
             var position = new Vector2( tile.tileposition.x, tile.tileposition.y + y );
             var neighbour = this.GetTileByTilePosition( position );
 
-            if ( neighbour ) {
+            if ( neighbour && neighbour !== tile ) {
                 neighbours.push( neighbour );
             }
         }

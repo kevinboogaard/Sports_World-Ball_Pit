@@ -39,12 +39,27 @@ ballpit.BallController = (function () {
     };
 
     /**
-     * 'SwapBallsByTilePositions'
+     * 'SwapBallsBySwipe'
+     * @param {Vector2} 'StartPosition' - Screen Position.
+     * @param {Vector2} 'EndPosition'   - Screen Position.
      */
-    p.SwapBallsByTilePositions = function ( tilepositionA, tilepositionB ) {
-        var tileA = this.layer.GetTileByTilePosition(tilepositionA);
-        var tileB = this.layer.GetTileByTilePosition(tilepositionB);
+    p.SwapBallsBySwipe = function (startPosition, endPosition) {
+        var tile = this.layer.GetTileByScreenPosition(startPosition);
 
+        var difference = endPosition.Clone().Substract(startPosition);
+        var direction = difference.Normalize();
+
+        var neighbour = this.GetNeighbourFromTileByDirection(tile, direction);
+        this._swap(tile, neighbour);
+    };
+
+    /**
+     * 'Swap' 
+     * @private
+     * @param {TileModel} 'tileA'
+     * @param {TileModel} 'tileB'
+     */
+    p._swap = function (tileA, tileB) {
         var occupierA = tileA.occupier;
         var occupierB = tileB.occupier;
 
@@ -56,42 +71,22 @@ ballpit.BallController = (function () {
     };
 
     /**
-     * 'SwapBallsByScreenPositions'
+     * 'GetNeighbourFromTileByDirection'
+     * @returns {BallModel}
+     * @param {TileModel} 'tile'
+     * @param {Vector2} 'direction'
      */
-    p.SwapBallsByScreenPositions = function ( positionA, positionB ) {
-        var tileA = this.layer.GetTileByScreenPosition(positionA);
-        var tileB = this.layer.GetTileByScreenPosition(positionB);
-
-        var occupierA = tileA.occupier;
-        var occupierB = tileB.occupier;
-
-        tileA.occupier = occupierB;
-        tileB.occupier = occupierA;
-
-        occupierA.position = tileB.position;
-        occupierB.position = tileA.position;
-    };
-
-    /**
-     * 'PositionsOnGridByTileposition'
-     */
-    p.PositionsOnGridByTileposition = function ( tilepositionA, tilepositionB ) {
-        var tileA = this.layer.GetTileByTilePosition(tilepositionA);
-        var tileB = this.layer.GetTileByTilePosition(tilepositionB);
-
-        if ( tileA === null || tileB === null ) return false;
-        else return true;
-    };
-
-    /**
-     * 'PositionsOnGridByScreenposition'
-     */
-    p.PositionsOnGridByScreenposition = function ( positionA, positionB ) {
-        var tileA = this.layer.GetTileByScreenPosition(positionA);
-        var tileB = this.layer.GetTileByScreenPosition(positionB);
-
-        if ( tileA === null || tileB === null ) return false;
-        else return true;
+    p.GetNeighbourFromTileByDirection = function ( tile, direction ) {
+        var neighbours = tile.neighbours;
+        var len = neighbours.length;
+        for ( var i = 0; i < len; i++) {
+            var neighbour = neighbours[i];
+            
+            if (neighbour.tileposition.x === (tile.tileposition.x + direction.x) && neighbour.tileposition.y === (tile.tileposition.y + direction.y) ) {
+                return neighbour;
+            }
+        }
+        return null;
     };
 
     /**
