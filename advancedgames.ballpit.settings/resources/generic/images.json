@@ -31,6 +31,13 @@
             "dimensions": {"width":90, "height":90},
             "anchor":{"x":0.5,"y":0.5},
             "offset":{"x": 0, "y":0}
+        },
+        "asset_buttoninactive":{
+            "path": "asset_buttoninactive.png",
+            "dimensions": {"width":273, "height":101},
+            "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
         }
+
     }
 }
