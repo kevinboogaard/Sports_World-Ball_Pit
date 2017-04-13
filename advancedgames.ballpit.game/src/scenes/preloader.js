@@ -25,7 +25,7 @@ scene.Preloader = (function () {
     /**'
      * 'Dispose'
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         
     };
 

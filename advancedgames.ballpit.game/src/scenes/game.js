@@ -17,9 +17,9 @@ scene.Game = (function () {
     /**'
      * 'Dispose'
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         
-    }
+    };
 
     return Game;
 }());

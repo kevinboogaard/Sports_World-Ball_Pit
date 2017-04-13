@@ -12,14 +12,14 @@ ADCore.Button = (function () {
         
         this.text = null;
 
-        this.inputEnabled = false;
-        this.disabled = false;
-        this.inputOVer = false;
+        this.inputEnabled = true;
+        this.disabled = true;
+        this.inputOver = false;
         
-        this.oninputdown = null;      
-        this.onmouseup = null;
-        this.onmouseover = null;
-        this.onmouseleave = null;
+        this.onInputDown = null;      
+        this.onInputUp = null;
+        this.onInputOver = null;
+        this.onInputLeave = null;
 
         this.Enable();
     }
@@ -27,13 +27,15 @@ ADCore.Button = (function () {
     Button.prototype.constructor = Button;
     var p = Button.prototype;
 
-    /**'
+    /**
     * 'setText'
     * @param {text} 'text'
     */
     p.SetText = function (text){
         this.text = text;
+        this.addChild(this.text);
     };
+
     /**
     * 'enable'
     */
@@ -44,10 +46,10 @@ ADCore.Button = (function () {
         this.removeChild( this.text );
         delete this.text;
 
-        this.events.onInputOut.add( this.onMouseLeave, this );
-        this.events.onInputOver.add( this.onMouseOver, this );
-        this.events.onInputUp.add( this.onMouseUp, this );
-        this.events.onInputDown.add( this.onMouseDown, this );
+        this.events.onInputOut.add( this._onInputLeave, this );
+        this.events.onInputOver.add( this._onInputOver, this );
+        this.events.onInputUp.add( this._onInputUp, this );
+        this.events.onInputDown.add( this._onInputDown, this );
     };
     
     /**
@@ -57,40 +59,44 @@ ADCore.Button = (function () {
         if ( this.disabled ) return;
         this.disabled = true;
 
-        this.events.onInputOut.remove( this.onMouseLeave, this );
-        this.events.onInputOver.remove( this.onMouseOver, this );
-        this.events.onInputUp.remove( this.onMouseUp, this );
-        this.events.onInputDown.remove( this.onMouseDown, this );
+        this.events.onInputOut.remove( this._onInputLeave, this );
+        this.events.onInputOver.remove( this._onInputOver, this );
+        this.events.onInputUp.remove( this._onInputUp, this );
+        this.events.onInputDown.remove( this._onInputDown, this );
     };
     
     /**
-    * 'onMouseDown'
+    * 'onInputDown'
+    * @private
     */
-    p._onMouseDown = function () {
-        if ( typeof this.onmousedown === "function" ) this.onmousedown( this );
+    p._onInputDown = function () {
+        if ( typeof this.onInputDown === "function" ) this.onInputDown( this );
     };
     
     /**
-    * 'onMouseUp'
+    * 'onInputUp'
+    * @private
     */
-    p._onMouseUp = function () {
-        if ( typeof this.onmouseup === "function" ) this.onmouseup( this );
+    p._onInputUp = function () {
+        if ( typeof this.onInputUp === "function" ) this.onInputUp( this );
     };
     
     /**
-    * 'onMouseOver'
+    * 'onInputOver'
+    * @private
     */
-    p._onMouseOver = function () {
-        this.mouseOver = true;
-        if ( typeof this.onmouseover === "function" ) this.onmouseover( this );
+    p._onInputOver = function () {
+        this.inputOver = true;
+        if ( typeof this.onInputOver === "function" ) this.onInputOver( this );
     };
     
     /**
-    * 'onMouseLeave'
+    * 'onInputLeave'
+    * @private
     */
-    p._onMouseLeave = function () {
-        this.mouseOver = false;
-        if ( typeof this.onmouseleave === "function" ) this.onmouseleave( this );
+    p._onInputLeave = function () {
+        this.inputOver = false;
+        if ( typeof this.onInputLeave === "function" ) this.onInputLeave( this );
     };
 
     return Button;

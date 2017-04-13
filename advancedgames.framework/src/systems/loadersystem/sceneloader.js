@@ -26,15 +26,15 @@ ADCore.Sceneloader = (function () {
      * @param {scene} 'scene'
      */
     p.Switch = function(scene) {
-        this.disposeCurrent();
-        this.load(scene);
+        this.DisposeCurrent();
+        this.Load(scene);
     };
 
     /**
      * 'DisposeCurrent'
      */
     p.DisposeCurrent = function(){
-        this.current.dispose();
+        this.current.Dispose();
         this.current = null;
     };
 

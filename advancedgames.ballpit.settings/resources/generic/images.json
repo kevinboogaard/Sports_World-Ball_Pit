@@ -34,8 +34,20 @@
         },
         "asset_buttoninactive":{
             "path": "asset_buttoninactive.png",
-            "dimensions": {"width":273, "height":101},
+            "dimensions": {"width":216, "height":216},
             "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
+        },
+        "Asset_Logo":{
+            "path": "Asset_Logo.png",
+            "dimensions": {"width":516, "height":345},
+            "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
+        },
+         "asset_menubackground":{
+            "path": "asset_menubackground.png",
+            "dimensions": {"width":720, "height":1280},
+            "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         }
 

@@ -6,19 +6,19 @@ ADCore.Text = ( function () {
      * 'Text'
      */
     function Text() {
-        this._text = '';
+        this._text = "";
         this._position = new Vector2();
         this._anchor = new Vector2();
 
-        this._fontName = 'Arial';
+        this._fontName = "Arial";
         this._fontSize = 10;
         
         this._params = {};
     }
     var p = Text.prototype;
-    /**'
+    /**
      * 'position'
-     * @returns {vector2}
+     * @returns {text}
      * @param {vector2} 'vector'
      */
     p.position = function ( vector ) {
@@ -26,40 +26,40 @@ ADCore.Text = ( function () {
         return this;
     };
 
-    /**'
+    /**
      * 'value'
-     * @returns {value}
-     * @param {value} 'val'
+     * @returns {text}
+     * @param {string} 'val'
      */
     p.value = function ( val ) {
-        this.value = val;
+        this._text = val;
         return this;
     };
 
-     /**'
+     /**
      * 'font'
-     * @returns {fontname}
-     * @param {name} 'name'
+     * @returns {text}
+     * @param {string} 'name'
      */
     p.font = function ( name ) {
         this._fontName = name;
         return this;
     };
     
-    /**'
+    /**
      * 'weight'
-     * @returns {fontWeight}
-     * @param {value} 'value'
+     * @returns {text}
+     * @param {int} 'value'
      */
     p.weight = function ( value ) {
         this._params.fontWeight = value;
         return this;
     };
 
-    /**'
+    /**
      * 'size'
-     * @returns {size}
-     * @param {size} 'size'
+     * @returns {text}
+     * @param {int} 'size'
      */
     p.size = function ( size ) {
         this._fontSize = size;
@@ -68,8 +68,8 @@ ADCore.Text = ( function () {
    
     /**'
      * 'color'
-     * @returns {color}
-     * @param {color} 'color'
+     * @returns {text}
+     * @param {int} 'color'
      */
     p.color = function ( color ) {
         this._params.fill = color;
@@ -78,7 +78,7 @@ ADCore.Text = ( function () {
 
     /**'
      * 'anchor'
-     * @returns {vector2}
+     * @returns {text}
      * @param {vector2} 'colvectoror'
      */
     p.anchor = function ( vector ) {
@@ -88,8 +88,8 @@ ADCore.Text = ( function () {
 
     /**'
      * 'wrap'
-     * @returns {size}
-     * @param {size} 'size'
+     * @returns {text}
+     * @param {int} 'size'
      */
     p.wrap = function ( size ) {
         this._params.wordWrap = true;
@@ -106,7 +106,7 @@ ADCore.Text = ( function () {
     p.finish = function () {
         this._params.font = this._fontSize + "px " + this._fontName;
 
-        var text = new Phaser.Text( CDC.phaser, this._position.x, this._position.y, this._text, this._params );
+        var text = new Phaser.Text( ADCore.phaser, this._position.x, this._position.y, this._text, this._params );
         text.anchor.set( this._anchor.x, this._anchor.y );
 
         return text;
