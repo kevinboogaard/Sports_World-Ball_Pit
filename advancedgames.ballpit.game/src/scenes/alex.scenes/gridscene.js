@@ -45,7 +45,14 @@ scene.Gridscene = (function () {
     p._onUp = function (caller, params) {
         this.swipePositions.end = params.position.Clone();
 
-        this.ballController.Swap(this.swipePositions.start, this.swipePositions.end);
+        var diff = this.swipePositions.end.Clone().Substract(this.swipePositions.start);
+
+        if (diff.x != 0 && diff.y != 0) {
+            var selected = this.ballController.layer.GetTileByScreenPosition(this.swipePositions.start);
+            var targeted = this.ballController.layer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
+
+            this.ballController.Swap(selected, targeted);
+        }
 
         this.swipePositions.start = null;
         this.swipePositions.end = null;

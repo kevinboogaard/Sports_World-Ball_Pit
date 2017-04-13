@@ -12,16 +12,30 @@ ballpit.BallHelper = (function () {
         this.ballContainer = ballContainer;
     }
     var p = BallHelper.prototype;
-    
+
     p.GetLowestBeneath = function (tile) {
+        var result = tile;
         var direction = new Vector2(0, -1);
-        
+
         var checked = this.layer.GetNeighbourFromTileByDirection(tile, direction);
-        while(checked.occupies !== null) {
+        while (checked !== null && checked.occupier === null) {
             checked = this.layer.GetNeighbourFromTileByDirection(checked, direction);
+            if (checked !== null) result = checked;
         }
 
-        return checked;
+        return result;
+    };
+
+    p.GetTilesByDirection = function (tile, direction ) {
+        var tiles = [];
+
+        var checked = tile;
+        while (checked) {
+            if (checked !== tile) tiles.push(checked);
+            checked = this.layer.GetNeighbourFromTileByDirection(checked, direction);
+        } 
+
+        return tiles;  
     };
 
     p.GetAligned = function (tile) {
