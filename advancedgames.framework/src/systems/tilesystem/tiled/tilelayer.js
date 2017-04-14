@@ -156,7 +156,7 @@ ADCore.Tiled.TileLayer = ( function () {
         translatedPosition.Add(new Vector2(this.x, this.y));
         return translatedPosition;
     };
-    
+  
     /**
      * 'GetNeighbourFromTileByDirection'
      * @returns {BallModel}
