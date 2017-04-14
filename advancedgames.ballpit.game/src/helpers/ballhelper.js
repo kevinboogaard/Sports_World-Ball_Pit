@@ -15,12 +15,12 @@ ballpit.BallHelper = (function () {
 
     p.GetLowestBeneath = function (tile) {
         var result = tile;
-        var direction = new Vector2(0, -1);
+        var direction = new Vector2(0, 1);
 
         var checked = this.layer.GetNeighbourFromTileByDirection(tile, direction);
         while (checked !== null && checked.occupier === null) {
+            result = checked;
             checked = this.layer.GetNeighbourFromTileByDirection(checked, direction);
-            if (checked !== null) result = checked;
         }
 
         return result;

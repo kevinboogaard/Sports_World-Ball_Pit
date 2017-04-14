@@ -17,7 +17,7 @@ ballpit.BallController = (function () {
         this.ballContainer = ballContainer;
 
         this.layer = this.tilemap.mainLayer;
-        this.columns = this.layer.tiledata;
+        this.rows = this.layer.tiledata;
 
         this.helper = new ballpit.BallHelper(this.layer, ballContainer);
 
@@ -33,37 +33,17 @@ ballpit.BallController = (function () {
      * Use this method before you allow the player to move balls!
      */
     p.Initialize = function () {
-        var column_len = this.columns.length;
-        for (var y = 0; y < column_len; y++) {
-            var row = this.columns[y];
+        var rows_len = this.rows.length;
+        for (var y = 0; y < rows_len; y++) {
+            var column = this.rows[y];
 
-            var row_len = row.length;
-            for (var x = 0; x < row_len; x++) {
-                var tile = row[x];
+            var column_len = column.length;
+            for (var x = 0; x < column_len; x++) {
+                var tile = column[x];
                 
                 if (tile.occupier === null) {
                     var ball = this.ballContainer.AddRandomBall(tile.position);
                     tile.occupier = ball;
-                }
-            }
-        }
-    };
-
-    /**
-     * 'Update'
-     * @private
-     */
-    p._update = function () {
-        var column_len = this.columns.length;
-        for (var y = 0; y < column_len; y++) {
-            var row = this.columns[y];
-
-            var row_len = row.length;
-            for (var x = 0; x < row_len; x++) {
-                var tile = row[x];
-                
-                if (tile.occupier !== null) {
-                    this.DropBall(tile);
                 }
             }
         }
@@ -80,12 +60,42 @@ ballpit.BallController = (function () {
     };
 
     /**
+     * 'CanSwap'
+     * @param {TileModel} 'tile'.
+     */
+    p.CanSwap = function (tile) {
+        return (tile !== null && tile.occupier !== null);
+    };
+
+    /**
      * 'DropBall'
      * @param {TileModel} 'tile'.
      */
     p.DropBall = function (tile) {
         var lowest = this.helper.GetLowestBeneath(tile);
         this._swap(tile, lowest);
+    };
+
+    /**
+     * 'DropColumn'
+     * @param {Int} 'tileX'.
+     */
+    p.DropColumn = function (tileX) {
+        var len = this.rows.length;
+        for (var y = len -1; y >= 0; y--) {
+            var row = this.rows[y];
+
+            var row_len = row.length;
+            for (var x = 0; x < row_len ; x++) {
+                if (x === tileX) {
+                    var tile = row[x];
+
+                    if (this.CanSwap(tile)) {
+                        this.DropBall(tile);
+                    }
+                }
+            }
+        }
     };
 
     /**
@@ -99,7 +109,7 @@ ballpit.BallController = (function () {
 
         Listener.Dispatch(ballpit.Event.ON_BALL_ALIGN, this, { "owner": tile, "aligned": aligned });
         return true;
-    }
+    };
 
     /**
      * 'OnBallSwap'
@@ -125,6 +135,7 @@ ballpit.BallController = (function () {
      */
     p._onBallAlign = function (caller, params) {
         var tiles = params.aligned;
+        var rowsAffected = [];
         tiles.push(params.owner);
 
         var len = tiles.length;
@@ -135,10 +146,17 @@ ballpit.BallController = (function () {
             this.ballContainer.RemoveBall(occupier);
             tiles[i].occupier = null;
 
+            if (!rowsAffected.contains(tile.tileposition.x)) {
+                rowsAffected.push(tile.tileposition.x);
+            }
+
             Listener.Dispatch(ballpit.Event.ON_BALL_REMOVED, this, {"tile": tile});
         }
 
-        this._update();
+        var col_len = rowsAffected.length;
+        for (var j = 0; j < col_len; j++) {
+            this.DropColumn(rowsAffected[j]);
+        }
     };
 
     /**

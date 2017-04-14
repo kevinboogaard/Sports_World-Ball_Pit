@@ -47,11 +47,16 @@ scene.Gridscene = (function () {
 
         var diff = this.swipePositions.end.Clone().Substract(this.swipePositions.start);
 
-        if (diff.x != 0 && diff.y != 0) {
+        if (diff.x !== 0 && diff.y !== 0) {
             var selected = this.ballController.layer.GetTileByScreenPosition(this.swipePositions.start);
-            var targeted = this.ballController.layer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
-
-            this.ballController.Swap(selected, targeted);
+            if (this.ballController.CanSwap(selected)) {
+                var targeted = this.ballController.layer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
+                
+                if (this.ballController.CanSwap(targeted)) {
+                    console.log(selected, targeted);
+                    this.ballController.Swap(selected, targeted);
+                }
+            }
         }
 
         this.swipePositions.start = null;
