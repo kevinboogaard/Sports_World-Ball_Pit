@@ -1,0 +1,14 @@
+{
+    "base_path": "advancedgames.ballpit.game/assets/spritesheets/",
+    "type": "atlas", 
+    "resources": {
+        "ball_explosion":{
+            "json_path": "particles/spritesheet_explosion.json",
+            "atlas_path": "particles/spritesheet_explosion.png"
+        },
+        "logo_startanim":{
+            "json_path": "particles/spritesheet_logo.json",
+            "atlas_path": "particles/spritesheet_logo.png"
+        }
+     }
+}

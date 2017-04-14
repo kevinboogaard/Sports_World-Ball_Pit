@@ -7,7 +7,6 @@ scene.Preloader = (function () {
      */
     function Preloader() {
         Phaser.Group.call(this, ADCore.phaser, null, "Preloader");
-
         console.log("Entering Preloader");
     }
     Preloader.prototype = Object.create(Phaser.Group.prototype);
@@ -25,7 +24,7 @@ scene.Preloader = (function () {
     /**'
      * 'Dispose'
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         
     };
 

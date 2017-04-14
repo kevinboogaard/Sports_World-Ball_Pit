@@ -61,6 +61,9 @@ Phaser.Cache.prototype.get = function ( type, key ) {
         case "image":
             return this.getImage( key );
 
+        case "atlas":
+            return this.getImage( key );
+
         case "framedata":
             return this.getFrameData( key );
 
@@ -102,6 +105,9 @@ phaserExtension.CacheTypeToNumber = function ( type ) {
             return 1;
             
         case "image": 
+            return 2;
+
+        case "atlas":
             return 2;
 
         case "texture": 

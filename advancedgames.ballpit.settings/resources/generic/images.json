@@ -3,31 +3,31 @@
     "type": "image", 
     "resources": {
         "asset_bowlingball":{
-            "path": "asset_bowlingball.png",
+            "path": "balls/asset_bowlingball.png",
             "dimensions": {"width":90, "height":90},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
         "asset_basketball":{
-            "path": "asset_basketball.png",
+            "path": "balls/asset_basketball.png",
             "dimensions": {"width":90, "height":90},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "asset_soccerball":{
-            "path": "asset_soccerball.png",
+            "path": "balls/asset_soccerball.png",
             "dimensions": {"width":90, "height":90},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "asset_tennisball":{
-            "path": "asset_tennisball.png",
+            "path": "balls/asset_tennisball.png",
             "dimensions": {"width":90, "height":90},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "asset_baseball":{
-            "path": "asset_baseball.png",
+            "path": "balls/asset_baseball.png",
             "dimensions": {"width":90, "height":90},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
@@ -35,6 +35,24 @@
          "asset_background":{
             "path": "asset_background.png",
             "dimensions": {"width": 720, "height": 1080},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "asset_buttoninactive":{
+            "path": "ui/asset_buttoninactive.png",
+            "dimensions": {"width":216, "height":216},
+            "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
+        },
+        "asset_logo":{
+            "path": "ui/asset_logo.png",
+            "dimensions": {"width":516, "height":345},
+            "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
+        },
+         "asset_menubackground":{
+            "path": "backgrounds/asset_menubackground.png",
+            "dimensions": {"width":720, "height":1280},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         }

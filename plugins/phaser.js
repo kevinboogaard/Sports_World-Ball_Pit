@@ -55599,7 +55599,8 @@ Phaser.Text.prototype.setStyle = function (style, update) {
 
     if (update === undefined) { update = false; }
 
-    var newStyle = Object.assign({}, style);
+    //var newStyle = Object.assign({}, style);
+    var newStyle = newStyle || {};
     newStyle.font = style.font || 'bold 20pt Arial';
     newStyle.backgroundColor = style.backgroundColor || null;
     newStyle.fill = style.fill || 'black';
