@@ -2,7 +2,6 @@ var ADCore = ADCore || {};
 ADCore.Tiled = ADCore.Tiled || {};
 
 ADCore.Tiled.LayerTypes = ADCore.Tiled.LayerTypes || {};
-ADCore.Tiled.LayerTypes.TILE = "tilelayer";
 ADCore.Tiled.LayerTypes.OBJECT = "objectgroup";
 
 ADCore.Tiled.ObjectLayer = ( function () {
@@ -20,8 +19,8 @@ ADCore.Tiled.ObjectLayer = ( function () {
 
         this.visible = data.visible;
 
-        this.x = data.x;
-        this.y = data.y;
+        this.x = data.offsetx;
+        this.y = data.offsety;
 
         this.parent = parent;
 

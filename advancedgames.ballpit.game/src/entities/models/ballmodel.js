@@ -7,6 +7,14 @@ ballpit.ballTypes.TENNISBALL = "tennisball";
 ballpit.ballTypes.BOWLINGBALL = "bowlingball";
 ballpit.ballTypes.BASEBALL = "baseball";
 
+ballpit.ballTypes.LIST = [
+    ballpit.ballTypes.FOOTBALL,
+    ballpit.ballTypes.BASKETBALL,
+    ballpit.ballTypes.TENNISBALL,
+    ballpit.ballTypes.BOWLINGBALL,
+    ballpit.ballTypes.BASEBALL
+];
+
 ballpit.BallModel = (function () {
 
     /**'
@@ -21,7 +29,6 @@ ballpit.BallModel = (function () {
     }
     BallModel.prototype = Object.create(ADCore.Entity.prototype);
     BallModel.prototype.constructor = BallModel;
-
     var p = BallModel.prototype;
 
     /**'

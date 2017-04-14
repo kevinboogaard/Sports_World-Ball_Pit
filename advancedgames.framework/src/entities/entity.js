@@ -11,7 +11,6 @@ ADCore.Entity = (function () {
         this.disposed = false;
 
         ADCore.EnableMutators( this );
-        this._gettersAndSetters();
     }
     var p = Entity.prototype;
 
@@ -28,7 +27,7 @@ ADCore.Entity = (function () {
     /**
      * 'Getters And Setters'
      */
-    p._gettersAndSetters = function () {
+    p.gettersAndSetters = function () {
         this.Define("x", {
             "get": function () {
                 return this.position.x;

@@ -84,6 +84,8 @@ function _update () {
     var deltaTime = 1 / 60;
     // Update main.
     this.main.Update( deltaTime );
+    // Update Input system aswell.
+    this.inputSystem.update( deltaTime );
 }
 
  /**
@@ -115,4 +117,6 @@ ADCore.EnableMutators = function ( prototype ) {
             set: callback.set.bind( this )
         } );
     };
+
+    prototype.gettersAndSetters();
 };

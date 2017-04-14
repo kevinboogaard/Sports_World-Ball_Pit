@@ -17,8 +17,20 @@ ballpit.BallContainer = (function () {
     p.AddBall = function(position,type){
         var ballModel = new ballpit.EntityFactory.AddBall(position,type);
         this.balls.push(ballModel);
+        return ballModel;
     };
-    
+
+    /**'
+     * 'AddRandomBall'
+     * @param {vector2} 'position'
+     */
+    p.AddRandomBall = function (position) {
+        var types = ballpit.ballTypes.LIST;
+        var randomType = types[Math.randomRange(0, types.length - 1)];
+
+        return this.AddBall(position, randomType);
+    };
+
      /**'
      * 'AddBall'
      * @param {ball} 'ball'
