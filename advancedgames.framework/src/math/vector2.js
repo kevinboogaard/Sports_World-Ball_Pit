@@ -81,11 +81,11 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'SquareRoot'
+    * 'Exponentiate'
     * @returns {Vector2}
     * @param {int} 'n'
     */
-    p.SquareRoot = function(n){
+    p.Exponentiate = function(n){
         this.x *= n;
         this.y *= n;
 
@@ -93,11 +93,11 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'Exponentiate'
+    * 'SquareRoot'
     * @returns {Vector2}
     * @param {int} 'n'
     */
-    p.Exponentiate = function(n){
+    p.SquareRoot = function(n){
         this.x /= n;
         this.y /= n;
 
@@ -179,12 +179,12 @@ this.Vector2 = (function() {
     * This method normalizes a vector: where the vector is the same direction but with norm (length) 1.
     */
     p.Normalize = function(){
-        var result = this.clone();
-        var magnitude = this.magnitude();
+        var result = this.Clone();
+        var magnitude = this.Magnitude();
 
         if(magnitude !== 0) result.SquareRoot(magnitude);
         
-        return result;
+        return result.Round();
     };
 
     return Vector2;

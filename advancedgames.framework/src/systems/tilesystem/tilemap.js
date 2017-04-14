@@ -46,8 +46,6 @@ this.Tilemap = ( function () {
      * 'Initialize'
      */
     p._initialize = function () {
-        ADCore.phaser.world.setBounds( -(this.worldWidth / 2), -(this.worldHeight / 2), this.worldWidth, this.worldHeight );
-
         if (typeof this.tilesets !== "undefined") {
             var tilesets = [];
             var tilesets_len = this.tilesets.length;
@@ -69,10 +67,11 @@ this.Tilemap = ( function () {
                 
                 if ( layerdata.type === ADCore.Tiled.LayerTypes.TILE ) {
                     layer = new ADCore.Tiled.TileLayer( this, layerdata );
-
                     if ( layer.properties && layer.properties.main ) this.mainLayer = layer;
                 } else if ( layerdata.type === ADCore.Tiled.LayerTypes.OBJECT ) {
                     layer = new ADCore.Tiled.ObjectLayer( this, layerdata );
+                } else if ( layerdata.type === ADCore.Tiled.LayerTypes.IMAGE ) {
+                    layer = new ADCore.Tiled.ImageLayer( this, layerdata );
                 }
 
                 layers.push( layer );

@@ -19,6 +19,9 @@ ADCore.InputSystem = (function () {
      * 'InputSystem'
      */
     function InputSystem(input) {
+        this.inputPosition = new Vector2();
+        this._inputDown = false;
+
         // Remember key presses.
         this.keyPressed = -1;
         this.lastKeyPressed = -1;
@@ -33,6 +36,10 @@ ADCore.InputSystem = (function () {
     }
     var p = InputSystem.prototype;
 
+    p.update = function () {
+        this.inputPosition = new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y);
+    };
+
     /**
      * onInputDown
      * This function dispatches ON_DOWN with the Listener class
@@ -40,7 +47,9 @@ ADCore.InputSystem = (function () {
      */
     p.onInputDown = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_DOWN, this, event, false);
+        this._inputDown = true;
+
+        Listener.Dispatch( ADCore.InputEvent.ON_DOWN, this, { "event": event, "position": this.inputPosition}, false);
     };
 
     /**
@@ -49,8 +58,9 @@ ADCore.InputSystem = (function () {
      * When Phaser detects any input.
      */
     p.onInputUp = function ( event ) {
-        if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_UP, this, event, false);
+        if ( Input.paused || this._inputDown === false ) return;
+        this._inputDown = false;
+        Listener.Dispatch( ADCore.InputEvent.ON_UP, this, { "event": event, "position": this.inputPosition}, false);
     };
 
     /**
@@ -60,7 +70,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputTap = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, event, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, { "event": event, "position": this.inputPosition}, false);
     };
 
     /**
@@ -70,7 +80,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputHold = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_HOLD, this, event, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_HOLD, this, { "event": event, "position": this.inputPosition}, false);
     };
 
     /**

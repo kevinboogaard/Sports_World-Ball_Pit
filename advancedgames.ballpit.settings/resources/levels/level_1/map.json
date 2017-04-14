@@ -3,7 +3,9 @@
         {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":7,
-         "name":"Tilelayer",
+         "name":"tilelayer",
+         "offsetx":45.3333333333334,
+         "offsety":620.666666666667,
          "opacity":1,
          "properties":
             {
@@ -18,12 +20,39 @@
          "width":7,
          "x":0,
          "y":0
+        }, 
+        {
+         "height":7,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/asset_background.png",
+         "name":"asset_background",
+         "offsetx":-0.666666666666629,
+         "offsety":246,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":7,
+         "x":0,
+         "y":0
         }],
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tileheight":90,
- "tilesets":[],
+ "tilesets":[
+        {
+         "columns":1,
+         "firstgid":1,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/asset_background.png",
+         "imageheight":1080,
+         "imagewidth":720,
+         "margin":0,
+         "name":"asset_background",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":1080,
+         "tilewidth":720,
+         "transparentcolor":"#120d39"
+        }],
  "tilewidth":90,
  "version":1,
  "width":7

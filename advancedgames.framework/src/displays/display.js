@@ -16,6 +16,11 @@ ADCore.Display = (function () {
     Display.prototype.constructor = Display;
     var p = Display.prototype;
 
+    p.render = function () {
+        this.x = this.model.x;
+        this.y = this.model.y;
+    };
+
     /**
      * 'Dispose'
      *  with the dispose function you can clear all the data of an object and then destroy it.

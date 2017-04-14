@@ -9,7 +9,6 @@ ballpit.LevelLoader = ( function () {
         this._level = -1;
 
         ADCore.EnableMutators( this );
-        this.__gettersAndSetters();
     }
     var p = LevelLoader.prototype;
 
@@ -64,9 +63,8 @@ ballpit.LevelLoader = ( function () {
 
     /**
      * 'Getters And Setters'
-     * @private
      */
-    p.__gettersAndSetters = function () {
+    p.gettersAndSetters = function () {
         this.Define( "level", {
             "get": function () {
                 return this._level;
