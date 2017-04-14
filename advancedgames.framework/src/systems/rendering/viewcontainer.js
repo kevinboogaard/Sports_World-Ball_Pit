@@ -87,7 +87,7 @@ ADCore.ViewContainer = (function () {
 
             if ( model === params.model ) {
                 this._views.removeChild( view );
-                view.dispose();
+                view.Dispose();
 
                 break;
             }
@@ -110,7 +110,7 @@ ADCore.ViewContainer = (function () {
 
             if ( model === params.model ) {
                 this._lowerviews.removeChild( view );
-                view.dispose();
+                view.Dispose();
 
                 break;
             }

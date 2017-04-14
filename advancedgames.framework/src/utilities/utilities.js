@@ -45,7 +45,6 @@ Math.toDegrees = function ( radians ) {
     return radians * 180 / Math.PI;
 };
 
-
 /**
  * 'Shuffle'
  * This method allows the programmer to shuffle the array.
@@ -69,4 +68,14 @@ Array.prototype.shuffle = function () {
 Array.prototype.pushAt = function (index, value) {
     if ( index >= this.length ) throw new Error( "Index is greater than it's length." );
     this.splice( index, 0, value );
+};
+
+/**
+ * 'Contains'
+ * @param {T} 'item'
+ * This method allows the programmer to check if an array contains an item.
+ */
+Array.prototype.contains = function(item) {
+    var index = this.indexOf(item);
+    return (index > -1) ? true : false;
 };

@@ -16,7 +16,7 @@ ADCore.Entity = (function () {
 
     /**
      * 'Dispose'
-     *  with the dispose funtion you can clear all the data of an object and then destroy it.
+     *  with the dispose function you can clear all the data of an object and then destroy it.
      */
     p.Dispose = function(){
         delete this.position;

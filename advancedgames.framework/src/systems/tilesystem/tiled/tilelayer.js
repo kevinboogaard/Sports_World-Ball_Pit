@@ -43,8 +43,8 @@ ADCore.Tiled.TileLayer = ( function () {
     p._initialize = function () {
         var tile_position = new Vector2();
 
-        var row = [];
-        var columns = [];
+        var column = [];
+        var rows = [];
 
         var tiledata_len = this.tiledata.length;
         for ( var tiledata_i = 0; tiledata_i < tiledata_len; tiledata_i++ ) {
@@ -61,17 +61,17 @@ ADCore.Tiled.TileLayer = ( function () {
                 tile = ADCore.EntityFactory.AddTile( position, tile_position, null, gid, dimensions, null );
             }
             
-            row.push( tile );
+            column.push( tile );
  
             tile_position.x++;
             if ( tile_position.x === this.width ) {
-                columns.push( row );
+                rows.push( column );
                 tile_position.x = 0;
                 tile_position.y++;
-                row = [];
+                column = [];
             }
         }
-        this.tiledata = columns;
+        this.tiledata = rows;
     };
 
     /**
@@ -79,14 +79,14 @@ ADCore.Tiled.TileLayer = ( function () {
      * @param {Vector2} tileposition;
      */
     p.GetTileByTilePosition = function ( tileposition ) {
-        var columns = this.tiledata;
-        var columns_len = columns.length;
-        for ( var i = 0; i < columns_len; i++ ) {
-            var rows = columns[i];
-            var rows_len = rows.length;
+        var rows = this.tiledata;
+        var rows_len = rows.length;
+        for ( var i = 0; i < rows_len; i++ ) {
+            var columns = rows[i];
+            var columns_len = columns.length;
 
-            for ( var j = 0; j < rows_len; j++ ) {
-                var tile = rows[j];
+            for ( var j = 0; j < columns_len; j++ ) {
+                var tile = columns[j];
                 if ( !tile ) continue;
 
                 var inBounds = tile.TileBounds( tileposition );
@@ -102,14 +102,14 @@ ADCore.Tiled.TileLayer = ( function () {
      * @param {Vector2} position;
      */
     p.GetTileByScreenPosition = function ( position ) {
-        var columns = this.tiledata;
-        var columns_len = columns.length;
-        for ( var i = 0; i < columns_len; i++ ) {
-            var rows = columns[i];
-            var rows_len = rows.length;
+        var rows = this.tiledata;
+        var rows_len = rows.length;
+        for ( var i = 0; i < rows_len; i++ ) {
+            var columns = rows[i];
+            var columns_len = columns.length;
 
-            for ( var j = 0; j < rows_len; j++ ) {
-                var tile = rows[j];
+            for ( var j = 0; j < columns_len; j++ ) {
+                var tile = columns[j];
                 if ( !tile ) continue;
 
                 var inBounds = tile.ScreenBounds( position );
@@ -128,14 +128,14 @@ ADCore.Tiled.TileLayer = ( function () {
     p.GetTilesByProperty = function ( propertyname, value ) {
         var result = [];
 
-        var columns = this.tiledata;
-        var columns_len = columns.length;
-        for ( var i = 0; i < columns_len; i++ ) {
-            var rows = columns[i];
-            var rows_len = rows.length;
+        var rows = this.tiledata;
+        var rows_len = rows.length;
+        for ( var i = 0; i < rows_len; i++ ) {
+            var columns = rows[i];
+            var columns_len = columns.length;
 
-            for ( var j = 0; j < rows_len; j++ ) {
-                var tile = rows[j];
+            for ( var j = 0; j < columns_len; j++ ) {
+                var tile = columns[j];
                 if ( !tile) continue;
 
                 if ( tile.properties[propertyname] && tile.properties[propertyname] === value ) {
@@ -156,19 +156,38 @@ ADCore.Tiled.TileLayer = ( function () {
         translatedPosition.Add(new Vector2(this.x, this.y));
         return translatedPosition;
     };
+  
+    /**
+     * 'GetNeighbourFromTileByDirection'
+     * @returns {BallModel}
+     * @param {TileModel} 'tile'
+     * @param {Vector2} 'direction'
+     */
+    p.GetNeighbourFromTileByDirection = function ( tile, direction ) {
+        var neighbours = tile.neighbours;
+        var len = neighbours.length;
+        for ( var i = 0; i < len; i++) {
+            var neighbour = neighbours[i];
+            
+            if (neighbour.tileposition.x === (tile.tileposition.x + direction.x) && neighbour.tileposition.y === (tile.tileposition.y + direction.y) ) {
+                return neighbour;
+            }
+        }
+        return null;
+    };
 
     /**
      * 'Finalize'
      */
     p.Finalize = function () {
-        var columns = this.tiledata;
-        var columns_len = columns.length;
-        for ( var i = 0; i < columns_len; i++ ) {
-            var rows = columns[i];
-            var rows_len = rows.length;
+        var rows = this.tiledata;
+        var rows_len = rows.length;
+        for ( var i = 0; i < rows_len; i++ ) {
+            var columns = rows[i];
+            var columns_len = columns.length;
 
-            for ( var j = 0; j < rows_len; j++ ) {
-                var tile = rows[j];
+            for ( var j = 0; j < columns_len; j++ ) {
+                var tile = columns[j];
                 if ( !tile ) continue;
 
                 if ( this.properties && this.properties.occupies ) {
@@ -215,23 +234,23 @@ ADCore.Tiled.TileLayer = ( function () {
      * 'Dispose'
      */
     p.dispose = function () {
-        var columns = this.tiledata;
-        var columns_len = columns.length;
-        for ( var i = columns_len - 1; i >= 0; i-- ) {
-            var rows = columns[i];
-            var rows_len = rows.length;
+        var rows = this.tiledata;
+        var rows_len = rows.length;
+        for ( var i = 0; i < rows_len; i++ ) {
+            var columns = rows[i];
+            var columns_len = columns.length;
 
-            for ( var j = rows_len - 1; j >= 0; j-- ) {
-                var tile = rows[j];
+            for ( var j = 0; j < columns_len; j++ ) {
+                var tile = columns[j];
                 if ( !tile ) continue;
 
                 Listener.Dispatch( ADCore.Event.ON_MODEL_REMOVE, this, { 'model': tile } );
                 tile.dispose();
 
-                rows.splice( j, 1 );
+                columns.splice( j, 1 );
             }
 
-            columns.splice( i, 1 );
+            rows.splice( i, 1 );
         }
         delete this.tiledata;
 
