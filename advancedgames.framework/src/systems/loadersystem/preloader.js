@@ -11,6 +11,7 @@ ADCore.PreloadCategory.LEVEL = "level";
 
 ADCore.PreloadType = ADCore.preloadType || {};
 ADCore.PreloadType.RESOURCE_LIST = "resourcelist";
+ADCore.PreloadType.ATLAS_LIST = "atlaslist";
 
 ADCore.Preloader = (function(){
 
@@ -74,6 +75,10 @@ ADCore.Preloader = (function(){
         switch ( data.type ) {
             case ADCore.PreloadType.RESOURCE_LIST:
                 this._preload_resource_list(data, savekey);
+                break;
+
+            case ADCore.PreloadType.ATLAS_LIST:
+                this._preload_atlas_list(data, savekey);
                 break;
 
             default:
@@ -146,7 +151,53 @@ ADCore.Preloader = (function(){
             }
         }
     };
-    
+
+    /**
+     * 'Preload Atlas List'
+     * @private
+     * @param {object} 'data'
+     * @param {string} 'savekey'
+     */
+    p._preload_atlas_list = function ( data, savekey ) {
+        // Phaser parses the file and stores it in the cache. So, I get the file out of there using its key.
+        var json = this._phaser.cache.getJSON( savekey );
+
+        // If the loader key already exists, throw an error.
+        if ( typeof Global.Loaded[data.loadedtype][data.filekey] !== "undefined" ) throw "Duplicate key found in Loaded files";
+
+        // Create new object inside Global namespace.
+        Global.Loaded[data.loadedtype][data.filekey] = {};
+
+        // Get the basepath, type and resources from the json file.
+        var resource_basepath = json["base_path"];
+        var resource_type = json["type"];
+        var resources = json["resources"];
+
+        // For each key inside resources
+        for ( var resource_key in resources ) {
+            // Check if the key actually exists inside resources.
+            if ( resources.hasOwnProperty( resource_key ) ) {
+
+                // Get all data from resource to preload the files.
+                var resource_data = resources[resource_key];
+                var resource_atlas_path = resource_basepath + resource_data.atlas_path;
+                var resource_json_path = resource_basepath + resource_data.json_path;
+                var resource_savekey = resource_key + " | " + resource_atlas_path;
+
+                this._file_load_data[resource_savekey] = {
+                    "type": resource_type,
+                    "filekey": resource_key,
+                    "savekey": resource_savekey,
+                    "loadedtype": data.loadedtype,
+                    "groupkey": data.filekey,
+                    "data": resource_data
+                };
+
+                this._load.atlas( resource_savekey, resource_atlas_path, resource_json_path, Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
+            }
+        }
+    };
+
     /**
      * 'Save Resource'
      * @private
@@ -217,5 +268,9 @@ ADCore.Preloader = (function(){
 })();
 
 Phaser.Loader.prototype.resourcelist = function ( key, url, overwrite ) { 
+    return this.addToFileList( "json", key, url, undefined, overwrite, ".json" );
+ };
+ 
+ Phaser.Loader.prototype.atlaslist = function ( key, url, overwrite ) { 
     return this.addToFileList( "json", key, url, undefined, overwrite, ".json" );
  };

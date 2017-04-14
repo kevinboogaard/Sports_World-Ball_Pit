@@ -8,28 +8,22 @@ ADCore.Display = (function () {
      * @param {entity} 'model'
      */
     function Display(model, key) {
-        Phaser.Sprite.call(this, ADCore.phaser, model.x, model.y, key);
+        ADCore.Interface.call(this, new Vector2(model.x, model.y), key);
         
         this.model = model;
-        this.anchor = new Vector2();
-        this.offset = new Vector2();
-        
-        this.disposed = false;
     }
-    Display.prototype = Object.create(Phaser.Sprite.prototype);
+    Display.prototype = Object.create(ADCore.Interface.prototype);
     Display.prototype.constructor = Display;
     var p = Display.prototype;
 
     /**
      * 'Dispose'
-     *  with the dispose funtion you can clear all the data of an object and then destroy it.
+     *  with the dispose function you can clear all the data of an object and then destroy it.
      */
+    p.__interface_dispose = p.Dispose;
     p.Dispose = function(){
         delete this.model;
-        delete this.anchor;
-        delete this.offset;
-
-        this.disposed = true;        
+        this.__interface_dispose();
     };
 
     return Display;
