@@ -4,6 +4,7 @@ ballpit.Event = ballpit.Event || {};
 ballpit.Event.ON_BALL_SWAP = "on_ball_swap";
 ballpit.Event.ON_BALL_ALIGN = "on_ball_align";
 ballpit.Event.ON_BALL_REMOVED = "on_ball_removed";
+ballpit.Event.ON_BALLS_SPAWNED = "on_balls_spawned";
 
 ballpit.BallController = (function () {
 
@@ -33,19 +34,9 @@ ballpit.BallController = (function () {
      * Use this method before you allow the player to move balls!
      */
     p.Initialize = function () {
-        var rows_len = this.rows.length;
-        for (var y = 0; y < rows_len; y++) {
-            var column = this.rows[y];
-
-            var column_len = column.length;
-            for (var x = 0; x < column_len; x++) {
-                var tile = column[x];
-                
-                if (tile.occupier === null) {
-                    var ball = this.ballContainer.AddRandomBall(tile.position);
-                    tile.occupier = ball;
-                }
-            }
+        var len = this.layer.width;
+        for (var x = 0; x < len; x++) {
+            this.RestoreColumn(x);
         }
     };
 
@@ -92,6 +83,29 @@ ballpit.BallController = (function () {
 
                     if (this.CanSwap(tile)) {
                         this.DropBall(tile);
+                    }
+                }
+            }
+        }
+    };
+
+    /**
+     * 'RestoreColumn'
+     * @param {Int} 'tileX'.
+     */
+    p.RestoreColumn = function (tileX) {
+        var len = this.rows.length;
+        for (var y = len -1; y >= 0; y--) {
+            var row = this.rows[y];
+
+            var row_len = row.length;
+            for (var x = 0; x < row_len ; x++) {
+                if (x === tileX) {
+                    var tile = row[x];
+
+                    if (this.CanSwap(tile) === false) {
+                        var ball = this.ballContainer.AddRandomBall(tile.position);
+                        tile.occupier = ball;
                     }
                 }
             }
@@ -156,6 +170,7 @@ ballpit.BallController = (function () {
         var col_len = rowsAffected.length;
         for (var j = 0; j < col_len; j++) {
             this.DropColumn(rowsAffected[j]);
+            this.RestoreColumn(rowsAffected[j]);
         }
     };
 
