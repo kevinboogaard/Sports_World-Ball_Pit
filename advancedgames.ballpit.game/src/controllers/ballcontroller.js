@@ -120,18 +120,28 @@ ballpit.BallController = (function () {
      * @param {Int} 'tileX'.
      */
     p.RestoreColumn = function (tileX) {
+        var y_spawns = [];
+
         var len = this._rows.length;
         for (var y = len -1; y >= 0; y--) {
             var row = this._rows[y];
 
             var row_len = row.length;
             for (var x = 0; x < row_len ; x++) {
+                if (!y_spawns[x]) y_spawns[x] = -1;
+                
                 if (x === tileX) {
                     var tile = row[x];
 
                     if (this.CanSwap(tile) === false) {
-                        var ball = this._ballContainer.AddRandomBall(tile.position.Clone());
+                        var position = this._layer.TilePositionToScreenPosition(new Vector2(tile.tileposition.x,  y_spawns[x]));
+                        y_spawns[x]--;
+
+                        var ball = this._ballContainer.AddRandomBall(position);
                         tile.occupier = ball;
+
+                        ball.MoveTo(tile.position);
+                        ball.state = ballpit.BallStates.FALLING;
                     }
                 }
             }

@@ -224,6 +224,16 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
+     * 'TilePositionToScreenPosition' 
+     * @param {Vector2} 'tileposition'
+     */
+    p.TilePositionToScreenPosition = function (tileposition) {
+        var first = this.tiledata[0][0].position;
+        var translated = tileposition.Clone().Multiply(new Vector2(this.parent.tilewidth, this.parent.tileheight));
+        return translated.Add(first);
+    };
+
+    /**
      * 'FindTileNeighbours'
      * @private
      */
