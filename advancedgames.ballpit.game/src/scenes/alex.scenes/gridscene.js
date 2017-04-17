@@ -15,7 +15,7 @@ scene.Gridscene = (function () {
         this.tilemap = new Tilemap(Global.Loaded.level.map);
 
         this.ballContainer = new ballpit.BallContainer();
-        this.ballController = new ballpit.BallController(this.tilemap, this.ballContainer);
+        this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
 
         this.ballController.Initialize();
 
@@ -50,9 +50,9 @@ scene.Gridscene = (function () {
         var diff = this.swipePositions.end.Clone().Substract(this.swipePositions.start);
 
         if (diff.x !== 0 && diff.y !== 0) {
-            var selected = this.ballController.layer.GetTileByScreenPosition(this.swipePositions.start);
+            var selected = this.tilemap.mainLayer.GetTileByScreenPosition(this.swipePositions.start);
             if (this.ballController.CanSwap(selected)) {
-                var targeted = this.ballController.layer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
+                var targeted = this.tilemap.mainLayer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
                 
                 if (this.ballController.CanSwap(targeted)) {
                     selected.occupier.beginning = selected;

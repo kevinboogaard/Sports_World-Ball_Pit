@@ -1,3 +1,6 @@
+var ADCore = ADCore || {};
+ADCore.Utilities = {};
+
 /**
  * Number.isInteger
  * @static
@@ -78,4 +81,10 @@ Array.prototype.pushAt = function (index, value) {
 Array.prototype.contains = function(item) {
     var index = this.indexOf(item);
     return (index > -1) ? true : false;
+};
+
+ADCore.Utilities.HasObjectValue = function (object, value) {
+    return Object.keys(object).some(function(v) {
+        return object[v] === value;
+    });
 };

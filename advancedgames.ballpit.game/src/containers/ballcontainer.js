@@ -37,8 +37,8 @@ ballpit.BallContainer = (function () {
      * @param {vector2} 'position'
      */
     p.AddRandomBall = function (position) {
-        var types = ballpit.ballTypes.LIST;
-        var randomType = types[Math.randomRange(0, types.length - 1)];
+        var keys = Object.keys(ballpit.ballTypes);
+        var randomType = ballpit.ballTypes[keys[ keys.length * Math.random() << 0]];
 
         return this.AddBall(position, randomType);
     };

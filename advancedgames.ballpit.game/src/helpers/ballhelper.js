@@ -56,10 +56,10 @@ ballpit.BallHelper = (function () {
         var occupier = tile.occupier;
 
         var aligned = [];
-        var type = occupier.balltype;
+        var type = occupier.type;
 
         var checked = tile;
-        while (checked && checked.occupier && checked.occupier.balltype === type) {
+        while (checked && checked.occupier && checked.occupier.type === type) {
             if (checked !== tile) aligned.push(checked);
             checked = this.layer.GetNeighbourFromTileByDirection(checked, direction);
         } 

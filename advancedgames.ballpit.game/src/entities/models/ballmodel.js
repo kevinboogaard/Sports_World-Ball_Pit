@@ -1,5 +1,8 @@
 var ballpit = ballpit || {};
 
+ballpit.Event = ballpit.Event || {};
+ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
+
 ballpit.ballTypes = ballpit.ballTypes || {};
 ballpit.ballTypes.FOOTBALL = "football";
 ballpit.ballTypes.BASKETBALL = "basketball";
@@ -7,16 +10,11 @@ ballpit.ballTypes.TENNISBALL = "tennisball";
 ballpit.ballTypes.BOWLINGBALL = "bowlingball";
 ballpit.ballTypes.BASEBALL = "baseball";
 
-ballpit.Event = ballpit.Event || {};
-ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
-
-ballpit.ballTypes.LIST = [
-    ballpit.ballTypes.FOOTBALL,
-    ballpit.ballTypes.BASKETBALL,
-    ballpit.ballTypes.TENNISBALL,
-    ballpit.ballTypes.BOWLINGBALL,
-    ballpit.ballTypes.BASEBALL
-];
+ballpit.BallStates = ballpit.BallStates || {};
+ballpit.BallStates.IDLING = "idling";
+ballpit.BallStates.SWAPPING = "swapping";
+ballpit.BallStates.REVERTING = "reverting";
+ballpit.BallStates.FALLING = "falling";
 
 ballpit.BallModel = (function () {
 
@@ -28,12 +26,12 @@ ballpit.BallModel = (function () {
     function BallModel(position, type) {
         ADCore.Entity.call(this, position);
 
-        this._oldTile = null;
-        this._destination = null;
-        this.closed = false;
+        this._type = type;
+        this._state = ballpit.BallStates.IDLING;
+        this._velocity = Settings.Velocity.BALL;
 
-        this.balltype = type;
-        this.velocity = Settings.Velocity.BALL;
+        this.beginning = null;
+        this._destination = null;
     }
     BallModel.prototype = Object.create(ADCore.Entity.prototype);
     BallModel.prototype.constructor = BallModel;
@@ -43,7 +41,7 @@ ballpit.BallModel = (function () {
      * 'Update'
      */
     p.Update = function () {
-        if (this._destination) {
+        if (this.isMoving) {
             var distance = this.position.Distance(this._destination);
             
             var difference = new Vector2(this.position.x - this._destination.x, this.position.y - this._destination.y);
@@ -72,11 +70,29 @@ ballpit.BallModel = (function () {
     };
 
     /**
+     * SwapTo
+     * @param {Vector2} 'vector'
+     */
+    p.SwapTo = function (vector) {
+        this._destination = vector.Clone();
+        this._state = ballpit.BallStates.SWAPPING;
+    };
+
+    /**
+     * Revert
+     */
+    p.Revert = function () {
+        this._state = ballpit.BallStates.REVERTING;
+    };
+
+    /**
     * 'Dispose '
     */
     p.__entity_dispose = p.Dispose;
     p.Dispose = function () {
-        delete this.balltype;
+        delete this._type;
+        delete this._state;
+        delete this._velocity;
         this.__entity_dispose();
     };
 
@@ -85,18 +101,29 @@ ballpit.BallModel = (function () {
      */
     p.__entity_gettersAndSetters = p.gettersAndSetters;
     p.gettersAndSetters = function () {
-        this.Get( "isSwiped", function () {
-            return (this._oldTile !== null);
+        this.Get( "type", function () {
+            return this._type;
         } );
-        this.Define( "beginning", {
+
+        this.Define( "state", {
             "get": function () {
-                return this._oldTile;
+                return this._state;
             },
             "set": function (value) {
-                this._oldTile = value;
+                if (ADCore.Utilities.HasObjectValue(ballpit.BallStates, value) === false) throw new Error(state + ":State doesn't exist");
+                this._state = value;
             }
         });
 
+        this.Get( "velocity", function () {
+                return this._velocity;
+        });
+
+        this.Get("isMoving", function () {
+            var state_moving = (this._state === ballpit.BallStates.SWAPPING || this._state === ballpit.BallStates.REVERTING || this._state === ballpit.BallStates.FALLING);
+            var destination_exists = (this._destination);
+            return (state_moving && destination_exists);
+        });
         this.__entity_gettersAndSetters();
     };
 
