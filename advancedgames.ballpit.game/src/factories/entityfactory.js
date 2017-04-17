@@ -35,6 +35,6 @@ ballpit.EntityFactory.AddBall = function(position,type){
             throw new Error("Type not known");
     }
  
-    Listener.Dispatch(ADCore.Event.ON_MODEL_ADD, this, { "model": model, "key": key, "viewtype": ADCore.Display});
+    Listener.Dispatch(ADCore.Event.ON_MODEL_ADD, this, { "model": model, "key": key, "viewtype": ballpit.BallView});
     return model;
 };

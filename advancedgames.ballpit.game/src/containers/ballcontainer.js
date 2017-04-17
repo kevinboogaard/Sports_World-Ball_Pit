@@ -10,7 +10,18 @@ ballpit.BallContainer = (function () {
     }
     var p = BallContainer.prototype;
     
-    /**'
+    /**
+     * 'Update' 
+     */
+    p.Update = function () {
+        var len = this.balls.length;
+        for (var i = len - 1; i >= 0; i--) {
+            var ball = this.balls[i];
+            ball.Update();
+        }
+    };
+
+    /**
      * 'AddBall'
      * @param {vector2} 'position'
      * @param {balltype} 'type'
@@ -21,7 +32,7 @@ ballpit.BallContainer = (function () {
         return ballModel;
     };
 
-    /**'
+    /**
      * 'AddRandomBall'
      * @param {vector2} 'position'
      */
@@ -32,7 +43,7 @@ ballpit.BallContainer = (function () {
         return this.AddBall(position, randomType);
     };
 
-     /**'
+     /**
      * 'AddBall'
      * @param {ball} 'ball'
      */

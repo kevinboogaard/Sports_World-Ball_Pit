@@ -11,11 +11,14 @@ ADCore.Interface = (function () {
         Phaser.Sprite.call(this, ADCore.phaser, position.x,position.y,key);
 
         var spriteData = Global.Loaded.generic.images[key];
-        this.anchor.set(spriteData.anchor.x, spriteData.anchor.y);
-        this.offset = new Vector2(spriteData.offset.x, spriteData.offset.y);
-        this.width = spriteData.dimensions.width;
-        this.height = spriteData.dimensions.height;
 
+        if (spriteData) {
+            this.anchor.set(spriteData.anchor.x, spriteData.anchor.y);
+            this.offset = new Vector2(spriteData.offset.x, spriteData.offset.y);
+
+            this.width = spriteData.dimensions.width;
+            this.height = spriteData.dimensions.height;
+        }
         this.key = key;
         
         this.animationList = {};

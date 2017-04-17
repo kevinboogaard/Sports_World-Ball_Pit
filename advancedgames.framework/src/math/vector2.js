@@ -157,7 +157,7 @@ this.Vector2 = (function() {
 
     /**
     * 'Magnitude'
-    * @returns {Vector2}
+    * @returns {int}
     * This method calculates the magnitude: the size of a mathematical object, a property by which the object can be compared as larger or smaller than other objects of the same kind. 
     * More formally, an object's magnitude is the displayed result of an ordering (or ranking) of the class of objects to which it belongs.
     */
@@ -167,10 +167,11 @@ this.Vector2 = (function() {
 
     /**
     * 'Distance'
-    * @returns {Vector2}
+    * @returns {int}
+    * @param {Vector2} 'vector2'
     */
-    p.Distance = function(){
-        return(new Vector2(this.x - this.x,this.y - this.y)).Magnitude();
+    p.Distance = function(vector2){
+        return(new Vector2(this.x - vector2.x, this.y - vector2.y)).Magnitude();
     };
 
     /**

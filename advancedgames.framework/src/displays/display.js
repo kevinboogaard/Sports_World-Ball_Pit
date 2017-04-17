@@ -10,6 +10,7 @@ ADCore.Display = (function () {
     function Display(model, key) {
         ADCore.Interface.call(this, new Vector2(model.x, model.y), key);
         
+        this.position = new Vector2(model.x, model.y);
         this.model = model;
     }
     Display.prototype = Object.create(ADCore.Interface.prototype);
@@ -17,8 +18,8 @@ ADCore.Display = (function () {
     var p = Display.prototype;
 
     p.render = function () {
-        this.x = this.model.x;
-        this.y = this.model.y;
+        this.x = this.position.x = this.model.x;
+        this.y = this.position.y = this.model.y;
     };
 
     /**

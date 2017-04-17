@@ -177,6 +177,27 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
+     * 'GetTileByOccupier' 
+     * @param {T} 'occupier'
+     */
+    p.GetTileByOccupier = function (occupier) {
+        
+        var rows = this.tiledata;
+        var rows_len = rows.length;
+        for ( var i = 0; i < rows_len; i++ ) {
+            var columns = rows[i];
+            var columns_len = columns.length;
+
+            for ( var j = 0; j < columns_len; j++ ) {
+                var tile = columns[j];
+                if ( !tile) continue;
+
+                if (tile.occupier === occupier) return tile;
+            }
+        }
+    };
+
+    /**
      * 'Finalize'
      */
     p.Finalize = function () {

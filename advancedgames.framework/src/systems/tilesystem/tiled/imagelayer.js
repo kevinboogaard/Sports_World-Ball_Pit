@@ -19,8 +19,8 @@ ADCore.Tiled.ImageLayer = ( function () {
 
         this.visible = data.visible;
 
-        this.x = data.offsetx;
-        this.y = data.offsety;
+        this.x = data.offsetx || 0;
+        this.y = data.offsety || 0;
 
         this.parent = parent;
 
@@ -30,17 +30,9 @@ ADCore.Tiled.ImageLayer = ( function () {
 
         this.disposed = false;
 
-        this._initialize();
+        ADCore.EntityFactory.AddImageLayer(this, this.name);
     }
     var p = ImageLayer.prototype;
-
-   /**
-    * 'Initialize'
-    * @private
-    */
-    p._initialize = function () {
-        Debug.LogWarning("ImageLayer.Initialize not made yet!");
-    };
 
     /**
      * dispose

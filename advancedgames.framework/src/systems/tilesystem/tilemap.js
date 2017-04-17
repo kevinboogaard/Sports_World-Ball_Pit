@@ -64,7 +64,7 @@ this.Tilemap = ( function () {
                 var layer = null;
 
                 if ( layerdata.visible === false ) continue;
-                
+
                 if ( layerdata.type === ADCore.Tiled.LayerTypes.TILE ) {
                     layer = new ADCore.Tiled.TileLayer( this, layerdata );
                     if ( layer.properties && layer.properties.main ) this.mainLayer = layer;

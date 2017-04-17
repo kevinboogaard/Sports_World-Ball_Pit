@@ -1,9 +1,7 @@
 var ballpit = ballpit || {};
 
 ballpit.Event = ballpit.Event || {};
-ballpit.Event.ON_BALL_SWAP = "on_ball_swap";
 ballpit.Event.ON_BALL_ALIGN = "on_ball_align";
-ballpit.Event.ON_BALL_REMOVED = "on_ball_removed";
 ballpit.Event.ON_BALLS_SPAWNED = "on_balls_spawned";
 
 ballpit.BallController = (function () {
@@ -22,9 +20,8 @@ ballpit.BallController = (function () {
 
         this.helper = new ballpit.BallHelper(this.layer, ballContainer);
 
-        Listener.Listen(ballpit.Event.ON_BALL_SWAP, this, this._onBallSwap.bind(this), this);
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this), this);
-        Listener.Listen(ballpit.Event.ON_BALL_REMOVED, this, this._onBallRemove.bind(this), this);
+        Listener.Listen(ballpit.Event.ON_BALL_DESTINATION_REACHED, this, this._onBallDestinationReached.bind(this));
     }
     var p = BallController.prototype;
 
@@ -46,8 +43,19 @@ ballpit.BallController = (function () {
      * @param {TileModel} 'targeted'.
      */
     p.Swap = function (selected, targeted) {
-        this._swap(selected, targeted);
-        Listener.Dispatch(ballpit.Event.ON_BALL_SWAP, this, { "selected": selected, "targeted": targeted });
+        if (selected === targeted) throw new Error("Can't swap the selected with the selected");
+
+        // Get the occupiers of the selected tiles.
+        var selected_occupier = selected.occupier;
+        var targeted_occupier = targeted.occupier;
+
+        // Swap the occupiers.
+        selected.occupier = targeted_occupier;
+        targeted.occupier = selected_occupier;
+
+        // If the occupier exists- change the occupiedPosition also.
+        if (selected_occupier) selected_occupier.MoveTo(targeted.position.Clone());
+        if (targeted_occupier) targeted_occupier.MoveTo(selected.position.Clone());
     };
 
     /**
@@ -64,7 +72,10 @@ ballpit.BallController = (function () {
      */
     p.DropBall = function (tile) {
         var lowest = this.helper.GetLowestBeneath(tile);
-        this._swap(tile, lowest);
+
+        if (tile !== lowest) {
+            this.Swap(tile, lowest);
+        }
     };
 
     /**
@@ -104,41 +115,11 @@ ballpit.BallController = (function () {
                     var tile = row[x];
 
                     if (this.CanSwap(tile) === false) {
-                        var ball = this.ballContainer.AddRandomBall(tile.position);
+                        var ball = this.ballContainer.AddRandomBall(tile.position.Clone());
                         tile.occupier = ball;
                     }
                 }
             }
-        }
-    };
-
-    /**
-     * 'CheckAlignment'
-     * @return {Bool}
-     * @param {TileModel} 'tile'.
-     */
-    p.CheckAlignment = function(tile) {
-        var aligned = this.helper.GetAligned(tile);
-        if (aligned.length === 0) return false; 
-
-        Listener.Dispatch(ballpit.Event.ON_BALL_ALIGN, this, { "owner": tile, "aligned": aligned });
-        return true;
-    };
-
-    /**
-     * 'OnBallSwap'
-     * @param { {} } 'caller'.
-     * @param { {TileModel}: "selected", {TileModel}: "targeted" } 'params'.
-     */
-    p._onBallSwap = function (caller, params) {
-        var select_aligned = this.CheckAlignment(params.selected);
-        var target_aligned = this.CheckAlignment(params.targeted);
-
-        // If the selected tile and targetted tile are not aligned.
-        if (!select_aligned && !target_aligned) {
-            // Swap the balls back.
-            this._swap(params.selected, params.targeted);
-            return;
         }
     };
 
@@ -163,10 +144,8 @@ ballpit.BallController = (function () {
             if (!rowsAffected.contains(tile.tileposition.x)) {
                 rowsAffected.push(tile.tileposition.x);
             }
-
-            Listener.Dispatch(ballpit.Event.ON_BALL_REMOVED, this, {"tile": tile});
         }
-
+        
         var col_len = rowsAffected.length;
         for (var j = 0; j < col_len; j++) {
             this.DropColumn(rowsAffected[j]);
@@ -175,32 +154,49 @@ ballpit.BallController = (function () {
     };
 
     /**
-     * 'OnBallRemove'
+     * 'OnBallDestinationReached'
      * @param { {} } 'caller'.
-     * @param { {TileModel}: "tile" } 'params'.
+     * @param { {BallModel}: "ball" } 'params'.
      */
-    p._onBallRemove = function (caller, params) {
-        /* Add new Balls. */
+    p._onBallDestinationReached = function (caller, params) {
+        var tile = this.layer.GetTileByOccupier(params.ball);
+        var aligned = this.helper.GetAligned(tile);
+
+        if (aligned.length > 0) {
+            params.ball.beginning = null;
+            Listener.Dispatch(ballpit.Event.ON_BALL_ALIGN, this, { "owner": tile, "aligned": aligned });
+        } else {
+            if (params.ball.isSwiped) {
+                var other = params.ball.beginning.occupier;
+                if (other.beginning !== null) {
+                    if (other.closed === true) {
+                        this._return(tile);
+                    } else {
+                        params.ball.closed = true;
+                    }
+                }
+            }
+        }
     };
-
+    
     /**
-     * 'Swap'
-     * @private
-     * @param {TileModel} 'selected'.
-     * @param {TileModel} 'targeted'.
+     * 'Return'
+     * @param {TileModel} 'tile'
      */
-    p._swap = function (selected, targeted) {
-        // Get the occupiers of the selected tiles.
-        var selected_occupier = selected.occupier;
-        var targeted_occupier = targeted.occupier;
+    p._return = function (tile) {
+        var occupier = tile.occupier;
+        var occupier_beginning = occupier.beginning;
 
-        // Swap the occupiers.
-        selected.occupier = targeted_occupier;
-        targeted.occupier = selected_occupier;
+        var other = occupier_beginning.occupier;
+        var other_beginning = other.beginning;
 
-        // If the occupier exists- change the position also.
-        if (selected_occupier) selected_occupier.position = targeted.position;
-        if (targeted_occupier) targeted_occupier.position = selected.position;
+        this.Swap(occupier_beginning, other_beginning);
+
+        tile.occupier.beginning = null;
+        occupier_beginning.occupier.beginning = null;
+
+        occupier.closed = false;
+        other.closed = false;
     };
 
     /**

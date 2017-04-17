@@ -28,10 +28,12 @@ scene.Gridscene = (function () {
     Gridscene.prototype.constructor = Gridscene; 
     var p = Gridscene.prototype;
 
-    p.update = function () {
+    p.update = function (deltatime) {
         if (this.swipePositions.start && !this.swipePositions.end) {
             Debug.DrawLine(this.swipePositions.start, inputSystem.inputPosition, "#FF0000", false);
         }
+
+        this.ballContainer.Update(deltatime);
     };
 
     p.render = function () {
@@ -53,7 +55,9 @@ scene.Gridscene = (function () {
                 var targeted = this.ballController.layer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
                 
                 if (this.ballController.CanSwap(targeted)) {
-                    console.log(selected, targeted);
+                    selected.occupier.beginning = selected;
+                    targeted.occupier.beginning = targeted;
+
                     this.ballController.Swap(selected, targeted);
                 }
             }

@@ -32,12 +32,6 @@
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
-         "asset_background":{
-            "path": "asset_background.png",
-            "dimensions": {"width": 720, "height": 1080},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
         "asset_buttoninactive":{
             "path": "ui/asset_buttoninactive.png",
             "dimensions": {"width":216, "height":216},
@@ -53,6 +47,30 @@
          "asset_menubackground":{
             "path": "backgrounds/asset_menubackground.png",
             "dimensions": {"width":720, "height":1280},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "asset_gridborder":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":658, "height":668},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "asset_gridgradient":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":630, "height":630},
+            "anchor":{"x":0,"y":0 },
+            "offset":{"x": 0, "y":0}
+        },
+         "asset_gridpart1":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "asset_gridpart2":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":90, "height":90},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         }
