@@ -12,6 +12,7 @@ ADCore.PreloadCategory.LEVEL = "level";
 ADCore.PreloadType = ADCore.preloadType || {};
 ADCore.PreloadType.RESOURCE_LIST = "resourcelist";
 ADCore.PreloadType.ATLAS_LIST = "atlaslist";
+ADCore.PreloadType.MAP = "map";
 
 ADCore.Preloader = (function(){
 
@@ -79,6 +80,10 @@ ADCore.Preloader = (function(){
 
             case ADCore.PreloadType.ATLAS_LIST:
                 this._preload_atlas_list(data, savekey);
+                break;
+
+            case ADCore.PreloadType.MAP: 
+                this.__preload_map( data, savekey );
                 break;
 
             default:
@@ -197,6 +202,40 @@ ADCore.Preloader = (function(){
             }
         }
     };
+    
+    /**
+     * 'Preload Map'
+     * @private
+     * @param {object} 'data'
+     * @param {string} 'savekey'
+     */
+    p.__preload_map = function ( data, savekey ) {
+        // Phaser parses the file and stores it in the cache. So, I get the file out of there using its key.
+        var map = this._phaser.cache.getJSON( savekey );
+        var group_key = "images";
+
+        // If the loader key already exists, throw an error.
+        if ( typeof Global.Loaded[data.loadedtype][data.filekey] !== "undefined" ) throw "Duplicate key found in Loaded files";
+
+        // Create new objects inside Global namespace to save the tileset images.
+        Global.Loaded[data.loadedtype]["images"] = Global.Loaded[data.loadedtype][group_key] || {};
+
+        // Loop through all tilesets.
+        var len = map.tilesets.length;
+        for ( var i = 0; i < len; i++ ) {
+            var tileset = map.tilesets[i];
+
+            var tileset_type = "image";
+            var tileset_key = tileset.name;
+            var tileset_path = tileset.image;
+            var tileset_savekey = tileset_key + " | " + tileset_path;
+
+            this._preload_resource( tileset_type, tileset_path, tileset_key, tileset_savekey, data.loadedtype, group_key, tileset);
+        }
+
+        // Save the map.
+        Global.Loaded[data.loadedtype][data.filekey] = map;
+    };
 
     /**
      * 'Save Resource'
@@ -209,6 +248,7 @@ ADCore.Preloader = (function(){
         var resource = this._phaser.cache.get( data.type, savekey );
 
         if ( data.type === "image" ) resource = this._parse_image( data.data );
+        else if ( data.type === "atlas" ) resource = data.data.animations;
 
         // Save in the loaded object.
         if ( data.groupkey ) Global.Loaded[data.loadedtype][data.groupkey][data.filekey] = resource;
@@ -274,3 +314,11 @@ Phaser.Loader.prototype.resourcelist = function ( key, url, overwrite ) {
  Phaser.Loader.prototype.atlaslist = function ( key, url, overwrite ) { 
     return this.addToFileList( "json", key, url, undefined, overwrite, ".json" );
  };
+
+Phaser.Loader.prototype.map = function ( key, url, overwrite ) { 
+    return this.addToFileList( "json", key, url, undefined, overwrite, ".json" ); 
+};
+
+Phaser.Loader.prototype.tileset = function ( key, url, overwrite ) { 
+    return this.addToFileList( "image", key, url, undefined, overwrite, ".png" ); 
+};

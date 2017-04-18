@@ -20,8 +20,6 @@ function Initialize() {
 
     // Initialize the main of the game.
     this.main = new ballpit.Core();
-    // Need last update for calculating the deltatime.
-    this.lastUpdate = performance.now();
     // Create the scene loader system.
     this.sceneLoader = new ADCore.Sceneloader();
     // Create the preloader system that preloads the resources in a json file.
@@ -74,14 +72,8 @@ function _create () {
  * I use this function to update the main and to update the input.
  */
 function _update () {
-    // Calculate the deltatime.
-    // var now = performance.now();
-    // var deltaTime = (now - this.lastUpdate) / 1000;
-    // this.lastUpdate = now;
+    var deltaTime = ADCore.phaser.time.elapsed / 1000;
 
-    // Deltatime has some bugs now- need to check later. 
-    // For now- calculate deltatime with 60fps.
-    var deltaTime = 1 / 60;
     // Update main.
     this.main.Update( deltaTime );
     // Update Input system aswell.

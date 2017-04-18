@@ -13,6 +13,10 @@ ballpit.BallHelper = (function () {
     }
     var p = BallHelper.prototype;
 
+    /**'
+    * 'GetLowestBeneath'
+    * @param {tile} 'tile'
+    */
     p.GetLowestBeneath = function (tile) {
         var result = tile;
         var direction = new Vector2(0, 1);
@@ -26,6 +30,11 @@ ballpit.BallHelper = (function () {
         return result;
     };
 
+    /**' 
+    * 'GetTilesByDirection'
+    * @param {tile} 'tile'
+    * @param {vector2} 'direction'
+    */
     p.GetTilesByDirection = function (tile, direction ) {
         var tiles = [];
 
@@ -38,6 +47,10 @@ ballpit.BallHelper = (function () {
         return tiles;  
     };
 
+    /**' 
+    * 'GetAligned'
+    * @param {tile} 'tile'
+    */
     p.GetAligned = function (tile) {
         if (tile.occupier === null) throw new Error("Tile doesn't have a ball on it.");
         var aligned = [];
@@ -51,15 +64,20 @@ ballpit.BallHelper = (function () {
         return aligned;
     };
 
+    /**' 
+    * 'GetAlignedByDirection'
+    * @param {tile} 'tile'
+    * @param {vector2} 'direction'
+    */
     p.GetAlignedByDirection = function (tile, direction) {
         if (tile.occupier === null) throw new Error("Tile doesn't have a ball on it.");
         var occupier = tile.occupier;
 
         var aligned = [];
-        var type = occupier.balltype;
+        var type = occupier.type;
 
         var checked = tile;
-        while (checked && checked.occupier && checked.occupier.balltype === type) {
+        while (checked && checked.occupier && checked.occupier.type === type) {
             if (checked !== tile) aligned.push(checked);
             checked = this.layer.GetNeighbourFromTileByDirection(checked, direction);
         } 

@@ -10,8 +10,9 @@ ADCore.TileModel = (function () {
      * @param {Vector3} tileposition
      */
     function TileModel(gid, position, tileposition, dimensions, properties) {
-        this._gid = gid;
         ADCore.Entity.call(this, position);
+
+        this._gid = gid;
         
         this.dimensions = dimensions;
         this.properties = properties = properties || {};
@@ -20,10 +21,7 @@ ADCore.TileModel = (function () {
         this.position = position.Clone();
         this.tileposition = tileposition.Clone();
 
-        Debug.DrawRect(new Vector2(this.position.x, this.position.y), new Vector2(this.dimensions.x, this.dimensions.y), "#00FF00", true);
-
-        // If the gid is actually something, use itself as occupier so the ball can't get on it.
-        this.occupier = ( gid === 0 ) ? null : this;
+        this.occupier = null;
 
         // G, H, F values are used in the A* pathfinding Algorithm. Don't touch!
         this.g = 0;

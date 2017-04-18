@@ -18,7 +18,7 @@ Config.ResourceLists = {
     ],
     "LEVELS": [
         [
-          { "key":"map", "type": "json", "path":"advancedgames.ballpit.settings/resources/levels/level_1/map.json"}
+          { "key":"map", "type": "map", "path":"advancedgames.ballpit.settings/resources/levels/level_1/map.json"}
         ]
     ]
 };

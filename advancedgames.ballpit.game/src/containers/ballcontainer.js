@@ -10,7 +10,18 @@ ballpit.BallContainer = (function () {
     }
     var p = BallContainer.prototype;
     
-    /**'
+    /**
+     * 'Update' 
+     */
+    p.Update = function () {
+        var len = this.balls.length;
+        for (var i = len - 1; i >= 0; i--) {
+            var ball = this.balls[i];
+            ball.Update();
+        }
+    };
+
+    /**
      * 'AddBall'
      * @param {vector2} 'position'
      * @param {balltype} 'type'
@@ -21,18 +32,18 @@ ballpit.BallContainer = (function () {
         return ballModel;
     };
 
-    /**'
+    /**
      * 'AddRandomBall'
      * @param {vector2} 'position'
      */
     p.AddRandomBall = function (position) {
-        var types = ballpit.ballTypes.LIST;
-        var randomType = types[Math.randomRange(0, types.length - 1)];
+        var keys = Object.keys(ballpit.ballTypes);
+        var randomType = ballpit.ballTypes[keys[ keys.length * Math.random() << 0]];
 
         return this.AddBall(position, randomType);
     };
 
-     /**'
+     /**
      * 'AddBall'
      * @param {ball} 'ball'
      */
@@ -40,8 +51,10 @@ ballpit.BallContainer = (function () {
         var index = this.balls.indexOf(ball);
         this.balls.splice(index, 1);
 
-        Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball});
-        ball.Dispose();
+        ball.Destroy( function () { 
+            Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball});
+            ball.Dispose();
+        }.bind(this));
     };
 
     return BallContainer;

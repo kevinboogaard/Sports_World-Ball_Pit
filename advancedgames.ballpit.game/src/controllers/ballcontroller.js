@@ -1,30 +1,25 @@
 var ballpit = ballpit || {};
 
 ballpit.Event = ballpit.Event || {};
-ballpit.Event.ON_BALL_SWAP = "on_ball_swap";
 ballpit.Event.ON_BALL_ALIGN = "on_ball_align";
-ballpit.Event.ON_BALL_REMOVED = "on_ball_removed";
 ballpit.Event.ON_BALLS_SPAWNED = "on_balls_spawned";
 
 ballpit.BallController = (function () {
 
     /**'
      * 'BallController'
-     * @param {Tilemap} 'tilemap'
+     * @param {TileLayer} 'layer'
      * @param {BallContainer} 'ballcontainer'
      */
-    function BallController(tilemap, ballContainer) {
-        this.tilemap = tilemap;
-        this.ballContainer = ballContainer;
+    function BallController(layer, ballContainer) {
+        this._layer = layer;
+        this._ballContainer = ballContainer;
 
-        this.layer = this.tilemap.mainLayer;
-        this.rows = this.layer.tiledata;
+        this._rows = this._layer.tiledata;
+        this._helper = new ballpit.BallHelper(this._layer, this._ballContainer);
 
-        this.helper = new ballpit.BallHelper(this.layer, ballContainer);
-
-        Listener.Listen(ballpit.Event.ON_BALL_SWAP, this, this._onBallSwap.bind(this), this);
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this), this);
-        Listener.Listen(ballpit.Event.ON_BALL_REMOVED, this, this._onBallRemove.bind(this), this);
+        Listener.Listen(ballpit.Event.ON_BALL_DESTINATION_REACHED, this, this._onBallDestinationReached.bind(this));
     }
     var p = BallController.prototype;
 
@@ -34,37 +29,55 @@ ballpit.BallController = (function () {
      * Use this method before you allow the player to move balls!
      */
     p.Initialize = function () {
-        var len = this.layer.width;
+        var len = this._layer.width;
         for (var x = 0; x < len; x++) {
             this.RestoreColumn(x);
         }
     };
-
+    
     /**
      * 'Swap'
      * @param {TileModel} 'selected'.
      * @param {TileModel} 'targeted'.
      */
     p.Swap = function (selected, targeted) {
-        this._swap(selected, targeted);
-        Listener.Dispatch(ballpit.Event.ON_BALL_SWAP, this, { "selected": selected, "targeted": targeted });
+        if (selected === targeted) throw new Error("Can't swap the selected with the selected");
+
+        // Get the occupiers of the selected tiles.
+        var selected_occupier = selected.occupier;
+        var targeted_occupier = targeted.occupier;
+
+        // Swap the occupiers.
+        selected.occupier = targeted_occupier;
+        targeted.occupier = selected_occupier;
+
+        selected_occupier.beginning = selected;
+        targeted_occupier.beginning = targeted;
+
+        // Change the position of the balls also.
+        if (selected_occupier) selected_occupier.SwapTo(targeted.position);
+        if (targeted_occupier) targeted_occupier.SwapTo(selected.position);
     };
 
     /**
-     * 'CanSwap'
-     * @param {TileModel} 'tile'.
+     * 'Move'
+     * @param {TileModel} 'selected'.
+     * @param {TileModel} 'targeted'.
      */
-    p.CanSwap = function (tile) {
-        return (tile !== null && tile.occupier !== null);
-    };
+    p.Move = function (selected, targeted) {
+        if (selected === targeted) throw new Error("Can't swap the selected with the selected");
 
-    /**
-     * 'DropBall'
-     * @param {TileModel} 'tile'.
-     */
-    p.DropBall = function (tile) {
-        var lowest = this.helper.GetLowestBeneath(tile);
-        this._swap(tile, lowest);
+        // Get the occupiers of the selected tiles.
+        var selected_occupier = selected.occupier;
+        var targeted_occupier = targeted.occupier;
+
+        // Swap the occupiers.
+        selected.occupier = targeted_occupier;
+        targeted.occupier = selected_occupier;
+
+        // Change the position of the balls also.
+        if (selected_occupier) selected_occupier.MoveTo(targeted.position);
+        if (targeted_occupier) targeted_occupier.MoveTo(selected.position);
     };
 
     /**
@@ -72,9 +85,9 @@ ballpit.BallController = (function () {
      * @param {Int} 'tileX'.
      */
     p.DropColumn = function (tileX) {
-        var len = this.rows.length;
+        var len = this._rows.length;
         for (var y = len -1; y >= 0; y--) {
-            var row = this.rows[y];
+            var row = this._rows[y];
 
             var row_len = row.length;
             for (var x = 0; x < row_len ; x++) {
@@ -90,55 +103,92 @@ ballpit.BallController = (function () {
     };
 
     /**
+     * 'DropBall'
+     * @param {TileModel} 'tile'.
+     */
+    p.DropBall = function (tile) {
+        var lowest = this._helper.GetLowestBeneath(tile);
+
+        if (tile !== lowest) {
+            tile.occupier.state = ballpit.BallStates.FALLING;
+            this.Move(tile, lowest);
+        }
+    };
+    
+    /**
      * 'RestoreColumn'
      * @param {Int} 'tileX'.
      */
     p.RestoreColumn = function (tileX) {
-        var len = this.rows.length;
+        var y_spawns = [];
+
+        var len = this._rows.length;
         for (var y = len -1; y >= 0; y--) {
-            var row = this.rows[y];
+            var row = this._rows[y];
 
             var row_len = row.length;
             for (var x = 0; x < row_len ; x++) {
+                if (!y_spawns[x]) y_spawns[x] = -1;
+                
                 if (x === tileX) {
                     var tile = row[x];
 
                     if (this.CanSwap(tile) === false) {
-                        var ball = this.ballContainer.AddRandomBall(tile.position);
+                        var position = this._layer.TilePositionToScreenPosition(new Vector2(tile.tileposition.x,  y_spawns[x]));
+                        y_spawns[x]--;
+
+                        var ball = this._ballContainer.AddRandomBall(position);
                         tile.occupier = ball;
+
+                        ball.MoveTo(tile.position);
+                        ball.state = ballpit.BallStates.FALLING;
                     }
                 }
             }
         }
     };
-
+   
     /**
-     * 'CheckAlignment'
-     * @return {Bool}
+     * 'CanSwap'
      * @param {TileModel} 'tile'.
      */
-    p.CheckAlignment = function(tile) {
-        var aligned = this.helper.GetAligned(tile);
-        if (aligned.length === 0) return false; 
-
-        Listener.Dispatch(ballpit.Event.ON_BALL_ALIGN, this, { "owner": tile, "aligned": aligned });
-        return true;
+    p.CanSwap = function (tile) {
+        return (tile !== null && tile.occupier instanceof ballpit.BallModel);
     };
 
     /**
-     * 'OnBallSwap'
+     * 'OnBallDestinationReached'
      * @param { {} } 'caller'.
-     * @param { {TileModel}: "selected", {TileModel}: "targeted" } 'params'.
+     * @param { {BallModel}: "ball" } 'params'.
      */
-    p._onBallSwap = function (caller, params) {
-        var select_aligned = this.CheckAlignment(params.selected);
-        var target_aligned = this.CheckAlignment(params.targeted);
+    p._onBallDestinationReached = function (caller, params) {
+        var tile_current = this._layer.GetTileByOccupier(params.ball);
+        var ball_current = params.ball;
 
-        // If the selected tile and targetted tile are not aligned.
-        if (!select_aligned && !target_aligned) {
-            // Swap the balls back.
-            this._swap(params.selected, params.targeted);
-            return;
+        var tile_other = params.ball.beginning;
+        var ball_other = (tile_other) ? tile_other.occupier : null;
+
+        var aligned = this._helper.GetAligned(tile_current);
+
+        if (aligned.length > 0) {
+            ball_current.position = tile_current.position.Clone();
+            ball_current.state = ballpit.BallStates.IDLING; 
+
+            Debug.LogWarning("Warning: I'm idling the other his movement and thus 2 ball aligns can NEVER happen.");
+            if (ball_other) {
+                ball_other.position = tile_other.position.Clone();
+                ball_other.state = ballpit.BallStates.IDLING; 
+            }
+        
+            Listener.Dispatch(ballpit.Event.ON_BALL_ALIGN, this, { "owner": tile_current, "aligned": aligned });
+        } else {
+            if (ball_current.state === ballpit.BallStates.SWAPPING) {
+                if (ball_other.state === ballpit.BallStates.REVERTING) {
+                    this.Move(tile_current, tile_other);
+                } else {
+                    ball_current.state = ballpit.BallStates.REVERTING;
+                }
+            }
         }
     };
 
@@ -157,50 +207,19 @@ ballpit.BallController = (function () {
             var tile = tiles[i];
             var occupier = tile.occupier;
 
-            this.ballContainer.RemoveBall(occupier);
+            this._ballContainer.RemoveBall(occupier);
             tiles[i].occupier = null;
 
             if (!rowsAffected.contains(tile.tileposition.x)) {
                 rowsAffected.push(tile.tileposition.x);
             }
-
-            Listener.Dispatch(ballpit.Event.ON_BALL_REMOVED, this, {"tile": tile});
         }
-
+        
         var col_len = rowsAffected.length;
         for (var j = 0; j < col_len; j++) {
             this.DropColumn(rowsAffected[j]);
             this.RestoreColumn(rowsAffected[j]);
         }
-    };
-
-    /**
-     * 'OnBallRemove'
-     * @param { {} } 'caller'.
-     * @param { {TileModel}: "tile" } 'params'.
-     */
-    p._onBallRemove = function (caller, params) {
-        /* Add new Balls. */
-    };
-
-    /**
-     * 'Swap'
-     * @private
-     * @param {TileModel} 'selected'.
-     * @param {TileModel} 'targeted'.
-     */
-    p._swap = function (selected, targeted) {
-        // Get the occupiers of the selected tiles.
-        var selected_occupier = selected.occupier;
-        var targeted_occupier = targeted.occupier;
-
-        // Swap the occupiers.
-        selected.occupier = targeted_occupier;
-        targeted.occupier = selected_occupier;
-
-        // If the occupier exists- change the position also.
-        if (selected_occupier) selected_occupier.position = targeted.position;
-        if (targeted_occupier) targeted_occupier.position = selected.position;
     };
 
     /**

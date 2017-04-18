@@ -1,7 +1,44 @@
 { "height":7,
  "layers":[
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":7,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/backgrounds\/asset_background.png",
+         "name":"background",
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":7,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":7,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridgradient.png",
+         "name":"gridgradient",
+         "offsetx":44,
+         "offsety":618,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":7,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "height":7,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridborder.png",
+         "name":"gridborder",
+         "offsetx":31.3333333333333,
+         "offsety":606.666666666667,
+         "opacity":1,
+         "type":"imagelayer",
+         "visible":true,
+         "width":7,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1],
          "height":7,
          "name":"tilelayer",
          "offsetx":45.3333333333334,
@@ -20,19 +57,6 @@
          "width":7,
          "x":0,
          "y":0
-        }, 
-        {
-         "height":7,
-         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/asset_background.png",
-         "name":"asset_background",
-         "offsetx":-0.666666666666629,
-         "offsety":246,
-         "opacity":1,
-         "type":"imagelayer",
-         "visible":true,
-         "width":7,
-         "x":0,
-         "y":0
         }],
  "nextobjectid":1,
  "orientation":"orthogonal",
@@ -42,15 +66,87 @@
         {
          "columns":1,
          "firstgid":1,
-         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/asset_background.png",
-         "imageheight":1080,
-         "imagewidth":720,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridpart1.png",
+         "imageheight":90,
+         "imagewidth":90,
          "margin":0,
-         "name":"asset_background",
+         "name":"gridpart1",
+         "properties":
+            {
+             "lower":true
+            },
+         "propertytypes":
+            {
+             "lower":"bool"
+            },
          "spacing":0,
          "tilecount":1,
-         "tileheight":1080,
+         "tileheight":90,
+         "tilewidth":90,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":2,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridpart2.png",
+         "imageheight":90,
+         "imagewidth":90,
+         "margin":0,
+         "name":"gridpart2",
+         "properties":
+            {
+             "lower":true
+            },
+         "propertytypes":
+            {
+             "lower":"bool"
+            },
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":90,
+         "tilewidth":90,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":3,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/backgrounds\/asset_background.png",
+         "imageheight":1280,
+         "imagewidth":720,
+         "margin":0,
+         "name":"background",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":1280,
          "tilewidth":720,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":4,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridgradient.png",
+         "imageheight":630,
+         "imagewidth":630,
+         "margin":0,
+         "name":"gridgradient",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":630,
+         "tilewidth":630,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":5,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridborder.png",
+         "imageheight":668,
+         "imagewidth":658,
+         "margin":0,
+         "name":"gridborder",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":668,
+         "tilewidth":658,
          "transparentcolor":"#120d39"
         }],
  "tilewidth":90,
