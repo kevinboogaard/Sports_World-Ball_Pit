@@ -43,6 +43,7 @@ scene.Game = (function () {
     };
 
     p._onUp = function (caller, params) {
+        if (this.swipePositions.start === null) return;
         this.swipePositions.end = params.position.Clone();
 
         var diff = this.swipePositions.end.Clone().Substract(this.swipePositions.start);
@@ -75,7 +76,7 @@ scene.Game = (function () {
 
         this.ballContainer.Dispose();
         delete this.ballContainer;
-        
+
         this.ballController.Dispose();
         delete this.ballController;
         

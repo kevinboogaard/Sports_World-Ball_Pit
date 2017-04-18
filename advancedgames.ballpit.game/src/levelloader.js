@@ -29,7 +29,7 @@ ballpit.LevelLoader = ( function () {
         var resources =  Config.ResourceLists.LEVELS[this.level];
         if (typeof resources === "undefined") throw new Error("Level is not known.");
 
-        sceneLoader.Load(scene.Preloader);
+        sceneLoader.Load( scene.Preloader );
         preloader.Preload( resources, ADCore.PreloadCategory.LEVEL );
     };
     
