@@ -51,8 +51,10 @@ ballpit.BallContainer = (function () {
         var index = this.balls.indexOf(ball);
         this.balls.splice(index, 1);
 
-        Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball});
-        ball.Dispose();
+        ball.Destroy( function () { 
+            Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball});
+            ball.Dispose();
+        }.bind(this));
     };
 
     return BallContainer;

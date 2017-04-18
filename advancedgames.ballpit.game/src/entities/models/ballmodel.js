@@ -3,6 +3,7 @@ var ballpit = ballpit || {};
 ballpit.Event = ballpit.Event || {};
 ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
 ballpit.Event.ON_BALL_STATE_CHANGE = "on_ball_state_change";
+ballpit.Event.ON_BALL_DESTROY = "on_ball_destroy";
 
 ballpit.ballTypes = ballpit.ballTypes || {};
 ballpit.ballTypes.SOCCERBALL = "soccerball";
@@ -84,6 +85,13 @@ ballpit.BallModel = (function () {
      */
     p.Revert = function () {
         this.state = ballpit.BallStates.REVERTING;
+    };
+
+    /**
+     * 'Destroy'
+     */
+    p.Destroy = function (callback) {
+        Listener.Dispatch(ballpit.Event.ON_BALL_DESTROY, this, { "callback": callback });
     };
 
     /**

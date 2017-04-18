@@ -52,11 +52,12 @@ ADCore.Sprite = (function () {
 
     /**
      * 'Play'
+     * @returns {Phaser.Animation}
      * @param {String} 'name'
      */
     p.Play = function (name, frameRate, loop) {
         if (this._animations.contains(name) === false) throw new Error("Animation doesn't exist");
-        this.animations.play(name, frameRate || 30, loop || false );
+        return this.animations.play(name, frameRate || 30, loop || false );
     };
 
     /**

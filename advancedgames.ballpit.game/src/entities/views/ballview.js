@@ -15,7 +15,9 @@ ballpit.BallView = (function () {
      */
     function BallView(model, key) {
         ADCore.Display.call( this, model, key );
+
         Listener.Listen(ballpit.Event.ON_BALL_STATE_CHANGE, this, this._onStateChange.bind(this), model);
+        Listener.Listen(ballpit.Event.ON_BALL_DESTROY, this, this._onDestroy.bind(this), model);
     }
     BallView.prototype = Object.create(ADCore.Display.prototype);
     BallView.prototype.constructor = BallView;
@@ -32,6 +34,20 @@ ballpit.BallView = (function () {
                 this.Play(ballpit.ballAnimations.SWIPE_FAIL);
             break;
         }
+    };
+
+    /**
+     * 'OnStateChange'
+     * @params {BallModel} 'caller'
+     * @params { {Function}: "callback" } 'params'
+     */
+    p._onDestroy = function (caller, params) {
+        var animation = this.Play(ballpit.ballAnimations.PLOP);
+        animation.onComplete.add(params.callback);
+
+        var explosion = new ADCore.Sprite(new Vector2(0,0), "explosion");
+        this.addChild(explosion);
+        explosion.Play("explosion");
     };
 
     /**
