@@ -174,6 +174,7 @@ ballpit.BallController = (function () {
             ball_current.position = tile_current.position.Clone();
             ball_current.state = ballpit.BallStates.IDLING; 
 
+            Debug.LogWarning("Warning: I'm idling the other his movement and thus 2 ball aligns can NEVER happen.");
             if (ball_other) {
                 ball_other.position = tile_other.position.Clone();
                 ball_other.state = ballpit.BallStates.IDLING; 

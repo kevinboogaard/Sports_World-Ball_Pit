@@ -248,6 +248,7 @@ ADCore.Preloader = (function(){
         var resource = this._phaser.cache.get( data.type, savekey );
 
         if ( data.type === "image" ) resource = this._parse_image( data.data );
+        else if ( data.type === "atlas" ) resource = data.data.animations;
 
         // Save in the loaded object.
         if ( data.groupkey ) Global.Loaded[data.loadedtype][data.groupkey][data.filekey] = resource;

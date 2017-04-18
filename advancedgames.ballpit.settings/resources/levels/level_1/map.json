@@ -3,7 +3,7 @@
         {
          "height":7,
          "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/backgrounds\/asset_background.png",
-         "name":"asset_background",
+         "name":"background",
          "opacity":1,
          "type":"imagelayer",
          "visible":true,
@@ -14,7 +14,7 @@
         {
          "height":7,
          "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridgradient.png",
-         "name":"asset_gridgradient",
+         "name":"gridgradient",
          "offsetx":44,
          "offsety":618,
          "opacity":1,
@@ -27,7 +27,7 @@
         {
          "height":7,
          "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/grid\/asset_gridborder.png",
-         "name":"asset_gridborder",
+         "name":"gridborder",
          "offsetx":31.3333333333333,
          "offsety":606.666666666667,
          "opacity":1,
@@ -70,7 +70,7 @@
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
-         "name":"asset_gridpart1",
+         "name":"gridpart1",
          "properties":
             {
              "lower":true
@@ -92,7 +92,7 @@
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
-         "name":"asset_gridpart2",
+         "name":"gridpart2",
          "properties":
             {
              "lower":true
@@ -114,7 +114,7 @@
          "imageheight":1280,
          "imagewidth":720,
          "margin":0,
-         "name":"asset_background",
+         "name":"background",
          "spacing":0,
          "tilecount":1,
          "tileheight":1280,
@@ -128,7 +128,7 @@
          "imageheight":630,
          "imagewidth":630,
          "margin":0,
-         "name":"asset_gridgradient",
+         "name":"gridgradient",
          "spacing":0,
          "tilecount":1,
          "tileheight":630,
@@ -142,7 +142,7 @@
          "imageheight":668,
          "imagewidth":658,
          "margin":0,
-         "name":"asset_gridborder",
+         "name":"gridborder",
          "spacing":0,
          "tilecount":1,
          "tileheight":668,

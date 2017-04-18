@@ -2,9 +2,10 @@ var ballpit = ballpit || {};
 
 ballpit.Event = ballpit.Event || {};
 ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
+ballpit.Event.ON_BALL_STATE_CHANGE = "on_ball_state_change";
 
 ballpit.ballTypes = ballpit.ballTypes || {};
-ballpit.ballTypes.FOOTBALL = "football";
+ballpit.ballTypes.SOCCERBALL = "soccerball";
 ballpit.ballTypes.BASKETBALL = "basketball";
 ballpit.ballTypes.TENNISBALL = "tennisball";
 ballpit.ballTypes.BOWLINGBALL = "bowlingball";
@@ -75,14 +76,14 @@ ballpit.BallModel = (function () {
      */
     p.SwapTo = function (vector) {
         this._destination = vector.Clone();
-        this._state = ballpit.BallStates.SWAPPING;
+        this.state = ballpit.BallStates.SWAPPING;
     };
 
     /**
      * Revert
      */
     p.Revert = function () {
-        this._state = ballpit.BallStates.REVERTING;
+        this.state = ballpit.BallStates.REVERTING;
     };
 
     /**
@@ -112,6 +113,7 @@ ballpit.BallModel = (function () {
             "set": function (value) {
                 if (ADCore.Utilities.HasObjectValue(ballpit.BallStates, value) === false) throw new Error(state + ":State doesn't exist");
                 this._state = value;
+                Listener.Dispatch(ballpit.Event.ON_BALL_STATE_CHANGE, this, { "state": this.state });
             }
         });
 
@@ -120,7 +122,7 @@ ballpit.BallModel = (function () {
         });
 
         this.Get("isMoving", function () {
-            var state_moving = (this._state === ballpit.BallStates.SWAPPING || this._state === ballpit.BallStates.REVERTING || this._state === ballpit.BallStates.FALLING);
+            var state_moving = (this.state === ballpit.BallStates.SWAPPING || this.state === ballpit.BallStates.REVERTING || this.state === ballpit.BallStates.FALLING);
             var destination_exists = (this._destination);
             return (state_moving && destination_exists);
         });

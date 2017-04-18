@@ -39,13 +39,13 @@ ADCore.ViewContainer = (function () {
         var l_len = this._lowerviews.children.length;
         for ( var i = 0; i < l_len; i++ ) {
             var l_view = this._lowerviews.children[i];
-            l_view.render();
+            l_view.Render();
         }
 
         var v_len = this._views.children.length;
         for ( var j = 0; j < v_len; j++ ) {
             var v_view = this._views.children[j];
-            v_view.render();
+            v_view.Render();
         }
     };
 
