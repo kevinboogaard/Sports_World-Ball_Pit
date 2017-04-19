@@ -73,6 +73,36 @@
             "dimensions": {"width":46, "height":46},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
+        },
+         "tutorialbackground":{
+            "path": "tutorial/asset_tutorial-screen_background.png",
+            "dimensions": {"width": 360, "height": 640},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen1":{
+            "path": "tutorial/asset_tutorial-screen-01.png",
+            "dimensions": {"width": 136, "height": 150},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen2":{
+            "path": "tutorial/asset_tutorial-screen-02.png",
+            "dimensions": {"width": 136, "height": 150},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen3":{
+            "path": "tutorial/asset_tutorial-screen-03.png",
+            "dimensions": {"width": 136, "height": 150},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen4":{
+            "path": "tutorial/asset_tutorial-screen-04.png",
+            "dimensions": {"width": 136, "height": 150},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
         }
     }
 }
