@@ -18,8 +18,11 @@ ballpit.Core = ( function () {
         
         sceneLoader.Load( scene.MainMenu );
         Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
-            this.levelLoader.level = 0;
-            this.levelLoader.LoadLevel();
+            sceneLoader.Load( scene.Tutorialscene );
+            Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
+                this.levelLoader.level = 0;
+                this.levelLoader.LoadLevel();
+            }.bind(this));
         }.bind(this), sceneLoader.current);
     };
 
