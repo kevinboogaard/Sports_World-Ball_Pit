@@ -4,31 +4,31 @@
     "resources": {
         "bowlingball":{
             "path": "balls/asset_bowlingball.png",
-            "dimensions": {"width":90, "height":90},
+            "dimensions": {"width": 45, "height":45},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
         "basketball":{
             "path": "balls/asset_basketball.png",
-            "dimensions": {"width":90, "height":90},
+            "dimensions": {"width": 45, "height":45},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "soccerball":{
             "path": "balls/asset_soccerball.png",
-            "dimensions": {"width":90, "height":90},
+            "dimensions": {"width":45, "height":45},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "tennisball":{
             "path": "balls/asset_tennisball.png",
-            "dimensions": {"width":90, "height":90},
+            "dimensions": {"width":45, "height":45},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "baseball":{
             "path": "balls/asset_baseball.png",
-            "dimensions": {"width":90, "height":90},
+            "dimensions": {"width":45, "height":45},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
@@ -64,13 +64,13 @@
         },
          "gridpart1":{
             "path": "grid/asset_gridpart1.png",
-            "dimensions": {"width":46, "height":46},
+            "dimensions": {"width":45, "height":45},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "gridpart2":{
             "path": "grid/asset_gridpart2.png",
-            "dimensions": {"width":46, "height":46},
+            "dimensions": {"width":45, "height":45},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
