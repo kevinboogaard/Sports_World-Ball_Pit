@@ -1,0 +1,120 @@
+{"frames": [
+
+{
+	"filename": "plop animation0001.png0001.png",
+	"frame": {"x":0,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0002.png",
+	"frame": {"x":111,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0003.png",
+	"frame": {"x":222,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0004.png",
+	"frame": {"x":333,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0005.png",
+	"frame": {"x":444,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0006.png",
+	"frame": {"x":555,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0007.png",
+	"frame": {"x":666,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0008.png",
+	"frame": {"x":777,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0009.png",
+	"frame": {"x":888,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0010.png",
+	"frame": {"x":999,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0011.png",
+	"frame": {"x":1110,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "plop animation0001.png0012.png",
+	"frame": {"x":1221,"y":0,"w":111,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":111,"h":110},
+	"sourceSize": {"w":111,"h":110},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "spritesheet_explosion_v3.png",
+	"format": "RGBA8888",
+	"size": {"w":1332,"h":110},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:1959bd9851a1e1e671f1830a435be512:046e4baa26ef9b6728c3fa77deeaed29:96addad21dce3219c690bcdca8b0a2ba$"
+}
+}

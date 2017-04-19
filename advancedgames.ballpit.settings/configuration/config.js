@@ -7,7 +7,7 @@ var Config = {};
  * Phaser.HEADLESS: 3.
  */
 Config.Core = {};
-Config.Core.Dimensions = { width: 720, height: 1280 };
+Config.Core.Dimensions = { width: 360, height: 640 }; 
 Config.Core.Renderer = 0;
 Config.Core.Parent = "Container";
 

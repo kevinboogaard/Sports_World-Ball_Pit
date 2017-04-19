@@ -1,0 +1,72 @@
+{
+    "base_path": "assets/",
+    "type": "image", 
+    "resources": {
+        "bowlingball":{
+            "path": "balls/asset_bowlingball.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "basketball":{
+            "path": "balls/asset_basketball.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "soccerball":{
+            "path": "balls/asset_soccerball.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tennisball":{
+            "path": "balls/asset_tennisball.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "baseball":{
+            "path": "balls/asset_baseball.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "buttoninactive":{
+            "path": "ui/asset_buttoninactive.png",
+            "dimensions": {"width":216, "height":216},
+            "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
+        },
+         "menubackground":{
+            "path": "backgrounds/asset_menubackground.png",
+            "dimensions": {"width":720, "height":1280},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "gridborder":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":658, "height":668},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "gridgradient":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":630, "height":630},
+            "anchor":{"x":0,"y":0 },
+            "offset":{"x": 0, "y":0}
+        },
+         "gridpart1":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "gridpart2":{
+            "path": "grid/asset_grid.png",
+            "dimensions": {"width":90, "height":90},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        }
+    }
+}
