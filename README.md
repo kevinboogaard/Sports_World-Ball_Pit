@@ -1,3 +1,9 @@
+## WARNING: DOCUMENTATION
+We haven't generated any documentation yet. That is because we can't find any documentation generators. We will try to do this for sprint 2. For now- to prove that we can document our code, we've in our readme and example of one documentated class.
+
+But please know that all of our classes are commented and thus serves as 'documented code'?
+
+
 ## Sports World: Ball Pit
 
 Sports World; Ball Pit is a puzzle game made for Cool Games. This project is for the 'Proeve van Bekwaamheid' of Mediacollege Amsterdam. This game is being developed by: Alex Antonides, Jennifer Versteeg, Frederiqué Gesbert, Kevin Boogaard, Lorenzo Koning, Sabrina Rahali El Bairi and Susan van der Puijl.
