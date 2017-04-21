@@ -1,35 +1,47 @@
 ## Sports World: Ball Pit
 
-Introduction to the github.
+Sports World; Ball Pit is a puzzle game made for Cool Games. This project is for the 'Proeve van Bekwaamheid' of Mediacollege Amsterdam. This game is being developed by: Alex Antonides, Jennifer Versteeg, Frederiqué Gesbert, Kevin Boogaard, Lorenzo Koning, Sabrina Rahali El Bairi and Susan van der Puijl.
 
-### Markdown
+### Code Documentation
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+In this README file you can find the documentation for the code of Sports World: Ball Pit. The documentation location will change later once we have found a Javascript documentation generator that works with out code. Since we have a lot of code we will only document the most important classes in our code. 
+
+
+## Sprite
 
 ```markdown
-Syntax highlighted code block
+new ADCore.Sprite(vector,key)
 
-# Header 1
-## Header 2
-### Header 3
+The Sprite class is the most basic view in the framework. It is extended by Display and Interface. This class handles the key-to-information in its private functions.
 
-- Bulleted
-- List
+# Parameters
+- position
+- key
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+# Public Properties
+- boolean: disposed
 
-[Link](url) and ![Image](src)
+## Disposed: boolean
+Disposed is a variable that turns true if the sprite has been disposed.
+
+
+# Public Methods
+- Play 
+- Dispose
+
+## Play(name, framerate, loop) -> {Phaser.Animation}
+The animation matching the name will play when calling this method. 
+
+### Parameters
+- string: Name [The name matching the animation in the json file]
+- int: Framerate [The framerate that the animation will play at]
+- boolean: Loop [If true, the animation will loop]
+
+### Returns
+Phaser.Animation- 
+The Animation instance. 
+
+## Dispose()
+Disposes the Sprite
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kevinboogaard/Sports_World-Ball_Pit/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
