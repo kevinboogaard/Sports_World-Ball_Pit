@@ -1,0 +1,29 @@
+{
+  "name": "source",
+  "version": "1.0.0",
+  "description": "Introduction to the github.",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^3.19.0",
+    "mr-doc": "^3.2.1",
+    "phaser": "^2.6.2",
+    "uglify-js": "^2.8.22"
+  },
+  "devDependencies": {
+    "mr-doc-theme-cayman": "^1.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinboogaard/Sports_World-Ball_Pit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinboogaard/Sports_World-Ball_Pit/issues"
+  },
+  "homepage": "https://github.com/kevinboogaard/Sports_World-Ball_Pit#readme"
+}

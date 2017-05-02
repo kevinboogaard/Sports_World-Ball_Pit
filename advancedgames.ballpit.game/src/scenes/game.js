@@ -26,7 +26,7 @@ scene.Game = (function () {
     Game.prototype.constructor = Game; 
     var p = Game.prototype;
 
-    p.update = function (deltatime) {
+    p.Update = function (deltatime) {
         if (this.swipePositions.start && !this.swipePositions.end) {
             Debug.DrawLine(this.swipePositions.start, inputSystem.inputPosition, "#FF0000", false);
         }
@@ -34,7 +34,7 @@ scene.Game = (function () {
         this.ballContainer.Update(deltatime);
     };
 
-    p.render = function () {
+    p.Render = function () {
         this.viewContainer.render();
     };
 
@@ -66,7 +66,7 @@ scene.Game = (function () {
         this.swipePositions.end = null;
     };
 
-    p.dispose = function () {
+    p.Dispose = function () {
         this.viewContainer.Dispose();
         this.removeChild(this.viewContainer);
         delete this.viewContainer;

@@ -40,7 +40,7 @@ scene.Tutorialscene = (function () {
         this.addChild(this.description);
 
         this.startButton = new ADCore.Button(new Vector2(halfWidth, 580),"startbutton-inactive");
-        this.startButton.onInputUp = this.onStartButtonInputUp.bind(this);
+        this.startButton.onInputUp = this._onStartButtonInputUp.bind(this);
         this.addChild(this.startButton);
 
     }
@@ -48,12 +48,29 @@ scene.Tutorialscene = (function () {
     Tutorialscene.prototype.constructor = Tutorialscene; 
     var p = Tutorialscene.prototype;
 
-    p.onStartButtonInputUp = function () {
+    p._onStartButtonInputUp = function () {
         Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this);
     };
 
     p.Dispose = function () {
+        this.removeChild(this.background);  
+        this.background.Dispose();  
+ 
+       this.removeChild(this.header);
 
+        this.removeChild(this.tutorialscreen1);  
+        this.tutorialscreen1.Dispose();
+        this.removeChild(this.tutorialscreen2);
+        this.tutorialscreen2.Dispose();
+        this.removeChild(this.tutorialscreen3); 
+        this.tutorialscreen3.Dispose();
+        this.removeChild(this.tutorialscreen4);
+        this.tutorialscreen4.Dispose();
+
+        this.removeChild(this.description);
+
+        this.removeChild(this.startButton);
+        this.startButton.Dispose();
     };
 
     return Tutorialscene;

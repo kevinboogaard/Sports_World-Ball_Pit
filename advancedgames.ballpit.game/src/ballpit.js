@@ -18,8 +18,10 @@ ballpit.Core = ( function () {
         
         sceneLoader.Load( scene.MainMenu );
         Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
+            sceneLoader.DisposeCurrent();
             sceneLoader.Load( scene.Tutorialscene );
             Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
+                sceneLoader.DisposeCurrent();
                 this.levelLoader.level = 0;
                 this.levelLoader.LoadLevel();
             }.bind(this));
@@ -31,8 +33,8 @@ ballpit.Core = ( function () {
      */
     p.Update = function ( deltaTime ) {
         var currentScene = sceneLoader.current;
-        if ( currentScene && currentScene.update ) {
-            currentScene.update( deltaTime );
+        if ( currentScene && currentScene.Update ) {
+            currentScene.Update( deltaTime );
         }
     };
 
@@ -42,8 +44,8 @@ ballpit.Core = ( function () {
     p.Render = function () {
         var currentScene = sceneLoader.current;
 
-        if ( currentScene && currentScene.render ) {
-            currentScene.render();
+        if ( currentScene && currentScene.Render ) {
+            currentScene.Render();
         }
     };
 
