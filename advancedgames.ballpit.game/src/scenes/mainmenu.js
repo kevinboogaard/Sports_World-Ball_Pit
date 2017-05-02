@@ -23,15 +23,24 @@ scene.MainMenu = (function () {
 
         this.logo.Play("entry");
 
+<<<<<<< HEAD
         this.startButton = new ADCore.Button(new Vector2(this.logo.x, this.logo.y + this.logo.height * 0.70),"buttoninactive");
         this.startButton.onInputDown = this.onStartButtonInputDown.bind(this);
+=======
+        this.startButton = new ADCore.Button(new Vector2(this.logo.x, this.logo.y + this.logo.height * 0.70),"startbutton-inactive");
+        this.startButton.onInputUp = this.onStartButtonInputUp.bind(this);
+>>>>>>> development
         this.addChild(this.startButton);
     }
     MainMenu.prototype = Object.create(Phaser.Group.prototype);
     MainMenu.prototype.constructor = MainMenu; 
     var p = MainMenu.prototype;
 
+<<<<<<< HEAD
     p.onStartButtonInputDown = function () {
+=======
+    p.onStartButtonInputUp = function () {
+>>>>>>> development
         Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this);
     };
 

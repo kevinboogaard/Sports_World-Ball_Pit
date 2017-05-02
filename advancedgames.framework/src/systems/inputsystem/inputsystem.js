@@ -36,7 +36,11 @@ ADCore.InputSystem = (function () {
     }
     var p = InputSystem.prototype;
 
+<<<<<<< HEAD
     p.update = function () {
+=======
+    p.Update = function () {
+>>>>>>> development
         this.inputPosition = new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y);
     };
 

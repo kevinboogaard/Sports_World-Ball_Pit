@@ -77,7 +77,11 @@ function _update () {
     // Update main.
     this.main.Update( deltaTime );
     // Update Input system aswell.
+<<<<<<< HEAD
     this.inputSystem.update( deltaTime );
+=======
+    this.inputSystem.Update( deltaTime );
+>>>>>>> development
 }
 
  /**

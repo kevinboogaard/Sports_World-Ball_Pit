@@ -4,30 +4,47 @@
     "resources": {
         "bowlingball":{
             "path": "balls/asset_bowlingball.png",
+<<<<<<< HEAD
             "dimensions": {"width":90, "height":90},
+=======
+            "dimensions": {"width": 45, "height":45},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
         "basketball":{
             "path": "balls/asset_basketball.png",
+<<<<<<< HEAD
             "dimensions": {"width":90, "height":90},
+=======
+            "dimensions": {"width": 45, "height":45},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "soccerball":{
             "path": "balls/asset_soccerball.png",
+<<<<<<< HEAD
             "dimensions": {"width":90, "height":90},
+=======
+            "dimensions": {"width":45, "height":45},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "tennisball":{
             "path": "balls/asset_tennisball.png",
+<<<<<<< HEAD
             "dimensions": {"width":90, "height":90},
+=======
+            "dimensions": {"width":45, "height":45},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "baseball":{
             "path": "balls/asset_baseball.png",
+<<<<<<< HEAD
             "dimensions": {"width":90, "height":90},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
@@ -35,36 +52,105 @@
         "buttoninactive":{
             "path": "ui/asset_buttoninactive.png",
             "dimensions": {"width":216, "height":216},
+=======
+            "dimensions": {"width":45, "height":45},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "startbutton-inactive":{
+            "path": "buttons/asset_startbutton_inactive.png",
+            "dimensions": {"width":108, "height":108},
+            "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
+        },
+        "startbutton-active":{
+            "path": "buttons/asset_startbutton_active.png",
+            "dimensions": {"width":108, "height":108},
+>>>>>>> development
             "anchor":{"x":0.5,"y":0.5},
             "offset":{"x": 0, "y":0}
         },
          "menubackground":{
             "path": "backgrounds/asset_menubackground.png",
+<<<<<<< HEAD
             "dimensions": {"width":720, "height":1280},
+=======
+            "dimensions": {"width": 360, "height": 640},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "gridborder":{
+<<<<<<< HEAD
             "path": "grid/asset_grid.png",
             "dimensions": {"width":658, "height":668},
+=======
+            "path": "grid/asset_gridborder.png",
+            "dimensions": {"width":330, "height":334},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "gridgradient":{
+<<<<<<< HEAD
             "path": "grid/asset_grid.png",
             "dimensions": {"width":630, "height":630},
+=======
+            "path": "grid/asset_gridgradient.png",
+            "dimensions": {"width":316, "height":316},
+>>>>>>> development
             "anchor":{"x":0,"y":0 },
             "offset":{"x": 0, "y":0}
         },
          "gridpart1":{
+<<<<<<< HEAD
             "path": "grid/asset_grid.png",
             "dimensions": {"width":90, "height":90},
+=======
+            "path": "grid/asset_gridpart1.png",
+            "dimensions": {"width":45, "height":45},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
          "gridpart2":{
+<<<<<<< HEAD
             "path": "grid/asset_grid.png",
             "dimensions": {"width":90, "height":90},
+=======
+            "path": "grid/asset_gridpart2.png",
+            "dimensions": {"width":45, "height":45},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialbackground":{
+            "path": "tutorial/asset_tutorial-screen_background.png",
+            "dimensions": {"width": 360, "height": 640},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen1":{
+            "path": "tutorial/asset_tutorial-screen-01.png",
+            "dimensions": {"width": 136, "height": 150},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen2":{
+            "path": "tutorial/asset_tutorial-screen-02.png",
+            "dimensions": {"width": 136, "height": 150},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen3":{
+            "path": "tutorial/asset_tutorial-screen-03.png",
+            "dimensions": {"width": 136, "height": 150},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+         "tutorialscreen4":{
+            "path": "tutorial/asset_tutorial-screen-04.png",
+            "dimensions": {"width": 136, "height": 150},
+>>>>>>> development
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         }
