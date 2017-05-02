@@ -6,7 +6,6 @@ But please know that all of our classes are commented and thus serves as 'docume
 ## Sports World: Ball Pit
 
 Introduction to the github.
->>>>>>> development
 
 ## Sports World: Ball Pit
 
