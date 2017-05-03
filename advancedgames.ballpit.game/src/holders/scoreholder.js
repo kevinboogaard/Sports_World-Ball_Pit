@@ -1,17 +1,17 @@
 var ballpit = ballpit || {};
 
-ballpit.Scoreholder = (function () {
+ballpit.ScoreHolder = (function () {
 
     /**'
-     * 'Scoreholder'
+     * 'ScoreHolder'
      */
-    function Scoreholder() {
+    function ScoreHolder() {
         this._score = 0;
         this._highscores = [];
 
         ADCore.EnableMutators( this );
     }
-    var p = Scoreholder.prototype;
+    var p = ScoreHolder.prototype;
 
 
     /**'
@@ -37,5 +37,5 @@ ballpit.Scoreholder = (function () {
         });
     };
 
-    return Scoreholder;
+    return ScoreHolder;
 }());
