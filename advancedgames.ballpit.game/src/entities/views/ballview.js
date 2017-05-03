@@ -31,7 +31,7 @@ ballpit.BallView = (function () {
     p._onStateChange = function (caller, params) {
         switch (params.state) {
             case ballpit.BallStates.REVERTING:
-                //this.Play(ballpit.ballAnimations.SWIPE_FAIL);
+                this.Play(ballpit.ballAnimations.SWIPE_FAIL);
             break;
         }
     };
@@ -42,12 +42,12 @@ ballpit.BallView = (function () {
      * @params { {Function}: "callback" } 'params'
      */
     p._onDestroy = function (caller, params) {
-        //var animation = this.Play(ballpit.ballAnimations.PLOP);
-        //animation.onComplete.add(params.callback);
+        var animation = this.Play(ballpit.ballAnimations.PLOP);
+        animation.onComplete.add(params.callback);
 
-        //var explosion = new ADCore.Sprite(new Vector2(0,0), "explosion");
-        //this.addChild(explosion);
-        //explosion.Play("explosion");
+        var explosion = new ADCore.Sprite(new Vector2(0,0), "explosion");
+        this.addChild(explosion);
+        explosion.Play("explosion");
 
         params.callback();
     };

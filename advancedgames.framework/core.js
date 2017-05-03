@@ -18,12 +18,12 @@ function Initialize() {
         render: _render.bind(this)
     });
 
-    // Initialize the main of the game.
-    this.main = new ballpit.Core();
-    // Create the scene loader system.
-    this.sceneLoader = new ADCore.Sceneloader();
     // Create the preloader system that preloads the resources in a json file.
     this.preloader = new ADCore.Preloader(ADCore.phaser);
+    // Create the scene loader system.
+    this.sceneLoader = new ADCore.Sceneloader();
+    // Initialize the main of the game.
+    this.main = new ballpit.Core(this.preloader, this.sceneLoader);
 }
 
  /**
@@ -39,7 +39,7 @@ function _preload () {
     // Preload the generic files.
     var len = Config.ResourceLists.GENERIC.length;
     if ( len > 0 ) {
-        preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategory.GENERIC  );
+        this.preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategory.GENERIC  );
     }
 }
 
@@ -51,10 +51,8 @@ function _preload () {
  */
 function _create () {
     // Align the canvas horizontally and refresh the scale.
-    ADCore.phaser.scale.pageAlignHorizontally = true;
-    ADCore.phaser.scale.pageAlignVertically = true;
-    ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-    ADCore.phaser.scale.refresh();
+	//ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+    //ADCore.phaser.scale.refresh();
 
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);

@@ -5,9 +5,20 @@
         <title>Sports world: Ball pit</title>
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="advancedgames.ballpit.game/css/fonts.css"/>
+        <link rel="stylesheet" href="advancedgames.ballpit.website/css/main.website.css"/>
+		
+        <link rel="stylesheet" href="advancedgames.ballpit.website/css/sportsworld.theme.css"/>
+		
+        <link rel="stylesheet" href="advancedgames.ballpit.game/css/ballpit.game.fonts.css"/>
+        <link rel="stylesheet" href="advancedgames.ballpit.website/css/ballpit.website.play.css"/>
 
         <script src="plugins/phaser.js"></script>
+        <script src="plugins/tweenlite.min.js"></script>
+        <script src="plugins/tweenlite.cssplugin.min.js"></script>
+        <script src="plugins/tweenlite.easepack.min.js"></script>
+        <script src="plugins/tweenlite.customease.min.js"></script>
+        <script src="plugins/jquery-3.2.1.min.js"></script>
+		
         <script src="advancedgames.framework/src/utilities/utilities.js"></script>
         <script src="advancedgames.framework/src/utilities/rephraser.js"></script>
 
@@ -76,7 +87,39 @@
         <script src="advancedgames.ballpit.settings/debugging/debugcommands.js"></script>
     </head>
 
-    <body style="margin: 0;">
+    <body style="overflow: hidden">
+		<div id="sw-container">
+			<div id="sw-sky">
+                <div class="sw-cloud-holder">
+                    <div class="sw-cloud i1 right" style="top: 20px; left: -2000px;"></div>
+                    <div class="sw-cloud i2 right" style="top: 100px; left: -1000px;"></div>
+                    <div class="sw-cloud i3 right" style="top: 150px;"></div>
+                </div>
+
+                <div class="sw-zeppelin left" style="bottom: 560px;"></div>
+
+                <div class="sw-building-holder">
+                    <div id="sw-building-rugby"></div>
+                    <div id="sw-building-tower"></div>
+                    <div id="sw-building-soccer"></div>
+                    <div id="sw-building-bowling"></div>
+                    <div id="sw-building-stadium"></div>
+                </div>
+
+                <div id="sw-grass-bg">
+                    <div id="sw-grass-fg"></div>
+                </div>
+			</div>
+		</div>
+        
+        <div id="bp-container">
+                <div id="bp-holder">
+                
+                </div>
+        </div>
+		
+        <script src="advancedgames.ballpit.website/js/sportsworld.website.main.js"></script>
         <script src="advancedgames.ballpit.game/main.js"></script>
+        <script src="advancedgames.ballpit.website/js/ballpit.website.main.js"></script>
     </body>
 </html>

@@ -9,7 +9,7 @@ var Config = {};
 Config.Core = {};
 Config.Core.Dimensions = { width: 360, height: 640 }; 
 Config.Core.Renderer = 0;
-Config.Core.Parent = "Container";
+Config.Core.Parent = "bp-holder";
 
 Config.ResourceLists = {
     "GENERIC": [

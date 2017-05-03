@@ -1,0 +1,61 @@
+ @media screen and (max-width: 380px), screen and (max-height: 640px) {
+	#bp-container {
+		width: 36.5%;
+		height: 100%;
+
+		top: 50%;
+		left: 50%;
+		
+		position: absolute;
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform:  translateX(-50%) translateY(-50%);	
+		-moz-transform:  translateX(-50%) translateY(-50%);
+		transform:  translateX(-50%) translateY(-50%);
+
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+
+		background-color: #6A7C6C;
+		border: #2A2F33 solid 50px;
+	}
+
+	#bp-holder {
+		-ms-transform: translateX(-2.5%) translateY(-10%);
+		-webkit-transform:  translateX(-2.5%) translateY(-10%);
+		-moz-transform:  translateX(-2.5%) translateY(-10%);
+		transform:  translateX(-2.5%) translateY(-10%);
+	}
+ }
+
+@media screen and (min-width: 380px) and (min-height: 640px) {
+	#bp-container {
+		min-width: 554px;
+		min-height: 759px;
+
+		width: 36.5%;
+		height: 100%;
+
+		top: 50%;
+		left: 50%;
+		
+		position: absolute;
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-webkit-transform:  translateX(-50%) translateY(-50%);	
+		-moz-transform:  translateX(-50%) translateY(-50%);
+		transform:  translateX(-50%) translateY(-50%);
+
+		background: url("../images/asset_game_board.png") no-repeat;
+		background-size: contain;
+	}
+
+	#bp-holder {
+		max-width: 360px; 
+		max-height: 642px;
+
+		-ms-transform: translateX(27.2%) translateY(7.9%);
+		-webkit-transform:  translateX(27.2%) translateY(7.9%);	
+		-moz-transform:  translateX(27.2%) translateY(7.9%);
+		transform:  translateX(27.2%) translateY(7.9%);
+	}
+}

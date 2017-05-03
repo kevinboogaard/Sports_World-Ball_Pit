@@ -4,10 +4,14 @@ ballpit.LevelLoader = ( function () {
 
     /**
      * 'LevelLoader'
+     * @param {Preloader} 'preloader'
+     * @param {SceneLoader} 'sceneloader'
      */
-    function LevelLoader() {
+    function LevelLoader(preloader, sceneLoader) {
         this._level = -1;
 
+        this.preloader = preloader;
+        this.sceneLoader = sceneLoader;
         ADCore.EnableMutators( this );
     }
     var p = LevelLoader.prototype;
@@ -29,8 +33,8 @@ ballpit.LevelLoader = ( function () {
         var resources =  Config.ResourceLists.LEVELS[this.level];
         if (typeof resources === "undefined") throw new Error("Level is not known.");
 
-        sceneLoader.Load( scene.Preloader );
-        preloader.Preload( resources, ADCore.PreloadCategory.LEVEL );
+        this.sceneLoader.Load( scene.Preloader );
+        this.preloader.Preload( resources, ADCore.PreloadCategory.LEVEL );
     };
     
     /**
@@ -39,9 +43,9 @@ ballpit.LevelLoader = ( function () {
      */
     /*
     p._onLoadUpdate = function ( progress ) {
-        if ( !sceneLoader.current || sceneLoader.current.constructor !== scene.Preloader ) return;
+        if ( !this.sceneLoader.current || this.sceneLoader.current.constructor !== scene.Preloader ) return;
 
-        var currentScene = sceneLoader.current;
+        var currentScene = this.sceneLoader.current;
         currentScene.update( progress );
     };
     */
@@ -51,13 +55,13 @@ ballpit.LevelLoader = ( function () {
      * @private
      */
     p._onLoadComplete = function ( ) {
-        sceneLoader.current.Complete();
-        sceneLoader.DisposeCurrent();
+        this.sceneLoader.current.Complete();
+        this.sceneLoader.DisposeCurrent();
 
         if (Debug.ENABLED && Debug.FORCE_LOAD_SCENE) {
-            sceneLoader.Load( Debug.DEBUG_SCENE );
+            this.sceneLoader.Load( Debug.DEBUG_SCENE );
         } else { 
-            sceneLoader.Load( scene.Game );
+            this.sceneLoader.Load( scene.Game );
         } 
     };
 

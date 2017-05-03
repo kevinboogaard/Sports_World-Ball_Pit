@@ -4,9 +4,12 @@ ballpit.Core = ( function () {
 
     /**
      * 'Core'
+     * @param {Preloader} 'preloader'
+     * @param {SceneLoader} 'sceneloader'
      */
-    function Core() {
-        this.levelLoader = new ballpit.LevelLoader();
+    function Core(preloader, sceneLoader) {
+        this._sceneLoader = sceneLoader;
+        this.levelLoader = new ballpit.LevelLoader(preloader, this._sceneLoader);
     }
     var p = Core.prototype;
 
@@ -16,23 +19,23 @@ ballpit.Core = ( function () {
     p.Start = function () {
         this.levelLoader.Initialize();
         
-        sceneLoader.Load( scene.MainMenu );
+        this._sceneLoader.Load( scene.MainMenu );
         Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
-            sceneLoader.DisposeCurrent();
-            sceneLoader.Load( scene.Tutorialscene );
+            this._sceneLoader.DisposeCurrent();
+            this._sceneLoader.Load( scene.Tutorialscene );
             Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
-                sceneLoader.DisposeCurrent();
+                this._sceneLoader.DisposeCurrent();
                 this.levelLoader.level = 0;
                 this.levelLoader.LoadLevel();
             }.bind(this));
-        }.bind(this), sceneLoader.current);
+        }.bind(this), this._sceneLoader.current);
     };
 
     /**
      * 'Update'
      */
     p.Update = function ( deltaTime ) {
-        var currentScene = sceneLoader.current;
+        var currentScene = this._sceneLoader.current;
         if ( currentScene && currentScene.Update ) {
             currentScene.Update( deltaTime );
         }
@@ -42,7 +45,7 @@ ballpit.Core = ( function () {
      * 'Render'
      */
     p.Render = function () {
-        var currentScene = sceneLoader.current;
+        var currentScene = this._sceneLoader.current;
 
         if ( currentScene && currentScene.Render ) {
             currentScene.Render();
