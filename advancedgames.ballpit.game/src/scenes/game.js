@@ -9,7 +9,7 @@ scene.Game = (function () {
         Phaser.Group.call(this, ADCore.phaser, null, "Game");
         this.viewContainer = new ADCore.ViewContainer();
         this.addChild(this.viewContainer);
-        
+
         this.tilemap = new Tilemap(Global.Loaded.level.map);
 
         this.ballContainer = new ballpit.BallContainer();
@@ -50,14 +50,17 @@ scene.Game = (function () {
 
         if (diff.x !== 0 && diff.y !== 0) {
             var selected = this.tilemap.mainLayer.GetTileByScreenPosition(this.swipePositions.start);
-            if (this.ballController.CanSwap(selected)) {
+            if (this.ballController.CanMove(selected)) {
                 var targeted = this.tilemap.mainLayer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
                 
-                if (this.ballController.CanSwap(targeted)) {
+                if (this.ballController.CanSwap(selected, targeted)) {
                     selected.occupier.beginning = selected;
                     targeted.occupier.beginning = targeted;
 
                     this.ballController.Swap(selected, targeted);
+                } else {
+                    Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, selected.occupier);
+                    Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, targeted.occupier);
                 }
             }
         }

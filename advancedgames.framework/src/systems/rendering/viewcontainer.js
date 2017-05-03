@@ -47,6 +47,8 @@ ADCore.ViewContainer = (function () {
             var v_view = this._views.children[j];
             v_view.Render();
         }
+
+        this._views.sort( "y", Phaser.Group.SORT_ASCENDING );
     };
 
      /**
