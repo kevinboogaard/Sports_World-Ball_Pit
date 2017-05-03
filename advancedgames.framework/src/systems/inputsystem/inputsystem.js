@@ -49,7 +49,7 @@ ADCore.InputSystem = (function () {
         if ( Input.paused ) return;
         this._inputDown = true;
 
-        Listener.Dispatch( ADCore.InputEvent.ON_DOWN, this, { "event": event, "position": this.inputPosition}, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_DOWN, this, { "event": event, "position": new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y) }, false);
     };
 
     /**
@@ -60,7 +60,7 @@ ADCore.InputSystem = (function () {
     p.onInputUp = function ( event ) {
         if ( Input.paused || this._inputDown === false ) return;
         this._inputDown = false;
-        Listener.Dispatch( ADCore.InputEvent.ON_UP, this, { "event": event, "position": this.inputPosition}, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_UP, this, { "event": event, "position": new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y) }, false);
     };
 
     /**
@@ -70,7 +70,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputTap = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, { "event": event, "position": this.inputPosition}, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, { "event": event, "position": new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y) }, false);
     };
 
     /**
@@ -80,7 +80,7 @@ ADCore.InputSystem = (function () {
      */
     p.onInputHold = function ( event ) {
         if ( Input.paused ) return;
-        Listener.Dispatch( ADCore.InputEvent.ON_HOLD, this, { "event": event, "position": this.inputPosition}, false);
+        Listener.Dispatch( ADCore.InputEvent.ON_HOLD, this, { "event": event, "position": new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y) }, false);
     };
 
     /**

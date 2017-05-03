@@ -9,7 +9,7 @@ scene.Game = (function () {
         Phaser.Group.call(this, ADCore.phaser, null, "Game");
         this.viewContainer = new ADCore.ViewContainer();
         this.addChild(this.viewContainer);
-        
+
         this.tilemap = new Tilemap(Global.Loaded.level.map);
 
         this.ballContainer = new ballpit.BallContainer();
