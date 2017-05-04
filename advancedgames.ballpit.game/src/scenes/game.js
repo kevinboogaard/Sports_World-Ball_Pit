@@ -73,6 +73,8 @@ scene.Game = (function () {
      * @param {TileModel} 'target'
      */
     p._trySwap = function (current, target) {
+        if (!current.neighbours.contains(target)) return;
+
         if (this.ballController.CanSwap(current, target)) {
             current.occupier.beginning = current;
             target.occupier.beginning = target;

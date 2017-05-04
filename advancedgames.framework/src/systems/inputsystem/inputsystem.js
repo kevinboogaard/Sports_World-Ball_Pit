@@ -70,7 +70,9 @@ ADCore.InputSystem = (function () {
         this._inputDown = false;
         Listener.Dispatch( ADCore.InputEvent.ON_UP, this, { "event": event, "position": position }, false);
 
-        if (this._startPosition !== position)  Listener.Dispatch( ADCore.InputEvent.ON_SWIPE, this, { "event": event, "start": this._startPosition, "end": position }, false);
+        if (this._startPosition !== null && this._startPosition.x !== position.x && this._startPosition.y !== position.y) {
+            Listener.Dispatch( ADCore.InputEvent.ON_SWIPE, this, { "event": event, "start": this._startPosition, "end": position }, false);
+        }  
         this._startPosition = null;
     };
 
