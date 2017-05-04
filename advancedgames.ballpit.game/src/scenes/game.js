@@ -17,58 +17,76 @@ scene.Game = (function () {
 
         this.ballController.Initialize();
 
-        this.swipePositions = { start: null, end: null };
+        this.selected = null;
 
-        Listener.Listen(ADCore.InputEvent.ON_DOWN, this, this._onDown.bind(this));
-        Listener.Listen(ADCore.InputEvent.ON_UP, this, this._onUp.bind(this));
+        Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
+        Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
     }
     Game.prototype = Object.create(Phaser.Group.prototype);
     Game.prototype.constructor = Game; 
     var p = Game.prototype;
 
+    /**
+     * 'Update'
+     * @param {int 'deltatime'
+     */
     p.Update = function (deltatime) {
-        if (this.swipePositions.start && !this.swipePositions.end) {
-            Debug.DrawLine(this.swipePositions.start, inputSystem.inputPosition, "#FF0000", false);
-        }
-
         this.ballContainer.Update(deltatime);
     };
 
+    /**
+     * 'Render'
+     */
     p.Render = function () {
         this.viewContainer.render();
     };
 
-     p._onDown = function (caller, params) {
-         this.swipePositions.start = params.position.Clone();
-    };
-
-    p._onUp = function (caller, params) {
-        if (this.swipePositions.start === null) return;
-        this.swipePositions.end = params.position.Clone();
-
-        var diff = this.swipePositions.end.Clone().Substract(this.swipePositions.start);
-
-        if (diff.x !== 0 && diff.y !== 0) {
-            var selected = this.tilemap.mainLayer.GetTileByScreenPosition(this.swipePositions.start);
-            if (this.ballController.CanMove(selected)) {
-                var targeted = this.tilemap.mainLayer.GetNeighbourFromTileByDirection(selected, diff.Normalize());
-                
-                if (this.ballController.CanSwap(selected, targeted)) {
-                    selected.occupier.beginning = selected;
-                    targeted.occupier.beginning = targeted;
-
-                    this.ballController.Swap(selected, targeted);
-                } else if (this.ballController.CanMove(targeted)){
-                    Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, selected.occupier);
-                    Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, targeted.occupier);
-                }
-            }
+    /**
+     * 'OnTap'
+     * @param {{}} 'caller'
+     * @param {{ {{}}: event, {Vector2}: position }} 'params'
+     */
+    p._onTap = function (caller, params) {
+        if (this.selected !== null) {
+            var target = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
+            this._trySwap(this.selected, target);
+            this.selected = null;
+        } else {
+            this.selected = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
         }
-
-        this.swipePositions.start = null;
-        this.swipePositions.end = null;
     };
 
+    /**
+     * 'OnSwipe'
+     * @param {{}} 'caller'
+     * @param {{ {{}}: event, {Vector2}: start, {Vector2}: end }} 'params'
+     */
+    p._onSwipe = function (caller, params) {
+        var start =  this.tilemap.mainLayer.GetTileByScreenPosition(params.start);
+        var end =  this.tilemap.mainLayer.GetTileByScreenPosition(params.end);
+        this._trySwap(start, end);
+    };
+
+    /**
+     * 'TrySwap'
+     * @param {TileModel} 'current'
+     * @param {TileModel} 'target'
+     */
+    p._trySwap = function (current, target) {
+        if (this.ballController.CanSwap(current, target)) {
+            current.occupier.beginning = current;
+            target.occupier.beginning = target;
+
+            this.ballController.Swap(current, target);
+        } else if (this.ballController.CanMove(target)){
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current);
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target);
+        }
+    };
+
+    /**
+     * 'Dispose'
+     */
     p.Dispose = function () {
         this.viewContainer.Dispose();
         this.removeChild(this.viewContainer);
