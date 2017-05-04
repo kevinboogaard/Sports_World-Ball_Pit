@@ -58,7 +58,7 @@ scene.Game = (function () {
                     targeted.occupier.beginning = targeted;
 
                     this.ballController.Swap(selected, targeted);
-                } else {
+                } else if (this.ballController.CanMove(targeted)){
                     Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, selected.occupier);
                     Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, targeted.occupier);
                 }

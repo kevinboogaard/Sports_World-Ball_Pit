@@ -158,7 +158,7 @@ ballpit.BallController = (function () {
      * @param {TileModel} 'target'.
      */
     p.CanSwap = function (tile, target) {
-         if (!this.CanMove(tile) && !this.CanMove(target)) return false;
+         if (!this.CanMove(tile) || !this.CanMove(target)) return false;
 
         var ball_current = tile.occupier;
         var ball_target = target.occupier;

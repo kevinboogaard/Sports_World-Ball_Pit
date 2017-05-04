@@ -43,7 +43,7 @@ ballpit.BallModel = (function () {
     /**
      * 'Update'
      */
-    p.Update = function () {
+    p.Update = function (deltaTime) {
         if (this.isMoving) {
             var distance = this.position.Distance(this._destination);
             
@@ -51,7 +51,6 @@ ballpit.BallModel = (function () {
             var direction = difference.Normalize();
 
             if (distance >= 10) {
-                var deltaTime = ADCore.phaser.time.elapsed / 1000;
                 var vel = direction.Exponentiate(this.velocity * deltaTime);
 
                 this.position.Substract(vel);
