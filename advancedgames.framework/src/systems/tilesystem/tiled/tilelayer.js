@@ -1,44 +1,117 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
+
+/**
+ * @namespace Tiled
+ * @memberof ADCore
+ * @static
+ */
 var ADCore = ADCore || {};
 ADCore.Tiled = ADCore.Tiled || {};
 
+/**
+ * Enum for Layer Types
+ * @readonly
+ * @memberof Tiled
+ * @enum {String}
+ * @typedef {(String)} LayerTypes
+ */
 ADCore.Tiled.LayerTypes = ADCore.Tiled.LayerTypes || {};
+
+/**
+ * @member {String}
+ * @memberof LayerTypes
+ * Tilelayer type
+ */
 ADCore.Tiled.LayerTypes.TILE = "tilelayer";
 
 ADCore.Tiled.TileLayer = ( function () {
 
     /**
-     *  TileLayer
-     *  @private
+     * A TileLayer is a holder for the tiles of a specific TileLayer of a Tilemap.
+    *
+     * @class TileLayer
+     * @constructor
+     * @memberof Tiled
+     * @private
+     * @param {Tilemap} parent - Parent of the TileLayer.
+     * @param {Object} data - TileLayer data.
      */
     function TileLayer(parent, data) {
-        this.width = data.width;
-        this.height = data.height;
+        /**
+        * @property {number} width - The width of the map (in tiles).
+        */
+        this.width = data.width || 0;
 
+        /**
+        * @property {number} height - The height of the map (in tiles).
+        */
+        this.height = data.height || 0;
+
+        /**
+        * @property {string} name - The name of the TileLayer.
+        */
         this.name = data.name;
+
+        /**
+        * @property {LayerTypes} type - The LayerType of this layer.
+        * @readonly
+        */
         this.type = data.type;
 
+        /**
+         * @property {Boolean} visible - True if the layer is visible.
+         */
         this.visible = data.visible;
 
+        /**
+         * @property {integer} x - The x position of the TileLayer.
+         */
         this.x = data.offsetx;
+
+        /**
+         * @property {integer} y - The y position of the TileLayer.
+         */
         this.y = data.offsety;
 
+        /**
+         * @property {Tilemap} parent - The parent tilemap of this TileLayer.
+         */
         this.parent = parent;
 
-        this.properties = data.properties;
+        /**
+        * @property {object} properties - TileLayer-specific properties that are typically defined in the Tiled editor.
+        */
+        this.properties = data.properties || {};
 
+        /**
+         * @property {integer} opacity - The opacity of the TileLayer.
+         */
         this.opacity = data.opacity;
 
+        /**
+         * @property {Array} tiledata - Array of TileModels that the TileLayer is holding.
+         */
         this.tiledata = data.data;
 
+        /**
+        * @property {Boolean} disposed - True if the TileLayer  is disposed.
+        */
         this.disposed = false;
 
+        // Initialize the TileLayer when the constructor has been called.
         this._initialize();
     }
     var p = TileLayer.prototype;
 
     /**
-     *  Initialize
-     *  @private
+     * @method Initialize
+     * @private 
+     * @ignore 
      */
     p._initialize = function () {
         var tile_position = new Vector2();
@@ -75,8 +148,16 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
-     *  GetTileByTilePosition
-     * @param {Vector2} tileposition;
+     * Get a tile by its position on the grid.
+     *
+     * @method GetTileByTilePosition
+     * @memberof TileLayer
+     * @public
+     * @param {Vector2} tileposition - Position of the tile on the grid. 
+     * (0,0) represents the tile top-left. 
+     * (1,0) represents the tile on the right of the tile on (0,0)
+     * (0,1) represents the tile under the tile on (0,0)
+     * @returns {TileModel} The tile that corresponds to its position. Null if it hasn't been found.
      */
     p.GetTileByTilePosition = function ( tileposition ) {
         var rows = this.tiledata;
@@ -93,13 +174,18 @@ ADCore.Tiled.TileLayer = ( function () {
                 if ( inBounds ) return tile;
             }
         }
-
+        // Return null if the tile hasn't been found.
         return null;
     };
 
     /**
-     *  GetTileByScreenPosition
-     * @param {Vector2} position;
+     * Get a tile by its position on the screen.
+     *
+     * @method GetTileByScreenPosition
+     * @memberof TileLayer
+     * @public
+     * @param {Vector2} position - Position of the tile on the screen. 
+     * @returns {TileModel} The tile that corresponds to its position. Null if it hasn't been found.
      */
     p.GetTileByScreenPosition = function ( position ) {
         var rows = this.tiledata;
@@ -116,14 +202,19 @@ ADCore.Tiled.TileLayer = ( function () {
                 if ( inBounds ) return tile;
             }
         }
-
+        // Return null if the tile hasn't been found.
         return null;
     };
 
     /**
-     *  GetTilesByProperty
-     * @param {string} 'propertyname'
-     * @param {string} 'value'
+     * Get a tile by its property.
+     *
+     * @method GetTilesByProperty
+     * @memberof TileLayer
+     * @public
+     * @param {string} propertyname - Name of the property to look for. 
+     * @param {string} value - Value of the property to look for.
+     * @returns {TileModel} The tile that corresponds to its property. Null if it hasn't been found.
      */
     p.GetTilesByProperty = function ( propertyname, value ) {
         var result = [];
@@ -143,13 +234,18 @@ ADCore.Tiled.TileLayer = ( function () {
                 }
             }
         }
-
+        // Return null if the tile hasn't been found.
         return result;
     };
 
     /**
-     * 'TilePoisitionToPosition'
-     * @param {Vector2} vector
+     * Translate the tileposition to position.
+     *
+     * @method TilePositionToPosition
+     * @memberof TileLayer
+     * @public
+     * @param {Vector2} vector - The tileposition to be translated.
+     * @returns {Vector2} The translated position.
      */
     p.TilePositionToPosition = function ( vector ) {
         var translatedPosition = new Vector2( vector.x * this.parent.tilewidth, vector.y * this.parent.tileheight );
@@ -158,10 +254,14 @@ ADCore.Tiled.TileLayer = ( function () {
     };
   
     /**
-     * 'GetNeighbourFromTileByDirection'
-     * @returns {BallModel}
-     * @param {TileModel} 'tile'
-     * @param {Vector2} 'direction'
+     * Get the neighbour from a tile by a direction.
+     *
+     * @method GetNeighbourFromTileByDirection
+     * @memberof TileLayer
+     * @public
+     * @param {TileModel} tile - The tile to look in.
+     * @param {Vector2} direction - The direction to look for.
+     * @returns {TileModel} The neighbour that has been found. Null if it hasn't been found.
      */
     p.GetNeighbourFromTileByDirection = function ( tile, direction ) {
         var neighbours = tile.neighbours;
@@ -173,15 +273,20 @@ ADCore.Tiled.TileLayer = ( function () {
                 return neighbour;
             }
         }
+        // Return null if the neighbour hasn't been found.
         return null;
     };
 
     /**
-     * 'GetTileByOccupier' 
-     * @param {T} 'occupier'
+     * Get a tile by its occupier.
+     *
+     * @method GetTileByOccupier
+     * @memberof TileLayer
+     * @public
+     * @param {T} occupier - Occupier to look for.
+     * @returns {TileModel} The tile that has been found. Null if it hasn't been found.
      */
     p.GetTileByOccupier = function (occupier) {
-        
         var rows = this.tiledata;
         var rows_len = rows.length;
         for ( var i = 0; i < rows_len; i++ ) {
@@ -195,10 +300,15 @@ ADCore.Tiled.TileLayer = ( function () {
                 if (tile.occupier === occupier) return tile;
             }
         }
+        // Return null if the tileset hasn't been found.
+        return null;
     };
 
     /**
-     * 'Finalize'
+     * Finalizes the tilelayer. This function loops through all its tiles and looks for their neighbours. 
+     *
+     * @method Finalize
+     * @public
      */
     p.Finalize = function () {
         var rows = this.tiledata;
@@ -224,8 +334,13 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
-     * 'TilePositionToScreenPosition' 
-     * @param {Vector2} 'tileposition'
+     * Translate the given tile position to screen position.
+     *
+     * @method TilePositionToScreenPosition
+     * @memberof TileLayer
+     * @public
+     * @param {Vector2} tileposition - The tileposition to be translated..
+     * @returns {Vector2} The screen position result.
      */
     p.TilePositionToScreenPosition = function (tileposition) {
         var first = this.tiledata[0][0].position;
@@ -234,8 +349,13 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
-     * 'FindTileNeighbours'
+     * Translate the given tile position to screen position.
+     *
+     * @method FindTileNeighbours
+     * @memberof TileLayer
      * @private
+     * @param {TileModel} tile - The tile to look for the neighbours.
+     * @returns {Array} The neighbours of a tile.
      */
      p._findTileNeighbours = function (tile) {
         var neighbours = [];
@@ -262,9 +382,14 @@ ADCore.Tiled.TileLayer = ( function () {
     };
 
     /**
-     * 'Dispose'
+     * Dispose the tilelayer. Use this method to clean the tilelayer in order to avoid memory leaks.
+     *
+     * @method Dispose
+     * @memberof TileLayer
+     * @public
+     * @fires #ON_MODEL_REMOVE
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         var rows = this.tiledata;
         var rows_len = rows.length;
         for ( var i = 0; i < rows_len; i++ ) {

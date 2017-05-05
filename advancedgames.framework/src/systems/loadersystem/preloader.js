@@ -1,37 +1,134 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ADCore = ADCore || {};
 
+/**
+ * @namespace {String} Event
+ * @memberof ADCore
+ * @typedef {(String)} Event
+ */
 ADCore.Event = ADCore.Event || {};
+
+/**
+ * @event ON_PRELOAD_START
+ * @memberof ADCore.Event
+ */
 ADCore.Event.ON_PRELOAD_START = "on_preload_start";
+
+/**
+ * @event ON_PRELOAD_UPDATE
+ * @memberof ADCore.Event
+ */
 ADCore.Event.ON_PRELOAD_UPDATE = "on_preload_update";
+
+/**
+ * @event ON_PRELOAD_COMPLETE
+ * @memberof ADCore.Event
+ */
 ADCore.Event.ON_PRELOAD_COMLETE = "on_preload_complete";
 
-ADCore.PreloadCategory = ADCore.preloadCategory || {};
-ADCore.PreloadCategory.GENERIC = "generic";
-ADCore.PreloadCategory.LEVEL = "level";
+/**
+ * Enum for Preload Categories
+ * @readonly 
+ * @memberof ADCore
+ * @enum {string} 
+ * @typedef {(String)} PreloadCategories
+ */
+ADCore.PreloadCategories = ADCore.PreloadCategories || {};
 
-ADCore.PreloadType = ADCore.preloadType || {};
-ADCore.PreloadType.RESOURCE_LIST = "resourcelist";
-ADCore.PreloadType.ATLAS_LIST = "atlaslist";
-ADCore.PreloadType.MAP = "map";
+/**
+ * @member {String}
+ * @memberof PreloadCategories
+ * Generic Category
+ */
+ADCore.PreloadCategories.GENERIC = "generic";
+
+/**
+ * @member {String}
+ * @memberof PreloadCategories
+ * Level Category
+ */
+ADCore.PreloadCategories.LEVEL = "level";
+
+/**
+ * Enum for Preload Types
+ * @readonly 
+ * @memberof ADCore
+ * @enum {string} 
+ * @typedef {(String)} PreloadTypes
+ */
+ADCore.PreloadTypes = ADCore.PreloadTypes || {};
+
+/**
+ * @member {String}
+ * @memberof PreloadTypes
+ * Resourcelist Type
+ */
+ADCore.PreloadTypes.RESOURCE_LIST = "resourcelist";
+
+/**
+ * @member {String}
+ * @memberof PreloadTypes
+ * Atlaslist Type
+ */
+ADCore.PreloadTypes.ATLAS_LIST = "atlaslist";
+
+/**
+ * @member {String}
+ * @memberof PreloadTypes
+ * Map Type
+ */
+ADCore.PreloadTypes.MAP = "map";
 
 ADCore.Preloader = (function(){
 
     /**
-     * 'Preloader'
-     * @param {Phaser} 'phaser'
+     * Special preloader to preload maps, atlas lists and resource lists.
+    *
+     * @class Preloader
+     * @constructor
+     * @param {Phaser.Game} phaser - This is usually ADCore.phaser. 
      */
     function Preloader(phaser) {
+        /**
+        * @property {Phaser.Game} phaser - Constructed Phaser Game.
+        * @private
+        */
         this._phaser = phaser;
+
+        /**
+         * Load is made when calling the 'Initialize' method of the class. 
+         * @property {Phaser.Load} load - Constructed Phaser Load.
+         * @private
+         * @default Null 
+         */
         this._load = null;
 
+        /**
+        * @property {Boolean} initialized - True if Preloader.Initialize() is called.
+        * @public
+        */
         this.initialized = false;
 
+        /**
+        * @property {Object} file_load_data - THe data if the files loaded.
+        * @private
+        */
         this._file_load_data = {};
     } 
     var p = Preloader.prototype;
 
     /**
-     * 'Initialize'
+     * This method needs to be called when Phaser.Game has been constructed.
+     * This way The Phaser.Load has been made, so ADCore.Preloader can use the Phaser.Preloader.
+     * 
+     * @method Initialize
+     * @memberof Preloader
+     * @public 
      */
     p.Initialize = function(){
         this._load = this._phaser.load;        
@@ -42,15 +139,19 @@ ADCore.Preloader = (function(){
     };
 
     /**
-     * 'Preload'
-     * @param {object} 'files'
-     * @param {PreloadCategory} 'category'
+     * Use this function to preload files into a specific category.
+     * 
+     * @method Preload
+     * @memberof Preloader
+     * @public 
+     * @param {Object} files - Files that need to be preloaded.
+     * @param {PreloadCategories} category - Category of the files. 
      */
     p.Preload = function(files, category){
         if (!this.initialized) throw new Error("Preloader hasn't been initialized yet.");
 
         // If category is level, make a new object. We don't need the old level data because we're on a new one!
-        if(category === ADCore.PreloadCategory.LEVEL) Global.Loaded.level = {};
+        if(category === ADCore.PreloadCategories.LEVEL) Global.Loaded.level = {};
         // Reset the Phaser Load since we're preloading new things.
         this._load.reset(); 
 
@@ -66,23 +167,29 @@ ADCore.Preloader = (function(){
     };
 
     /**
-     * 'OnFileComplete'
-     * @private
      * Called by phaser when a file has been preloaded. Do not call yourself!
+     * 
+     * @method OnFileComplete
+     * @memberof Preloader
+     * @private 
+     * @param {Number} progress - The progress of the file.
+     * @param {String} savekey - The savekey of the file. 
+     * @param {Boolean} success - True if the file has been succesfully loaded. 
+     * @ignore
      */
     p._onFileComplete = function ( progress, savekey, success ) {
         var data = this._file_load_data[savekey];
 
         switch ( data.type ) {
-            case ADCore.PreloadType.RESOURCE_LIST:
+            case ADCore.PreloadTypes.RESOURCE_LIST:
                 this._preload_resource_list(data, savekey);
                 break;
 
-            case ADCore.PreloadType.ATLAS_LIST:
+            case ADCore.PreloadTypes.ATLAS_LIST:
                 this._preload_atlas_list(data, savekey);
                 break;
 
-            case ADCore.PreloadType.MAP: 
+            case ADCore.PreloadTypes.MAP: 
                 this.__preload_map( data, savekey );
                 break;
 
@@ -95,14 +202,17 @@ ADCore.Preloader = (function(){
     };
 
     /**
-     * 'Preload Resource'
+     * This method preloads a specific resource.
+     * 
+     * @method Preload Resource
+     * @memberof Preloader
      * @private
-     * @param {string} 'file type'
-     * @param {string} 'file path'
-     * @param {string} 'savekey'
-     * @param {string} 'loaded type'
-     * @param {string} 'group key'
-     * @param {object} 'data'
+     * @param {String} 'file type'
+     * @param {String} 'file path'
+     * @param {String} 'savekey'
+     * @param {String} 'loaded type'
+     * @param {String} 'group key'
+     * @param {Object} 'data'
      * 
      * @example 
      * preloader._preload_resource( 'image', 'character', 'character | path/to/image', 'GENERIC', 'images', {} );
@@ -122,10 +232,13 @@ ADCore.Preloader = (function(){
     };
 
     /**
-     * 'Preload Resource List'
+     * Preload a resource list.
+     * 
+     * @method Preload Resource List
+     * @memberof Preloader
      * @private
-     * @param {object} 'data'
-     * @param {string} 'savekey'
+     * @param {object} data - The data of the resource list.
+     * @param {string} savekey - The save key of the resource list.
      */
     p._preload_resource_list = function ( data, savekey ) {
         // Phaser parses the file and stores it in the cache. So, I get the file out of there using its key.
@@ -158,10 +271,13 @@ ADCore.Preloader = (function(){
     };
 
     /**
-     * 'Preload Atlas List'
+     * Preload an atlas list.
+     * 
+     * @method Preload Atlas List
+     * @memberof Preloader
      * @private
-     * @param {object} 'data'
-     * @param {string} 'savekey'
+     * @param {object} data - The data of the atlas list.
+     * @param {string} savekey - The save key of the atlas list.
      */
     p._preload_atlas_list = function ( data, savekey ) {
         // Phaser parses the file and stores it in the cache. So, I get the file out of there using its key.
@@ -204,10 +320,13 @@ ADCore.Preloader = (function(){
     };
     
     /**
-     * 'Preload Map'
+     * Preload a Tiled map.
+     * 
+     * @method Preload Map
+     * @memberof Preloader
      * @private
-     * @param {object} 'data'
-     * @param {string} 'savekey'
+     * @param {object} data - The data of the map.
+     * @param {string} savekey - The save key of the map.
      */
     p.__preload_map = function ( data, savekey ) {
         // Phaser parses the file and stores it in the cache. So, I get the file out of there using its key.
@@ -238,10 +357,13 @@ ADCore.Preloader = (function(){
     };
 
     /**
-     * 'Save Resource'
+     * Preload a resource.
+     * 
+     * @method Save Resource
+     * @memberof Preloader
      * @private
-     * @param {object} 'data'
-     * @param {string} 'savekey'
+     * @param {object} data - The data of the resource.
+     * @param {string} savekey - The save key of the resource.
      */
     p._save_resource = function ( data, savekey ) {
         // Get resource from cache.
@@ -255,17 +377,20 @@ ADCore.Preloader = (function(){
         else Global.Loaded[data.loadedtype][data.filekey] = resource;
         
         var cachemap = this._phaser.cache._cacheMap;
-        var map = cachemap[phaserExtension.CacheTypeToNumber(data.type)];
+        var map = cachemap[ADCore.PhaserExtension.CacheTypeToNumber(data.type)];
 
          map[data.filekey] = map[savekey];
          delete map[savekey];
     };
 
     /**
-     * 'Parse Image'
-     * @private
-     * @returns {object}
-     * @param {object} 'data'
+     * This function parses image data so each image has the same data saved.
+     * 
+     * @method Parse Image
+     * @memberof Preloader
+     * @private 
+     * @param {Object} data - data of the image
+     * @returns {Object} Parsed image data.
      */
     p._parse_image = function ( data ) {
         if ( data.image ) {
@@ -296,9 +421,14 @@ ADCore.Preloader = (function(){
     };
 
     /**
-     * 'On File Error'
-     * @private
-     * Called by phaser when a file has been preloaded. Do not call yourself!
+     * Called by phaser when a file has failed to preload. Do not call yourself!
+     * 
+     * @method OnFileError
+     * @memberof Preloader
+     * @private 
+     * @param {String} key - The savekey of the file. 
+     * @param {Object} file - File that has failed to load.
+     * @ignore
      */
     p._onFileError = function ( key, file ) {
         throw new Error( "\n ERROR in `" + key + "`: '" + file.errorMessage + "'" );
@@ -307,18 +437,22 @@ ADCore.Preloader = (function(){
     return Preloader;
 })();
 
+// Extension of phaser loader to preload a custom object called "Resourcelist"
 Phaser.Loader.prototype.resourcelist = function ( key, url, overwrite ) { 
     return this.addToFileList( "json", key, url, undefined, overwrite, ".json" );
  };
  
+// Extension of phaser loader to preload a custom object called "Atlaslist"
  Phaser.Loader.prototype.atlaslist = function ( key, url, overwrite ) { 
     return this.addToFileList( "json", key, url, undefined, overwrite, ".json" );
  };
 
+// Extension of phaser loader to preload a custom object called "Map"
 Phaser.Loader.prototype.map = function ( key, url, overwrite ) { 
     return this.addToFileList( "json", key, url, undefined, overwrite, ".json" ); 
 };
 
+// Extension of phaser loader to preload a custom object called "Tileset"
 Phaser.Loader.prototype.tileset = function ( key, url, overwrite ) { 
     return this.addToFileList( "image", key, url, undefined, overwrite, ".png" ); 
 };

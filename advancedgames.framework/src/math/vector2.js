@@ -1,77 +1,122 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 this.Vector2 = (function() {
 
     /**
-     * 'Vector2'
-     * @param {int} 'x'
-     * @param {int} 'y'
+     * A Vector2 object represents a location in a two-dimensional coordinate system, where x represents the horizontal axis and y represents the vertical axis. 
+     * The following code creates a vector at (0,0): 
+     * var myVector2 = new Vector2();
+     * 
+     * @class Vector2
+     * @constructor
+     * @param {number} [x=0] - The horizontal position of this Vector.
+     * @param {number} [y=0] - The vertical position of this Vector.
      */
     function Vector2(x, y){
-        this.x = x || 0;
-        this.y = y || 0;
+
+        x = x || 0;
+        y = y || 0;
+
+        /**
+         * @property {number} x - The x value of the vector.
+         */
+        this.x = x;
+
+        /**
+         * @property {number} y - The y value of the vector.
+         */
+        this.y = y;
     } 
     var p = Vector2.prototype;
 
 
     /**
-     * 'Add'
-     * @returns {Vector2}
-     * @param {Vector2} 'Vector2'
+     * Adds the given vector to this Vector.
+     *
+     * @method Add
+     * @memberof Vector2
+     * @public
+     * @param {Vector2} vector - The vector to add to the vector.
+     * @returns {Vector2} This Vector object. Useful for chaining method calls.
      */
-    p.Add = function (vector2) {
-        this.x += vector2.x;
-        this.y += vector2.y;
+    p.Add = function (vector) {
+        this.x += vector.x;
+        this.y += vector.y;
 
         return this;
     };
 
     /**
-     * 'Substract'
-     * @returns {Vector2}
-     * @param {Vector2} 'Vector2'
+     * Substracts the given vector to this Vector.
+     *
+     * @method Substract
+     * @memberof Vector2
+     * @public
+     * @param {Vector2} vector - The vector to substract from the vector.
+     * @returns {Vector2} This Vector object. Useful for chaining method calls.
      */
-    p.Substract = function (vector2) {
-        this.x -= vector2.x;
-        this.y -= vector2.y;
+    p.Substract = function (vector) {
+        this.x -= vector.x;
+        this.y -= vector.y;
         
         return this;
     };
 
-     /**
-     * 'Multiply'
-     * @returns {Vector2}
-     * @param {Vector2} 'Vector2'
+    /**
+     * Multiply the given vector to this Vector.
+     *
+     * @method Multiply
+     * @memberof Vector2
+     * @public
+     * @param {Vector2} vector - The vector to multiply the vector by.
+     * @returns {Vector2} This Vector object. Useful for chaining method calls.
      */
-    p.Multiply = function (vector2){
-        this.x *= vector2.x;
-        this.y *= vector2.y;
-
-        return this;
-    };
-
-     /**
-     * 'Divide'
-     * @returns {Vector2}
-     * @param {Vector2} 'Vector2'
-     */
-    p.Divide = function (vector2){
-        this.x /= vector2.x;
-        this.y /= vector2.y;
+    p.Multiply = function (vector){
+        this.x *= vector.x;
+        this.y *= vector.y;
 
         return this;
     };
 
     /**
-    * 'Clone'
-    * @returns {Vector2}
-    * Use the function to duplicate the Vector2.
-    */
+     * Divide the given vector to this Vector.
+     *
+     * @method Divide
+     * @memberof Vector2
+     * @public
+     * @param {Vector2} vector - The vector to divide the vector by.
+     * @returns {Vector2} This Vector object. Useful for chaining method calls.
+     */
+    p.Divide = function (vector){
+        this.x /= vector.x;
+        this.y /= vector.y;
+
+        return this;
+    };
+
+    /**
+     * Creates a copy of the given Vector.
+     *
+     * @method Clone
+     * @memberof Vector2
+     * @public
+     * @returns {Vector2} The new Vector object.
+     */
     p.Clone = function(){
         return new Vector2(this.x,this.y);
     };
 
-     /**
-     * 'Invert'
-     * @returns {Vector2}
+    /**
+     * Inverts the x and y values of this Vector.
+     *
+     * @method Invert
+     * @memberof Vector2
+     * @public
+     * @returns {Vector2} This Vector object.
      */
     p.Invert = function(){
         this.x *= -1;
@@ -81,10 +126,14 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'Exponentiate'
-    * @returns {Vector2}
-    * @param {int} 'n'
-    */
+     * Exponentiates the x and y values of this vector by n.
+     *
+     * @method Exponentiate
+     * @memberof Vector2
+     * @public
+     * @param {number} n - The scalar to exponentiate with.
+     * @returns {Vector2} This Vector object. Useful for chaining method calls.
+     */
     p.Exponentiate = function(n){
         this.x *= n;
         this.y *= n;
@@ -93,10 +142,14 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'SquareRoot'
-    * @returns {Vector2}
-    * @param {int} 'n'
-    */
+     * Roots the x and y values of this vector by n.
+     *
+     * @method SquareRoot
+     * @memberof Vector2
+     * @public
+     * @param {number} n - The scalar to root with.
+     * @returns {Vector2} This Vector object. Useful for chaining method calls.
+     */
     p.SquareRoot = function(n){
         this.x /= n;
         this.y /= n;
@@ -105,27 +158,38 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'Dot'
-    * @returns {Vector2}
-    * @param {Vector2} 'Vector2'
-    * This method is an algebraic operation that takes two equal-length sequences of numbers and returns a single number.
-    */
-    p.Dot = function(vector2){
-        return this.x * vector2.x + this.y * vector2.y;
+     * The dot product of this and another Vector object.
+     *
+     * @method Dot
+     * @memberof Vector2
+     * @public
+     * @param {Vector2} vector - The vector object to get the dot product combined with this Vector.
+     * @returns {number} The result.
+     */
+    p.Dot = function(vector){
+        return this.x * vector.x + this.y * vector.y;
     };
 
     /**
-    * 'Length'
-    * @returns {Vector2}
-    */
+     * Calculates the length squared of the Vector object.
+     *
+     * @method Length
+     * @memberof Vector2
+     * @public
+     * @returns {number} The result.
+     */
     p.Length = function(){
-        return this.x * this.x + this.y * this.y;
+        return (this.x * this.x) + (this.y * this.y);
     };
 
     /**
-    * 'Floor'
-    * @returns {Vector2}
-    */
+     * Math.floor() both the x and y properties of this Vector.
+     *
+     * @method Floor
+     * @memberof Vector2
+     * @public
+     * @returns {Vector2} This Vector object.
+     */
     p.Floor = function(){
         this.x = Math.floor(this.x);
         this.y = Math.floor(this.y);
@@ -134,9 +198,13 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'Round'
-    * @returns {Vector2}
-    */
+     * Math.round() both the x and y properties of this Vector.
+     *
+     * @method Round
+     * @memberof Vector2
+     * @public
+     * @returns {Vector2} This Vector object.
+     */
     p.Round = function(){
         this.x = Math.round(this.x);
         this.y = Math.round(this.y);
@@ -145,9 +213,13 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'Abs'
-    * @returns {Vector2}
-    */
+     * Math.abs() both the x and y properties of this Vector.
+     *
+     * @method Abs
+     * @memberof Vector2
+     * @public
+     * @returns {Vector2} This Vector object.
+     */
     p.Abs = function(){
         this.x = Math.abs(this.x);
         this.y = Math.abs(this.y);
@@ -156,29 +228,38 @@ this.Vector2 = (function() {
     };
 
     /**
-    * 'Magnitude'
-    * @returns {int}
-    * This method calculates the magnitude: the size of a mathematical object, a property by which the object can be compared as larger or smaller than other objects of the same kind. 
-    * More formally, an object's magnitude is the displayed result of an ordering (or ranking) of the class of objects to which it belongs.
-    */
+    * Calculates the magnitude: the size of a mathematical object, a property by which the object can be compared as larger or smaller than other objects of the same kind. 
+     *
+     * @method Magnitude
+     * @memberof Vector2
+     * @public
+     * @returns {number} The result.
+     */
     p.Magnitude = function(){
         return Math.sqrt(this.x * this.x + this.y * this.y);
     };
 
     /**
-    * 'Distance'
-    * @returns {int}
-    * @param {Vector2} 'vector2'
-    */
-    p.Distance = function(vector2){
-        return(new Vector2(this.x - vector2.x, this.y - vector2.y)).Magnitude();
+     * Returns the distance of this Vector object to the given vector.
+     *
+     * @method Distance
+     * @memberof Vector2
+     * @public
+     * @param {number} vector - The Vector to calculate the distance from this Vector with.
+     * @returns {number} The result.
+     */
+    p.Distance = function(vector){
+        return(new Vector2(this.x - vector.x, this.y - vector.y)).Magnitude();
     };
 
     /**
-    * 'Normalize'
-    * @returns {Vector2}
-    * This method normalizes a vector: where the vector is the same direction but with norm (length) 1.
-    */
+     * Alters the Vector object so that its length is 1, but it retains the same direction.
+     *
+     * @method Normalize
+     * @memberof Vector2
+     * @public
+     * @returns {Vector} This Vector object.
+     */
     p.Normalize = function(){
         var result = this.Clone();
         var magnitude = this.Magnitude();

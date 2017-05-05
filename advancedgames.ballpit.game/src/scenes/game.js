@@ -35,7 +35,7 @@ scene.Game = (function () {
     };
 
     p.Render = function () {
-        this.viewContainer.render();
+        this.viewContainer.Render();
     };
 
      p._onDown = function (caller, params) {

@@ -1,12 +1,26 @@
 /**
- * Phaser Rephraser
- * Didn't like the look of some phaser functions.
- * I renamed them in this file and made some extra functionality. 
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
  */
-this.phaserExtension = {};
 
-/** 
- * There is no Generic Get function in Phaser Cache. 
+/**
+ * @namespace PhaserExtension
+ * @memberof ADCore
+ * @static
+ */
+var ADCore = ADCore || {};
+ADCore.PhaserExtension = {};
+
+/**
+ * @method Phaser.Cache.get
+ * @memberof PhaserExtension
+ * @override 
+ * @public
+ * @param {string} type - Type of the result you are trying to get.
+ * @param {string} result - Key of the result you are trying to get.
+ * @returns {T} result
  */
 Phaser.Cache.prototype.get = function ( type, key ) {
     switch ( type ) {
@@ -99,7 +113,17 @@ Phaser.Cache.prototype.get = function ( type, key ) {
     }
 };
 
-phaserExtension.CacheTypeToNumber = function ( type ) {
+/**
+ * Returns the corresponding number to the cache type.
+ * 
+ * @method CacheTypeToNumber
+ * @memberof PhaserExtension
+ * @override
+ * @static
+ * @param {string} type - Type of the result you are trying to get.
+ * @returns {Number} result
+ */
+ADCore.PhaserExtension.CacheTypeToNumber = function ( type ) {
     switch (type) {
         case "canvas":
             return 1;
