@@ -1,26 +1,82 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ADCore = ADCore || {};
 
 ADCore.Button = (function () {
 
-    /**'
-     * 'Button'
-     * @param {vector2} 'position'
-     * @param {key} 'key'
+    /**
+     * @class Button
+     * @constructor
+     * @extends Interface
+     * @param {Vector2} position
+     * @param {String} key - The sprite key from the preloader.
      */
     function Button(position, key) {
         ADCore.Interface.call(this, position, key);
         
+        /**
+         * @property {Text} text - If the button has a text- this is the variable where it would be stored.
+         * Use the SetText() to set text on the button.
+         * @public
+         * @readonly 
+         * @default null
+         */
         this.text = null;
 
+        /**
+         * @property {Boolean} inputEnabled - Need to put input enabled for Phaser Input System. 
+         * @ignore
+         */
         this.inputEnabled = true;
+        
+        /**
+         * @property {Boolean} disabled - This will be true if the input is disabled. 
+         * Look at the Enable() and Disable() functions to switch the variable.
+         * @public
+         * @readonly 
+         */
         this.disabled = true;
+
+        /**
+         * @property {Boolean} inputOver - This will be true if a mouse hovers over the button.
+         * @public
+         * @readonly 
+         */
         this.inputOver = false;
         
-        this.onInputDown = null;      
+        /**
+         * @property {Function} onInputDown - Set this variable with a function to listen to the call.
+         * @public
+         * @default null
+         */
+        this.onInputDown = null;     
+
+        /**
+         * @property {Function} onInputUp - Set this variable with a function to listen to the call.
+         * @public
+         * @default null
+         */
         this.onInputUp = null;
+        
+        /**
+         * @property {Function} onInputOver - Set this variable with a function to listen to the call.
+         * @public
+         * @default null
+         */
         this.onInputOver = null;
+
+        /**
+         * @property {Function} onInputLeave - Set this variable with a function to listen to the call.
+         * @public
+         * @default null
+         */
         this.onInputLeave = null;
 
+        // Enable the button when it is constructed.
         this.Enable();
     }
     Button.prototype = Object.create(ADCore.Interface.prototype);
@@ -28,17 +84,21 @@ ADCore.Button = (function () {
     var p = Button.prototype;
 
     /**
-    * 'setText'
-    * @param {text} 'text'
-    */
+     * @method SetText
+     * @memberof Button
+     * @public
+     * @param {Text} text - This method only adds the text child and sets the variable. 
+     */
     p.SetText = function (text){
         this.text = text;
         this.addChild(this.text);
     };
 
     /**
-    * 'enable'
-    */
+     * @method Enable
+     * @memberof Button
+     * @public
+     */
     p.Enable = function(){  
         if ( this.disabled === false ) return;
         this.disabled = false;
@@ -53,8 +113,10 @@ ADCore.Button = (function () {
     };
     
     /**
-    * 'disable'
-    */
+     * @method Disable
+     * @memberof Button
+     * @public
+     */
     p.Disable = function(){
         if ( this.disabled ) return;
         this.disabled = true;
@@ -66,34 +128,46 @@ ADCore.Button = (function () {
     };
     
     /**
-    * 'onInputDown'
-    * @private
-    */
+     * Listens to Phaser build in input system.
+     * 
+     * @method OnInputDown
+     * @memberof Button
+     * @private
+     */
     p._onInputDown = function () {
         if ( typeof this.onInputDown === "function" ) this.onInputDown( this );
     };
     
     /**
-    * 'onInputUp'
-    * @private
-    */
+     * Listens to Phaser build in input system.
+     * 
+     * @method OnInputUp
+     * @memberof Button
+     * @private
+     */
     p._onInputUp = function () {
         if ( typeof this.onInputUp === "function" ) this.onInputUp( this );
     };
     
     /**
-    * 'onInputOver'
-    * @private
-    */
+     * Listens to Phaser build in input system.
+     * 
+     * @method OnInputOver
+     * @memberof Button
+     * @private
+     */
     p._onInputOver = function () {
         this.inputOver = true;
         if ( typeof this.onInputOver === "function" ) this.onInputOver( this );
     };
     
     /**
-    * 'onInputLeave'
-    * @private
-    */
+     * Listens to Phaser build in input system.
+     * 
+     * @method OnInputLeave
+     * @memberof Button
+     * @private
+     */
     p._onInputLeave = function () {
         this.inputOver = false;
         if ( typeof this.onInputLeave === "function" ) this.onInputLeave( this );

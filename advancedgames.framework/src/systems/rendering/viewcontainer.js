@@ -111,6 +111,7 @@ ADCore.ViewContainer = (function () {
      * @method OnModelAdd
      * @memberof ViewContainer
      * @private
+     * @listens Event.ON_MODEL_ADD
      * @param {Object} caller -  Dispatcher of the event.
      * @param {Object} params - The given parameters.
      * @param {T} params.model - Model of the view being added.
@@ -125,6 +126,7 @@ ADCore.ViewContainer = (function () {
      * @method OnLowerModelAdd
      * @memberof ViewContainer
      * @private
+     * @listens Event.ON_LOWER_MODEL_ADD
      * @param {Object} caller -  Dispatcher of the event.
      * @param {Object} params - The given parameters.
      * @param {T} params.model - Model of the view being added.
@@ -139,6 +141,7 @@ ADCore.ViewContainer = (function () {
      * @method OnModelRemove
      * @memberof ViewContainer
      * @private
+     * @listens Event.ON_MODEL_REMOVE
      * @param {Object} caller -  Dispatcher of the event., 
      * @param {Object} params - The given parameters.
      * @param {T} params.model - Model of the view being removed.
@@ -164,6 +167,7 @@ ADCore.ViewContainer = (function () {
      * @method OnLowerModelRemove
      * @memberof ViewContainer
      * @private
+     * @listens Event.ON_LOWER_MODEL_REMOVE
      * @param {Object} caller -  Dispatcher of the event., 
      * @param {Object} params - The given parameters.
      * @param {T} params.model - Model of the view being removed.
@@ -192,7 +196,7 @@ ADCore.ViewContainer = (function () {
      * @memberof ViewContainer
      * @public
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         throw new Error( "NO DISPOSE WRITTEN YET !" );
     };
 

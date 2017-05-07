@@ -4,13 +4,13 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+var ADCore = ADCore || {};
 
 /**
  * @namespace PhaserExtension
  * @memberof ADCore
  * @static
  */
-var ADCore = ADCore || {};
 ADCore.PhaserExtension = {};
 
 /**

@@ -4,13 +4,13 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+var ADCore = ADCore || {};
 
 /**
  * @namespace Tiled
  * @memberof ADCore
  * @static
  */
-var ADCore = ADCore || {};
 ADCore.Tiled = ADCore.Tiled || {};
 
 /**
@@ -44,62 +44,74 @@ ADCore.Tiled.TileLayer = ( function () {
     function TileLayer(parent, data) {
         /**
         * @property {number} width - The width of the map (in tiles).
+        * @public
         */
         this.width = data.width || 0;
 
         /**
         * @property {number} height - The height of the map (in tiles).
+        * @public
         */
         this.height = data.height || 0;
 
         /**
         * @property {string} name - The name of the TileLayer.
+        * @public
         */
         this.name = data.name;
 
         /**
         * @property {LayerTypes} type - The LayerType of this layer.
+        * @public
         * @readonly
         */
         this.type = data.type;
 
         /**
          * @property {Boolean} visible - True if the layer is visible.
+        * @public
          */
         this.visible = data.visible;
 
         /**
          * @property {integer} x - The x position of the TileLayer.
+        * @public
          */
         this.x = data.offsetx;
 
         /**
          * @property {integer} y - The y position of the TileLayer.
+        * @public
          */
         this.y = data.offsety;
 
         /**
          * @property {Tilemap} parent - The parent tilemap of this TileLayer.
+        * @public
          */
         this.parent = parent;
 
         /**
         * @property {object} properties - TileLayer-specific properties that are typically defined in the Tiled editor.
+        * @public
         */
         this.properties = data.properties || {};
 
         /**
          * @property {integer} opacity - The opacity of the TileLayer.
+        * @public
          */
         this.opacity = data.opacity;
 
         /**
          * @property {Array} tiledata - Array of TileModels that the TileLayer is holding.
+        * @public
          */
         this.tiledata = data.data;
 
         /**
         * @property {Boolean} disposed - True if the TileLayer  is disposed.
+        * @public
         */
         this.disposed = false;
 

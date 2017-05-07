@@ -1,43 +1,64 @@
-var AGCore = AGCore || {};
-AGCore.Event = AGCore.Event || {};
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
+var ADCore = ADCore || {};
+
+/**
+ * @namespace {String} Event
+ * @memberof ADCore
+ * @typedef {(String)} Event
+ */
+ADCore.Event = ADCore.Event || {};
 
 this.Listener = (function () {
 
     /**
-     * 'Listener'
-     * @static
      * Similar to the addEventListener / DispatchEvent from Actionscript3.
      * Event listeners, which are also called event handlers, are functions that are executed in response to specific events. 
      * Adding an event listener is a two-step process. First, you create a function or class method to execute in response to the event. This is sometimes called the event handler function.
      * Second, you use the Listener.Listen() method to register your listener function with the target of the event or any display list object that lies along the appropriate event flow. 
+     * 
+     * @class Listener
+     * @constructor
+     * @static
      */
     function Listener() {
+
+        /**
+        * @property {Object} listeners - The list containing all the listener data.
+        * @private
+        */
         this._listeners = {};
     } 
     var p = Listener.prototype;
 
     /**
-     * 'Listen'
-     * @static
-     * @param {event_string} 'Event'
-     * @param {object} 'Listener'
-     * @param {function} 'Handler'
-     * @param {object} {optional} 'Dispatcher' | If dispatcher is null, your listener will listen to everyone.
      * Use the Listener.Listen() method to register your handler with the target of the event that lies along the appropriate event flow.
+     * 
+     * @method Listen
+     * @static
+     * @param {Event} event
+     * @param {Object} listener
+     * @param {Function} handler
+     * @param {Object} [dispatcher] - If dispatcher is null, your listener will listen to everyone.
      */
     p.Listen = function (event, listener, handler, dispatcher) {
         this._listen(event, listener, handler, dispatcher);
     };
 
     /**
-     * 'ListenOnce'
-     * @static
-     * @param {event_string} 'Event'
-     * @param {object} 'Listener'
-     * @param {function} 'Handler'
-     * @param {object} {optional} 'Dispatcher' | If dispatcher is null, your listener will listen to everyone.
      * Use the Listener.ListenOnce() method to listen once to an event that lies along the appropriate event flow.
      * If the listener is called it will be automaticly removed from the list.  
+     * 
+     * @method ListenOnce
+     * @static
+     * @param {Event} event
+     * @param {Object} listener
+     * @param {Function} handler
+     * @param {Object} [dispatcher] - If dispatcher is null, your listener will listen to everyone.
      */
     p.ListenOnce = function (event, listener, handler, dispatcher) {
         var data = this._listen(event, listener, handler, dispatcher);
@@ -45,13 +66,14 @@ this.Listener = (function () {
     };
 
     /**
-     * 'Listen'
-     * @private
-     * @param {event_string} 'Event'
-     * @param {object} 'Listener'
-     * @param {function} 'Handler'
-     * @param {object} {optional} 'Dispatcher' | If dispatcher is null, your listener will listen to everyone.
      * Private function to handle both of the Listen / ListenOnce methods. 
+     * 
+     * @method Listen
+     * @private
+     * @param {Event} event
+     * @param {Object} listener
+     * @param {Function} handler
+     * @param {Object} [dispatcher] - If dispatcher is null, your listener will listen to everyone.
      */
     p._listen = function (event, listener, handler, dispatcher) {
         // Check if the listener is defined and if the listener doesn't have the event.
@@ -69,12 +91,13 @@ this.Listener = (function () {
     };
 
     /**
-     * 'Mute'
-     * @static
-     * @param {event_string} 'Event'
-     * @param {object} 'Listener'
      * You can use the Listener.Mute() method to remove an event listener that you no longer need. 
      * It is a good idea to remove any listeners that will no longer be used to prevent memory leaks from happening.
+     * 
+     * @method Mute
+     * @static
+     * @param {Event} event
+     * @param {Object} listener
      */
     p.Mute = function (event, listener) {
         var index = this._getListenerIndex(event, listener);
@@ -84,12 +107,13 @@ this.Listener = (function () {
     };
 
     /**
-     * 'MuteAll'
-     * @static
-     * @param {object} 'Listener'
      * You can use the Listener.MuteAll() method to remove all event listeners from the object. 
      * Warning: Don't use this if you don't know what you're doing. It's better to mute them individually than to mute it all.
      * This function is mostly used on the end of a dispose function!
+     * 
+     * @method MuteAll
+     * @static
+     * @param {Object} listener
      */
     p.MuteAll = function ( listener ) {
         // For each key inside _listeners.
@@ -110,13 +134,14 @@ this.Listener = (function () {
     };
 
     /**
-     * 'Dispatch'
-     * @static
-     * @param {event_string} 'Event'
-     * @param {object} 'caller'
-     * @param {{}}  {optional} 'arguments'
-     * @param {boolean} {optional} 'call_when_debug' | If you have debug mode on, you will console the dispatch.
      * The Listener.Dispatch() method can be used to dispatch a custom event object into the event flow.
+     * 
+     * @method Dispatch
+     * @static
+     * @param {Event} event
+     * @param {Object} caller
+     * @param {Object}  [arguments] - The arguments to give to the listeners.
+     * @param {boolean} [call_when_debug=false] - If you have debug mode on, you will console the dispatch.
      */
     p.Dispatch = function (event, caller, arguments, call_when_debug) {
         var listeners = this._getListenersByEvent(event);
@@ -139,11 +164,11 @@ this.Listener = (function () {
     };
 
     /**
-     * 'HasListenerAddedEvent'
+     * @method HasListenerAddedEvent
      * @private
+     * @param {Object} listener
+     * @param {Event} event
      * @returns {Boolean}
-     * @param {object} 'listener'
-     * @param {event_string} 'event'
      */
     p._hasListenerAddedEvent = function (listener, event) {
         var listeners = this._getListenersByEvent(event);
@@ -159,21 +184,21 @@ this.Listener = (function () {
     };
 
     /**
-     * 'GetListenersByEvent'
+     * @method GetListenersByEvent
      * @private
+     * @param {Event} event
      * @returns {Object}
-     * @param {event_string} 'event'
      */
     p._getListenersByEvent = function (event) {
         return this._listeners[event] || [];
     };
 
     /**
-     * 'GetListenerIndex'
+     * @method GetListenerIndex
      * @private
-     * @returns {int}
-     * @param {Object} 'listener'
-     * @param {event_string} 'event'
+     * @param {Object} listener
+     * @param {Event} event
+     * @returns {Integer}
      */
     p._getListenerIndex = function (event, listener) {
         var len = this._listeners[event].length;
@@ -187,11 +212,11 @@ this.Listener = (function () {
     };
 
     /**
-     * 'GetListenerIndexes'
+     * @method GetListenerIndexes
      * @private
-     * @returns {int[]}
-     * @param {Object} 'listener'
-     * @param {event_string} 'event'
+     * @param {Object} listener
+     * @param {Event} event
+     * @returns {Array} Array of indexes (integers)
      */
     p._getListenerIndexes = function (listener) {
         var result = [];

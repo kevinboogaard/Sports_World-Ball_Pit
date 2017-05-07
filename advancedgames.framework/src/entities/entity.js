@@ -1,22 +1,45 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ADCore = ADCore || {};
 
 ADCore.Entity = (function () {
 
     /**
-     * 'Entity'
+     * This is the base-model for the MVC pattern.
+     * 
+     * @class Entity
+     * @constructor
+     * @param {Vector2} position - The position of the entity.
      */
     function Entity(position) {
+
+        /**
+         * @property {Vector2} position - The position of the entity.
+         * @public
+         */
         this.position = position;
 
+        /**
+         * @property {Boolean} disposed - True if the entity has been disposed.
+         * @public
+         */
         this.disposed = false;
 
+        // Enable the mutators for this class to have Getters & Setters.
         ADCore.EnableMutators( this );
     }
     var p = Entity.prototype;
 
     /**
-     * 'Dispose'
-     *  with the dispose function you can clear all the data of an object and then destroy it.
+     * Dispose the entity. Use this method to clean the entity in order to avoid memory leaks.
+     *
+     * @method Dispose
+     * @memberof Entity
+     * @public
      */
     p.Dispose = function(){
         delete this.position;
@@ -25,9 +48,19 @@ ADCore.Entity = (function () {
     };
 
     /**
-     * 'Getters And Setters'
+     * Getters & Setters internal function.
+     * 
+     * @method GettersAndSetters
+     * @memberof Entity
+     * @private 
+     * @ignore
      */
     p.gettersAndSetters = function () {
+
+        /**
+         * @property {Integer} x
+         * @public
+         */
         this.Define("x", {
             "get": function () {
                 return this.position.x;
@@ -37,6 +70,10 @@ ADCore.Entity = (function () {
             }
         });
 
+        /**
+         * @property {Integer} y
+         * @public
+         */
         this.Define("y", {
             "get": function () {
                 return this.position.y;

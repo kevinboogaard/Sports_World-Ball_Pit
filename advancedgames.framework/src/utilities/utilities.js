@@ -4,12 +4,12 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+var ADCore = ADCore || {};
 
 /**
  * @namespace Utilities
  * @memberof ADCore
  */
-var ADCore = ADCore || {};
 ADCore.Utilities = {};
 
 /**

@@ -4,13 +4,13 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+var ADCore = ADCore || {};
 
 /**
  * @namespace Tiled
  * @memberof ADCore
  * @static
  */
-var ADCore = ADCore || {};
 ADCore.Tiled = ADCore.Tiled || {};
 
 /**
@@ -44,67 +44,80 @@ ADCore.Tiled.ObjectLayer = ( function () {
     function ObjectLayer( parent, data ) {
         /**
         * @property {number} width - The width of the map (in tiles).
+        * @public
         */
         this.width = data.width || 0;
 
         /**
         * @property {number} height - The height of the map (in tiles).
+        * @public
         */
         this.height = data.height || 0;
 
         /**
         * @property {string} name - The name of the ObjectLayer.
+        * @public
         */
         this.name = data.name;
 
         /**
         * @property {LayerTypes} type - The LayerType of this layer.
+        * @public
         * @readonly
         */
         this.type = data.type;
 
         /**
          * @property {Boolean} visible - True if the layer is visible.
+        * @public
          */
         this.visible = data.visible;
 
         /**
          * @property {integer} x - The x position of the ObjectLayer.
+        * @public
          */
         this.x = data.offsetx || 0;
 
         /**
          * @property {integer} y - The y position of the ObjectLayer.
+        * @public
          */
         this.y = data.offsety || 0;
 
         /**
          * @property {Tilemap} parent - The parent tilemap of this ObjectLayer.
+        * @public
          */
         this.parent = parent;
 
         /**
         * @property {object} properties - ObjectLayer-specific properties that are typically defined in the Tiled editor.
+        * @public
         */
         this.properties = data.properties || {};
 
         /**
          * @property {integer} opacity - The opacity of the ObjectLayer.
+        * @public
          */
         this.opacity = data.opacity;
 
         /**
          * @property {string} draworder - The draworder of the ObjectLayer
+        * @public
          */
         this.draworder = data.draworder;
 
         /**
          * @property {Array} objectdata - Array of objects that the ObjectLayer  is holding.
+        * @public
          */
         this.objectdata = data.objects;
 
         /**
         * @property {Boolean} disposed - True if the ObjectLayer  is disposed.
+        * @public
         */
         this.disposed = false;
 

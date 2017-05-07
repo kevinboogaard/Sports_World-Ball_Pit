@@ -23,11 +23,13 @@ this.Vector2 = (function() {
 
         /**
          * @property {number} x - The x value of the vector.
+         * @public
          */
         this.x = x;
 
         /**
          * @property {number} y - The y value of the vector.
+         * @public
          */
         this.y = y;
     } 

@@ -4,13 +4,13 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+var ADCore = ADCore || {};
 
 /**
  * @namespace Tiled
  * @memberof ADCore
  * @static
  */
-var ADCore = ADCore || {};
 ADCore.Tiled = ADCore.Tiled || {};
 
 ADCore.Tiled.Tileset = ( function () {
@@ -30,18 +30,21 @@ ADCore.Tiled.Tileset = ( function () {
         * The Tiled firstgid value.
         * This is the starting index of the first tile index this Tileset contains.
         * @property {integer} firstgid
+        * @public
         */
         this.firstgid = data.firstgid;
 
         /**
         * The key of the Tileset.
         * @property {string} key
+        * @public
         */
         this.key = data.name;
 
         /**
         * The width of each tile (in pixels).
         * @property {integer} tilewidth
+        * @public
         * @readonly
         */
         this.tilewidth = data.tilewidth | 0;
@@ -49,6 +52,7 @@ ADCore.Tiled.Tileset = ( function () {
         /**
         * The height of each tile (in pixels).
         * @property {integer} tileheight
+        * @public
         * @readonly
         */
         this.tileheight = data.tileheight | 0;
@@ -56,6 +60,7 @@ ADCore.Tiled.Tileset = ( function () {
         /**
         * The width of the image (in pixels).
         * @property {integer} imagewidth
+        * @public
         * @readonly
         */
         this.imagewidth = data.imagewidth || 0;
@@ -63,6 +68,7 @@ ADCore.Tiled.Tileset = ( function () {
         /**
         * The height of the image (in pixels).
         * @property {integer} imageheight
+        * @public
         * @readonly
         */
         this.imageheight = data.imageheight || 0;
@@ -70,12 +76,14 @@ ADCore.Tiled.Tileset = ( function () {
         /**
         * Tileset-specific properties that are typically defined in the Tiled editor.
         * @property {object} properties
+        * @public
         */
         this.properties = data.properties || {};
 
         /**
         * The margin around the tiles in the sheet (in pixels).
         * @property {integer} margin
+        * @public
         * @readonly
         */
         this.margin = data.margin || 0;
@@ -83,6 +91,7 @@ ADCore.Tiled.Tileset = ( function () {
         /**
         * The spacing between each tile in the sheet (in pixels).
         * @property {integer} spacing
+        * @public
         * @readonly
         */
         this.spacing = data.spacing;
@@ -90,6 +99,7 @@ ADCore.Tiled.Tileset = ( function () {
         /**
         * Tileset-specific tileproperties that are typically defined in the Tiled editor.
         * @property {object} tileproperties
+        * @public
         */
         this.tileproperties = data.tileproperties;
 
@@ -97,6 +107,7 @@ ADCore.Tiled.Tileset = ( function () {
         * Terrains of the tileset.
         * Not supported yet!
         * @property {array} terrains
+        * @public
         */
         this.terrains = data.terrains || [];
 
@@ -104,12 +115,14 @@ ADCore.Tiled.Tileset = ( function () {
         * Tiles of the tileset.
         * Not supported yet!
         * @property {object} tiles
+        * @public
         */
         this.tiles = data.tiles || {}; 
 
         /**
          * True if the map is disposed.
         * @property {Boolean} disposed
+        * @public
         */
         this.disposed = false;
     }

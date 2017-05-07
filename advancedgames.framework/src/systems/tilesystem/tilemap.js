@@ -4,13 +4,13 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+var ADCore = ADCore || {};
 
 /**
  * @namespace Tiled
  * @memberof ADCore
  * @static
  */
-var ADCore = ADCore || {};
 ADCore.Tiled = ADCore.Tiled || {};
 
 /**
@@ -49,77 +49,92 @@ this.Tilemap = ( function () {
 
         /**
         * @property {number} width - The width of the map (in tiles).
+        * @public
         */
         this.width = data.width;
 
         /**
         * @property {number} height - The height of the map (in tiles).
+        * @public
         */
         this.height = data.height;
 
         /**
         * @property {number} tilewidth - The base width of the tiles in the map (in pixels).
+        * @public
         */
         this.tilewidth = data.tilewidth;
         
         /**
         * @property {number} tileheight - The base height of the tiles in the map (in pixels).
+        * @public
         */
         this.tileheight = data.tileheight;
 
         /**
         * @property {number} worldWidth - The base width of the world (in pixels).
+        * @public
         */
         this.worldWidth = this.width * this.tilewidth;
 
         /**
         * @property {number} worldHeight - The base height of the world (in pixels).
+        * @public
         */
         this.worldHeight = this.height * this.tileheight;
 
         /**
         * @property {Orientation} orientation - The orientation of the map data (as specified in Tiled), usually 'orthogonal'.
         * @default Orientation.ORTHOGONAL - Currently forced to set on 'orthogonal' since the other types are not supported yet! 
+        * @public
         */
         this.orientation = ADCore.Tiled.Orientation.ORTHOGONAL;
 
         /**
          * @property {TileLayer} mainLayer - The main layer of the tilemap. Set in Tiled by custom property: main (boolean).
+         * @public
          */
         this.mainLayer = null;
         
         /**
         * @property {array} layers - An array of Tilemap layer data.
+        * @public
         */
         this.layers = data.layers;
         
         /**
         * @property {array} tilesets - An array of Tilesets.
+        * @public
         */
         this.tilesets = data.tilesets;
 
         /**
         * @property {Number} backgroundColor - The background color of the map.
+        * @public
         */
         this.backgroundColor = data.backgroundColor;
 
         /**
         * @property {string} renderorder - The render order of the map.
+        * @public
         */
         this.renderorder = data.renderorder;
 
         /**
         * @property {object} properties - Tileset-specific properties that are typically defined in the Tiled editor.
+        * @public
         */
         this.properties = data.properties;
 
         /**
         * @property {Number} nextobjectid - The next object id of the map.
+        * @public
         */
         this.nextobjectid = data.nextobjectid;
             
         /**
         * @property {Boolean} disposed - Is the map disposed
+        * @public
         */
         this.disposed = false;
 
