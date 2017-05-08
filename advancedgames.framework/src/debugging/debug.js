@@ -20,6 +20,7 @@ ADCore.Debug = ( function () {
         /**
          * @property {Boolean} ENABLED
          * @public
+         * @default false
          */
         this.ENABLED = false;
     }

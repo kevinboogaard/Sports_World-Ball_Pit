@@ -7,11 +7,21 @@
 var ADCore = ADCore || {};
 
 /**
- * @namespace Tiled
- * @memberof ADCore
- * @static
+ * @namespace
+ * @name Tiled
  */
 ADCore.Tiled = ADCore.Tiled || {};
+
+/**
+ * @namespace 
+ * @memberof Tiled
+ * @name LayerTypes
+ */
+ADCore.Tiled.LayerTypes = {
+    IMAGE: "imagelayer",
+    TILE: "tilelayer",
+    OBJECT: "objectgroup"
+};
 
 /**
  * Enum for map orientations.
@@ -20,17 +30,14 @@ ADCore.Tiled = ADCore.Tiled || {};
  * @typedef {(String)} Orientation
  */
 ADCore.Tiled.Orientation = {
-    /** @member {String} */
     /** Orthogonal orientation of the map */
-    ORTHOGONAL = "orthogonal",
+    ORTHOGONAL: "orthogonal",
     
-    /** @member {String} */
     /** Isometric orientation of the map */
-    ISOMETRIC = "isometric",
+    ISOMETRIC: "isometric",
 
-    /** @member {String} */
     /** Staggered orientation of the map */
-    STAGGERED = "staggered"
+    STAGGERED: "staggered"
 };
 
 this.Tilemap = ( function () {

@@ -13,19 +13,39 @@ ADCore.Entity = (function () {
      * 
      * @class Entity
      * @constructor
+     * @abstract 
      * @param {Vector2} position - The position of the entity.
      */
     function Entity(position) {
+        if (this.constructor.name === Sprite.name) throw new Error("This class is an abstract class.");
+
+        /**
+         * @property {Integer} x
+         * @memberof Entity
+         * @public
+         * @instance
+         */
+         var x; // For documentation purposes.
+
+        /**
+         * @property {Integer} y
+         * @memberof Entity
+         * @public
+         * @instance
+         */
+        var y; // For documentation purposes.
 
         /**
          * @property {Vector2} position - The position of the entity.
          * @public
+         * @instance
          */
         this.position = position;
 
         /**
          * @property {Boolean} disposed - True if the entity has been disposed.
          * @public
+         * @instance
          */
         this.disposed = false;
 
@@ -56,11 +76,6 @@ ADCore.Entity = (function () {
      * @ignore
      */
     p.gettersAndSetters = function () {
-
-        /**
-         * @property {Integer} x
-         * @public
-         */
         this.Define("x", {
             "get": function () {
                 return this.position.x;
@@ -70,10 +85,6 @@ ADCore.Entity = (function () {
             }
         });
 
-        /**
-         * @property {Integer} y
-         * @public
-         */
         this.Define("y", {
             "get": function () {
                 return this.position.y;

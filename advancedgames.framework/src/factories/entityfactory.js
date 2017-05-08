@@ -7,9 +7,8 @@
 var ADCore = ADCore || {};
 
 /**
- * @namespace EntityFactory
- * @memberof ADCore
- * @static
+ * @namespace
+ * @name EntityFactory 
  */
 ADCore.EntityFactory = {};
 

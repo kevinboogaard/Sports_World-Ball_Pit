@@ -5,12 +5,6 @@
  * @ignore
  */
 var ADCore = ADCore || {};
-
-/**
- * @namespace Tiled
- * @memberof ADCore
- * @static
- */
 ADCore.Tiled = ADCore.Tiled || {};
 
 ADCore.Tiled.Tileset = ( function () {

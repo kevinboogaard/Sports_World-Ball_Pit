@@ -39,6 +39,7 @@ this.Listener = (function () {
      * Use the Listener.Listen() method to register your handler with the target of the event that lies along the appropriate event flow.
      * 
      * @method Listen
+     * @memberof Listener
      * @static
      * @param {Event} event
      * @param {Object} listener
@@ -54,6 +55,7 @@ this.Listener = (function () {
      * If the listener is called it will be automaticly removed from the list.  
      * 
      * @method ListenOnce
+     * @memberof Listener
      * @static
      * @param {Event} event
      * @param {Object} listener
@@ -69,6 +71,7 @@ this.Listener = (function () {
      * Private function to handle both of the Listen / ListenOnce methods. 
      * 
      * @method Listen
+     * @memberof Listener
      * @private
      * @param {Event} event
      * @param {Object} listener
@@ -95,6 +98,7 @@ this.Listener = (function () {
      * It is a good idea to remove any listeners that will no longer be used to prevent memory leaks from happening.
      * 
      * @method Mute
+     * @memberof Listener
      * @static
      * @param {Event} event
      * @param {Object} listener
@@ -112,6 +116,7 @@ this.Listener = (function () {
      * This function is mostly used on the end of a dispose function!
      * 
      * @method MuteAll
+     * @memberof Listener
      * @static
      * @param {Object} listener
      */
@@ -137,15 +142,16 @@ this.Listener = (function () {
      * The Listener.Dispatch() method can be used to dispatch a custom event object into the event flow.
      * 
      * @method Dispatch
+     * @memberof Listener
      * @static
      * @param {Event} event
      * @param {Object} caller
-     * @param {Object}  [arguments] - The arguments to give to the listeners.
+     * @param {Object}  [args] - The arguments to give to the listeners.
      * @param {boolean} [call_when_debug=false] - If you have debug mode on, you will console the dispatch.
      */
-    p.Dispatch = function (event, caller, arguments, call_when_debug) {
+    p.Dispatch = function (event, caller, args, call_when_debug) {
         var listeners = this._getListenersByEvent(event);
-        if ( call_when_debug ) call_when_debug = true; // Placeholder for the debug call.
+        if ( call_when_debug ) Debug.LogWarning("Listener.js: 148 not written yet"); // Placeholder for the debug call.
         if ( typeof event === "undefined" ) throw "Event is undefined!";
 
         var len = listeners.length;
@@ -158,13 +164,14 @@ this.Listener = (function () {
                     this.Mute( current.event, current.listener );
                 }
 
-                current.handler(caller, arguments);
+                current.handler(caller, args);
             }
         }
     };
 
     /**
      * @method HasListenerAddedEvent
+     * @memberof Listener
      * @private
      * @param {Object} listener
      * @param {Event} event
@@ -185,6 +192,7 @@ this.Listener = (function () {
 
     /**
      * @method GetListenersByEvent
+     * @memberof Listener
      * @private
      * @param {Event} event
      * @returns {Object}
@@ -195,6 +203,7 @@ this.Listener = (function () {
 
     /**
      * @method GetListenerIndex
+     * @memberof Listener
      * @private
      * @param {Object} listener
      * @param {Event} event
@@ -213,6 +222,7 @@ this.Listener = (function () {
 
     /**
      * @method GetListenerIndexes
+     * @memberof Listener
      * @private
      * @param {Object} listener
      * @param {Event} event

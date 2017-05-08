@@ -5,29 +5,7 @@
  * @ignore
  */
 var ADCore = ADCore || {};
-
-/**
- * @namespace Tiled
- * @memberof ADCore
- * @static
- */
 ADCore.Tiled = ADCore.Tiled || {};
-
-/**
- * Enum for Layer Types
- * @readonly
- * @memberof Tiled
- * @enum {String}
- * @typedef {(String)} LayerTypes
- */
-ADCore.Tiled.LayerTypes = ADCore.Tiled.LayerTypes || {};
-
-/**
- * @member {String}
- * @memberof LayerTypes
- * Objectlayer type
- */
-ADCore.Tiled.LayerTypes.OBJECT = "objectgroup";
 
 ADCore.Tiled.ObjectLayer = ( function () {
 
