@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'comfortaa';
+    src: url('../fonts/comfortaa-regular.eot');
+    src: url('../fonts/comfortaa-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/comfortaa-regular.woff2') format('woff2'),
+         url('../fonts/comfortaa-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'comfortaa';
+    src: url('../fonts/comfortaa-bold.eot');
+    src: url('../fonts/comfortaa-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/comfortaa-bold.woff2') format('woff2'),
+         url('../fonts/comfortaa-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'comfortaa';
+    src: url('.../fonts/comfortaa-light.eot');
+    src: url('../fonts/comfortaa-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/comfortaa-light.woff2') format('woff2'),
+         url('../fonts/comfortaa-light.ttf') format('truetype');
+    font-weight: light;
+    font-style: light;
+}
+
+@font-face {
+    font-family: 'dsdigi';
+    src: url('../fonts/dsdigi-regular.eot');
+    src: url('../fonts/dsdigi-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dsdigi-regular.woff2') format('woff2'),
+         url('../fonts/dsdigi-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dsdigi';
+    src: url('../fonts/dsdigi-bold.eot');
+    src: url('../fonts/dsdigi-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dsdigi-bold.woff2') format('woff2'),
+         url('../fonts/dsdigi-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'dsdigi';
+    src: url('../fonts/dsdigi-italic.eot');
+    src: url('../fonts/dsdigi-italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dsdigi-italic.woff2') format('woff2'),
+         url('../fonts/dsdigi-italic.ttf') format('truetype');
+    font-weight: italic;
+    font-style: italic;
+}

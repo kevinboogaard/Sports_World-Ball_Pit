@@ -15,10 +15,12 @@ ballpit.CoachView = (function () {
      * @param {CoachModel} model
      * @param {String} key
      */
-    function CoachView(model, key) {
-        ADCore.Display.call( this, model, key );
+    function CoachView(position, key, model) {
+        ADCore.Interface.call( this, position, key );
+
+        this.model = model;
     }
-    CoachView.prototype = Object.create(ADCore.Display.prototype);
+    CoachView.prototype = Object.create(ADCore.Interface.prototype);
     CoachView.prototype.constructor = CoachView;
     var p = CoachView.prototype;
 

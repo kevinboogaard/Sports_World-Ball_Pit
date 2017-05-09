@@ -17,7 +17,7 @@ ADCore.Timer = (function () {
         this.multiplier = multiplier;
         this._callback = callback;
 
-        this._count = startTime; 
+        this.count = startTime; 
         this._timerStarted = false;
     }
     var p = Timer.prototype;
@@ -40,7 +40,7 @@ ADCore.Timer = (function () {
      * 'Reset'
      */
     p.Reset = function(){
-        this._count = 0;
+        this.count = 0;
     };
 
     /**'
@@ -48,9 +48,9 @@ ADCore.Timer = (function () {
      */
     p.Update = function(deltaTime){
         if(this._timerStarted === true){
-            this._count -= (deltaTime * this.multiplier);
+            this.count -= (deltaTime * this.multiplier);
 
-            if (this._count <= 0) {
+            if (this.count <= 0) {
                 ClearTimer(this);
                 this._callback();
             }

@@ -73,6 +73,12 @@
             "dimensions": {"width": 136, "height": 150},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
+        },
+         "stopwatch":{
+            "path": "ui/asset_stopwatch.png",
+            "dimensions": {"width": 78, "height": 77},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
         }
     }
 }

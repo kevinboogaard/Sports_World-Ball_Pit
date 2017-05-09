@@ -27,9 +27,9 @@ ADCore.Text = ( function () {
     };
 
     /**
-     * 'value'
+     * value
      * @returns {text}
-     * @param {string} 'val'
+     * @param {string} val
      */
     p.value = function ( val ) {
         this._text = val;
@@ -104,7 +104,7 @@ ADCore.Text = ( function () {
      * @returns {text}
      */
     p.finish = function () {
-        this._params.font = this._fontSize + "px " + this._fontName;
+        this._params.font = this._fontSize + "px dsdigi"; // + this._fontName;
 
         var text = new Phaser.Text( ADCore.phaser, this._position.x, this._position.y, this._text, this._params );
         text.anchor.set( this._anchor.x, this._anchor.y );

@@ -17,9 +17,15 @@ scene.Game = (function () {
         this.ballContainer = new ballpit.BallContainer();
         this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
 
-        this.coach = new ballpit.CoachModel(new Vector2(0, 0), this.taskHandler);
-        var coachView = new ballpit.CoachView(this.coach, "gridpart1");
-        this.addChild(coachView);
+        this.coach = new ballpit.CoachModel(this.taskHandler);
+
+        this.gameTimer = SetTimer(function () {
+            console.log("GAME DONE!");
+        }, Settings.Game.TIME, 0);
+        this.gameTimer.Stop();
+
+        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.coach);
+        this.addChild(this.interfaceLayer);
 
         this.ballController.Initialize();
 
@@ -46,6 +52,7 @@ scene.Game = (function () {
      */
     p.Render = function () {
         this.viewContainer.render();
+        this.interfaceLayer.Render();
     };
 
     /**
@@ -84,6 +91,7 @@ scene.Game = (function () {
 
         if (this.started === false) {
             this.coach.Start();
+            this.gameTimer.Start();
             this.started = true;
         } 
 
