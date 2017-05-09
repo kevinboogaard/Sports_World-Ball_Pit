@@ -5,7 +5,12 @@
  * @ignore
  */
 
-// ADCore is the frameworks namespace. Either use the existing ADCore namespace or create an object if it doesn't exist.
+/**
+ * ADCore is the frameworks namespace: Advanced Core.
+ * 
+ * @namespace
+ * @name ADCore
+ */
 var ADCore = ADCore || {};
 
 // Function that initializes the framework of ADCore. 
@@ -95,9 +100,10 @@ ADCore.EnableMutators = function ( prototype ) {
 
     /**
      * Makes a getter variable in the prototype.
+     * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
      * 
      * @method Get
-     * @memberof EnableMutators
+     * @memberof ADCore
      * @private
      * @param {string} propertyString - the getters name.
      * @param {Function} callback - the function to call if someone gets the getter.
@@ -110,6 +116,7 @@ ADCore.EnableMutators = function ( prototype ) {
 
     /**
      * Makes a setter variable in the prototype.
+     * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
      * 
      * @method Set
      * @memberof EnableMutators
@@ -125,9 +132,10 @@ ADCore.EnableMutators = function ( prototype ) {
     
     /**
      * Defines a variable in the prototype with both the get & set functionality.
+     * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
      * 
      * @method Define
-     * @memberof EnableMutators
+     * @memberof ADCore
      * @private
      * @param {string} propertyString - the variable's name.
      * @param {Object} callback - an object containing two methods: get and set.

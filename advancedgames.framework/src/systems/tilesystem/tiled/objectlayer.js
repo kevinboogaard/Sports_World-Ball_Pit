@@ -14,7 +14,6 @@ ADCore.Tiled.ObjectLayer = ( function () {
     *
      * @class ObjectLayer
      * @constructor
-     * @memberof Tiled
      * @private
      * @param {Tilemap} parent - Parent of the ObjectLayer.
      * @param {Object} data - ObjectLayer data.

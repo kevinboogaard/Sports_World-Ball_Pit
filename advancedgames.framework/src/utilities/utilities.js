@@ -5,19 +5,13 @@
  * @ignore
  */
 var ADCore = ADCore || {};
-
-/**
- * @namespace Utilities
- * @memberof ADCore
- */
 ADCore.Utilities = {};
 
 /**
  * Adds the ECMAScript 2015 support to IE11 aswell.
  * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger}
  * 
- * @method Number.isInteger
- * @memberof Utilities
+ * @method ADCore.Utilities.isInteger
  * @static
  * @param {int} val - value to be checked.
  * @returns {boolean} result
@@ -33,6 +27,29 @@ Number.isInteger = Number.isInteger || function ( val ) {
 };
 ADCore.Utilities.Number = ADCore.Utilities.Number || {};
 ADCore.Utilities.Number.isInteger = Number.isInteger;
+
+/**
+ * Adds the ECMAScript 2015 support to IE11 aswell.
+ * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger}
+ * 
+ * @method ADCore.Utilities.test
+ * @static
+ * @param {int} val - value to be checked.
+ * @returns {boolean} result
+ * 
+ * @example 
+ * Number.isInteger(10); 
+ * // => true
+ */
+Number.test = Number.test || function ( val ) {
+    return typeof val === "number" &&
+           isFinite( val ) &&
+           Math.floor( val ) === val;
+};
+ADCore.Utilities.Number = ADCore.Utilities.Number || {};
+ADCore.Utilities.Number.test = Number.test;
+
+
 
 /**
  * This method returns a random number between the specified values.
