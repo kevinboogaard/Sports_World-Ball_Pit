@@ -1,47 +1,45 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
-
 ballpit.Event = ballpit.Event || {};
+
+/**
+ * @event ON_TASK_DONE
+ */
 ballpit.Event.ON_TASK_DONE = "on_task_done";
+
+/**
+ * @event ON_TASK_DONE
+ */
 ballpit.Event.ON_TASK_SPAWN = "on_tast_spawn";
-ballpit.Event.ON_ROUND_BEGIN = "on_round_begin";
-ballpit.Event.ON_ROUND_DONE = "on_round_done";
 
 ballpit.CoachModel = (function () {
 
     /**'
-     * 'CoachModel'
+     * @class CoachModel
+     * @constructor 
+     * @param {Vector2} position
+     * @param {TaskHandler} taskhandler
      */
-    function CoachModel(json) {
-        this.list = json;
+    function CoachModel(position, taskhandler) {
 
-        this.openList = [];
-        this.closeList = [];
+        /**
+         * @property {TaskHandler} taskhandler
+         * @private
+         */
+        this._taskhandler = taskhandler;
 
-        this.current = null;
-
-        this._initialize();
-        this.PrepareRound();
+        /**
+         * @property {Vector2} position
+         * @public
+         */
+        this.position = position;
     }
     var p = CoachModel.prototype;
-
-    p._initialize = function () {
-        
-    };
-
-    p.CallTask = function(){
-
-    };
-
-    p.CloseTask = function(){
-
-    };
-
-    p.PrepareRound = function(){
-        /*for (var i = 0; i < this.list.length; i++) {
-            console.log(this.list.length);
-        }*/
-        console.log(this.list);
-    };
 
     return CoachModel;
 })();

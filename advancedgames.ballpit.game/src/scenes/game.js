@@ -11,9 +11,13 @@ scene.Game = (function () {
         this.addChild(this.viewContainer);
 
         this.tilemap = new Tilemap(Global.Loaded.level.map);
+        
+        this.taskHandler = new ballpit.TaskHandler(Global.Loaded.level.tasks);
 
         this.ballContainer = new ballpit.BallContainer();
         this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
+
+        this.coach = ballpit.EntityFactory.AddCoach(new Vector2(0, 0), "gridpart1", this.taskHandler);
 
         this.ballController.Initialize();
 
