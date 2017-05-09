@@ -14,23 +14,39 @@ this.Timer = (function () {
     }
     var p = Timer.prototype;
 
+    /**'
+     * 'Start'
+     */
     p.Start = function(){
         this._startTimer = true;
     };
     
+    /**'
+     * 'Stop'
+     */
     p.Stop = function(){
         this._startTimer = false;
     };
     
+    /**'
+     * 'Reset'
+     */
     p.Reset = function(){
         this.starttime = 0;
     };
 
+    /**'
+     * 'Update'
+     */
     p.Update = function(deltaTime){
         if(startTimer === true){
             this._counter += this.multiplier * deltaTime;
         }
     };
+
+    /**'
+     * 'Round'
+     */
     p.Round = function(){
         var roundtime = this._counter;
         this._rounds.push(roundtime);
