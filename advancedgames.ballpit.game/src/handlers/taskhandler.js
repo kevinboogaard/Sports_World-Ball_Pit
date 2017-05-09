@@ -22,15 +22,15 @@ ballpit.TaskHandler = (function() {
     /**
      * @class TaskHandler
      * @constructor
-     * @param {Array} tasks - Lists of tasks with the tasks that come in the current level.
+     * @param {Array} stages - Lists of stages with the stages that come in the current level.
      */
-    function TaskHandler(tasks) {
+    function TaskHandler(stages) {
         
         /**
-         * @property {Array} tasks
+         * @property {Array} stages
          * @private
          */
-        this._tasks = tasks;
+        this._stages = stages;
     }
     var p = TaskHandler.prototype;
 
@@ -40,7 +40,33 @@ ballpit.TaskHandler = (function() {
      * @public
      */
     p.GetNewStage = function () {
+        var stage = [];
 
+        var difficulty_len = this._stages.length;
+        for (var i = 0; i< difficulty_len; i++) {
+            var difficulty = this._stages[i];
+
+            var tasks_len = difficulty.length;
+            for (var j = 0; j < tasks_len; j++) {
+                var task = difficulty[j];
+
+                var type = task.type;
+                var amount = task.amount;
+
+                if (type === "random") {
+                    var keys = Object.keys(ballpit.ballTypes);
+                    type = ballpit.ballTypes[keys[ keys.length * Math.random() << 0]];
+                } 
+
+                if (typeof amount === 'object') {
+                    amount = Math.randomRange(task.amount.min, task.amount.max);
+                }
+
+                stage.push({ "type": type, "amount": amount });
+            }
+        }
+
+        return stage;
     };
 
     return TaskHandler;

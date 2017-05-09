@@ -1,13 +1,22 @@
-this.Stopwatch = (function () {
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
+var ADCore = ADCore || {};
 
-    /**'
-     * 'Function / stopwatch name'
-     * 
+ADCore.Stopwatch = (function () {
+
+    /**
+     * @class Stopwatch
+     * @constructor
      */
     function Stopwatch() {
-        this.elapsed = null;
-        this._startwatch = false;
+        this.elapsed = 0;
 
+        this._watchStarted = false;
+        this._rounds = [];
     }
     var p = Stopwatch.prototype;
 
@@ -15,14 +24,14 @@ this.Stopwatch = (function () {
      * 'Start'
      */
     p.Start = function(){
-        this._startwatch = true;
+        this._watchStarted = true;
     };
 
     /**'
      * 'Stop'
      */
     p.Stop = function(){
-        this._startwatch = false;
+        this._watchStarted = false;
     };
 
     /**'
@@ -33,10 +42,19 @@ this.Stopwatch = (function () {
     };
 
     /**'
+     * 'Round'
+     */
+    p.Round = function(){
+        var elapsed = this.elapsed;
+        this._rounds.push(elapsed);
+        this.elapsed = 0;
+    };
+
+    /**'
      * 'Update'
      */
     p.Update = function(deltaTime){
-        if(this._startwatch === true){
+        if(this._watchStarted === true){
             this.elapsed += deltaTime;
         }
     };

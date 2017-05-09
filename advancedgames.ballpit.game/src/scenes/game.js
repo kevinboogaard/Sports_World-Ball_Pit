@@ -22,6 +22,7 @@ scene.Game = (function () {
         this.ballController.Initialize();
 
         this.selected = null;
+        this.started = false;
 
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
@@ -78,6 +79,11 @@ scene.Game = (function () {
      */
     p._trySwap = function (current, target) {
         if (!current.neighbours.contains(target)) return;
+
+        if (this.started === false) {
+            this.coach.Start();
+            this.started = true;
+        } 
 
         if (this.ballController.CanSwap(current, target)) {
             current.occupier.beginning = current;

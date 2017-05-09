@@ -24,6 +24,8 @@ function Initialize() {
     this.sceneLoader = new ADCore.Sceneloader();
     // Create the preloader system that preloads the resources in a json file.
     this.preloader = new ADCore.Preloader(ADCore.phaser);
+    // Create a container for all the counters.
+    this.counterContainer = new ADCore.CounterContainer();
 }
 
  /**
@@ -81,6 +83,8 @@ function _update () {
         deltaTime = 1/60; // Seems to run weird on mobile when using Time.Elapsed
     }
 
+    // Update CounterContainer.
+    this.counterContainer.Update( deltaTime );
     // Update main.
     this.main.Update( deltaTime );
     // Update Input system aswell.
@@ -118,4 +122,28 @@ ADCore.EnableMutators = function ( prototype ) {
     };
 
     prototype.gettersAndSetters();
+};
+
+this.SetTimer = function (callback, starttime, multiplier) {
+    var timer = new ADCore.Timer(starttime, multiplier | 1, callback);
+    Listener.Dispatch(ADCore.Event.ON_COUNTER_ADD, this, { "counter": timer });
+
+    timer.Start();
+    return timer;
+};
+
+this.SetStopwatch = function () {
+    var stopwatch = new ADCore.Stopwatch();
+    Listener.Dispatch(ADCore.Event.ON_COUNTER_ADD, this, { "counter": stopwatch });
+
+    stopwatch.Start();
+    return stopwatch;
+};
+
+this.ClearTimer = function(timer) {
+    this.counterContainer.RemoveCounter(timer);
+};
+
+this.ClearStopwatch = function (stopwatch) {
+    this.counterContainer.RemoveCounter(stopwatch);
 };
