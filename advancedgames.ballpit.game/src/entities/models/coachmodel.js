@@ -32,22 +32,15 @@ ballpit.CoachModel = (function () {
     /**'
      * @class CoachModel
      * @constructor 
-     * @param {Vector2} position
      * @param {TaskHandler} taskhandler
      */
-    function CoachModel(position, taskhandler) {
+    function CoachModel(taskhandler) {
 
         /**
          * @property {TaskHandler} taskhandler
          * @private
          */
         this._taskhandler = taskhandler;
-
-        /**
-         * @property {Vector2} position
-         * @public
-         */
-        this.position = position;
 
         /**
          * @property {Boolean} inTraining
