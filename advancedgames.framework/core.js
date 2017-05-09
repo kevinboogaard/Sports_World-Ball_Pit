@@ -65,7 +65,7 @@ function _create () {
         this.main.Start();
     }.bind(this), 1);
 }
-
+ 
  /**
  * 'Update'
  * @private
@@ -74,7 +74,12 @@ function _create () {
  * I use this function to update the main and to update the input.
  */
 function _update () {
-    var deltaTime = ADCore.phaser.time.elapsed / 1000;
+    var deltaTime;
+    if (ADCore.phaser.device.desktop) {
+        deltaTime = ADCore.phaser.time.elapsed / 1000;
+    } else {
+        deltaTime = 1/60; // Seems to run weird on mobile when using Time.Elapsed
+    }
 
     // Update main.
     this.main.Update( deltaTime );
