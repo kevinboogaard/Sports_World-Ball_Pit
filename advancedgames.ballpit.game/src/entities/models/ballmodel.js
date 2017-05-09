@@ -4,6 +4,7 @@ ballpit.Event = ballpit.Event || {};
 ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
 ballpit.Event.ON_BALL_STATE_CHANGE = "on_ball_state_change";
 ballpit.Event.ON_BALL_DESTROY = "on_ball_destroy";
+ballpit.Event.ON_BALL_SWAP_WRONG = "on_ball_swap_wrong";
 
 ballpit.ballTypes = ballpit.ballTypes || {};
 ballpit.ballTypes.SOCCERBALL = "soccerball";
@@ -42,7 +43,7 @@ ballpit.BallModel = (function () {
     /**
      * 'Update'
      */
-    p.Update = function () {
+    p.Update = function (deltaTime) {
         if (this.isMoving) {
             var distance = this.position.Distance(this._destination);
             
@@ -50,7 +51,6 @@ ballpit.BallModel = (function () {
             var direction = difference.Normalize();
 
             if (distance >= 10) {
-                var deltaTime = ADCore.phaser.time.elapsed / 1000;
                 var vel = direction.Exponentiate(this.velocity * deltaTime);
 
                 this.position.Substract(vel);
