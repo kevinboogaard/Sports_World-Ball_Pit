@@ -1,11 +1,23 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
 ballpit.LevelLoader = ( function () {
 
     /**
-     * 'LevelLoader'
+     * @class ballpit.LevelLoader
+     * @constructor
      */
     function LevelLoader() {
+        /**
+         * @property {number} level 
+         * @private
+         * @default -1
+         */
         this._level = -1;
 
         ADCore.EnableMutators( this );
@@ -13,7 +25,9 @@ ballpit.LevelLoader = ( function () {
     var p = LevelLoader.prototype;
 
     /**
-     * 'Initialize'
+     * @method Initialize
+     * @memberof ballpit.LevelLoader
+     * @public
      */
     p.Initialize = function () {
         var load = ADCore.phaser.load;
@@ -21,7 +35,9 @@ ballpit.LevelLoader = ( function () {
     };
 
     /**
-     * 'LoadLevel'
+     * @method LoadLevel
+     * @memberof ballpit.LevelLoader
+     * @public
      */
     p.LoadLevel = function () {
         if (Debug.ENABLED && Debug.FORCE_LOAD_DEBUG_LEVEL) this.level = Debug.DEBUG_LEVEL;
@@ -35,7 +51,6 @@ ballpit.LevelLoader = ( function () {
     
     /**
      * 'OnLoadUpdate'
-     * @private
      */
     /*
     p._onLoadUpdate = function ( progress ) {
@@ -47,7 +62,8 @@ ballpit.LevelLoader = ( function () {
     */
 
     /**
-     * 'OnLoadComplete'
+     * @method OnLoadComplete
+     * @memberof ballpit.LevelLoader
      * @private
      */
     p._onLoadComplete = function ( ) {
@@ -62,7 +78,12 @@ ballpit.LevelLoader = ( function () {
     };
 
     /**
-     * 'Getters And Setters'
+     * Getters & Setters internal function.
+     * 
+     * @method GettersAndSetters
+     * @memberof ballpit.LevelLoader
+     * @private 
+     * @ignore
      */
     p.gettersAndSetters = function () {
         this.Define( "level", {

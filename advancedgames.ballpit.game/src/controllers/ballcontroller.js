@@ -1,21 +1,58 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
-ballpit.Event = ballpit.Event || {};
-ballpit.Event.ON_BALL_ALIGN = "on_ball_align";
-ballpit.Event.ON_BALLS_SPAWNED = "on_balls_spawned";
+/**
+ * Enum for ball events.
+ * @readonly
+ * @enum {String}
+ * @typedef {(String)} events
+ */
+ballpit.Event =  {
+    
+    /** The allign event of the balls */
+    ON_BALL_ALIGN : "on_ball_align",
+
+    /** The spawned event of the balls */
+    ON_BALLS_SPAWNED : "on_balls_spawned"
+}
 
 ballpit.BallController = (function () {
 
-    /**'
-     * 'BallController'
-     * @param {TileLayer} 'layer'
-     * @param {BallContainer} 'ballcontainer'
+     /**
+     * @class ballpit.BallController
+     * @constructor
+     * @param {layer} layer - The layers
+     * @param {ballContainer} ballContainer - The ball controller
      */
     function BallController(layer, ballContainer) {
+                
+        /**
+        * @property {layer} layer - The layers
+        * @public
+        */
         this._layer = layer;
+
+        /**
+        * @property {ballContainer} ballContainer - The ball controller
+        * @private
+        */
         this._ballContainer = ballContainer;
 
+        /**
+        * @property {rows} rows - The tile row
+        * @private
+        */
         this._rows = this._layer.tiledata;
+
+        /**
+        * @property {helper} helper - The helper 
+        * @private
+        */
         this._helper = new ballpit.BallHelper(this._layer, this._ballContainer);
 
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this), this);
@@ -23,10 +60,10 @@ ballpit.BallController = (function () {
     }
     var p = BallController.prototype;
 
-    /**
-     * 'Initialize'
-     * Method to Initialize the balls on the grid.
-     * Use this method before you allow the player to move balls!
+     /**
+     * @method Initialize
+     * @memberof ballpit.BallController
+     * @public
      */
     p.Initialize = function () {
         var len = this._layer.width;
@@ -35,10 +72,12 @@ ballpit.BallController = (function () {
         }
     };
     
-    /**
-     * 'Swap'
-     * @param {TileModel} 'selected'.
-     * @param {TileModel} 'targeted'.
+     /**
+     * @method Swap
+     * @memberof ballpit.BallController
+     * @public
+     * @param {Tile} selected - the selected tile
+     * @param {Tile} targeted - the target tile
      */
     p.Swap = function (selected, targeted) {
         if (selected === targeted) throw new Error("Can't swap the selected with the selected");
@@ -59,10 +98,12 @@ ballpit.BallController = (function () {
         if (targeted_occupier) targeted_occupier.SwapTo(selected.position);
     };
 
-    /**
-     * 'Move'
-     * @param {TileModel} 'selected'.
-     * @param {TileModel} 'targeted'.
+     /**
+     * @method Move
+     * @memberof ballpit.BallController
+     * @public
+     * @param {Tile} selected - the selected tile
+     * @param {Tile} targeted - the target tile
      */
     p.Move = function (selected, targeted) {
         if (selected === targeted) throw new Error("Can't swap the selected with the selected");
@@ -80,9 +121,11 @@ ballpit.BallController = (function () {
         if (targeted_occupier) targeted_occupier.MoveTo(selected.position);
     };
 
-    /**
-     * 'DropColumn'
-     * @param {Int} 'tileX'.
+     /**
+     * @method DropColumn
+     * @memberof ballpit.BallController
+     * @public
+     * @param {number} tileX - the horizontal of the tile
      */
     p.DropColumn = function (tileX) {
         var len = this._rows.length;
@@ -102,9 +145,11 @@ ballpit.BallController = (function () {
         }
     };
 
-    /**
-     * 'DropBall'
-     * @param {TileModel} 'tile'.
+     /**
+     * @method DropBall
+     * @memberof ballpit.BallController
+     * @public
+     * @param {Tile} tile - The tile
      */
     p.DropBall = function (tile) {
         var lowest = this._helper.GetLowestBeneath(tile);
@@ -114,10 +159,11 @@ ballpit.BallController = (function () {
             this.Move(tile, lowest);
         }
     };
-    
-    /**
-     * 'RestoreColumn'
-     * @param {Int} 'tileX'.
+     /**
+     * @method DropBall
+     * @memberof ballpit.BallController
+     * @public
+     * @param {number} tileX -  the horizontal of the tile
      */
     p.RestoreColumn = function (tileX) {
         var y_spawns = [];
@@ -148,18 +194,22 @@ ballpit.BallController = (function () {
         }
     };
    
-    /**
-     * 'CanSwap'
-     * @param {TileModel} 'tile'.
+     /**
+     * @method CanSwap
+     * @memberof ballpit.BallController
+     * @public
+     * @param {tile} tile -  the tile
      */
     p.CanSwap = function (tile) {
         return (tile !== null && tile.occupier instanceof ballpit.BallModel);
     };
 
-    /**
-     * 'OnBallDestinationReached'
-     * @param { {} } 'caller'.
-     * @param { {BallModel}: "ball" } 'params'.
+     /**
+     * @method OnBallDestinationReached
+     * @memberof ballpit.BallController
+     * @private
+     * @param {caller} caller -  the caller
+     * @param {params} params -  the params
      */
     p._onBallDestinationReached = function (caller, params) {
         var tile_current = this._layer.GetTileByOccupier(params.ball);
@@ -192,10 +242,12 @@ ballpit.BallController = (function () {
         }
     };
 
-    /**
-     * 'OnBallAlign'
-     * @param { {} } 'caller'.
-     * @param { {TileModel}: "owner", {TileModel[]}: "aligned" } 'params'.
+     /**
+     * @method OnBallAlign
+     * @memberof ballpit.BallController
+     * @private
+     * @param {caller} caller -  the caller
+     * @param {params} params -  the params
      */
     p._onBallAlign = function (caller, params) {
         var tiles = params.aligned;
@@ -223,7 +275,9 @@ ballpit.BallController = (function () {
     };
 
     /**
-     * 'Dispose'
+     * @method Dispose
+     * @memberof ballpit.BallModel
+     * @public
      */
     p.dispose = function () {
         throw new Error("NOT MADE YET");

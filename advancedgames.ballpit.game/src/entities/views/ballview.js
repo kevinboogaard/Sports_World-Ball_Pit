@@ -1,3 +1,9 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
 ballpit.ballAnimations = ballpit.ballAnimations || {};
@@ -8,10 +14,10 @@ ballpit.ballAnimations.SWIPE_FAIL = "swipefail";
 ballpit.BallView = (function () {
 
     /**
-     * BallView class.
-     * @extends Display,
-     * @param {TileModel} model.
-     * @param {String} key.
+     * @class ballpit.BallView
+     * @constructor
+     * @param {BallModel} model - The model of the ball
+     * @param {String} key - The key of the ballsprite
      */
     function BallView(model, key) {
         ADCore.Display.call( this, model, key );
@@ -23,10 +29,14 @@ ballpit.BallView = (function () {
     BallView.prototype.constructor = BallView;
     var p = BallView.prototype;
 
-    /**
-     * 'OnStateChange'
-     * @params {BallModel} 'caller'
-     * @params { { BallStates } : "state" } 'params'
+     /**
+     * @method OnStateChange
+     * @memberof ballpit.BallView
+     * @private
+     * @listens Event.ON_BALL_STATE_CHANGE
+     * @param {Object} caller -  Dispatcher of the event.
+     * @param {Object} params - The given parameters.
+     * @param {String} params.state - The new state.
      */
     p._onStateChange = function (caller, params) {
         switch (params.state) {
@@ -36,10 +46,14 @@ ballpit.BallView = (function () {
         }
     };
 
-    /**
-     * 'OnStateChange'
-     * @params {BallModel} 'caller'
-     * @params { {Function}: "callback" } 'params'
+     /**
+     * @method OnDestroy
+     * @memberof ballpit.BallView
+     * @private
+     * @listens Event.ON_BALL_DESTROY
+     * @param {Object} caller -  Dispatcher of the event.
+     * @param {Object} params - The given parameters.
+     * @param {String} params.callback - A callback is a functions that is executed in response to the event.
      */
     p._onDestroy = function (caller, params) {
         //var animation = this.Play(ballpit.ballAnimations.PLOP);
@@ -52,8 +66,10 @@ ballpit.BallView = (function () {
         params.callback();
     };
 
-    /**
-     * 'Dispose'
+     /**
+     * @method Dispose
+     * @memberof ballpit.BallView
+     * @public
      */
     p.__display_dispose = p.Dispose;
     p.Dispose = function () {

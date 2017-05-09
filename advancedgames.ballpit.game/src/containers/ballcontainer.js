@@ -1,17 +1,26 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
 ballpit.BallContainer = (function () {
 
-    /**'
-     * 'BallContainer'
+     /**
+     * @class ballpit.BallContainer
+     * @constructor
      */
     function BallContainer() {
         this.balls = [];
     }
     var p = BallContainer.prototype;
     
-    /**
-     * 'Update' 
+     /**
+     * @method Update
+     * @memberof ballpit.BallContainer
+     * @public
      */
     p.Update = function () {
         var len = this.balls.length;
@@ -22,9 +31,11 @@ ballpit.BallContainer = (function () {
     };
 
     /**
-     * 'AddBall'
-     * @param {vector2} 'position'
-     * @param {balltype} 'type'
+     * @method AddBall
+     * @memberof ballpit.BallContainer
+     * @public
+     * @param {Vector2} position - the position of the added ball
+     * @param {type} type - The type of a ball
      */
     p.AddBall = function(position,type){
         var ballModel = new ballpit.EntityFactory.AddBall(position,type);
@@ -33,8 +44,10 @@ ballpit.BallContainer = (function () {
     };
 
     /**
-     * 'AddRandomBall'
-     * @param {vector2} 'position'
+     * @method AddRandomBall
+     * @memberof ballpit.BallContainer
+     * @public
+     * @param {Vector2} position - the position of the added ball
      */
     p.AddRandomBall = function (position) {
         var keys = Object.keys(ballpit.ballTypes);
@@ -42,10 +55,12 @@ ballpit.BallContainer = (function () {
 
         return this.AddBall(position, randomType);
     };
-
-     /**
-     * 'AddBall'
-     * @param {ball} 'ball'
+    
+    /**
+     * @method RemoveBall
+     * @memberof ballpit.BallContainer
+     * @public
+     * @param {ball} ball - the ball
      */
     p.RemoveBall = function(ball){
         var index = this.balls.indexOf(ball);

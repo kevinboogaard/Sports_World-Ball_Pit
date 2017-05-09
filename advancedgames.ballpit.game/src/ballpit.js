@@ -1,17 +1,28 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
 ballpit.Core = ( function () {
 
     /**
-     * 'Core'
+     * @class ballpit.Core
+     * @constructor
      */
     function Core() {
         this.levelLoader = new ballpit.LevelLoader();
     }
     var p = Core.prototype;
-
-    /**
-     * 'Start'
+    
+     /**
+     * This function starts the game scene
+     *    
+     * @method Start
+     * @memberof ballpit.Core
+     * @public
      */
     p.Start = function () {
         this.levelLoader.Initialize();
@@ -28,8 +39,11 @@ ballpit.Core = ( function () {
         }.bind(this), sceneLoader.current);
     };
 
-    /**
-     * 'Update'
+     /**
+     * @method Update
+     * @memberof ballpit.Core
+     * @public
+     * @param {Number} deltaTime - The number deltatime is a multiplier to convert gametime in to realtime
      */
     p.Update = function ( deltaTime ) {
         var currentScene = sceneLoader.current;
@@ -38,8 +52,10 @@ ballpit.Core = ( function () {
         }
     };
 
-    /**
-     * 'Render'
+     /**
+     * @method Render
+     * @memberof ballpit.Core
+     * @public
      */
     p.Render = function () {
         var currentScene = sceneLoader.current;
