@@ -17,7 +17,9 @@ scene.Game = (function () {
         this.ballContainer = new ballpit.BallContainer();
         this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
 
-        this.coach = ballpit.EntityFactory.AddCoach(new Vector2(0, 0), "gridpart1", this.taskHandler);
+        this.coach = new ballpit.CoachModel(new Vector2(0, 0), this.taskHandler);
+        var coachView = new ballpit.CoachView(this.coach, "gridpart1");
+        this.addChild(coachView);
 
         this.ballController.Initialize();
 
