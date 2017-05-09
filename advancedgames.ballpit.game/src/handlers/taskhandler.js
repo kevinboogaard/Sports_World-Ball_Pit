@@ -5,17 +5,6 @@
  * @ignore
  */
 var ballpit = ballpit || {};
-ballpit.Event = ballpit.Event || {};
-
-/**
- * @event ON_STAGE_END
- */
-ballpit.Event.ON_STAGE_END = "on_round_begin";
-
-/**
- * @event ON_STAGE_END
- */
-ballpit.Event.ON_STAGE_END = "on_round_done";
 
 ballpit.TaskHandler = (function() {
 
@@ -49,24 +38,34 @@ ballpit.TaskHandler = (function() {
             var tasks_len = difficulty.length;
             for (var j = 0; j < tasks_len; j++) {
                 var task = difficulty[j];
-
-                var type = task.type;
-                var amount = task.amount;
-
-                if (type === "random") {
-                    var keys = Object.keys(ballpit.ballTypes);
-                    type = ballpit.ballTypes[keys[ keys.length * Math.random() << 0]];
-                } 
-
-                if (typeof amount === 'object') {
-                    amount = Math.randomRange(task.amount.min, task.amount.max);
-                }
-
-                stage.push({ "type": type, "amount": amount });
+                task = this._parseTask(task);
+                stage.push({ "type": task.type, "amount": task.amount });
             }
         }
 
         return stage;
+    };
+
+    /**
+     * @method ParseTask
+     * @memberof TaskHandler
+     * @private
+     * @param {Object} jsonTask
+     * @returns {Object} parsedTask
+     */
+    p._parseTask = function (jsonTask) {
+        var parsedTask = jsonTask;
+
+        if (parsedTask.type === "random") {
+            var keys = Object.keys(ballpit.ballTypes);
+            parsedTask.type = ballpit.ballTypes[keys[ keys.length * Math.random() << 0]];
+        } 
+
+        if (typeof parsedTask.amount === "object") {
+            parsedTask.amount = Math.randomRange(parsedTask.amount.min, parsedTask.amount.max);
+        }
+
+        return parsedTask;
     };
 
     return TaskHandler;
