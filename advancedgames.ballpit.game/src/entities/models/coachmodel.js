@@ -27,6 +27,22 @@ ballpit.Event.ON_STAGE_BEGIN = "on_stage_begin";
  */
 ballpit.Event.ON_STAGE_DONE = "on_stage_done";
 
+ballpit.Coach = ballpit.Coach || {};
+
+ballpit.Coach.Emotions = {
+    NEUTRAL: "neutral",
+    ANGRY: "angry",
+    HAPPY: "happy",
+    SUPER_ANGRY: "super_angry",
+    SUPER_HAPPY: "super_happy"
+};
+
+ballpit.Coach.States = {
+    IDLE: "idle",
+    WALK: "walk",
+    TALK: "talk"
+};
+
 ballpit.CoachModel = (function () {
 
     /**'
@@ -34,13 +50,8 @@ ballpit.CoachModel = (function () {
      * @constructor 
      * @param {TaskHandler} taskhandler
      */
-    function CoachModel(taskhandler) {
-
-        /**
-         * @property {TaskHandler} taskhandler
-         * @private
-         */
-        this._taskhandler = taskhandler;
+    function CoachModel(position, taskhandler) {
+        ADCore.Entity.call(this, position);
 
         /**
          * @property {Boolean} inTraining
@@ -49,6 +60,28 @@ ballpit.CoachModel = (function () {
          * @default false
          */
         this.inTraining = false;
+
+        /**
+         * @property {States} state
+         * @public
+         * @readonly
+         * @default States.IDLE
+         */
+        this.state = ballpit.Coach.States.IDLE;
+
+        /**
+         * @property {Emotions} emotion
+         * @public
+         * @readonly
+         * @default Emotions.NEUTRAL
+         */
+        this.emotion = ballpit.Coach.Emotions.NEUTRAL;
+
+        /**
+         * @property {TaskHandler} taskhandler
+         * @private
+         */
+        this._taskhandler = taskhandler;
 
         /**
          * @property {Array} tasks
@@ -65,6 +98,8 @@ ballpit.CoachModel = (function () {
 
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
     }
+    CoachModel.prototype = Object.create(ADCore.Entity.prototype);
+    CoachModel.prototype.constructor = CoachModel;
     var p = CoachModel.prototype;
 
     /**

@@ -17,7 +17,7 @@ scene.Game = (function () {
         this.ballContainer = new ballpit.BallContainer();
         this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
 
-        this.coach = new ballpit.CoachModel(this.taskHandler);
+        this.coach = ballpit.EntityFactory.AddCoach(new Vector2( Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height * 0.33), "soccer", this.taskHandler);
 
         this.gameTimer = SetTimer(function () {
             console.log("GAME DONE!");
@@ -26,7 +26,7 @@ scene.Game = (function () {
 
         this.scoreHolder = new ballpit.ScoreHolder();
 
-        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder, this.coach);
+        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder);
         this.addChild(this.interfaceLayer);
 
         this.ballController.Initialize();
