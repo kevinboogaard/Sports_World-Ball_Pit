@@ -94,7 +94,7 @@ ballpit.BallController = (function () {
                 if (x === tileX) {
                     var tile = row[x];
 
-                    if (this.CanSwap(tile)) {
+                    if (this.CanMove(tile)) {
                         this.DropBall(tile);
                     }
                 }
@@ -133,7 +133,7 @@ ballpit.BallController = (function () {
                 if (x === tileX) {
                     var tile = row[x];
 
-                    if (this.CanSwap(tile) === false) {
+                    if (this.CanMove(tile) === false) {
                         var position = this._layer.TilePositionToScreenPosition(new Vector2(tile.tileposition.x,  y_spawns[x]));
                         y_spawns[x]--;
 
@@ -148,12 +148,32 @@ ballpit.BallController = (function () {
         }
     };
    
+    p.CanMove = function (tile) {
+        return (tile !== null && tile.occupier instanceof ballpit.BallModel);
+    };
+
     /**
      * 'CanSwap'
      * @param {TileModel} 'tile'.
+     * @param {TileModel} 'target'.
      */
-    p.CanSwap = function (tile) {
-        return (tile !== null && tile.occupier instanceof ballpit.BallModel);
+    p.CanSwap = function (tile, target) {
+         if (!this.CanMove(tile) || !this.CanMove(target)) return false;
+
+        var ball_current = tile.occupier;
+        var ball_target = target.occupier;
+        
+        tile.occupier = ball_target;
+        target.occupier = ball_current;
+         
+        var tile_aligned = this._helper.GetAligned(tile);
+        var target_aligned = this._helper.GetAligned(target);
+
+        tile.occupier = ball_current;
+        target.occupier = ball_target;
+
+        if (tile_aligned.length === 0 && target_aligned.length === 0) return false;
+        else return true;
     };
 
     /**
@@ -165,30 +185,12 @@ ballpit.BallController = (function () {
         var tile_current = this._layer.GetTileByOccupier(params.ball);
         var ball_current = params.ball;
 
-        var tile_other = params.ball.beginning;
-        var ball_other = (tile_other) ? tile_other.occupier : null;
-
-        var aligned = this._helper.GetAligned(tile_current);
-
+        ball_current.position = tile_current.position.Clone();
+        ball_current.state = ballpit.BallStates.IDLING; 
+            
+        var aligned = this._helper.GetAligned(tile_current, ball_current.type);
         if (aligned.length > 0) {
-            ball_current.position = tile_current.position.Clone();
-            ball_current.state = ballpit.BallStates.IDLING; 
-
-            Debug.LogWarning("Warning: I'm idling the other his movement and thus 2 ball aligns can NEVER happen.");
-            if (ball_other) {
-                ball_other.position = tile_other.position.Clone();
-                ball_other.state = ballpit.BallStates.IDLING; 
-            }
-        
             Listener.Dispatch(ballpit.Event.ON_BALL_ALIGN, this, { "owner": tile_current, "aligned": aligned });
-        } else {
-            if (ball_current.state === ballpit.BallStates.SWAPPING) {
-                if (ball_other.state === ballpit.BallStates.REVERTING) {
-                    this.Move(tile_current, tile_other);
-                } else {
-                    ball_current.state = ballpit.BallStates.REVERTING;
-                }
-            }
         }
     };
 

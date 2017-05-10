@@ -9,6 +9,7 @@ scene.Tutorialscene = (function () {
         Phaser.Group.call(this, ADCore.phaser, null, "Tutorialscene");
 
         var halfWidth = Config.Core.Dimensions.width / 2;
+
         this.background = new ADCore.Interface(new Vector2(0, 0),"tutorialbackground");
         this.addChild(this.background);    
 
@@ -42,11 +43,13 @@ scene.Tutorialscene = (function () {
         this.startButton = new ADCore.Button(new Vector2(halfWidth, 580),"startbutton-inactive");
         this.startButton.onInputUp = this._onStartButtonInputUp.bind(this);
         this.addChild(this.startButton);
-
-    }
+        }
     Tutorialscene.prototype = Object.create(Phaser.Group.prototype);
     Tutorialscene.prototype.constructor = Tutorialscene; 
     var p = Tutorialscene.prototype;
+
+    p.Update = function () {
+    };
 
     p._onStartButtonInputUp = function () {
         Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this);

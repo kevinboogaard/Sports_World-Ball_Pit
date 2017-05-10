@@ -5,21 +5,25 @@
         <title>Sports world: Ball pit</title>
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="advancedgames.ballpit.game/css/fonts.css"/>
-
         <script src="plugins/phaser.js"></script>
+        <script src="plugins/webfont.js"></script>
+
         <script src="advancedgames.framework/src/utilities/utilities.js"></script>
         <script src="advancedgames.framework/src/utilities/rephraser.js"></script>
 
         <script src="advancedgames.framework/src/math/vector2.js"></script>
+        <script src="advancedgames.framework/src/math/timer.js"></script>
+        <script src="advancedgames.framework/src/math/stopwatch.js"></script>
 
         <script src="advancedgames.framework/src/debugging/debug.js"></script>
+
+        <script src="advancedgames.framework/src/factories/entityfactory.js"></script>
+        
+        <script src="advancedgames.framework/src/container/countercontainer.js"></script>
 
         <script src="advancedgames.framework/src/systems/eventlistener/listener.js"></script>
 
         <script src="advancedgames.framework/src/systems/pathfinding/astar.js"></script>
-
-        <script src="advancedgames.framework/src/factories/entityfactory.js"></script>
 
         <script src="advancedgames.framework/src/systems/loadersystem/preloader.js"></script>
         <script src="advancedgames.framework/src/systems/loadersystem/sceneloader.js"></script>
@@ -46,6 +50,8 @@
 
         <script src="advancedgames.framework/src/displays/tileview.js"></script>
 
+        <script src="advancedgames.ballpit.game/src/holders/scoreholder.js"></script>
+
         <script src="advancedgames.framework/core.js"></script>
 
         <script src="advancedgames.ballpit.settings/global.js"></script>
@@ -55,13 +61,20 @@
         <script src="advancedgames.ballpit.game/src/scenes/alex.scenes/gridscene.js"></script>
         <script src="advancedgames.ballpit.game/src/scenes/kevin.scenes/uiscene.js"></script>
         <script src="advancedgames.ballpit.game/src/scenes/kevin.scenes/tutorialscene.js"></script>
+        <script src="advancedgames.ballpit.game/src/scenes/kevin.scenes/coachscene.js"></script>
 
         <script src="advancedgames.ballpit.game/src/scenes/mainmenu.js"></script>
         <script src="advancedgames.ballpit.game/src/scenes/game.js"></script>
         <script src="advancedgames.ballpit.game/src/scenes/preloader.js"></script>
 
         <script src="advancedgames.ballpit.game/src/entities/models/ballmodel.js"></script>
+        <script src="advancedgames.ballpit.game/src/entities/models/coachmodel.js"></script>
         <script src="advancedgames.ballpit.game/src/entities/views/ballview.js"></script>
+        <script src="advancedgames.ballpit.game/src/entities/views/coachview.js"></script>
+        
+        <script src="advancedgames.ballpit.game/src/interface/interfacelayer.js"></script>
+        <script src="advancedgames.ballpit.game/src/interface/timer/watch.js"></script>
+        <script src="advancedgames.ballpit.game/src/interface/score/scoreboard.js"></script>
 
         <script src="advancedgames.ballpit.game/src/levelloader.js"></script>
         <script src="advancedgames.ballpit.game/src/ballpit.js"></script>
@@ -70,13 +83,17 @@
         <script src="advancedgames.ballpit.game/src/controllers/ballcontroller.js"></script>     
         <script src="advancedgames.ballpit.game/src/helpers/ballhelper.js"></script>        
 
-        <script src="advancedgames.ballpit.game/src/factories/entityfactory.js"></script>        
+        <script src="advancedgames.ballpit.game/src/factories/entityfactory.js"></script>       
+        <script src="advancedgames.ballpit.game/src/handlers/taskhandler.js"></script>   
 
         <script src="advancedgames.ballpit.settings/debugging/debugsettings.js"></script>
         <script src="advancedgames.ballpit.settings/debugging/debugcommands.js"></script>
+        
+        <script src="advancedgames.ballpit.game/fonts/fonts.js"></script>
     </head>
 
     <body style="margin: 0;">
+
         <script src="advancedgames.ballpit.game/main.js"></script>
     </body>
 </html>

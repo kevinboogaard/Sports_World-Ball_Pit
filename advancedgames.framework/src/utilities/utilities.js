@@ -1,6 +1,8 @@
 var ADCore = ADCore || {};
 ADCore.Utilities = {};
 
+ADCore.Utilities.PI = 3.14159265359;
+
 /**
  * Number.isInteger
  * @static
@@ -81,6 +83,39 @@ Array.prototype.pushAt = function (index, value) {
 Array.prototype.contains = function(item) {
     var index = this.indexOf(item);
     return (index > -1) ? true : false;
+};
+
+/**
+ * 'msToTime'
+ * @static
+ * @returns {int}
+ * @param {int} 'duration'
+ * @param {Array} settings - "hours, minutes, seconds, milliseconds";
+ */
+ADCore.msToTime = function ( duration, settings ) {    
+        if (!settings) settings = [ "hours", "minutes", "seconds", "milliseconds" ];
+
+        var time = { 
+            milliseconds: parseInt((duration%1)/100),
+            seconds: parseInt((duration/1)%60),
+            minutes: parseInt((duration/(1*60))%60),
+            hours: parseInt((duration/(1*60*60))%24)
+        };
+
+        time.hours = (time.hours < 10) ? "0" + time.hours : time.hours;
+        time.minutes = (time.minutes < 10) ? "0" + time.minutes : time.minutes;
+        time.seconds = (time.seconds < 10) ? "0" + time.seconds : time.seconds;
+
+        var timestring = "";
+        var settings_len = settings.length;
+
+        for (var i = 0; i < settings_len; i++ ) {
+            timestring += time[settings[i]];
+            
+            if (i + 1 < settings_len) timestring += ":";
+        }
+
+        return timestring;
 };
 
 ADCore.Utilities.HasObjectValue = function (object, value) {

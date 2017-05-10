@@ -12,12 +12,13 @@ ballpit.BallContainer = (function () {
     
     /**
      * 'Update' 
+     * @param {int} 'deltatime'
      */
-    p.Update = function () {
+    p.Update = function (deltatime) {
         var len = this.balls.length;
         for (var i = len - 1; i >= 0; i--) {
             var ball = this.balls[i];
-            ball.Update();
+            ball.Update(deltatime);
         }
     };
 
