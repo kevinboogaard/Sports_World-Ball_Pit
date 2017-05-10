@@ -1,6 +1,8 @@
 var ADCore = ADCore || {};
 ADCore.Utilities = {};
 
+ADCore.Utilities.PI = 3.14159265359;
+
 /**
  * Number.isInteger
  * @static
