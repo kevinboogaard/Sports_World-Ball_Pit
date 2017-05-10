@@ -34,10 +34,9 @@ ballpit.InterfaceLayer = (function () {
      * @private
      * @param {Timer} gameTimer 
      * @param {ScoreHolder} scoreHolder
-     * @param {CoachModel} coachModel 
      * @ignore
      */
-    p._initialize = function (gameTimer, scoreHolder, coachModel) {
+    p._initialize = function (gameTimer, scoreHolder) {
         this.watch = new ballpit.Watch(new Vector2(0,0), "stopwatch", gameTimer);
         this.addChild(this.watch);
 

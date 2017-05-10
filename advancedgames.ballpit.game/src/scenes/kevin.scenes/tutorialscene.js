@@ -1,5 +1,8 @@
 var scene = scene || {};
 
+scene.Names = scene.Names || {};
+scene.Names.TUTORIALSCENE = "Tutorialscene";
+
 scene.Tutorialscene = (function () {
 
     /**

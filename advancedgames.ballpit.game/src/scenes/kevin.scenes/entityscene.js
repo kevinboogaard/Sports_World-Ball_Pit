@@ -1,5 +1,8 @@
 var scene = scene || {};
 
+scene.Names = scene.Names || {};
+scene.Names.ENTITYSCENE = "Entityscene";
+
 scene.Entityscene = (function () {
 
     /**
