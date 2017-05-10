@@ -11,7 +11,7 @@ ballpit.Watch = (function () {
     /**'
      * @class Watch
      * @constructor 
-     * @extends Display
+     * @extends Interface
      * @param {Vector2} position
      * @param {String} key
      * @param {Timer} timer

@@ -1,9 +1,16 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
 ballpit.ScoreHolder = (function () {
 
     /**'
-     * 'ScoreHolder'
+     * @class ScoreHolder
+     * @constructor 
      */
     function ScoreHolder() {
         this._score = 0;
@@ -12,7 +19,6 @@ ballpit.ScoreHolder = (function () {
         ADCore.EnableMutators( this );
     }
     var p = ScoreHolder.prototype;
-
 
     /**'
      * 'Add'
@@ -24,6 +30,14 @@ ballpit.ScoreHolder = (function () {
         this._score += n;
     };
 
+    /**'
+     * 'CalculateScoreByAmountAligned'
+     * @param {int} 'amountAligned'
+     */
+    p.CalculateScoreByAmountAligned = function (amountAligned) {
+        return amountAligned;
+    };
+
     /**
      * 'gettersAndSetters'
      */
@@ -33,6 +47,10 @@ ballpit.ScoreHolder = (function () {
         });
 
         this.Get("highscore", function () {
+            return this._highscores[0];
+        });
+
+        this.Get("highscores", function () {
             return this._highscores;
         });
     };

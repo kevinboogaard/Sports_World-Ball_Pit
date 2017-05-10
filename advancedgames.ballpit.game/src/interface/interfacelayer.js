@@ -13,15 +13,17 @@ ballpit.InterfaceLayer = (function () {
      * @constructor 
      * @extends Phaser.Group
      * @param {Timer} gameTimer 
+     * @param {ScoreHolder} scoreHolder
      * @param {CoachModel} coachModel 
      */
-    function InterfaceLayer(gameTimer, coachModel) {
+    function InterfaceLayer(gameTimer, scoreHolder, coachModel) {
         Phaser.Group.call( this, ADCore.phaser, null, "Interface Layer" );
 
         this.watch = null;
+        this.scoreboard = null;
         this.coachView = null;
 
-        this._initialize(gameTimer, coachModel);
+        this._initialize(gameTimer, scoreHolder, coachModel);
     }
     InterfaceLayer.prototype = Object.create( Phaser.Group.prototype );
     InterfaceLayer.prototype.constructor = InterfaceLayer;
@@ -32,12 +34,16 @@ ballpit.InterfaceLayer = (function () {
      * @memberof InterfaceLayer
      * @private
      * @param {Timer} gameTimer 
+     * @param {ScoreHolder} scoreHolder
      * @param {CoachModel} coachModel 
      * @ignore
      */
-    p._initialize = function (gameTimer, coachModel) {
+    p._initialize = function (gameTimer, scoreHolder, coachModel) {
         this.watch = new ballpit.Watch(new Vector2(0,0), "stopwatch", gameTimer);
         this.addChild(this.watch);
+
+        this.scoreboard = new ballpit.ScoreBoard(new Vector2(0,0), "scoreboard", scoreHolder);
+        this.addChild(this.scoreboard);
 
         //this.coachView = new ballpit.CoachView(new Vector2(0,0), "gridpart1", coachModel);
         //this.addChild(this.coachView);
@@ -50,6 +56,7 @@ ballpit.InterfaceLayer = (function () {
      */
     p.Render = function () {
         this.watch.Render();
+        this.scoreboard.Render();
     };
 
     return InterfaceLayer;

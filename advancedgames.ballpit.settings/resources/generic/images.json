@@ -79,6 +79,12 @@
             "dimensions": {"width": 78, "height": 77},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
+        },
+         "scoreboard":{
+            "path": "ui/asset_scoreboard.png",
+            "dimensions": {"width": 126, "height": 99},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
         }
     }
 }

@@ -24,7 +24,9 @@ scene.Game = (function () {
         }, Settings.Game.TIME, 0);
         this.gameTimer.Stop();
 
-        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.coach);
+        this.scoreHolder = new ballpit.ScoreHolder();
+
+        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder, this.coach);
         this.addChild(this.interfaceLayer);
 
         this.ballController.Initialize();
@@ -34,6 +36,7 @@ scene.Game = (function () {
 
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
+        Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
     }
     Game.prototype = Object.create(Phaser.Group.prototype);
     Game.prototype.constructor = Game; 
@@ -82,12 +85,27 @@ scene.Game = (function () {
     };
 
     /**
+     * @method OnBallAlign
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @param {TileModel} params.owner
+     * @param {Array} params.aligned
+     * @ignore
+     */
+    p._onBallAlign = function (caller, params) {
+        var amount = params.aligned.length + 1; // + 1 = owner.
+        var score = this.scoreHolder.CalculateScoreByAmountAligned(amount);
+        this.scoreHolder.Add(score);
+    };
+
+    /**
      * 'TrySwap'
      * @param {TileModel} 'current'
      * @param {TileModel} 'target'
      */
     p._trySwap = function (current, target) {
-        if (!current.neighbours.contains(target)) return;
+        if (!current || !target ||  !current.neighbours.contains(target)) return;
 
         if (this.started === false) {
             this.coach.Start();
