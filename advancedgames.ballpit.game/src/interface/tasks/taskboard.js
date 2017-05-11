@@ -34,7 +34,7 @@ ballpit.TaskBoard = (function () {
      * @ignore
      */
     p._initialize = function () { 
-        this._text = new ADCore.Text().position(new Vector2(30, 10)).size(12).font("comfortaa").wrap(this.width).finish();
+        this._text = new ADCore.Text().position(new Vector2(30, 10)).weight("bold").size(12).font("comfortaa").wrap(this.width).finish();
         this._text.anchor.set(0, 0);
         this.addChild(this._text);
     };
@@ -45,18 +45,22 @@ ballpit.TaskBoard = (function () {
      * @public
      */
     p.Render = function () {
-        if (this._coach.activeTask !== this._currentTask) {
-            this._currentTask = this._coach.activeTask; 
+        if (this._coach.activeTask) {
+            if (this._coach.activeTask !== this._currentTask) {
+                this._currentTask = this._coach.activeTask; 
 
-            var message = "Collect " + this._currentTask.amount + " " + this._currentTask.type + "s";
-            var speed = 50;
+                var message = "Collect " + this._currentTask.amount + " " + this._currentTask.type + "s";
+                var speed = 50;
 
-            if (this.IsTalking()) { 
-                this.Mute();
-                this.Talk(message, speed);
-            } else {
-                this.Talk(message, speed);
+                if (this.IsTalking()) { 
+                    this.Mute();
+                    this.Talk(message, speed);
+                } else {
+                    this.Talk(message, speed);
+                }
             }
+        } else {
+            this._text.text = "";
         }
     };
 

@@ -28,6 +28,22 @@ ADCore.Timer = (function () {
     p.Start = function(){
         this._timerStarted = true;
     };
+
+    /**
+     * @method Add
+     * @memberof Timer
+     */
+    p.Add = function(amount){
+        this.count += amount;
+    };
+
+    /**
+     * @method Substract
+     * @memberof Timer
+     */
+    p.Substract = function(amount){
+        this.count -= amount;
+    };
     
     /**'
      * 'Stop'

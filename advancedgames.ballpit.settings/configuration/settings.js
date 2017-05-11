@@ -5,6 +5,8 @@ var Settings = {};
 
 Settings.Game = {};
 Settings.Game.TIME = 60;
+Settings.Game.TIME_PER_STAGE = 40;
+Settings.Game.DELAY_PER_STAGE = 10;
 
 /**
  * value = pixels per second.

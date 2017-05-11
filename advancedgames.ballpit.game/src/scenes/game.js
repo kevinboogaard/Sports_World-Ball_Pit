@@ -45,6 +45,8 @@ scene.Game = (function () {
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
+        Listener.Listen(ballpit.Event.ON_STAGE_BEGIN, this, this._onStageBegin.bind(this));
+        Listener.Listen(ballpit.Event.ON_STAGE_DONE, this, this._onStageDone.bind(this));
     }
     Game.prototype = Object.create(Phaser.Group.prototype);
     Game.prototype.constructor = Game; 
@@ -76,8 +78,20 @@ scene.Game = (function () {
             var target = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
             this._trySwap(this.selected, target);
             this.selected = null;
+            
+            var glow = new ADCore.Interface(new Vector2(0,0), "ballselect");
+            glow.x = target.x - 8;
+            glow.y = target.y - 8;
+            this.addChild(glow);
+            glow.Play("glow", 60, false, true);
         } else {
             this.selected = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
+
+            var glow = new ADCore.Interface(new Vector2(0,0), "ballselect");
+            glow.x = this.selected.x - 8;
+            glow.y = this.selected.y - 8;
+            this.addChild(glow);
+            glow.Play("glow", 60, false, true);
         }
     };
 
@@ -108,6 +122,33 @@ scene.Game = (function () {
     };
 
     /**
+     * @method OnStageBegin
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @param {TileModel} params.owner
+     * @param {Array} params.aligned
+     * @ignore
+     */
+    p._onStageBegin = function(caller, params) {
+        this.gameTimer.multiplier = 2;
+        this.interfaceLayer.watch.text.tint = 0xFF0000;
+    };
+
+    /**
+     * @method OnStageDone
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @ignore
+     */
+    p._onStageDone = function(caller, params) {
+        this.gameTimer.multiplier = 1;
+        this.interfaceLayer.watch.text.tint = 0xFFFFFF;
+        this.gameTimer.Add(Settings.Game.TIME_PER_STAGE);
+    };
+
+    /**
      * 'TrySwap'
      * @param {TileModel} 'current'
      * @param {TileModel} 'target'
@@ -127,8 +168,8 @@ scene.Game = (function () {
 
             this.ballController.Swap(current, target);
         } else if (this.ballController.CanMove(target)){
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current);
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target);
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current.occupier);
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target.occupier);
         }
     };
 

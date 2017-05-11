@@ -112,7 +112,6 @@ ballpit.CoachModel = (function () {
         if (this._tasks.length === 0) {
             this._tasks = this._taskhandler.GetNewStage();
             Listener.Dispatch(ballpit.Event.ON_STAGE_BEGIN, this);
-            console.log("NEW STAGE: " + this._tasks[0].type + ", amount: " + this._tasks[0].amount );
         }
 
         if(this._stopwatch) this._stopwatch.Start();
@@ -166,7 +165,6 @@ ballpit.CoachModel = (function () {
             current_task.amount -= amount;
             if (current_task.amount < 0) current_task.amount = 0;
 
-            console.log("CURRENT TASK: " + this._tasks[0].type + ", amount left:" + this._tasks[0].amount );
             if (current_task.amount <= 0) {
                 Listener.Dispatch(ballpit.Event.ON_TASK_DONE, this);
 
@@ -177,11 +175,14 @@ ballpit.CoachModel = (function () {
 
                     this.Stop();
                     this._stopwatch.Round();
-                    this.Start();
+                    
+                    setTimeout(function() {
+                        this.Start();
+                    }.bind(this), Settings.Game.DELAY_PER_STAGE * 1000);
+                    return;
                 }
 
                 Listener.Dispatch(ballpit.Event.ON_TASK_BEGIN, this);
-                console.log("NEW TASK: " + this._tasks[0].type + ", amount: " + this._tasks[0].amount );
             }
         }
     };

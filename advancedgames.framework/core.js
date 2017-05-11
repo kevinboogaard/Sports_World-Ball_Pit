@@ -35,6 +35,8 @@ function Initialize() {
  * This is the first function that will be called once Phaser has been initialized.
  */
 function _preload () {
+    ADCore.phaser.time.advancedTiming = true;
+
     // Initialize the preloader.
     this.preloader.Initialize();
 
@@ -99,6 +101,8 @@ function _update () {
  * I use this function to render the main.
  */
 function _render () {
+    ADCore.phaser.debug.text(ADCore.phaser.time.fps ||"--", 2, 14, "#00ff00");   
+
     // Render main.
     this.main.Render();
 }
