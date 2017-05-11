@@ -20,8 +20,6 @@ ballpit.Watch = (function () {
         ADCore.Interface.call( this, position, key );
 
         this.timer = timer;
-        this.timer.Start();
-
         this.text = null;
 
         this._initialize();

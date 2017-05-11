@@ -93,7 +93,7 @@ ADCore.Tiled.ObjectLayer = ( function () {
     /**
      * dispose
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         delete this.draworder;
 
         var len = this.objectdata.length;

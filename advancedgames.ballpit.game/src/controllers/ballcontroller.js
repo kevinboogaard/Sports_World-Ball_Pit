@@ -31,7 +31,7 @@ ballpit.BallController = (function () {
     p.Initialize = function () {
         var len = this._layer.width;
         for (var x = 0; x < len; x++) {
-            this.RestoreColumn(x);
+            this.RestoreColumn(x, true);
         }
     };
     
@@ -119,7 +119,7 @@ ballpit.BallController = (function () {
      * 'RestoreColumn'
      * @param {Int} 'tileX'.
      */
-    p.RestoreColumn = function (tileX) {
+    p.RestoreColumn = function (tileX, forceType) {
         var y_spawns = [];
 
         var len = this._rows.length;
@@ -137,7 +137,16 @@ ballpit.BallController = (function () {
                         var position = this._layer.TilePositionToScreenPosition(new Vector2(tile.tileposition.x,  y_spawns[x]));
                         y_spawns[x]--;
 
-                        var ball = this._ballContainer.AddRandomBall(position);
+                        var ball = null;
+                        var type = tile.properties.type || "random";
+
+                        if (forceType !== true) type = "random";
+
+                        if (type === "random") {
+                            ball = this._ballContainer.AddRandomBall(position);
+                        } else {
+                            ball = this._ballContainer.AddBall(position, type);
+                        }
                         tile.occupier = ball;
 
                         ball.MoveTo(tile.position);
@@ -227,8 +236,18 @@ ballpit.BallController = (function () {
     /**
      * 'Dispose'
      */
-    p.dispose = function () {
-        throw new Error("NOT MADE YET");
+    p.Dispose = function () {
+        delete this._layer;
+        delete this._ballContainer;
+
+        delete this._rows;
+
+        this._helper.Dispose();
+        delete this._helper;
+        
+        Listener.Mute(ballpit.Event.ON_BALL_ALIGN, this);
+        Listener.Mute(ballpit.Event.ON_BALL_DESTINATION_REACHED, this);
+    
     };
 
     return BallController;

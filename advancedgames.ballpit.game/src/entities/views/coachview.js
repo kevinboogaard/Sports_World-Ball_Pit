@@ -19,6 +19,7 @@ ballpit.CoachView = (function () {
         ADCore.Display.call( this, model, key + "coachbody" );
 
         this.anchor.set(0.5, 1);
+        this.scale.set(0.75, 0.75);
         
         this.__display_play(this.model.state + "_" + this.model.emotion, 30, true);
 
@@ -31,7 +32,6 @@ ballpit.CoachView = (function () {
         this.addChild(this.mouth);
 
         this.mouth.Play(this.model.emotion + "_" + "mouth", 30, true);
-
     }
     CoachView.prototype = Object.create(ADCore.Display.prototype);
     CoachView.prototype.constructor = CoachView;

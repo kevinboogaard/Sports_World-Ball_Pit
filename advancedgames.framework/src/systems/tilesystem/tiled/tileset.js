@@ -34,7 +34,7 @@ ADCore.Tiled.Tileset = ( function () {
     /**
      * 'Dispose'
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         delete this.firstgid;
 
         delete this.key;

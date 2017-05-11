@@ -37,7 +37,7 @@ ADCore.Tiled.ImageLayer = ( function () {
     /**
      * dispose
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         delete this.width;
         delete this.height;
 

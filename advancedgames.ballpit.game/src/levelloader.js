@@ -29,8 +29,9 @@ ballpit.LevelLoader = ( function () {
      */
     p.IsSceneLevel = function (level) {
         var gamescene = scene[scene.Names.GAME];
+        var tutorialscene = scene[scene.Names.TUTORIAL];
         if (typeof level === "string") level = scene[level];
-        return (gamescene === level);
+        return (gamescene === level || tutorialscene === level);
     };
 
     /**

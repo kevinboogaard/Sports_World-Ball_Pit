@@ -18,6 +18,11 @@ Config.ResourceLists = {
     ],
     "LEVELS": [
         [
+          { "key":"map", "type": "map", "path":"advancedgames.ballpit.settings/resources/levels/level_tutorial/map.json"},
+          { "key":"tasks", "type": "json", "path":"advancedgames.ballpit.settings/resources/levels/level_tutorial/tasks.json"},
+          { "key":"sprites", "type": "resourcelist", "path":"advancedgames.ballpit.settings/resources/levels/level_tutorial/sprites.json"}
+        ],
+        [
           { "key":"map", "type": "map", "path":"advancedgames.ballpit.settings/resources/levels/level_1/map.json"},
           { "key":"tasks", "type": "json", "path":"advancedgames.ballpit.settings/resources/levels/level_1/tasks.json"}
         ]

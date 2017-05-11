@@ -14,15 +14,16 @@ ballpit.InterfaceLayer = (function () {
      * @extends Phaser.Group
      * @param {Timer} gameTimer 
      * @param {ScoreHolder} scoreHolder
+     * @param {CoachModel} coach
      */
-    function InterfaceLayer(gameTimer, scoreHolder) {
+    function InterfaceLayer(gameTimer, scoreHolder, coach) {
         Phaser.Group.call( this, ADCore.phaser, null, "Interface Layer" );
 
         this.watch = null;
         this.scoreboard = null;
-        this.coachView = null;
+        this.taskboard = null;
 
-        this._initialize(gameTimer, scoreHolder);
+        this._initialize(gameTimer, scoreHolder, coach);
     }
     InterfaceLayer.prototype = Object.create( Phaser.Group.prototype );
     InterfaceLayer.prototype.constructor = InterfaceLayer;
@@ -34,14 +35,20 @@ ballpit.InterfaceLayer = (function () {
      * @private
      * @param {Timer} gameTimer 
      * @param {ScoreHolder} scoreHolder
+     * @param {CoachModel} coach
      * @ignore
      */
-    p._initialize = function (gameTimer, scoreHolder) {
-        this.watch = new ballpit.Watch(new Vector2(0,0), "stopwatch", gameTimer);
+    p._initialize = function (gameTimer, scoreHolder, coach) {
+        this.scoreboard = new ballpit.ScoreBoard(new Vector2(10, 10), "scoreboard", scoreHolder);
+        this.addChild(this.scoreboard);
+
+        this.watch = new ballpit.Watch(new Vector2(this.scoreboard.width, 10), "stopwatch", gameTimer);
+        this.watch.x += this.watch.width * 0.33;
         this.addChild(this.watch);
 
-        this.scoreboard = new ballpit.ScoreBoard(new Vector2(0,0), "scoreboard", scoreHolder);
-        this.addChild(this.scoreboard);
+        this.taskboard = new ballpit.TaskBoard(new Vector2(Config.Core.Dimensions.width * 0.33, 125), "bubble", coach);
+        this.taskboard.x -= this.taskboard.width * 0.33;
+        this.addChild(this.taskboard);
     };
 
     /**
@@ -52,6 +59,7 @@ ballpit.InterfaceLayer = (function () {
     p.Render = function () {
         this.watch.Render();
         this.scoreboard.Render();
+        this.taskboard.Render();
     };
 
     return InterfaceLayer;

@@ -35,7 +35,7 @@ scene.MainMenu = (function () {
     var p = MainMenu.prototype;
 
     p._onStartButtonInputUp = function () {
-        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.GAME });
+        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIAL });
     };
 
     p.Dispose = function () {

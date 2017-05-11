@@ -71,7 +71,10 @@ ADCore.InputSystem = (function () {
         Listener.Dispatch( ADCore.InputEvent.ON_UP, this, { "event": event, "position": position }, false);
 
         if (this._startPosition !== null && this._startPosition.x !== position.x && this._startPosition.y !== position.y) {
-            Listener.Dispatch( ADCore.InputEvent.ON_SWIPE, this, { "event": event, "start": this._startPosition, "end": position }, false);
+            var direction = position.Clone().Substract(this._startPosition);
+            direction = direction.Normalize();
+
+            Listener.Dispatch( ADCore.InputEvent.ON_SWIPE, this, { "event": event, "start": this._startPosition, "end": position, "direction": direction }, false);
         }  
         this._startPosition = null;
     };

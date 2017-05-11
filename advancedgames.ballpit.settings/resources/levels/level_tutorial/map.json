@@ -44,6 +44,19 @@
          "offsetx":21,
          "offsety":287,
          "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":7,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[4, 7, 4, 3, 4, 7, 6, 3, 4, 5, 5, 6, 3, 7, 7, 5, 6, 6, 5, 7, 6, 7, 3, 4, 6, 4, 6, 5, 6, 7, 5, 5, 4, 5, 7, 5, 4, 6, 7, 6, 6, 5, 4, 7, 5, 4, 7, 5, 3],
+         "height":7,
+         "name":"balllayer",
+         "offsetx":21.3333333333334,
+         "offsety":287.333333333333,
+         "opacity":1,
          "properties":
             {
              "main":true
@@ -52,19 +65,6 @@
             {
              "main":"bool"
             },
-         "type":"tilelayer",
-         "visible":true,
-         "width":7,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "data":[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-         "height":7,
-         "name":"balllayer",
-         "offsetx":20,
-         "offsety":286,
-         "opacity":1,
          "type":"tilelayer",
          "visible":false,
          "width":7,
@@ -165,28 +165,110 @@
         {
          "columns":1,
          "firstgid":3,
-         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/balls\/asset_randomball.png",
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/balls\/asset_tennisball.png",
          "imageheight":45,
          "imagewidth":45,
          "margin":0,
-         "name":"asset_randomball",
+         "name":"asset_tennisball",
+         "properties":
+            {
+             "type":"tennisball"
+            },
+         "propertytypes":
+            {
+             "type":"string"
+            },
          "spacing":0,
          "tilecount":1,
          "tileheight":45,
-         "tileproperties":
+         "tilewidth":45,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":4,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/balls\/asset_basketball.png",
+         "imageheight":45,
+         "imagewidth":45,
+         "margin":0,
+         "name":"asset_basketball",
+         "properties":
             {
-             "0":
-                {
-                 "type":"random"
-                }
+             "type":"basketball"
             },
-         "tilepropertytypes":
+         "propertytypes":
             {
-             "0":
-                {
-                 "type":"string"
-                }
+             "type":"string"
             },
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":45,
+         "tilewidth":45,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":5,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/balls\/asset_soccerball.png",
+         "imageheight":45,
+         "imagewidth":45,
+         "margin":0,
+         "name":"asset_soccerball",
+         "properties":
+            {
+             "type":"soccerball"
+            },
+         "propertytypes":
+            {
+             "type":"string"
+            },
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":45,
+         "tilewidth":45,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":6,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/balls\/asset_bowlingball.png",
+         "imageheight":45,
+         "imagewidth":45,
+         "margin":0,
+         "name":"asset_bowlingball",
+         "properties":
+            {
+             "type":"bowlingball"
+            },
+         "propertytypes":
+            {
+             "type":"string"
+            },
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":45,
+         "tilewidth":45,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":7,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/balls\/asset_baseball.png",
+         "imageheight":45,
+         "imagewidth":45,
+         "margin":0,
+         "name":"asset_baseball",
+         "properties":
+            {
+             "type":"baseball"
+            },
+         "propertytypes":
+            {
+             "type":"string"
+            },
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":45,
          "tilewidth":45,
          "transparentcolor":"#120d39"
         }],

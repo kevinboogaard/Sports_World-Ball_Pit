@@ -9,10 +9,11 @@ ADCore.TileModel = (function () {
      * @param {Vector3} position
      * @param {Vector3} tileposition
      */
-    function TileModel(gid, position, tileposition, dimensions, properties) {
+    function TileModel(gid, position, tileposition, dimensions, layer, properties) {
         ADCore.Entity.call(this, position);
 
         this._gid = gid;
+        this.layer = layer;
         
         this.dimensions = dimensions;
         this.properties = properties = properties || {};

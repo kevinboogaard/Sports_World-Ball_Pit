@@ -14,27 +14,29 @@ ballpit.TaskBoard = (function () {
      * @extends Interface
      * @param {Vector2} position
      * @param {String} key
-     * @param {TaskHandler} taskHandler
+     * @param {CoachModel} coach
      */
-    function TaskBoard(position, key, taskHandler) {
-        ADCore.Interface.call(this,position,key);
+    function TaskBoard(position, key, coach) {
+        ballpit.Speech.call(this,position,key);
 
-        this._taskHandler = taskHandler;
+        this._coach = coach;
 
-        this._initialize();
+        this._currentTask = this._coach.activeTask;
     }
-    TaskBoard.prototype = Object.create(ADCore.Interface.prototype);
+    TaskBoard.prototype = Object.create(ballpit.Speech.prototype);
     TaskBoard.prototype.constructor = TaskBoard;
     var p = TaskBoard.prototype;
 
     /**
      * @method Initialize
-     * @memberof TaskBoard
+     * @memberof Speech
      * @private
      * @ignore
      */
     p._initialize = function () { 
-
+        this._text = new ADCore.Text().position(new Vector2(30, 10)).size(12).font("comfortaa").wrap(this.width).finish();
+        this._text.anchor.set(0, 0);
+        this.addChild(this._text);
     };
 
     /**
@@ -43,7 +45,19 @@ ballpit.TaskBoard = (function () {
      * @public
      */
     p.Render = function () {
-        
+        if (this._coach.activeTask !== this._currentTask) {
+            this._currentTask = this._coach.activeTask; 
+
+            var message = "Collect " + this._currentTask.amount + " " + this._currentTask.type + "s";
+            var speed = 50;
+
+            if (this.IsTalking()) { 
+                this.Mute();
+                this.Talk(message, speed);
+            } else {
+                this.Talk(message, speed);
+            }
+        }
     };
 
     return TaskBoard;

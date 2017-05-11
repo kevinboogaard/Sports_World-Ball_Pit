@@ -9,7 +9,7 @@ scene.Game = (function () {
      * 'Game'
      */
     function Game() {
-        Phaser.Group.call(this, ADCore.phaser, null, "Game");
+        Phaser.Group.call(this, ADCore.phaser, null, "Game");   
         this.viewContainer = new ADCore.ViewContainer();
         this.addChild(this.viewContainer);
 
@@ -20,22 +20,27 @@ scene.Game = (function () {
         this.ballContainer = new ballpit.BallContainer();
         this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
 
-        this.coach = ballpit.EntityFactory.AddCoach(new Vector2( Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height * 0.33), "soccer", this.taskHandler);
+        this.coach = ballpit.EntityFactory.AddCoach(new Vector2( Config.Core.Dimensions.width * 0.8, Config.Core.Dimensions.height * 0.33), "soccer", this.taskHandler);
 
         this.gameTimer = SetTimer(function () {
-            console.log("GAME DONE!");
-        }, Settings.Game.TIME, 0);
+            Input.paused = true;
+            setTimeout(function() {
+                Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+            }.bind(this), 1000);
+        }, Settings.Game.TIME, 1);
         this.gameTimer.Stop();
 
         this.scoreHolder = new ballpit.ScoreHolder();
 
-        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder);
+        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder, this.coach);
         this.addChild(this.interfaceLayer);
 
         this.ballController.Initialize();
 
         this.selected = null;
         this.started = false;
+
+        Input.paused = false;
 
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
@@ -83,7 +88,7 @@ scene.Game = (function () {
      */
     p._onSwipe = function (caller, params) {
         var start =  this.tilemap.mainLayer.GetTileByScreenPosition(params.start);
-        var end =  this.tilemap.mainLayer.GetTileByScreenPosition(params.end);
+        var end = this.tilemap.mainLayer.GetNeighbourFromTileByDirection( start, params.direction );
         this._trySwap(start, end);
     };
 
@@ -131,10 +136,6 @@ scene.Game = (function () {
      * 'Dispose'
      */
     p.Dispose = function () {
-        this.viewContainer.Dispose();
-        this.removeChild(this.viewContainer);
-        delete this.viewContainer;
-
         this.tilemap.Dispose();
         delete this.tilemap;
 
@@ -143,8 +144,16 @@ scene.Game = (function () {
 
         this.ballController.Dispose();
         delete this.ballController;
-        
+
         delete this.swipePositions;
+
+        this.viewContainer.Dispose();
+        this.removeChild(this.viewContainer);
+        delete this.viewContainer;
+        
+        Listener.Mute(ADCore.InputEvent.ON_TAP, this);
+        Listener.Mute(ADCore.InputEvent.ON_SWIPE, this);
+        Listener.Mute(ballpit.Event.ON_BALL_ALIGN, this);
     };
 
     return Game;

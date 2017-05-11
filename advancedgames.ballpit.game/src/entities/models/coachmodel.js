@@ -194,5 +194,18 @@ ballpit.CoachModel = (function () {
         throw new Error("Dispose not made yet");
     };
 
+    /**
+     * @method GettersAndSetters
+     * @private 
+     * @ignore
+     */
+    p.__entity_gettersAndSetters = p.gettersAndSetters;
+    p.gettersAndSetters = function () {
+        this.Get( "activeTask", function () {
+            return this._tasks[0];
+        });
+        this.__entity_gettersAndSetters();
+    };
+
     return CoachModel;
 })();

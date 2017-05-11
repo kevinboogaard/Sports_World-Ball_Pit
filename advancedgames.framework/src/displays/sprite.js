@@ -24,8 +24,11 @@ ADCore.Sprite = (function () {
      */
     p._initializeSprite = function (key) {
         var data = Global.Loaded.generic.images[key];
-        if (!data) return;
-
+        if (!data) {
+            if (!Global.Loaded.level.sprites) return;
+            data = (Global.Loaded.level.sprites[key]);
+            if (!data) return;
+        }
         this.anchor.set(data.anchor.x, data.anchor.y);
         this.offset = data.offset;
         this.width = data.dimensions.width;
