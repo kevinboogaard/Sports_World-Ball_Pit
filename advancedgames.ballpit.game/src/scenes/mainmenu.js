@@ -3,6 +3,9 @@ var scene = scene || {};
 scene.Event = scene.Event || {};
 scene.Event.ON_SCENE_SWITCH = "on_scene_switch";
 
+scene.Names = scene.Names || {};
+scene.Names.MAINMENU = "MainMenu";
+
 scene.MainMenu = (function () {
 
     /**
@@ -32,10 +35,10 @@ scene.MainMenu = (function () {
     var p = MainMenu.prototype;
 
     p._onStartButtonInputUp = function () {
-        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this);
+        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIAL });
     };
 
-    p.Dispose = function () {
+    p.Dispose = function () {  
       this.removeChild(this.background);
       this.background.Dispose();
       delete this.background;

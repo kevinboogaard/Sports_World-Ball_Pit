@@ -149,10 +149,21 @@ ADCore.Preloader = (function(){
 
                 // Get all data from resource to preload the files.
                 var resource_data = resources[resource_key];
-                var resource_path = resource_basepath + resource_data.path;
-                var resource_savekey = resource_key + " | " + resource_path;
 
-                this._preload_resource( resource_type, resource_path, resource_key, resource_savekey, data.loadedtype, data.filekey, resource_data );
+                if (resource_data.path.constructor === Array) {
+                    var len = resource_data.path.length;
+                    for (var i = 0; i < len; i++) {
+                        var resource_path = resource_basepath + resource_data.path[i];
+                        var resource_savekey = resource_key + " | " + resource_path;
+
+                        this._preload_resource( resource_type, resource_path, resource_key, resource_savekey, data.loadedtype, data.filekey, resource_data );
+                    }
+                } else {
+                    var resource_path = resource_basepath + resource_data.path;
+                    var resource_savekey = resource_key + " | " + resource_path;
+
+                    this._preload_resource( resource_type, resource_path, resource_key, resource_savekey, data.loadedtype, data.filekey, resource_data );
+                }
             }
         }
     };
@@ -244,6 +255,10 @@ ADCore.Preloader = (function(){
      * @param {string} 'savekey'
      */
     p._save_resource = function ( data, savekey ) {
+        if (savekey === "ingamesound | advancedgames.ballpit.game/assets/sounds/ingamemusic.mp3") {
+            var a = "a";
+        }
+
         // Get resource from cache.
         var resource = this._phaser.cache.get( data.type, savekey );
 
@@ -253,11 +268,13 @@ ADCore.Preloader = (function(){
         // Save in the loaded object.
         if ( data.groupkey ) Global.Loaded[data.loadedtype][data.groupkey][data.filekey] = resource;
         else Global.Loaded[data.loadedtype][data.filekey] = resource;
-        
+
         var cachemap = this._phaser.cache._cacheMap;
         var map = cachemap[phaserExtension.CacheTypeToNumber(data.type)];
 
          map[data.filekey] = map[savekey];
+        
+         if ( data.type === "audio" ) return;
          delete map[savekey];
     };
 

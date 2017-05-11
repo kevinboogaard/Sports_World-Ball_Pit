@@ -56,9 +56,9 @@ ADCore.Tiled.TileLayer = ( function () {
 
             if (gid !== 0) {
                 var tileset = this.parent.GetTilesetByGid( gid );
-                tile = ADCore.EntityFactory.AddTile( position, tile_position, tileset.key, gid, dimensions, tileset.properties  );
+                tile = ADCore.EntityFactory.AddTile( position, tile_position, tileset.key, gid, dimensions, this, tileset.properties  );
             } else {
-                tile = ADCore.EntityFactory.AddTile( position, tile_position, null, gid, dimensions, null );
+                tile = ADCore.EntityFactory.AddTile( position, tile_position, null, gid, dimensions, this, null );
             }
             
             column.push( tile );
@@ -264,19 +264,19 @@ ADCore.Tiled.TileLayer = ( function () {
     /**
      * 'Dispose'
      */
-    p.dispose = function () {
+    p.Dispose = function () {
         var rows = this.tiledata;
         var rows_len = rows.length;
-        for ( var i = 0; i < rows_len; i++ ) {
+        for ( var i = rows_len - 1; i >= 0; i-- ) {
             var columns = rows[i];
             var columns_len = columns.length;
 
-            for ( var j = 0; j < columns_len; j++ ) {
+            for ( var j = columns_len - 1; j >= 0; j-- ) {
                 var tile = columns[j];
                 if ( !tile ) continue;
 
                 Listener.Dispatch( ADCore.Event.ON_MODEL_REMOVE, this, { 'model': tile } );
-                tile.dispose();
+                tile.Dispose();
 
                 columns.splice( j, 1 );
             }

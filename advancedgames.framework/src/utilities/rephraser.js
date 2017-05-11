@@ -94,6 +94,9 @@ Phaser.Cache.prototype.get = function ( type, key ) {
         case "basetexture":
             return this.getBaseTexture( key );
 
+        case "audio": 
+            return this.getSound( key );
+
         default:
             throw new Error( "Type not known: Cache.Get()" );
     }
@@ -113,7 +116,8 @@ phaserExtension.CacheTypeToNumber = function ( type ) {
         case "texture": 
             return 3;
 
-        case "sound": 
+        case "sound":
+        case "audio": 
             return 4;
 
         case "text": 

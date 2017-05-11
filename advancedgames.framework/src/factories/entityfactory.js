@@ -10,8 +10,8 @@ ADCore.EntityFactory = {};
  * @param {vector2} 'dimensions'
  * @param { {} } 'properties'
  */
-ADCore.EntityFactory.AddTile = function( position, tileposition, key, gid, dimensions, properties ){
-    var model = new ADCore.TileModel( gid, position, tileposition, dimensions, properties );
+ADCore.EntityFactory.AddTile = function( position, tileposition, key, gid, dimensions, layer, properties ){
+    var model = new ADCore.TileModel( gid, position, tileposition, dimensions, layer, properties );
 
     if ( gid !== null ) {
         if ( model.lower ) {

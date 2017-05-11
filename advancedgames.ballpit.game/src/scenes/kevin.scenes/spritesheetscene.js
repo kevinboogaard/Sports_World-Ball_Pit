@@ -1,5 +1,8 @@
 var scene = scene || {};
 
+scene.Names = scene.Names || {};
+scene.Names.SPRITESHEETSCENE = "Spritesheetscene";
+
 scene.Spritesheetscene = (function () {
 
     /**

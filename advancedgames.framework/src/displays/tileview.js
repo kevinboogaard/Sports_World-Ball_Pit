@@ -11,6 +11,8 @@ ADCore.TileView = (function () {
      */
     function TileView(model, key) {
         ADCore.Display.call( this, model, key );
+
+        this.visible = model.layer.visible;
     }
     TileView.prototype = Object.create(ADCore.Display.prototype);
     TileView.prototype.constructor = TileView;
@@ -21,6 +23,7 @@ ADCore.TileView = (function () {
      */
     p.__display_render = p.render;
     p.render = function () {
+        if (!this.visible) return;
         this.__display_render();
     };
 

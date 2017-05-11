@@ -12,12 +12,13 @@ ADCore.Sceneloader = (function () {
     
     /**
      * 'Load'
-     * @param {scene} 'scene'
+     * @param {scene} 'constructor'
      */
-    p.Load = function(scene){
-        if (typeof scene === "undefined") throw new Error("Scene doesn't exist: " + scene);
+    p.Load = function(constructor) {
+        if (typeof constructor === "undefined") throw new Error("Scene doesn't exist: " + constructor);
+        if (typeof constructor === "string") constructor = scene[constructor];
 
-        this.current = new scene();
+        this.current = new constructor();
         ADCore.phaser.add.existing(this.current);
     };
 

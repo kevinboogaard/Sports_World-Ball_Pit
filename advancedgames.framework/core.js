@@ -18,12 +18,14 @@ function Initialize() {
         render: _render.bind(this)
     });
 
-    // Create the preloader system that preloads the resources in a json file.
-    this.preloader = new ADCore.Preloader(ADCore.phaser);
+    // Initialize the main of the game.
+    this.main = new ballpit.Core();
     // Create the scene loader system.
     this.sceneLoader = new ADCore.Sceneloader();
-    // Initialize the main of the game.
-    this.main = new ballpit.Core(this.preloader, this.sceneLoader);
+    // Create the preloader system that preloads the resources in a json file.
+    this.preloader = new ADCore.Preloader(ADCore.phaser);
+    // Create a container for all the counters.
+    this.counterContainer = new ADCore.CounterContainer();
 }
 
  /**
@@ -39,7 +41,7 @@ function _preload () {
     // Preload the generic files.
     var len = Config.ResourceLists.GENERIC.length;
     if ( len > 0 ) {
-        this.preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategory.GENERIC  );
+        preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategory.GENERIC  );
     }
 }
 
@@ -51,7 +53,9 @@ function _preload () {
  */
 function _create () {
     // Align the canvas horizontally and refresh the scale.
-	ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+    ADCore.phaser.scale.pageAlignHorizontally = true;
+    ADCore.phaser.scale.pageAlignVertically = true;
+    ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
     ADCore.phaser.scale.refresh();
 
     // Create the input system.
@@ -63,7 +67,7 @@ function _create () {
         this.main.Start();
     }.bind(this), 1);
 }
-
+ 
  /**
  * 'Update'
  * @private
@@ -72,8 +76,15 @@ function _create () {
  * I use this function to update the main and to update the input.
  */
 function _update () {
-    var deltaTime = ADCore.phaser.time.elapsed / 1000;
+    var deltaTime;
+    if (ADCore.phaser.device.desktop) {
+        deltaTime = ADCore.phaser.time.elapsed / 1000;
+    } else {
+        deltaTime = 1/60; // Seems to run weird on mobile when using Time.Elapsed
+    }
 
+    // Update CounterContainer.
+    this.counterContainer.Update( deltaTime );
     // Update main.
     this.main.Update( deltaTime );
     // Update Input system aswell.
@@ -111,4 +122,28 @@ ADCore.EnableMutators = function ( prototype ) {
     };
 
     prototype.gettersAndSetters();
+};
+
+this.SetTimer = function (callback, starttime, multiplier) {
+    var timer = new ADCore.Timer(starttime, multiplier | 1, callback);
+    Listener.Dispatch(ADCore.Event.ON_COUNTER_ADD, this, { "counter": timer });
+
+    timer.Start();
+    return timer;
+};
+
+this.SetStopwatch = function () {
+    var stopwatch = new ADCore.Stopwatch();
+    Listener.Dispatch(ADCore.Event.ON_COUNTER_ADD, this, { "counter": stopwatch });
+
+    stopwatch.Start();
+    return stopwatch;
+};
+
+this.ClearTimer = function(timer) {
+    this.counterContainer.RemoveCounter(timer);
+};
+
+this.ClearStopwatch = function (stopwatch) {
+    this.counterContainer.RemoveCounter(stopwatch);
 };

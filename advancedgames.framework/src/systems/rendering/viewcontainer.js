@@ -47,6 +47,8 @@ ADCore.ViewContainer = (function () {
             var v_view = this._views.children[j];
             v_view.Render();
         }
+
+        this._views.sort( "y", Phaser.Group.SORT_ASCENDING );
     };
 
      /**
@@ -120,8 +122,17 @@ ADCore.ViewContainer = (function () {
     /**
      * 'dispose'
      */
-    p.dispose = function () {
-        throw new Error( "NO DISPOSE WRITTEN YET !" );
+    p.Dispose = function () {
+        Listener.Mute( ADCore.Event.ON_MODEL_ADD, this );
+        Listener.Mute( ADCore.Event.ON_MODEL_REMOVE, this );
+        Listener.Mute( ADCore.Event.ON_LOWER_MODEL_ADD, this );
+        Listener.Mute( ADCore.Event.ON_LOWER_MODEL_REMOVE, this );
+
+        this.removeChild(this._views);
+        delete this._views;
+
+        this.removeChild(this._lowerviews);
+        delete this._lowerviews;
     };
 
     return ViewContainer;

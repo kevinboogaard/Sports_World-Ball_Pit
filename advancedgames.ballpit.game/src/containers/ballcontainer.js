@@ -12,12 +12,13 @@ ballpit.BallContainer = (function () {
     
     /**
      * 'Update' 
+     * @param {int} 'deltatime'
      */
-    p.Update = function () {
+    p.Update = function (deltatime) {
         var len = this.balls.length;
         for (var i = len - 1; i >= 0; i--) {
             var ball = this.balls[i];
-            ball.Update();
+            ball.Update(deltatime);
         }
     };
 
@@ -55,6 +56,17 @@ ballpit.BallContainer = (function () {
             Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball});
             ball.Dispose();
         }.bind(this));
+    };
+
+    p.Dispose = function() {
+        var len = this.balls.length;
+        for (var i = len-1; i >= 0; i--) {
+            var ball = this.balls[i];
+            ball.Dispose();
+            Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball });
+            this.balls.splice(i, 1);
+        }
+        delete this.balls;
     };
 
     return BallContainer;
