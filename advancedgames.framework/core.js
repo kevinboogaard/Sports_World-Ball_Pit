@@ -51,8 +51,8 @@ function _preload () {
  */
 function _create () {
     // Align the canvas horizontally and refresh the scale.
-	//ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-    //ADCore.phaser.scale.refresh();
+	ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+    ADCore.phaser.scale.refresh();
 
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
