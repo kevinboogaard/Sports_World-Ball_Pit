@@ -255,10 +255,6 @@ ADCore.Preloader = (function(){
      * @param {string} 'savekey'
      */
     p._save_resource = function ( data, savekey ) {
-        if (savekey === "ingamesound | advancedgames.ballpit.game/assets/sounds/ingamemusic.mp3") {
-            var a = "a";
-        }
-
         // Get resource from cache.
         var resource = this._phaser.cache.get( data.type, savekey );
 

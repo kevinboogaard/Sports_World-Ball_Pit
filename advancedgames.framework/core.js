@@ -60,6 +60,9 @@ function _create () {
 
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
+    // Create the sound system.
+    this.soundSystem = new ADCore.SoundSystem(ADCore.phaser.sound);
+    this.soundSystem.Load(Global.Loaded.generic.music);
 
     // If the main is started immediately some things will bug out.
     // To prevent any errors from happening we use a timeout.

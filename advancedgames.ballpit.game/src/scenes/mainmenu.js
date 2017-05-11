@@ -14,6 +14,8 @@ scene.MainMenu = (function () {
     function MainMenu() {
         Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");
         var halfWidth = Config.Core.Dimensions.width/2;
+	
+        this.identifier = soundSystem.PlayMusic("menusound", 1, true);
 
         this.background = new ADCore.Interface(new Vector2(0, 0),"menubackground");
         this.addChild(this.background);
@@ -39,6 +41,7 @@ scene.MainMenu = (function () {
     };
 
     p.Dispose = function () {  
+      this.identifier.audio.pause();
       this.removeChild(this.background);
       this.background.Dispose();
       delete this.background;

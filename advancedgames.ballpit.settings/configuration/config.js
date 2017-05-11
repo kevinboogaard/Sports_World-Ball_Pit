@@ -14,7 +14,8 @@ Config.Core.Parent = "Container";
 Config.ResourceLists = {
     "GENERIC": [
         { "key":"images", "type": "resourcelist", "path":"advancedgames.ballpit.settings/resources/generic/images.json"},
-        { "key":"spritesheets", "type": "atlaslist", "path":"advancedgames.ballpit.settings/resources/generic/spritesheets.json"}
+        { "key":"spritesheets", "type": "atlaslist", "path":"advancedgames.ballpit.settings/resources/generic/spritesheets.json"},
+        { "key":"music", "type": "resourcelist", "path":"advancedgames.ballpit.settings/resources/generic/music.json"}
     ],
     "LEVELS": [
         [
@@ -24,7 +25,8 @@ Config.ResourceLists = {
         ],
         [
           { "key":"map", "type": "map", "path":"advancedgames.ballpit.settings/resources/levels/level_1/map.json"},
-          { "key":"tasks", "type": "json", "path":"advancedgames.ballpit.settings/resources/levels/level_1/tasks.json"}
+          { "key":"tasks", "type": "json", "path":"advancedgames.ballpit.settings/resources/levels/level_1/tasks.json"},
+          { "key":"sounds", "type": "resourcelist", "path":"advancedgames.ballpit.settings/resources/levels/level_1/sounds.json"}
         ]
     ]
 };

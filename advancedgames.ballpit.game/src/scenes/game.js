@@ -13,6 +13,8 @@ scene.Game = (function () {
         this.viewContainer = new ADCore.ViewContainer();
         this.addChild(this.viewContainer);
 
+        this.identifier = soundSystem.PlayMusic("ingamesound", 1, true);
+	
         this.tilemap = new Tilemap(Global.Loaded.level.map);
         
         this.taskHandler = new ballpit.TaskHandler(Global.Loaded.level.tasks);
@@ -136,6 +138,8 @@ scene.Game = (function () {
      * 'Dispose'
      */
     p.Dispose = function () {
+        this.identifier.stop.audio.pause();
+
         this.tilemap.Dispose();
         delete this.tilemap;
 
