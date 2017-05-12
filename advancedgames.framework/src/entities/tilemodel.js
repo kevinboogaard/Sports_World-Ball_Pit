@@ -20,7 +20,7 @@ ADCore.TileModel = (function () {
      * @param {Vector2} dimensions - The dimensions of the tile model.
      * @param {Object} properties - The custom properties for a tile model.
      */
-    function TileModel(gid, position, tileposition, dimensions, properties) {
+    function TileModel(gid, position, tileposition, dimensions, layer, properties) {
         ADCore.Entity.call(this, position);
 
         /**
@@ -29,6 +29,7 @@ ADCore.TileModel = (function () {
          * @public
          */
         this._gid = gid;
+        this.layer = layer;
         
         /**
          * @property {Vector2} dimensions - The dimensions of the tile model.

@@ -10,6 +10,7 @@ ballpit.Event = ballpit.Event || {};
 ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
 ballpit.Event.ON_BALL_STATE_CHANGE = "on_ball_state_change";
 ballpit.Event.ON_BALL_DESTROY = "on_ball_destroy";
+ballpit.Event.ON_BALL_SWAP_WRONG = "on_ball_swap_wrong";
 
 /**
  * Enum for map orientations.
@@ -91,7 +92,7 @@ ballpit.BallModel = (function () {
      * @public
      * @param {Number} deltaTime - The number deltatime is a multiplier to convert gametime in to realtime
      */
-    p.Update = function (deltatime) {
+    p.Update = function (deltaTime) {
         if (this.isMoving) {
             var distance = this.position.Distance(this._destination);
             

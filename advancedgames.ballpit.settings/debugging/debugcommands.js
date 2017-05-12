@@ -10,12 +10,18 @@ if (typeof Debug !== "undefined" && Debug.ENABLED) {
             get: function () {
                 return "Debug Commands:" + "\n" +
                        "---------------" + "\n \n" +
-                       "Get: exp | Example" + "\n";
+                       "Get: exp | Example" + "\n" + 
+                       "Set: addscore | addscore(100)" + "\n";
             }
         },
         "exp": {
             get: function () {
                 return "HELLO WORLD!";
+            }
+        },
+        "addscore": {
+            set: function(n){
+                __GLOBAL__HACK_SCORE_HOLDER.Add(n);
             }
         }
     });

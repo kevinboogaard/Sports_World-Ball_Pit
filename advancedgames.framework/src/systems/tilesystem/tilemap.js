@@ -175,15 +175,14 @@ this.Tilemap = ( function () {
             for ( var layers_i = 0; layers_i < layers_len; layers_i++ ) {
                 var layerdata = this.layers[layers_i];
                 var layer = null;
-
-                if ( layerdata.visible === false ) continue;
-
                 if ( layerdata.type === ADCore.Tiled.LayerTypes.TILE ) {
                     layer = new ADCore.Tiled.TileLayer( this, layerdata );
                     if ( layer.properties && layer.properties.main ) this.mainLayer = layer;
                 } else if ( layerdata.type === ADCore.Tiled.LayerTypes.OBJECT ) {
+                    if ( layerdata.visible === false ) continue;
                     layer = new ADCore.Tiled.ObjectLayer( this, layerdata );
                 } else if ( layerdata.type === ADCore.Tiled.LayerTypes.IMAGE ) {
+                     if ( layerdata.visible === false ) continue;
                     layer = new ADCore.Tiled.ImageLayer( this, layerdata );
                 }
 
@@ -309,7 +308,7 @@ this.Tilemap = ( function () {
         if (typeof this.tilesets !== "undefined") {
             var tilesets_len = this.tilesets.length;
             for ( var j = tilesets_len - 1; j >= 0; j-- ) {
-                var t_current = this.tilesets[i];
+                var t_current = this.tilesets[j];
                 t_current.Dispose();
                 this.tilesets.splice( j, 1 );
             }

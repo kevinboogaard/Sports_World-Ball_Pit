@@ -3,6 +3,9 @@ var scene = scene || {};
 scene.Event = scene.Event || {};
 scene.Event.ON_SCENE_SWITCH = "on_scene_switch";
 
+scene.Names = scene.Names || {};
+scene.Names.MAINMENU = "MainMenu";
+
 scene.MainMenu = (function () {
 
     /**
@@ -11,6 +14,8 @@ scene.MainMenu = (function () {
     function MainMenu() {
         Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");
         var halfWidth = Config.Core.Dimensions.width/2;
+	
+        this.identifier = soundSystem.PlayMusic("menusound", 1, true);
 
         this.background = new ADCore.Interface(new Vector2(0, 0),"menubackground");
         this.addChild(this.background);
@@ -32,10 +37,11 @@ scene.MainMenu = (function () {
     var p = MainMenu.prototype;
 
     p._onStartButtonInputUp = function () {
-        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this);
+        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIALSCENE });
     };
 
-    p.Dispose = function () {
+    p.Dispose = function () {  
+      this.identifier.audio.pause();
       this.removeChild(this.background);
       this.background.Dispose();
       delete this.background;

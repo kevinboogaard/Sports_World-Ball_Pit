@@ -51,8 +51,11 @@ ADCore.Sprite = (function () {
      */
     p._initializeSprite = function (key) {
         var data = Global.Loaded.generic.images[key];
-        if (!data) return;
-
+        if (!data) {
+            if (!Global.Loaded.level.sprites) return;
+            data = (Global.Loaded.level.sprites[key]);
+            if (!data) return;
+        }
         this.anchor.set(data.anchor.x, data.anchor.y);
         this.offset = data.offset;
         this.width = data.dimensions.width;
@@ -89,9 +92,9 @@ ADCore.Sprite = (function () {
      * @param {Boolean} [loop=false]
      * @returns {Phaser.Animation}
      */
-    p.Play = function (name, frameRate, loop) {
+    p.Play = function (name, frameRate, loop, killOnComplete) {
         if (this._animations.contains(name) === false) throw new Error("Animation doesn't exist");
-        return this.animations.play(name, frameRate || 30, loop || false );
+        return this.animations.play(name, frameRate || 30, loop || false, killOnComplete || false);
     };
 
     /**

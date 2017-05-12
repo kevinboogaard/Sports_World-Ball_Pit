@@ -1,5 +1,8 @@
 var scene = scene || {};
 
+scene.Names = scene.Names || {};
+scene.Names.UISCENE = "Uiscene";
+
 scene.Uiscene = (function () {
 
     /**

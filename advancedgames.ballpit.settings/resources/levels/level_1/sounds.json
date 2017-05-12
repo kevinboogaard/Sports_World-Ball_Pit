@@ -1,0 +1,11 @@
+{
+    "base_path": "advancedgames.ballpit.game/assets/sounds/",
+    "type": "audio", 
+    "resources": {
+        "ingamesound":{
+            "path":[ 
+                "ingamemusic.mp3"
+            ]
+        }
+    }
+}
