@@ -8,7 +8,7 @@ var ballpit = ballpit || {};
 ballpit.EntityFactory = {};
 
     /**
-     * @class ballpit.EntityFactory
+     * @class EntityFactory
      * @constructor
      * @param {Vector2} position - 
      * @param {BallContainer} ballContainer - 
@@ -21,6 +21,7 @@ ballpit.EntityFactory.AddBall = function(position,type){
 
 /**'
  * @method AddCoach
+ * @memberof EntityFactory
  * @param {balltype} 'type'
  * @param {vector2} 'position'
  * @param {TaskHandler} taskhandler

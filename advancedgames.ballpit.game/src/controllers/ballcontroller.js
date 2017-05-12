@@ -19,7 +19,7 @@ ballpit.Event.ON_BALLS_SPAWNED = "on_balls_spawned";
 ballpit.BallController = (function () {
 
      /**
-     * @class ballpit.BallController
+     * @class BallController
      * @constructor
      * @param {layer} layer - The layers
      * @param {ballContainer} ballContainer - The ball controller
@@ -57,7 +57,7 @@ ballpit.BallController = (function () {
 
      /**
      * @method Initialize
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @public
      */
     p.Initialize = function () {
@@ -69,7 +69,7 @@ ballpit.BallController = (function () {
     
      /**
      * @method Swap
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @public
      * @param {Tile} selected - the selected tile
      * @param {Tile} targeted - the target tile
@@ -95,7 +95,7 @@ ballpit.BallController = (function () {
 
      /**
      * @method Move
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @public
      * @param {Tile} selected - the selected tile
      * @param {Tile} targeted - the target tile
@@ -118,7 +118,7 @@ ballpit.BallController = (function () {
 
      /**
      * @method DropColumn
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @public
      * @param {number} tileX - the horizontal of the tile
      */
@@ -142,7 +142,7 @@ ballpit.BallController = (function () {
 
      /**
      * @method DropBall
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @public
      * @param {Tile} tile - The tile
      */
@@ -156,7 +156,7 @@ ballpit.BallController = (function () {
     };
      /**
      * @method DropBall
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @public
      * @param {number} tileX -  the horizontal of the tile
      */
@@ -228,7 +228,7 @@ ballpit.BallController = (function () {
 
      /**
      * @method OnBallDestinationReached
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @private
      * @param {caller} caller -  the caller
      * @param {params} params -  the params
@@ -248,7 +248,7 @@ ballpit.BallController = (function () {
 
      /**
      * @method OnBallAlign
-     * @memberof ballpit.BallController
+     * @memberof BallController
      * @private
      * @param {caller} caller -  the caller
      * @param {params} params -  the params
@@ -280,7 +280,7 @@ ballpit.BallController = (function () {
 
     /**
      * @method Dispose
-     * @memberof ballpit.BallModel
+     * @memberof BallController
      * @public
      */
     p.Dispose = function () {

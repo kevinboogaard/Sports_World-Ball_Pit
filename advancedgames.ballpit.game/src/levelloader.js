@@ -4,12 +4,14 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+
 var ballpit = ballpit || {};
 
 ballpit.LevelLoader = ( function () {
 
     /**
-     * @class ballpit.LevelLoader
+     * @alias ballpit.levelloader
+     * @class LevelLoader
      * @constructor
      */
     function LevelLoader() {
@@ -28,7 +30,7 @@ ballpit.LevelLoader = ( function () {
 
     /**
      * @method Initialize
-     * @memberof ballpit.LevelLoader
+     * @memberof LevelLoader
      * @public
      */
     p.Initialize = function () {
@@ -38,6 +40,7 @@ ballpit.LevelLoader = ( function () {
 
     /**
      * @method IsSceneLevel
+     * @memberof LevelLoader
      * @public 
      * @param {(Object | String)} level
      */
@@ -51,6 +54,7 @@ ballpit.LevelLoader = ( function () {
     /**
      * 'LoadLevel'
      * @param {Scene} levelscene
+     * @memberof LevelLoader
      */
     p.LoadLevel = function (levelscene) {
         if (Debug.ENABLED && Debug.FORCE_LOAD_DEBUG_LEVEL) this.level = Debug.DEBUG_LEVEL;
@@ -79,7 +83,7 @@ ballpit.LevelLoader = ( function () {
 
     /**
      * @method OnLoadComplete
-     * @memberof ballpit.LevelLoader
+     * @memberof LevelLoader
      * @private
      */
     p._onLoadComplete = function ( ) {
@@ -94,7 +98,7 @@ ballpit.LevelLoader = ( function () {
      * Getters & Setters internal function.
      * 
      * @method GettersAndSetters
-     * @memberof ballpit.LevelLoader
+     * @memberof LevelLoader
      * @private 
      * @ignore
      */

@@ -5,25 +5,33 @@
  * @ignore
  */
 var ballpit = ballpit || {};
-ballpit.Event = ballpit.Event || {};
 
 /**
- * @event ON_TASK_BEGIN
+ * @namespace Event
+ */
+let Event = ballpit.Event || {};
+ballpit.Event = Event;
+
+/**
+ * @memberof Event
  */
 ballpit.Event.ON_TASK_BEGIN = "on_tast_begin";
 
 /**
- * @event ON_TASK_DONE
+ * @property {String} ON_TASK_BEGIN
+ * @memberof Event
  */
 ballpit.Event.ON_TASK_DONE = "on_task_done";
 
 /**
- * @event ON_STAGE_BEGIN
+ * @property {String} ON_TASK_DONE
+ * @memberof Event
  */
 ballpit.Event.ON_STAGE_BEGIN = "on_stage_begin";
 
 /**
- * @event ON_STAGE_END
+ * @property {String} ON_STAGE_BEGIN
+ * @memberof Event
  */
 ballpit.Event.ON_STAGE_DONE = "on_stage_done";
 

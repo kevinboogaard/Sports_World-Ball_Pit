@@ -9,7 +9,7 @@ var ballpit = ballpit || {};
 ballpit.BallContainer = (function () {
 
      /**
-     * @class ballpit.BallContainer
+     * @class BallContainer
      * @constructor
      */
     function BallContainer() {
@@ -19,7 +19,7 @@ ballpit.BallContainer = (function () {
     
      /**
      * @method Update
-     * @memberof ballpit.BallContainer
+     * @memberof BallContainer
      * @public
      * @param {int} 'deltatime'
      */
@@ -33,7 +33,7 @@ ballpit.BallContainer = (function () {
 
     /**
      * @method AddBall
-     * @memberof ballpit.BallContainer
+     * @memberof BallContainer
      * @public
      * @param {Vector2} position - the position of the added ball
      * @param {type} type - The type of a ball
@@ -46,7 +46,7 @@ ballpit.BallContainer = (function () {
 
     /**
      * @method AddRandomBall
-     * @memberof ballpit.BallContainer
+     * @memberof BallContainer
      * @public
      * @param {Vector2} position - the position of the added ball
      */
@@ -59,7 +59,7 @@ ballpit.BallContainer = (function () {
     
     /**
      * @method RemoveBall
-     * @memberof ballpit.BallContainer
+     * @memberof BallContainer
      * @public
      * @param {ball} ball - the ball
      */
