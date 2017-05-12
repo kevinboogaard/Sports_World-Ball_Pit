@@ -12,14 +12,9 @@ var ballpit = ballpit || {};
  * @enum {String}
  * @typedef {(String)} events
  */
-ballpit.Event =  {
-    
-    /** The allign event of the balls */
-    ON_BALL_ALIGN : "on_ball_align",
-
-    /** The spawned event of the balls */
-    ON_BALLS_SPAWNED : "on_balls_spawned"
-}
+ballpit.Event = ballpit.Event || {};
+ballpit.Event.ON_BALL_ALIGN = "on_ball_align";
+ballpit.Event.ON_BALLS_SPAWNED = "on_balls_spawned";
 
 ballpit.BallController = (function () {
 

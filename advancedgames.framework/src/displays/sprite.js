@@ -19,7 +19,6 @@ ADCore.Sprite = (function () {
      * @param {String} key
      */
     function Sprite(position, key) {
-        if (this.constructor.name === Sprite.name) throw new Error("This class is an abstract class.");
         Phaser.Sprite.call(this, ADCore.phaser, position.x, position.y, key);
 
         /**

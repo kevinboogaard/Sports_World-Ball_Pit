@@ -62,7 +62,7 @@ ballpit.LevelLoader = ( function () {
         else sceneLoader.switch ( scene.PreLoader); 
 
          this._sceneToBeLoaded = levelscene;
-        preloader.Preload( resources, ADCore.PreloadCategory.LEVEL );
+        preloader.Preload( resources, ADCore.PreloadCategories.LEVEL );
     };
     
     /**

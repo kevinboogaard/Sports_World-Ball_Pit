@@ -5,8 +5,8 @@
  * @ignore
  */
 var ballpit = ballpit || {};
-ballpit.Event = ballpit.Event || {};
 
+ballpit.Event = ballpit.Event || {};
 ballpit.Event.ON_SPEECH_DONE = "on_speech_done";
 
 ballpit.Speech = (function () {
@@ -42,7 +42,7 @@ ballpit.Speech = (function () {
      * @ignore
      */
     p._initialize = function () { 
-        this._text = new ADCore.Text().position(new Vector2( this.width / 2, 10)).font("comfortaa").wrap(this.width * 0.9).finish();
+        this._text = new ADCore.Text().Position(new Vector2( this.width / 2, 10)).Font("comfortaa").Wrap(this.width * 0.9).Finish();
         this._text.anchor.set(0.5, 0);
         this.addChild(this._text);
     };

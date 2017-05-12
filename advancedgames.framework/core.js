@@ -45,7 +45,7 @@ function _preload () {
     // Preload the generic files.
     var len = Config.ResourceLists.GENERIC.length;
     if ( len > 0 ) {
-        preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategory.GENERIC  );
+        preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategories.GENERIC  );
     }
 }
 

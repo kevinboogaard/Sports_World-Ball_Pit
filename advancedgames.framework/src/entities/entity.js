@@ -17,7 +17,7 @@ ADCore.Entity = (function () {
      * @param {Vector2} position - The position of the entity.
      */
     function Entity(position) {
-        if (this.constructor.name === Sprite.name) throw new Error("This class is an abstract class.");
+        if (this.constructor.name === Entity.name) throw new Error("This class is an abstract class.");
 
         /**
          * @property {Integer} x
