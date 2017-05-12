@@ -5,6 +5,12 @@
  * @ignore
  */
 var ADCore = ADCore || {};
+
+/**
+ * @namespace
+ * @name Tiled
+ * @ignore
+ */
 ADCore.Tiled = ADCore.Tiled || {};
 
 ADCore.Tiled.Tileset = ( function () {
@@ -15,7 +21,6 @@ ADCore.Tiled.Tileset = ( function () {
      * 
      * @class Tileset
      * @constructor
-     * @memberof Tiled
      * @private
      * @param {Object} data - Tileset data.
      */

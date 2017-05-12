@@ -12,7 +12,7 @@ ADCore.Tiled.ImageLayer = ( function () {
     /**
      * An ImageLayer is the data holder of an image of a Tilemap.
     *
-     * @class ADCore.Tiled.ImageLayer
+     * @class ImageLayer
      * @constructor
      * @private
      * @param {Tilemap} parent - Parent of the ImageLayer.

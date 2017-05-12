@@ -24,11 +24,17 @@ ADCore.TileModel = (function () {
         ADCore.Entity.call(this, position);
 
         /**
-         * @property {Integer} gid - The Global Tile ID.
+         * @property {Integer} _gid - The Global Tile ID.
          * @readonly 
          * @public
          */
         this._gid = gid;
+        
+        /**
+         * @property {TileLayer} Layer - The layer the tile is on.
+         * @readonly 
+         * @private
+         */
         this.layer = layer;
         
         /**

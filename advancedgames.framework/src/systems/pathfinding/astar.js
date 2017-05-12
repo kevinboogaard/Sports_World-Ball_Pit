@@ -7,7 +7,6 @@
 
 /**
  * @namespace Astar
- * @memberof ADCore
  * @static
  */
 var Astar = {};
@@ -15,7 +14,8 @@ var Astar = {};
  /**
   * @property {number} horizontalScore - Horizontal Score being used for Astar calculations.
   * @memberof Astar
-  * @static.
+  * @static
+  * @instance
   * @default 1
   */
 Astar.horizontalScore = 1;
@@ -23,7 +23,8 @@ Astar.horizontalScore = 1;
  /**
   * @property {number} diagonalScore - Diagonal Score being used for Astar calculations.
   * @memberof Astar 
-  * @static.
+  * @static
+  * @instance
   * @default 1.414
   */
 Astar.diagonalScore = 1.414;
@@ -31,7 +32,8 @@ Astar.diagonalScore = 1.414;
  /**
   * @property {array} walkTiles - Tiles being used in the Astar calculations
   * @memberof Astar 
-  * @static.
+  * @static
+  * @instance
   * @default empty
   */
 Astar.walkTiles = [];
@@ -157,7 +159,7 @@ Astar.Search = function (start_position, end_position) {
 /**
  * Check if the two tiles are diagonal.
  * 
- * @method IsDiagonal
+ * @method _IsDiagonal
  * @memberof Astar
  * @private
  * @param {TileModel} tileA - The first tile.
@@ -172,7 +174,7 @@ Astar._isDiagonal = function (tileA, tileB) {
 /**
  * Method to check if the tiles should be first or not in the sorting process.
  * 
- * @method SortOnF
+ * @method _SortOnF
  * @memberof Astar
  * @private
  * @param {TileModel} a - The first tile.
@@ -192,7 +194,7 @@ Astar._sortOnF = function (a, b) {
  * Get the final path to the tile. This method loops through the parents untill it reaches the tile without a parent. 
  * On the end it will reverse the list to get the full path from A to B.
  * 
- * @method GetPathToTile
+ * @method _GetPathToTile
  * @memberof Astar
  * @private
  * @param {TileModel} tile - The destination tile.
@@ -218,7 +220,7 @@ Astar._getPathToTile = function (tile) {
 /**
  * Calculate the Heuristic from two positions 
  * 
- * @method Heuristic
+ * @method _Heuristic
  * @memberof Astar
  * @private
  * @param {Vector2} posA 

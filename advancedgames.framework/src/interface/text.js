@@ -22,7 +22,7 @@ ADCore.Text = ( function () {
         /**
          * Set by the Value() method.
          * 
-         * @property {String} _text
+         * @property {String} _Text
          * @private
          * @readonly 
          * @default ""
@@ -32,7 +32,7 @@ ADCore.Text = ( function () {
         /**
          * Set by the Position() method.
          * 
-         * @property {Vector2} _position
+         * @property {Vector2} _Position
          * @private
          * @readonly 
          * @default Vector2(0,0)
@@ -42,7 +42,7 @@ ADCore.Text = ( function () {
         /**
          * Set by the Anchor() method.
          * 
-         * @property {Vector2} _anchor
+         * @property {Vector2} _Anchor
          * @private
          * @readonly 
          * @default Vector2(0,0)
@@ -52,7 +52,7 @@ ADCore.Text = ( function () {
         /**
          * Set by the Font() method.
          * 
-         * @property {String} _fontName
+         * @property {String} _FontName
          * @private
          * @readonly 
          * @default "Arial"
@@ -62,7 +62,7 @@ ADCore.Text = ( function () {
         /**
          * Set by the Size() method.
          * 
-         * @property {Number} _fontSize
+         * @property {Number} _FontSize
          * @private
          * @readonly 
          * @default 10
@@ -72,7 +72,7 @@ ADCore.Text = ( function () {
         /**
          * Other parameters set by methods.
          * 
-         * @property {Object} _params
+         * @property {Object} _Params
          * @private
          * @readonly 
          * @default Empty

@@ -7,10 +7,9 @@
 var ADCore = ADCore || {};
 
 /**
- * @namespace PhaserExtension
- * @memberof ADCore
- * @static
+ * @namespace
  */
+let PhaserExtension = {}; // For documentation purposes.
 ADCore.PhaserExtension = {};
 
 /**
@@ -19,7 +18,7 @@ ADCore.PhaserExtension = {};
  * @override 
  * @public
  * @param {string} type - Type of the result you are trying to get.
- * @param {string} result - Key of the result you are trying to get.
+ * @param {string} key - Key of the result you are trying to get.
  * @returns {T} result
  */
 Phaser.Cache.prototype.get = function ( type, key ) {
@@ -119,7 +118,7 @@ Phaser.Cache.prototype.get = function ( type, key ) {
 /**
  * Returns the corresponding number to the cache type.
  * 
- * @method CacheTypeToNumber
+ * @method PhaserExtension.CacheTypeToNumber
  * @memberof PhaserExtension
  * @override
  * @static

@@ -13,36 +13,57 @@ ADCore.Stopwatch = (function () {
      * @constructor
      */
     function Stopwatch() {
+        /**
+        * @property {Number} Elapsed - The time elapsed since the start/reset.
+        * @public
+        */
         this.elapsed = 0;
 
+        /**
+        * @property {Number} WatchStarted - True if the watch has started ticking.
+        * @private
+        */
         this._watchStarted = false;
+
+        /**
+        * @property {Array} Rounds - Storage of all the rounds. 
+        * @private
+        */
         this._rounds = [];
     }
     var p = Stopwatch.prototype;
 
-    /**'
-     * 'Start'
+    /**
+     * @method Start
+     * @memberof Stopwatch
+     * @public 
      */
     p.Start = function(){
         this._watchStarted = true;
     };
 
-    /**'
-     * 'Stop'
+    /**
+     * @method Stop
+     * @memberof Stopwatch
+     * @public 
      */
     p.Stop = function(){
         this._watchStarted = false;
     };
 
-    /**'
-     * 'Reset'
+    /**
+     * @method Reset
+     * @memberof Stopwatch
+     * @public 
      */
     p.Reset = function(){
         this.elapsed = 0;
     };
 
-    /**'
-     * 'Round'
+    /**
+     * @method Round
+     * @memberof Stopwatch
+     * @public 
      */
     p.Round = function(){
         var elapsed = this.elapsed;
@@ -50,8 +71,11 @@ ADCore.Stopwatch = (function () {
         this.elapsed = 0;
     };
 
-    /**'
-     * 'Update'
+    /**
+     * @method Update
+     * @memberof Stopwatch
+     * @public 
+     * @param {Integer} deltaTime
      */
     p.Update = function(deltaTime){
         if(this._watchStarted === true){

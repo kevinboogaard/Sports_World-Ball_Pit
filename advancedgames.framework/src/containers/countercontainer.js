@@ -5,9 +5,23 @@
  * @ignore
  */
 var ADCore = ADCore || {};
+
+/**
+ * @namespace {String} Event
+ * @memberof ADCore
+ */
 ADCore.Event = ADCore.Event || {};
 
+/**
+ * @event ON_COUNTER_ADD
+ * @memberof Event
+ */
 ADCore.Event.ON_COUNTER_ADD = "on_counter_add";
+
+/**
+ * @event ON_COUNTER_REMOVE
+ * @memberof Event
+ */
 ADCore.Event.ON_COUNTER_REMOVE = "on_counter_remove";
 
 ADCore.CounterContainer = (function() {
@@ -22,7 +36,7 @@ ADCore.CounterContainer = (function() {
     function CounterContainer(){
         
         /**
-         * @property {Array} counters
+         * @property {Array} _Counters
          * @private
          */
         this._counters = [];
@@ -36,6 +50,7 @@ ADCore.CounterContainer = (function() {
      * @method Update
      * @memberof CounterContainer
      * @public
+     * @param {Number} deltaTime
      */
     p.Update = function (deltaTime) {
         var len = this._counters.length;
@@ -49,6 +64,7 @@ ADCore.CounterContainer = (function() {
      * @method AddCounter
      * @memberof CounterContainer
      * @public
+     * @param {Number} counter
      */
     p.AddCounter = function (counter) {
         this._counters.push(counter);
@@ -58,6 +74,7 @@ ADCore.CounterContainer = (function() {
      * @method RemoveCounter
      * @memberof CounterContainer
      * @public
+     * @param {Number} counter
      */
     p.RemoveCounter = function(counter) {
         var index = this._counters.indexOf(counter);
@@ -65,7 +82,7 @@ ADCore.CounterContainer = (function() {
     };
 
     /**
-     * @method _onCounterAdd
+     * @method _OnCounterAdd
      * @memberof CounterContainer
      * @private 
      * @param {Object} caller
@@ -78,7 +95,7 @@ ADCore.CounterContainer = (function() {
     };
 
     /**
-     * @method _onCounterRemove
+     * @method _OnCounterRemove
      * @memberof CounterContainer
      * @private 
      * @param {Object} caller

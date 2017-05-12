@@ -22,13 +22,13 @@ ADCore.Sprite = (function () {
         Phaser.Sprite.call(this, ADCore.phaser, position.x, position.y, key);
 
         /**
-         * @property {Array} animations - The animations of the sprite.
+         * @property {Array} _Animations - The animations of the sprite.
          * @private
          */
         this._animations = [];
 
         /**
-         * @property {Boolean} disposed - True if the spsrite has been disposed.
+         * @property {Boolean} Disposed - True if the spsrite has been disposed.
          * @public
          */
         this.disposed = false;
@@ -43,7 +43,7 @@ ADCore.Sprite = (function () {
     var p = Sprite.prototype;
 
     /**
-     * @method InitializeSprite
+     * @method _InitializeSprite
      * @memberof Sprite
      * @private
      * @param {String} key
@@ -62,7 +62,7 @@ ADCore.Sprite = (function () {
     };
 
     /**
-     * @method InitializeAnimations
+     * @method _InitializeAnimations
      * @memberof Sprite
      * @private
      * @param {String} key

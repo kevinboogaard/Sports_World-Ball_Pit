@@ -9,36 +9,66 @@ var ADCore = ADCore || {};
 /**
  * @namespace
  * @name Tiled
+ * @ignore
  */
 ADCore.Tiled = ADCore.Tiled || {};
 
 /**
- * @namespace 
- * @memberof Tiled
- * @name LayerTypes
+ * @namespace LayerTypes
  */
-ADCore.Tiled.LayerTypes = {
-    IMAGE: "imagelayer",
-    TILE: "tilelayer",
-    OBJECT: "objectgroup"
-};
+let LayerTypes = {}; // For documentation purposes.
+ADCore.Tiled.LayerTypes = LayerTypes;
+
+/** 
+ * @property {String} IMAGE
+ * @memberof LayerTypes
+ * @readonly 
+ */
+ADCore.Tiled.LayerTypes.IMAGE = "imagelayer";
+
+/** 
+ * @property {String} TILE
+ * @memberof LayerTypes
+ * @readonly 
+ */
+ADCore.Tiled.LayerTypes.TILE = "tilelayer";
+
+/** 
+ * @property {String} OBJECT
+ * @memberof LayerTypes
+ * @readonly 
+ */
+ADCore.Tiled.LayerTypes.OBJECT = "objectgroup";
 
 /**
- * Enum for map orientations.
- * @readonly
- * @enum {String}
- * @typedef {(String)} Orientation
+ * @namespace Orientation
  */
-ADCore.Tiled.Orientation = {
-    /** Orthogonal orientation of the map */
-    ORTHOGONAL: "orthogonal",
-    
-    /** Isometric orientation of the map */
-    ISOMETRIC: "isometric",
+let Orientation = {}; // For documentation purposes.
+ADCore.Tiled.Orientation = Orientation;
 
-    /** Staggered orientation of the map */
-    STAGGERED: "staggered"
-};
+/** 
+ * Orthogonal orientation of the map
+ * @property {String} ORTHOGONAL
+ * @memberof Orientation
+ * @readonly 
+ */
+ADCore.Tiled.Orientation.ORTHOGONAL = "orthogonal";
+    
+/** 
+ * Isometric orientation of the map
+ * @property {String} ORTHOGONAL
+ * @memberof Orientation
+ * @readonly 
+ */
+ADCore.Tiled.Orientation.ISOMETRIC = "isometric";
+
+/** 
+ * Staggered orientation of the map
+ * @property {String} ORTHOGONAL
+ * @memberof Orientation
+ * @readonly 
+ */
+ADCore.Tiled.Orientation.STAGGERED = "staggered";
 
 this.Tilemap = ( function () {
 
@@ -151,7 +181,7 @@ this.Tilemap = ( function () {
     var p = Tilemap.prototype;
 
     /**
-     * @method Initialize
+     * @method _Initialize
      * @private 
      * @ignore 
      */
@@ -255,7 +285,7 @@ this.Tilemap = ( function () {
     };
 
     /**
-     * @method Finalize
+     * @method _Finalize
      * @private 
      * @ignore 
      */

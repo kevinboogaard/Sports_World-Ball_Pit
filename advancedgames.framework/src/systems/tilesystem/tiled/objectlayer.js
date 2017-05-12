@@ -104,7 +104,7 @@ ADCore.Tiled.ObjectLayer = ( function () {
     var p = ObjectLayer.prototype;
 
     /**
-     * @method Initialize
+     * @method _Initialize
      * @private 
      * @ignore 
      */

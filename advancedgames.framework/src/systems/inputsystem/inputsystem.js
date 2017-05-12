@@ -99,12 +99,17 @@ ADCore.InputSystem = (function () {
         this.inputPosition = new Vector2();
 
         /**
-        * @property {Boolean} views - True if any input is down.
+        * @property {Boolean} _InputDown - True if any input is down.
         * @private
         */
         this._inputDown = false;
 
+        /**
+        * @property {Boolean} _StartPosition  - True if any input is down.
+        * @private
+        */
         this._startPosition = null;
+
         /**
         * @property {Integer} keyPressed - The current key pressed.
         * @public
@@ -118,12 +123,12 @@ ADCore.InputSystem = (function () {
         this.lastKeyPressed = -1;
 
         // Add the mouse move / mouse down / mouse up functies to the input call list.
-        input.onDown.add( this.onInputDown, this );
-        input.onUp.add( this.onInputUp, this );
-        input.onTap.add( this.onInputTap, this );
-        input.onHold.add( this.onInputHold, this );
-        input.keyboard.onDownCallback = this.onKeyboardKeyDown.bind( this );
-        input.keyboard.onUpCallback = this.onKeyboardKeyUp.bind( this );
+        input.onDown.add( this._onInputDown, this );
+        input.onUp.add( this._onInputUp, this );
+        input.onTap.add( this._onInputTap, this );
+        input.onHold.add( this._onInputHold, this );
+        input.keyboard.onDownCallback = this._onKeyboardKeyDown.bind( this );
+        input.keyboard.onUpCallback = this._onKeyboardKeyUp.bind( this );
     }
     var p = InputSystem.prototype;
 
@@ -140,11 +145,11 @@ ADCore.InputSystem = (function () {
      * This function dispatches ON_DOWN with the Listener class
      * When Phaser detects any input.
      * 
-     * @method onInputDown
+     * @method _onInputDown
      * @memberof InputSystem
      * @private
      */
-    p.onInputDown = function ( event ) {
+    p._onInputDown = function ( event ) {
         if ( Input.paused ) return;
         var position = new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y);
         
@@ -158,11 +163,11 @@ ADCore.InputSystem = (function () {
      * This function dispatches ON_UP with the Listener class
      * When Phaser detects any input.
      * 
-     * @method onInputUp
+     * @method _onInputUp
      * @memberof InputSystem
      * @private
      */
-    p.onInputUp = function ( event ) {
+    p._onInputUp = function ( event ) {
         if ( Input.paused || this._inputDown === false ) return;
         var position = new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y);
 
@@ -182,11 +187,11 @@ ADCore.InputSystem = (function () {
      * This function dispatches ON_TAP with the Listener class
      * When Phaser detects any input.
      * 
-     * @method onInputUp
+     * @method _onInputTap
      * @memberof InputSystem
      * @private
      */
-    p.onInputTap = function ( event ) {
+    p._onInputTap = function ( event ) {
         if ( Input.paused ) return;
         Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, { "event": event, "position": new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y) }, false);
     };
@@ -195,11 +200,11 @@ ADCore.InputSystem = (function () {
      * This function dispatches ON_HOLD with the Listener class
      * When Phaser detects any input.
      * 
-     * @method onInputHold
+     * @method _onInputHold
      * @memberof InputSystem
      * @private
      */
-    p.onInputHold = function ( event ) {
+    p._onInputHold = function ( event ) {
         if ( Input.paused ) return;
         Listener.Dispatch( ADCore.InputEvent.ON_HOLD, this, { "event": event, "position": new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y) }, false);
     };
@@ -208,11 +213,11 @@ ADCore.InputSystem = (function () {
      * This function dispatches KEY_DOWN with the Listener class
      * When Phaser detects keyboard input.
      * 
-     * @method onKeyboardKeyDown
+     * @method _onKeyboardKeyDown
      * @memberof InputSystem
      * @private
      */
-    p.onKeyboardKeyDown = function ( event ) {
+    p._onKeyboardKeyDown = function ( event ) {
         if ( Input.paused ) return;
         var keyCode = event.keyCode;
         this.keyPressed = this.lastKeyPressed = keyCode;
@@ -223,11 +228,11 @@ ADCore.InputSystem = (function () {
      * This function dispatches KEY_UP with the Listener class
      * When Phaser detects keyboard input.
      * 
-     * @method onKeyboardKeyUp
+     * @method _onKeyboardKeyUp
      * @memberof InputSystem
      * @private
      */
-    p.onKeyboardKeyUp = function ( event ) {
+    p._onKeyboardKeyUp = function ( event ) {
         if ( Input.paused ) return;
         var keyCode = event.keyCode;
         this.keyPressed = -1;

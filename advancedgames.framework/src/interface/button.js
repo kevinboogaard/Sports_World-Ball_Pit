@@ -19,7 +19,7 @@ ADCore.Button = (function () {
         ADCore.Interface.call(this, position, key);
         
         /**
-         * @property {Text} text - If the button has a text- this is the variable where it would be stored.
+         * @property {Text} Text - If the button has a text- this is the variable where it would be stored.
          * Use the SetText() to set text on the button.
          * @public
          * @readonly 
@@ -28,13 +28,13 @@ ADCore.Button = (function () {
         this.text = null;
 
         /**
-         * @property {Boolean} inputEnabled - Need to put input enabled for Phaser Input System. 
+         * @property {Boolean} InputEnabled - Need to put input enabled for Phaser Input System. 
          * @ignore
          */
         this.inputEnabled = true;
         
         /**
-         * @property {Boolean} disabled - This will be true if the input is disabled. 
+         * @property {Boolean} Disabled - This will be true if the input is disabled. 
          * Look at the Enable() and Disable() functions to switch the variable.
          * @public
          * @readonly 
@@ -42,35 +42,35 @@ ADCore.Button = (function () {
         this.disabled = true;
 
         /**
-         * @property {Boolean} inputOver - This will be true if a mouse hovers over the button.
+         * @property {Boolean} InputOver - This will be true if a mouse hovers over the button.
          * @public
          * @readonly 
          */
         this.inputOver = false;
         
         /**
-         * @property {Function} onInputDown - Set this variable with a function to listen to the call.
+         * @property {Function} OnInputDown - Set this variable with a function to listen to the call.
          * @public
          * @default null
          */
         this.onInputDown = null;     
 
         /**
-         * @property {Function} onInputUp - Set this variable with a function to listen to the call.
+         * @property {Function} OnInputUp - Set this variable with a function to listen to the call.
          * @public
          * @default null
          */
         this.onInputUp = null;
         
         /**
-         * @property {Function} onInputOver - Set this variable with a function to listen to the call.
+         * @property {Function} OnInputOver - Set this variable with a function to listen to the call.
          * @public
          * @default null
          */
         this.onInputOver = null;
 
         /**
-         * @property {Function} onInputLeave - Set this variable with a function to listen to the call.
+         * @property {Function} OnInputLeave - Set this variable with a function to listen to the call.
          * @public
          * @default null
          */
@@ -130,7 +130,7 @@ ADCore.Button = (function () {
     /**
      * Listens to Phaser build in input system.
      * 
-     * @method OnInputDown
+     * @method _OnInputDown
      * @memberof Button
      * @private
      */
@@ -141,7 +141,7 @@ ADCore.Button = (function () {
     /**
      * Listens to Phaser build in input system.
      * 
-     * @method OnInputUp
+     * @method _OnInputUp
      * @memberof Button
      * @private
      */
@@ -152,7 +152,7 @@ ADCore.Button = (function () {
     /**
      * Listens to Phaser build in input system.
      * 
-     * @method OnInputOver
+     * @method _OnInputOver
      * @memberof Button
      * @private
      */
@@ -164,7 +164,7 @@ ADCore.Button = (function () {
     /**
      * Listens to Phaser build in input system.
      * 
-     * @method OnInputLeave
+     * @method _OnInputLeave
      * @memberof Button
      * @private
      */

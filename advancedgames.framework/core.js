@@ -102,7 +102,14 @@ function _render () {
 }
 
 /**
- * To use Getters & Setters in your class use the ADCore.EnableMutators() class to enable the getter & setter functionality. 
+ * Javascript Object Utilities/Extensions
+ * @class Object
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object}
+ */
+var object = object || {}; // For documentation purposes.
+
+/**
+ * To use Getters & Setters in your class use the this method to enable the getter & setter functionality. 
  * This method will eventually call a method in your class named: "gettersAndSetters" where you can make your getters & setters.
  * This method also adds three new methods to the prototype: Get, Set and Define. 
  * 
@@ -112,17 +119,13 @@ function _render () {
  * @param {Object} prototype - The prototype of the class.
  */
 ADCore.EnableMutators = function ( prototype ) {
-    /**
-     * @external Object
-     * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object}
-     */
 
     /**
      * Makes a getter variable in the prototype.
-     * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
+     * The class needs to call [ ADCore.EnableMutators() ]{@link #ADCore.ADCore.EnableMutators} in order to have this functionality work!
      * 
-     * @method Get
-     * @memberof external:Object
+     * @method this.Get
+     * @memberof Object
      * @private
      * @param {string} propertyString - the getters name.
      * @param {Function} callback - the function to call if someone gets the getter.
@@ -135,10 +138,10 @@ ADCore.EnableMutators = function ( prototype ) {
 
     /**
      * Makes a setter variable in the prototype.
-     * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
+     * The class needs to call [ ADCore.EnableMutators() ]{@link #ADCore.ADCore.EnableMutators} in order to have this functionality work!
      * 
-     * @method Set
-     * @memberof external:Object
+     * @method this.Set
+     * @memberof Object
      * @private
      * @param {string} propertyString - the setters  name.
      * @param {Function} callback - the function to call if someone gets the setter.
@@ -151,10 +154,10 @@ ADCore.EnableMutators = function ( prototype ) {
     
     /**
      * Defines a variable in the prototype with both the get & set functionality.
-     * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
+     * The class needs to call [ ADCore.EnableMutators() ]{@link #ADCore.ADCore.EnableMutators} in order to have this functionality work!
      * 
-     * @method Define
-     * @memberof external:Object
+     * @method this.Define
+     * @memberof Object
      * @private
      * @param {string} propertyString - the variable's name.
      * @param {Object} callback - an object containing two methods: get and set.
@@ -170,6 +173,14 @@ ADCore.EnableMutators = function ( prototype ) {
     else prototype.gettersAndSetters();
 };
 
+/**
+ * @method SetTimer
+ * @memberof ADCore
+ * @public
+ * @param {Function} callback - The function to call when the timer has finished.
+ * @param {Integer} starttime - The time to start at in seconds.
+ * @param {Integer} [multiplier=1] - The multiplier.
+ */
 this.SetTimer = function (callback, starttime, multiplier) {
     var timer = new ADCore.Timer(starttime, multiplier | 1, callback);
     Listener.Dispatch(ADCore.Event.ON_COUNTER_ADD, this, { "counter": timer });
@@ -178,6 +189,11 @@ this.SetTimer = function (callback, starttime, multiplier) {
     return timer;
 };
 
+/**
+ * @method SetStopwatch
+ * @memberof ADCore
+ * @public
+ */
 this.SetStopwatch = function () {
     var stopwatch = new ADCore.Stopwatch();
     Listener.Dispatch(ADCore.Event.ON_COUNTER_ADD, this, { "counter": stopwatch });
@@ -186,10 +202,22 @@ this.SetStopwatch = function () {
     return stopwatch;
 };
 
+/**
+ * @method ClearTimer
+ * @memberof ADCore
+ * @public
+ * @param {Timer} timer - The timer to clear.
+ */
 this.ClearTimer = function(timer) {
     this.counterContainer.RemoveCounter(timer);
 };
 
+/**
+ * @method ClearStopwatch
+ * @memberof ADCore
+ * @public
+ * @param {StopWatch} stopwatch - The stopwatch to clear.
+ */
 this.ClearStopwatch = function (stopwatch) {
     this.counterContainer.RemoveCounter(stopwatch);
 };

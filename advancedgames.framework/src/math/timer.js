@@ -13,52 +13,90 @@ ADCore.Timer = (function () {
      * @constructor
      */
     function Timer(startTime, multiplier,callback) {
+        /**
+        * @property {Number} StartTime 
+        * @public
+        */
         this.startTime = startTime;
+
+        /**
+        * @property {Number} Multiplier
+        * @public
+        */
         this.multiplier = multiplier;
+        
+        /**
+        * @property {Function} _Callback
+        * @private
+        */
         this._callback = callback;
 
+        /**
+        * @property {Number} Count 
+        * @public
+        */
         this.count = startTime; 
+
+        /**
+        * @property {Boolean} _TimerStarted
+        * @private
+        */
         this._timerStarted = false;
     }
     var p = Timer.prototype;
 
     /**
-     * 'Start'
+     * @method Start
+     * @memberof Timer
+     * @public 
      */
     p.Start = function(){
         this._timerStarted = true;
     };
     
-    /**'
-     * 'Stop'
+    /**
+     * @method Stop
+     * @memberof Timer
+     * @public 
      */
     p.Stop = function(){
         this._timerStarted = false;
     };
 
     /**
-     * 'Add'
+     * @method Add
+     * @memberof Timer
+     * @public 
+     * @param {Integer} value
      */
     p.Add = function(value){
         this.count += value;
     };
 
     /**
-     * 'Substract'
+     * @method Substract
+     * @memberof Timer
+     * @public 
+     * @param {Integer} value
      */
     p.Substract = function(value){
         this.count -= value;
     };
     
-    /**'
-     * 'Reset'
+    /**
+     * @method Reset
+     * @memberof Timer
+     * @public 
      */
     p.Reset = function(){
         this.count = 0;
     };
 
-    /**'
-     * 'Update'
+    /**
+     * @method Update
+     * @memberof Timer
+     * @public 
+     * @param {Integer} deltaTime
      */
     p.Update = function(deltaTime){
         if(this._timerStarted === true){

@@ -7,80 +7,77 @@
 var ADCore = ADCore || {};
 
 /**
- * @namespace {String} Event
- * @memberof ADCore
- * @typedef {(String)} Event
+ * @namespace Event
  */
-ADCore.Event = ADCore.Event || {};
+let Event = ADCore.Event || {};
+ADCore.Event = Event;
 
 /**
- * @event ON_PRELOAD_START
- * @memberof ADCore.Event
+ * @property {String} ON_PRELOAD_START
+ * @memberof Event
+ * @readonly
  */
 ADCore.Event.ON_PRELOAD_START = "on_preload_start";
 
 /**
- * @event ON_PRELOAD_UPDATE
- * @memberof ADCore.Event
+ * @property {String} ON_PRELOAD_UPDATE
+ * @memberof Event
+ * @readonly
  */
 ADCore.Event.ON_PRELOAD_UPDATE = "on_preload_update";
 
 /**
- * @event ON_PRELOAD_COMPLETE
- * @memberof ADCore.Event
+ * @property {String} ON_PRELOAD_COMLETE
+ * @memberof Event
+ * @readonly
  */
 ADCore.Event.ON_PRELOAD_COMLETE = "on_preload_complete";
 
 /**
- * Enum for Preload Categories
- * @readonly 
- * @memberof ADCore
- * @enum {string} 
- * @typedef {(String)} PreloadCategories
+ * @namespace PreloadCategories
  */
-ADCore.PreloadCategories = ADCore.PreloadCategories || {};
+let PreloadCategories = ADCore.PreloadCategories || {};
+ADCore.PreloadCategories = PreloadCategories;
 
 /**
- * @member {String}
+ * @property {String} GENERIC
  * @memberof PreloadCategories
- * Generic Category
+ * @readonly
  */
 ADCore.PreloadCategories.GENERIC = "generic";
 
 /**
- * @member {String}
+ * @property {String} LEVEL
  * @memberof PreloadCategories
- * Level Category
+ * @readonly
  */
 ADCore.PreloadCategories.LEVEL = "level";
 
-/**
- * Enum for Preload Types
- * @readonly 
- * @memberof ADCore
- * @enum {string} 
- * @typedef {(String)} PreloadTypes
- */
-ADCore.PreloadTypes = ADCore.PreloadTypes || {};
 
 /**
- * @member {String}
+ * @namespace PreloadTypes
+ */
+let PreloadTypes = ADCore.PreloadTypes || {};
+ADCore.PreloadTypes = PreloadTypes;
+
+/**
+ * @property {String} RESOURCE_LIST
  * @memberof PreloadTypes
- * Resourcelist Type
+ * @readonly
  */
 ADCore.PreloadTypes.RESOURCE_LIST = "resourcelist";
 
 /**
- * @member {String}
+ * @property {String} ATLAS_LIST
  * @memberof PreloadTypes
- * Atlaslist Type
+ * @readonly
  */
 ADCore.PreloadTypes.ATLAS_LIST = "atlaslist";
 
 /**
- * @member {String}
+ * @property {String} MAP
  * @memberof PreloadTypes
- * Map Type
+ * @readonly
  */
 ADCore.PreloadTypes.MAP = "map";
 
@@ -95,14 +92,14 @@ ADCore.Preloader = (function(){
      */
     function Preloader(phaser) {
         /**
-        * @property {Phaser.Game} phaser - Constructed Phaser Game.
+        * @property {Phaser.Game} _Phaser - Constructed Phaser Game.
         * @private
         */
         this._phaser = phaser;
 
         /**
          * Load is made when calling the 'Initialize' method of the class. 
-         * @property {Phaser.Load} load - Constructed Phaser Load.
+         * @property {Phaser.Load} _Load - Constructed Phaser Load.
          * @private
          * @default Null 
          */
@@ -115,7 +112,7 @@ ADCore.Preloader = (function(){
         this.initialized = false;
 
         /**
-        * @property {Object} file_load_data - THe data if the files loaded.
+        * @property {Object} _FileLoadData - THe data if the files loaded.
         * @private
         */
         this._file_load_data = {};
@@ -169,7 +166,7 @@ ADCore.Preloader = (function(){
     /**
      * Called by phaser when a file has been preloaded. Do not call yourself!
      * 
-     * @method OnFileComplete
+     * @method _OnFileComplete
      * @memberof Preloader
      * @private 
      * @param {Number} progress - The progress of the file.
@@ -204,15 +201,16 @@ ADCore.Preloader = (function(){
     /**
      * This method preloads a specific resource.
      * 
-     * @method Preload Resource
+     * @method _PreloadResource
      * @memberof Preloader
      * @private
-     * @param {String} 'file type'
-     * @param {String} 'file path'
-     * @param {String} 'savekey'
-     * @param {String} 'loaded type'
-     * @param {String} 'group key'
-     * @param {Object} 'data'
+     * @param {String} file_type
+     * @param {String} file_path
+     * @param {String} file_key
+     * @param {String} save_key
+     * @param {String} loaded_type
+     * @param {String} group_key
+     * @param {Object} data
      * 
      * @example 
      * preloader._preload_resource( 'image', 'character', 'character | path/to/image', 'GENERIC', 'images', {} );
@@ -234,7 +232,7 @@ ADCore.Preloader = (function(){
     /**
      * Preload a resource list.
      * 
-     * @method Preload Resource List
+     * @method _PreloadResourceList
      * @memberof Preloader
      * @private
      * @param {object} data - The data of the resource list.
@@ -284,7 +282,7 @@ ADCore.Preloader = (function(){
     /**
      * Preload an atlas list.
      * 
-     * @method Preload Atlas List
+     * @method _PreloadAtlasList
      * @memberof Preloader
      * @private
      * @param {object} data - The data of the atlas list.
@@ -333,7 +331,7 @@ ADCore.Preloader = (function(){
     /**
      * Preload a Tiled map.
      * 
-     * @method Preload Map
+     * @method _PreloadMap
      * @memberof Preloader
      * @private
      * @param {object} data - The data of the map.
@@ -370,7 +368,7 @@ ADCore.Preloader = (function(){
     /**
      * Preload a resource.
      * 
-     * @method Save Resource
+     * @method _SaveResource
      * @memberof Preloader
      * @private
      * @param {object} data - The data of the resource.
@@ -399,7 +397,7 @@ ADCore.Preloader = (function(){
     /**
      * This function parses image data so each image has the same data saved.
      * 
-     * @method Parse Image
+     * @method _ParseImage
      * @memberof Preloader
      * @private 
      * @param {Object} data - data of the image
@@ -436,7 +434,7 @@ ADCore.Preloader = (function(){
     /**
      * Called by phaser when a file has failed to preload. Do not call yourself!
      * 
-     * @method OnFileError
+     * @method _OnFileError
      * @memberof Preloader
      * @private 
      * @param {String} key - The savekey of the file. 

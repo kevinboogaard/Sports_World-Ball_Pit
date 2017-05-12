@@ -6,13 +6,6 @@
  */
 var ADCore = ADCore || {};
 
-/**
- * @namespace {String} Event
- * @memberof ADCore
- * @typedef {(String)} Event
- */
-ADCore.Event = ADCore.Event || {};
-
 this.Listener = (function () {
 
     /**
@@ -28,7 +21,7 @@ this.Listener = (function () {
     function Listener() {
 
         /**
-        * @property {Object} listeners - The list containing all the listener data.
+        * @property {Object} _Listeners - The list containing all the listener data.
         * @private
         */
         this._listeners = {};
@@ -70,7 +63,7 @@ this.Listener = (function () {
     /**
      * Private function to handle both of the Listen / ListenOnce methods. 
      * 
-     * @method Listen
+     * @method _Listen
      * @memberof Listener
      * @private
      * @param {Event} event
@@ -170,7 +163,7 @@ this.Listener = (function () {
     };
 
     /**
-     * @method HasListenerAddedEvent
+     * @method _HasListenerAddedEvent
      * @memberof Listener
      * @private
      * @param {Object} listener
@@ -191,7 +184,7 @@ this.Listener = (function () {
     };
 
     /**
-     * @method GetListenersByEvent
+     * @method _GetListenersByEvent
      * @memberof Listener
      * @private
      * @param {Event} event
@@ -202,7 +195,7 @@ this.Listener = (function () {
     };
 
     /**
-     * @method GetListenerIndex
+     * @method _GetListenerIndex
      * @memberof Listener
      * @private
      * @param {Object} listener
@@ -221,7 +214,7 @@ this.Listener = (function () {
     };
 
     /**
-     * @method GetListenerIndexes
+     * @method _GetListenerIndexes
      * @memberof Listener
      * @private
      * @param {Object} listener

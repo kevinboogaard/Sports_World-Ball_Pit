@@ -61,13 +61,13 @@ ADCore.ViewContainer = (function () {
         Phaser.Group.call(this, ADCore.phaser, null, "ViewContainer");
         
         /**
-        * @property {Phaser.Group} views - Normal group of views.
+        * @property {Phaser.Group} _Views - Normal group of views.
         * @private
         */
         this._views = new Phaser.Group( ADCore.phaser, null, "Views");
 
         /**
-        * @property {Phaser.Group} views - Lower group of views.
+        * @property {Phaser.Group} _LowerViews - Lower group of views.
         * @private
         */
         this._lowerviews = new Phaser.Group( ADCore.phaser, null, "LowerViews");
@@ -110,7 +110,7 @@ ADCore.ViewContainer = (function () {
     };
 
      /**
-     * @method OnModelAdd
+     * @method _OnModelAdd
      * @memberof ViewContainer
      * @private
      * @listens Event.ON_MODEL_ADD
@@ -125,7 +125,7 @@ ADCore.ViewContainer = (function () {
     };
 
      /**
-     * @method OnLowerModelAdd
+     * @method _OnLowerModelAdd
      * @memberof ViewContainer
      * @private
      * @listens Event.ON_LOWER_MODEL_ADD
@@ -140,7 +140,7 @@ ADCore.ViewContainer = (function () {
     };
   
      /**
-     * @method OnModelRemove
+     * @method _OnModelRemove
      * @memberof ViewContainer
      * @private
      * @listens Event.ON_MODEL_REMOVE
@@ -166,7 +166,7 @@ ADCore.ViewContainer = (function () {
     };
     
      /**
-     * @method OnLowerModelRemove
+     * @method _OnLowerModelRemove
      * @memberof ViewContainer
      * @private
      * @listens Event.ON_LOWER_MODEL_REMOVE

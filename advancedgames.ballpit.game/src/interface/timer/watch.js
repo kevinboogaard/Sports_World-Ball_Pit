@@ -50,7 +50,7 @@ ballpit.Watch = (function () {
      * @public
      */
     p.Render = function () {
-        this.text.text = ADCore.msToTime(this.timer.count, [ "minutes", "seconds" ]);
+        this.text.text = ADCore.Utilities.MsToTime(this.timer.count, [ "minutes", "seconds" ]);
     };
     
     return Watch;

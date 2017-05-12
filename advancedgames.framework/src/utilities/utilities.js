@@ -5,15 +5,27 @@
  * @ignore
  */
 var ADCore = ADCore || {};
-ADCore.Utilities = {};
 
+/**
+ * @namespace
+ */
+let Utilities = {}; // For documentation purposes.
+ADCore.Utilities = Utilities;
+
+/** 
+ * @property {Number} PI
+ * @memberof Utilities
+ * @instance
+ * @readonly 
+ */
 ADCore.Utilities.PI = 3.14159265359;
 
 /**
  * Adds the ECMAScript 2015 support to IE11 aswell.
- * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger}
  * 
- * @method ADCore.Utilities.isInteger
+ * @method Number.isInteger
+ * @memberof Utilities
  * @static
  * @param {int} val - value to be checked.
  * @returns {boolean} result
@@ -29,29 +41,6 @@ Number.isInteger = Number.isInteger || function ( val ) {
 };
 ADCore.Utilities.Number = ADCore.Utilities.Number || {};
 ADCore.Utilities.Number.isInteger = Number.isInteger;
-
-/**
- * Adds the ECMAScript 2015 support to IE11 aswell.
- * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger}
- * 
- * @method ADCore.Utilities.test
- * @static
- * @param {int} val - value to be checked.
- * @returns {boolean} result
- * 
- * @example 
- * Number.isInteger(10); 
- * // => true
- */
-Number.test = Number.test || function ( val ) {
-    return typeof val === "number" &&
-           isFinite( val ) &&
-           Math.floor( val ) === val;
-};
-ADCore.Utilities.Number = ADCore.Utilities.Number || {};
-ADCore.Utilities.Number.test = Number.test;
-
-
 
 /**
  * This method returns a random number between the specified values.
@@ -180,13 +169,24 @@ ADCore.Utilities.Array = ADCore.Utilities.Array || {};
 ADCore.Utilities.Array.contains = Array.prototype.contains;
 
 /**
- * 'msToTime'
- * @static
- * @returns {int}
- * @param {int} 'duration'
- * @param {Array} settings - "hours, minutes, seconds, milliseconds";
+ * Turns Milliseconds into a time format: HH:MM:SS:MS.
+ * The translation follows the order of the settings variable.  
+ * 
+ * @method ADCore.Utilities.MsToTime
+ * @memberof Utilities
+ * @public
+ * @param {Integer} duration
+ * @param {Array} settings - An array with strings: "hours", "minutes", "seconds", "milliseconds";
+ * @returns {String} The translation
+ * 
+ * @example 
+ * ADCore.Utilities.MsToTime(100000, ["hours", "minutes", "seconds"]);
+ * // => 00:01:00 = 1 minute.
+ * 
+ * ADCore.Utilities.MsToTime(100000, ["minutes", "hours", "seconds"]);
+ * // => 01:00:00
  */
-ADCore.msToTime = function ( duration, settings ) {    
+ADCore.Utilities.MsToTime = function ( duration, settings ) {    
         if (!settings) settings = [ "hours", "minutes", "seconds", "milliseconds" ];
 
         var time = { 
@@ -215,7 +215,7 @@ ADCore.msToTime = function ( duration, settings ) {
 /**
  * Check if the Object has a value.
  * 
- * @method HasObjectValue
+ * @method ADCore.Utilities.HasObjectValue
  * @memberof Utilities
  * @param {T} object - object to search in.
  * @param {T} value - value to look for.

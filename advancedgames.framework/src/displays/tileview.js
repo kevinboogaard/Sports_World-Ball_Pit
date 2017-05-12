@@ -20,6 +20,10 @@ ADCore.TileView = (function () {
     function TileView(model, key) {
         ADCore.Display.call( this, model, key );
 
+        /**
+        * @property {Boolean} visible - Phaser Set Visible From Layer
+        * @ignore
+        */
         this.visible = model.layer.visible;
     }
     TileView.prototype = Object.create(ADCore.Display.prototype);

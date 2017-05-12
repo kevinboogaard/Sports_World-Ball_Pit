@@ -98,7 +98,7 @@ ADCore.Tiled.TileLayer = ( function () {
     var p = TileLayer.prototype;
 
     /**
-     * @method Initialize
+     * @method _Initialize
      * @private 
      * @ignore 
      */
@@ -297,6 +297,7 @@ ADCore.Tiled.TileLayer = ( function () {
      * Finalizes the tilelayer. This function loops through all its tiles and looks for their neighbours. 
      *
      * @method Finalize
+     * @memberof TileLayer
      * @public
      */
     p.Finalize = function () {
@@ -340,7 +341,7 @@ ADCore.Tiled.TileLayer = ( function () {
     /**
      * Translate the given tile position to screen position.
      *
-     * @method FindTileNeighbours
+     * @method _FindTileNeighbours
      * @memberof TileLayer
      * @private
      * @param {TileModel} tile - The tile to look for the neighbours.
