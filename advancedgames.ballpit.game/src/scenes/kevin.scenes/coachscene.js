@@ -1,3 +1,6 @@
+/**
+ * @ignore
+ */
 var scene = scene || {};
 
 scene.Names = scene.Names || {};
@@ -7,6 +10,7 @@ scene.Coachscene = (function () {
 
     /**
      * 'Spritesheetscene'
+     * @ignore
      */
     function Coachscene() {
         Phaser.Group.call(this, ADCore.phaser, null, "Coachscene");

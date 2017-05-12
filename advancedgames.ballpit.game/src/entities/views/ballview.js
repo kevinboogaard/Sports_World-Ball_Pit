@@ -14,7 +14,7 @@ ballpit.ballAnimations.SWIPE_FAIL = "swipefail";
 ballpit.BallView = (function () {
 
     /**
-     * @class ballpit.BallView
+     * @class ballmodel
      * @constructor
      * @param {BallModel} model - The model of the ball
      * @param {String} key - The key of the ballsprite
@@ -32,7 +32,7 @@ ballpit.BallView = (function () {
 
      /**
      * @method OnStateChange
-     * @memberof ballpit.BallView
+     * @memberof ballmodel
      * @private
      * @listens Event.ON_BALL_STATE_CHANGE
      * @param {Object} caller -  Dispatcher of the event.
@@ -49,7 +49,7 @@ ballpit.BallView = (function () {
 
      /**
      * @method OnDestroy
-     * @memberof ballpit.BallView
+     * @memberof ballmodel
      * @private
      * @listens Event.ON_BALL_DESTROY
      * @param {Object} caller -  Dispatcher of the event.
@@ -78,7 +78,7 @@ ballpit.BallView = (function () {
 
      /**
      * @method Dispose
-     * @memberof ballpit.BallView
+     * @memberof ballmodel
      * @public
      */
     p.__display_dispose = p.Dispose;

@@ -1,3 +1,4 @@
+
 var scene = scene || {};
 
 scene.Names = scene.Names || {};
@@ -7,6 +8,7 @@ scene.Entityscene = (function () {
 
     /**
      * 'Entityscene'
+     * @ignore
      */
     function Entityscene() {
         Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");

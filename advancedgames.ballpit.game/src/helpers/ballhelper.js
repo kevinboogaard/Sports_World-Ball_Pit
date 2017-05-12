@@ -9,7 +9,7 @@ var ballpit = ballpit || {};
 ballpit.BallHelper = (function () {
 
     /**
-     * @class ballpit.BallHelper
+     * @class BallHelper
      * @constructor
      * @param {TileLayer} layer - 
      * @param {BallContainer} ballContainer - 
@@ -31,7 +31,7 @@ ballpit.BallHelper = (function () {
     
     /**
      * @method GetLowestBeneath
-     * @memberof ballpit.BallHelper
+     * @memberof BallHelper
      * @public
      * @param {tile} tile - This is one of the tiles
      */
@@ -50,7 +50,7 @@ ballpit.BallHelper = (function () {
 
     /**
      * @method GetTilesByDirection
-     * @memberof ballpit.BallHelper
+     * @memberof BallHelper
      * @public
      * @param {tile} tile - This is one of the tiles
      * @param {number} direction - This is one of the tiles
@@ -69,7 +69,7 @@ ballpit.BallHelper = (function () {
 
      /**
      * @method GetAligned
-     * @memberof ballpit.BallHelper
+     * @memberof BallHelper
      * @public
      * @param {tile} tile - This is one of the tiles
      */
@@ -88,7 +88,7 @@ ballpit.BallHelper = (function () {
 
     /**
      * @method GetAlignedByDirection
-     * @memberof ballpit.BallHelper
+     * @memberof BallHelper
      * @public
      * @param {tile} tile - This is one of the tiles
      * @param {number} direction - This is one of the tiles
@@ -111,7 +111,7 @@ ballpit.BallHelper = (function () {
 
     /**
      * @method GetAlignedByAxis
-     * @memberof ballpit.BallHelper
+     * @memberof BallHelper
      * @public
      * @param {tile} tile - This is one of the tiles
      * @param {number} axis - The direction
@@ -135,7 +135,7 @@ ballpit.BallHelper = (function () {
     };
     /**
      * @method Dispose
-     * @memberof ballpit.BallHelper
+     * @memberof BallHelper
      * @public
      */
     p.Dispose = function () {

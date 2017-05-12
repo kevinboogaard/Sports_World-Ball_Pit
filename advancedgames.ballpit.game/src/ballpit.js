@@ -9,7 +9,7 @@ var ballpit = ballpit || {};
 ballpit.Core = ( function () {
 
     /**
-     * @class ballpit.Core
+     * @class Core
      * @constructor
      */
     function Core() {
@@ -22,7 +22,7 @@ ballpit.Core = ( function () {
      * This function starts the game scene
      *    
      * @method Start
-     * @memberof ballpit.Core
+     * @memberof Core
      * @public
      */
     p.Start = function () {
@@ -44,7 +44,7 @@ ballpit.Core = ( function () {
 
      /**
      * @method Update
-     * @memberof ballpit.Core
+     * @memberof Core
      * @public
      * @param {Number} deltaTime - The number deltatime is a multiplier to convert gametime in to realtime
      */
@@ -57,7 +57,7 @@ ballpit.Core = ( function () {
 
      /**
      * @method Render
-     * @memberof ballpit.Core
+     * @memberof Core
      * @public
      */
     p.Render = function () {
@@ -69,7 +69,8 @@ ballpit.Core = ( function () {
     };
 
     /**
-     * @method _onSceneSwitch
+     * @method OnSceneSwitch
+     * @memberof Core
      * @private 
      * @param {Object} caller
      * @param {Object} params

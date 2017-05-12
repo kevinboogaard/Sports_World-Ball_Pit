@@ -1,9 +1,14 @@
+/**
+ * @ignore
+ */
+
 var scene = scene || {};
 
 scene.Musicscene = (function () {
 
     /**
      * 'Spritesheetscene'
+     * @ignore
      */
     function Musicscene() {
         Phaser.Group.call(this, ADCore.phaser, null, "Musicscene");

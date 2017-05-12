@@ -4,13 +4,45 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
+
+
 var ballpit = ballpit || {};
 
-ballpit.Event = ballpit.Event || {};
+
+/**
+ * @namespace Event
+ */
+let Event = ballpit.Event || {};
+ballpit.Event = Event;
+/**
+ * @property {String} ON_BALL_DESTINATION_REACHED
+ * @memberof Event
+ * @readonly
+ */
 ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
+/**
+ * @property {String} ON_BALL_STATE_CHANGE
+ * @memberof Event
+ * @readonly
+ */
 ballpit.Event.ON_BALL_STATE_CHANGE = "on_ball_state_change";
+/**
+ * @property {String} ON_BALL_STATE_CHANGE
+ * @memberof Event
+ * @readonly
+ */
 ballpit.Event.ON_BALL_DESTROY = "on_ball_destroy";
+/**
+ * @property {String} ON_BALL_DESTROY
+ * @memberof Event
+ * @readonly
+ */
 ballpit.Event.ON_BALL_SWAP_WRONG = "on_ball_swap_wrong";
+/**
+ * @property {String} ON_BALL_SWAP_WRONG
+ * @memberof Event
+ * @readonly
+ */
 
 /**
  * Enum for map orientations.
@@ -44,7 +76,7 @@ ballpit.BallStates = {
 ballpit.BallModel = (function () {
 
      /**
-     * @class ballpit.Core
+     * @class ballmodel
      * @constructor
      * @param {Vector2} position - The position of the ball
      * @param {type} type - Type of the ball
@@ -88,7 +120,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method Update
-     * @memberof ballpit.BallModel
+     * @memberof ballmodel
      * @public
      * @param {Number} deltaTime - The number deltatime is a multiplier to convert gametime in to realtime
      */
@@ -114,7 +146,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method MoveTo
-     * @memberof ballpit.BallModel
+     * @memberof ballmodel
      * @public
      * @param {vector2} vector - The destenation 
      */
@@ -124,7 +156,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method SwapTo
-     * @memberof ballpit.BallModel
+     * @memberof Core
      * @public
      * @param {vector2} vector - The destenation 
      */
@@ -135,7 +167,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method SwapTo
-     * @memberof ballpit.BallModel
+     * @memberof ballmodel
      * @public
      */
     p.Revert = function () {
@@ -144,7 +176,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method SwapTo
-     * @memberof ballpit.BallModel
+     * @memberof ballmodel
      * @public
      * @param {callback} callback - The destenation 
      */
@@ -154,7 +186,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method Dispose
-     * @memberof ballpit.BallModel
+     * @memberof ballmodel
      * @public
      */
     p.__entity_dispose = p.Dispose;
@@ -169,7 +201,7 @@ ballpit.BallModel = (function () {
      * Getters & Setters internal function.
      * 
      * @method GettersAndSetters
-     * @memberof ballpit.LevelLoader
+     * @memberof ballmodel
      * @private 
      * @ignore
      */
