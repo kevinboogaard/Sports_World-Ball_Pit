@@ -61,6 +61,12 @@
             "dimensions": {"width": 162, "height": 79 },
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
+        },
+         "tutorial":{
+            "path": "tutorial/tutorial.png",
+            "dimensions": {"width": 364, "height": 641 },
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
         }
     }
 }

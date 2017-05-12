@@ -28,7 +28,7 @@ scene.Game = (function () {
             Input.paused = true;
             setTimeout(function() {
                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
-            }.bind(this), 1000);
+            }.bind(this), 10000);
         }, Settings.Game.TIME, 1);
         this.gameTimer.Stop();
 
@@ -47,6 +47,8 @@ scene.Game = (function () {
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
+        Listener.Listen(ballpit.Event.ON_STAGE_BEGIN, this, this._onStageBegin.bind(this));
+        Listener.Listen(ballpit.Event.ON_STAGE_DONE, this, this._onStageDone.bind(this));
     }
     Game.prototype = Object.create(Phaser.Group.prototype);
     Game.prototype.constructor = Game; 
@@ -129,9 +131,20 @@ scene.Game = (function () {
 
             this.ballController.Swap(current, target);
         } else if (this.ballController.CanMove(target)){
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current);
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target);
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current.occupier);
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target.occupier);
         }
+    };
+
+    p._onStageBegin = function (caller, params) {
+        this.interfaceLayer.watch.text.tint = 0xFF0000;
+        this.gameTimer.multiplier = 2;
+    };
+
+    p._onStageDone = function (caller, params) {
+        this.interfaceLayer.watch.text.tint = 0xFFFFFF;
+        this.gameTimer.multiplier = 1;
+        this.gameTimer.Add(20);
     };
 
     /**

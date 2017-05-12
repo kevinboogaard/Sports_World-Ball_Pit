@@ -35,6 +35,20 @@ ADCore.Timer = (function () {
     p.Stop = function(){
         this._timerStarted = false;
     };
+
+    /**
+     * 'Add'
+     */
+    p.Add = function(value){
+        this.count += value;
+    };
+
+    /**
+     * 'Substract'
+     */
+    p.Substract = function(value){
+        this.count -= value;
+    };
     
     /**'
      * 'Reset'

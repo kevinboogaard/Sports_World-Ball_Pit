@@ -4,7 +4,7 @@
 var Settings = {};
 
 Settings.Game = {};
-Settings.Game.TIME = 60;
+Settings.Game.TIME = 120;
 
 /**
  * value = pixels per second.
