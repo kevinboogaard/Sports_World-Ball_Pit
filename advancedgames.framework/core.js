@@ -62,7 +62,10 @@ function _create () {
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
     // Create the sound system.
     this.soundSystem = new ADCore.SoundSystem(ADCore.phaser.sound);
+    // Load the generic sounds.
     this.soundSystem.Load(Global.Loaded.generic.music);
+
+    Debug.LogWarning("Core.js:66 Sound system is currently loading the generic music @ _create function instead of 'preload'");
 
     // If the main is started immediately some things will bug out.
     // To prevent any errors from happening we use a timeout.
@@ -103,19 +106,23 @@ function _render () {
  * This method will eventually call a method in your class named: "gettersAndSetters" where you can make your getters & setters.
  * This method also adds three new methods to the prototype: Get, Set and Define. 
  * 
- * @method EnableMutators
+ * @method ADCore.EnableMutators
  * @memberof ADCore
  * @static
  * @param {Object} prototype - The prototype of the class.
  */
 ADCore.EnableMutators = function ( prototype ) {
+    /**
+     * @external Object
+     * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object}
+     */
 
     /**
      * Makes a getter variable in the prototype.
      * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
      * 
      * @method Get
-     * @memberof ADCore
+     * @memberof external:Object
      * @private
      * @param {string} propertyString - the getters name.
      * @param {Function} callback - the function to call if someone gets the getter.
@@ -131,7 +138,7 @@ ADCore.EnableMutators = function ( prototype ) {
      * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
      * 
      * @method Set
-     * @memberof EnableMutators
+     * @memberof external:Object
      * @private
      * @param {string} propertyString - the setters  name.
      * @param {Function} callback - the function to call if someone gets the setter.
@@ -147,7 +154,7 @@ ADCore.EnableMutators = function ( prototype ) {
      * The class needs to call ADCore.EnableMutators() in order to have this functionality work!
      * 
      * @method Define
-     * @memberof ADCore
+     * @memberof external:Object
      * @private
      * @param {string} propertyString - the variable's name.
      * @param {Object} callback - an object containing two methods: get and set.
