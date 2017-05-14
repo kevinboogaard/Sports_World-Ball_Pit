@@ -9,8 +9,8 @@ var ballpit = ballpit || {};
 /**
  * @namespace Event
  */
-let Event = ballpit.Event || {};
-ballpit.Event = Event;
+this.Event; // For documentation purposes.
+ballpit.Event = ballpit.Event || {};
 
 /**
  * @property {String} ON_TASK_BEGIN

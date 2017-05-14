@@ -15,6 +15,7 @@ ballpit.Watch = (function () {
      * @param {Vector2} position
      * @param {String} key
      * @param {Timer} timer
+     * @deprecated This will soon merge with ScoreBoard.
      */
     function Watch(position, key, timer) {
         ADCore.Interface.call( this, position, key );

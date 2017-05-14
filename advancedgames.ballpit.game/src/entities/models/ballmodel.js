@@ -9,8 +9,8 @@ var ballpit = ballpit || {};
 /**
  * @namespace Event
  */
-let Event = ballpit.Event || {};
-ballpit.Event = Event;
+this.Event; // For documentation purposes.
+ballpit.Event = ballpit.Event || {};
 
 /**
  * @property {String} ON_BALL_DESTINATION_REACHED
@@ -103,18 +103,11 @@ ballpit.BallStates.IDLING = "idling";
 ballpit.BallStates.SWAPPING = "swapping";
 
 /** 
- * @property {String} REVERTING
+ * @property {String} MOVING
  * @memberof BallStates
  * @readonly 
  */
-ballpit.BallStates.REVERTING = "reverting";
-
-/** 
- * @property {String} FALLING
- * @memberof BallStates
- * @readonly 
- */
-ballpit.BallStates.FALLING = "falling";
+ballpit.BallStates.MOVING = "moving";
 
 ballpit.BallModel = (function () {
 
@@ -193,6 +186,7 @@ ballpit.BallModel = (function () {
                 this.position = this._destination.Clone();
                 this._destination = null;
 
+                this.state = ballpit.BallStates.IDLE;
                 Listener.Dispatch(ballpit.Event.ON_BALL_DESTINATION_REACHED, this, { "ball": this });
             }
         }
@@ -206,6 +200,7 @@ ballpit.BallModel = (function () {
      */
     p.MoveTo = function (vector) {
         this._destination = vector.Clone();
+        this.state = ballpit.BallStates.MOVING;
     };
 
      /**
@@ -217,15 +212,6 @@ ballpit.BallModel = (function () {
     p.SwapTo = function (vector) {
         this._destination = vector.Clone();
         this.state = ballpit.BallStates.SWAPPING;
-    };
-
-     /**
-     * @method Revert
-     * @memberof BallModel
-     * @public
-     */
-    p.Revert = function () {
-        this.state = ballpit.BallStates.REVERTING;
     };
 
      /**
@@ -281,7 +267,7 @@ ballpit.BallModel = (function () {
         });
 
         this.Get("isMoving", function () {
-            var state_moving = (this.state === ballpit.BallStates.SWAPPING || this.state === ballpit.BallStates.REVERTING || this.state === ballpit.BallStates.FALLING);
+            var state_moving = (this.state === ballpit.BallStates.SWAPPING || this.state === ballpit.BallStates.MOVING);
             var destination_exists = (this._destination);
             return (state_moving && destination_exists);
         });
