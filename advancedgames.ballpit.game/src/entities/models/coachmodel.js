@@ -13,56 +13,118 @@ let Event = ballpit.Event || {};
 ballpit.Event = Event;
 
 /**
+ * @property {String} ON_TASK_BEGIN
  * @memberof Event
+ * @readonly
  */
 ballpit.Event.ON_TASK_BEGIN = "on_tast_begin";
 
 /**
- * @property {String} ON_TASK_BEGIN
+ * @property {String} ON_TASK_DONE
  * @memberof Event
+ * @readonly
  */
 ballpit.Event.ON_TASK_DONE = "on_task_done";
 
 /**
- * @property {String} ON_TASK_DONE
+ * @property {String} ON_STAGE_BEGIN
  * @memberof Event
+ * @readonly
  */
 ballpit.Event.ON_STAGE_BEGIN = "on_stage_begin";
 
 /**
- * @property {String} ON_STAGE_BEGIN
+ * @property {String} ON_STAGE_DONE
  * @memberof Event
+ * @readonly
  */
 ballpit.Event.ON_STAGE_DONE = "on_stage_done";
 
+
 ballpit.Coach = ballpit.Coach || {};
 
-ballpit.Coach.Emotions = {
-    NEUTRAL: "neutral",
-    ANGRY: "angry",
-    HAPPY: "happy",
-    SUPER_ANGRY: "super_angry",
-    SUPER_HAPPY: "super_happy"
-};
+/**
+ * @namespace CoachEmotions
+ */
+let CoachEmotions = {}; // For documentation purposes.
+ballpit.Coach.Emotions = CoachEmotions; 
 
-ballpit.Coach.States = {
-    IDLE: "idle",
-    WALK: "walk",
-    TALK: "talk"
-};
+/**
+ * @property {String} NEUTRAL
+ * @memberof CoachEmotions
+ * @readonly
+ */
+ballpit.Coach.Emotions.NEUTRAL = "neutral";
+
+/**
+ * @property {String} ANGRY
+ * @memberof CoachEmotions
+ * @readonly
+ */
+ballpit.Coach.Emotions.ANGRY = "angry";
+
+/**
+ * @property {String} HAPPY
+ * @memberof CoachEmotions
+ * @readonly
+ */
+ballpit.Coach.Emotions.HAPPY = "happy";
+
+/**
+ * @property {String} SUPER_ANGRY
+ * @memberof CoachEmotions
+ * @readonly
+ */
+ballpit.Coach.Emotions.SUPER_ANGRY = "super_angry";
+
+/**
+ * @property {String} SUPER_HAPPY
+ * @memberof CoachEmotions
+ * @readonly
+ */
+ballpit.Coach.Emotions.SUPER_HAPPY = "super_happy";
+
+/**
+ * @namespace CoachStates
+ */
+let CoachStates = {}; // For documentation purposes.
+ballpit.Coach.States = CoachStates; 
+
+/**
+ * @property {String} IDLE
+ * @memberof CoachStates
+ * @readonly
+ */
+ballpit.Coach.States.IDLE = "idle";
+
+/**
+ * @property {String} WALK
+ * @memberof CoachStates
+ * @readonly
+ */
+ballpit.Coach.States.WALK = "walk";
+
+/**
+ * @property {String} TALK
+ * @memberof CoachStates
+ * @readonly
+ */
+ballpit.Coach.States.TALK = "talk";
 
 ballpit.CoachModel = (function () {
 
-    /**'
+    /**
      * @class CoachModel
+     * @extends Entity
      * @constructor 
+     * @param {Vector2} position
      * @param {TaskHandler} taskhandler
      */
     function CoachModel(position, taskhandler) {
         ADCore.Entity.call(this, position);
 
         /**
-         * @property {Boolean} inTraining
+         * @property {Boolean} InTraining
          * @public
          * @readonly
          * @default false
@@ -70,7 +132,7 @@ ballpit.CoachModel = (function () {
         this.inTraining = false;
 
         /**
-         * @property {States} state
+         * @property {States} State
          * @public
          * @readonly
          * @default States.IDLE
@@ -78,7 +140,7 @@ ballpit.CoachModel = (function () {
         this.state = ballpit.Coach.States.IDLE;
 
         /**
-         * @property {Emotions} emotion
+         * @property {Emotions} Emotion
          * @public
          * @readonly
          * @default Emotions.NEUTRAL
@@ -86,20 +148,20 @@ ballpit.CoachModel = (function () {
         this.emotion = ballpit.Coach.Emotions.NEUTRAL;
 
         /**
-         * @property {TaskHandler} taskhandler
+         * @property {TaskHandler} _Taskhandler
          * @private
          */
         this._taskhandler = taskhandler;
 
         /**
-         * @property {Array} tasks
+         * @property {Array} _Tasks
          * @private
          * @default Empty
          */
         this._tasks = [];
 
         /**
-         * @property {Stopwatch} stopwatch
+         * @property {Stopwatch} _Stopwatch
          * @private
          */
         this._stopwatch = SetStopwatch();
@@ -113,6 +175,7 @@ ballpit.CoachModel = (function () {
     /**
      * @method Start
      * @memberof CoachModel
+     * @public
      */
     p.Start = function () {
         this.inTraining = true;
@@ -129,6 +192,7 @@ ballpit.CoachModel = (function () {
     /**
      * @method Stop
      * @memberof CoachModel
+     * @public
      */
     p.Stop = function () {
         this.inTraining = false;
@@ -138,6 +202,7 @@ ballpit.CoachModel = (function () {
     /**
      * @method Reset
      * @memberof CoachModel
+     * @public
      */
     p.Reset = function () {
         if (this._stopwatch) this._stopwatch.Reset();
@@ -152,7 +217,7 @@ ballpit.CoachModel = (function () {
     };
 
     /**
-     * @method OnBallAlign
+     * @method _OnBallAlign
      * @memberof CoachModel
      * @private
      * @param {Object} caller
@@ -197,13 +262,17 @@ ballpit.CoachModel = (function () {
     /**
      * @method Dispose
      * @memberof CoachModel
+     * @public
      */
     p.Dispose = function () {
         throw new Error("Dispose not made yet");
     };
 
     /**
+     * Getters & Setters internal function.
+     * 
      * @method GettersAndSetters
+     * @memberof CoachModel
      * @private 
      * @ignore
      */

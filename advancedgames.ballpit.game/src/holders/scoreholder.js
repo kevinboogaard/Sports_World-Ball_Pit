@@ -8,38 +8,65 @@ var ballpit = ballpit || {};
 
 ballpit.ScoreHolder = (function () {
 
-    /**'
+    /**
      * @class ScoreHolder
      * @constructor 
      */
     function ScoreHolder() {
+        /**
+         * @property {Integer} _Score
+         * @public
+         * @readonly
+         */
         this._score = 0;
+        
+        /**
+         * @property {Integer} _Highscores
+         * @public
+         * @readonly
+         */
         this._highscores = [];
+
+        /**
+         * @property {Integer} _Highscore
+         * @memberof ScoreHolder
+         * @public
+         * @readonly
+         * @instance
+         */
+        let highscore = 0; // For documentation purposes.
 
         ADCore.EnableMutators( this );
     }
     var p = ScoreHolder.prototype;
 
-    /**'
-     * 'Add'
-     * @param {int} 'n'
+    /**
+     * Add is used to add the points to the score.
      * 
-     * add is used to add the points to the score
+     * @method Add
+     * @memberof ScoreHolder
+     * @param {Integer} n
      */
     p.Add = function (n) {
         this._score += n;
     };
 
     /**'
-     * 'CalculateScoreByAmountAligned'
-     * @param {int} 'amountAligned'
+     * @method CalculateScoreByAmountAligned
+     * @memberof ScoreHolder
+     * @param {Integer} amountAligned
      */
     p.CalculateScoreByAmountAligned = function (amountAligned) {
         return amountAligned;
     };
 
     /**
-     * 'gettersAndSetters'
+     * Getters & Setters internal function.
+     * 
+     * @method GettersAndSetters
+     * @memberof ScoreHolder
+     * @private 
+     * @ignore
      */
     p.gettersAndSetters = function () {
         this.Get("score", function () {

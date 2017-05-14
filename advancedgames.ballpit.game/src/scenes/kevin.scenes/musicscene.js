@@ -1,7 +1,6 @@
 /**
  * @ignore
  */
-
 var scene = scene || {};
 
 scene.Musicscene = (function () {

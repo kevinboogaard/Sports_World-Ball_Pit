@@ -1,7 +1,10 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var scene = scene || {};
-
-scene.Event = scene.Event || {};
-scene.Event.ON_SCENE_SWITCH = "on_scene_switch";
 
 scene.Names = scene.Names || {};
 scene.Names.MAINMENU = "MainMenu";
@@ -9,17 +12,23 @@ scene.Names.MAINMENU = "MainMenu";
 scene.MainMenu = (function () {
 
     /**
-     * 'Entityscene'
+     * This is the Main Menu Scene.
+     * 
+     * @class MainMenu
+     * @extends Phaser.Group
+     * @constructor
      */
     function MainMenu() {
         Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");
+
         var halfWidth = Config.Core.Dimensions.width/2;
-	
         this.identifier = soundSystem.PlayMusic("menusound", 1, true);
 
+        /** @property {Interface} */
         this.background = new ADCore.Interface(new Vector2(0, 0),"menubackground");
         this.addChild(this.background);
 
+        /** @property {Interface} */
         this.logo = new ADCore.Interface(new Vector2(0, 0), "logo");
         this.logo.anchor.set(0.5, 0.5);
         this.logo.x = halfWidth;
@@ -28,6 +37,7 @@ scene.MainMenu = (function () {
 
         this.logo.Play("entry");
 
+        /** @property {Button} */
         this.startButton = new ADCore.Button(new Vector2(this.logo.x, this.logo.y + this.logo.height * 0.70),"startbutton-inactive");
         this.startButton.onInputUp = this._onStartButtonInputUp.bind(this);
         this.addChild(this.startButton);
@@ -36,10 +46,21 @@ scene.MainMenu = (function () {
     MainMenu.prototype.constructor = MainMenu; 
     var p = MainMenu.prototype;
 
+    /**
+     * @method _OnStartButtonInputUp
+     * @memberof MainMenu
+     * @private
+     * @ignore
+     */
     p._onStartButtonInputUp = function () {
         Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIALSCENE });
     };
 
+    /**
+     * @method Dispose
+     * @memberof MainMenu
+     * @public
+     */
     p.Dispose = function () {  
       this.identifier.audio.pause();
       this.removeChild(this.background);

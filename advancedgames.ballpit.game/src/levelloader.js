@@ -4,24 +4,27 @@
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
  */
-
 var ballpit = ballpit || {};
 
 ballpit.LevelLoader = ( function () {
 
     /**
-     * @alias ballpit.levelloader
      * @class LevelLoader
      * @constructor
      */
     function LevelLoader() {
         /**
-         * @property {number} level 
+         * @property {number} _Level 
          * @private
          * @default -1
          */
         this._level = -1;
 
+        /**
+         * @property {Scene} _SceneToBeLoaded
+         * @private 
+         * @default null
+         */
         this._sceneToBeLoaded = null;
 
         ADCore.EnableMutators( this );
@@ -52,9 +55,10 @@ ballpit.LevelLoader = ( function () {
     };
 
     /**
-     * 'LoadLevel'
-     * @param {Scene} levelscene
+     * @method LoadLevel
      * @memberof LevelLoader
+     * @public 
+     * @param {Scene} levelscene
      */
     p.LoadLevel = function (levelscene) {
         if (Debug.ENABLED && Debug.FORCE_LOAD_DEBUG_LEVEL) this.level = Debug.DEBUG_LEVEL;
@@ -70,7 +74,11 @@ ballpit.LevelLoader = ( function () {
     };
     
     /**
-     * 'OnLoadUpdate'
+     * @method _OnLoadUpdate
+     * @memberof LevelLoader
+     * @private
+     * @param {Integer} progress
+     * @ignore
      */
     /*
     p._onLoadUpdate = function ( progress ) {
@@ -82,7 +90,7 @@ ballpit.LevelLoader = ( function () {
     */
 
     /**
-     * @method OnLoadComplete
+     * @method _OnLoadComplete
      * @memberof LevelLoader
      * @private
      */

@@ -6,15 +6,38 @@
  */
 var ballpit = ballpit || {};
 
-ballpit.ballAnimations = ballpit.ballAnimations || {};
+/**
+ * @namespace BallAnimations
+ */
+let BallAnimations = ballpit.ballAnimations || {}; // For documentation purposes.
+ballpit.ballAnimations = BallAnimations;
+
+/**
+ * @property {String} HINT
+ * @memberof BallAnimations
+ * @readonly
+ */
 ballpit.ballAnimations.HINT = "hint";
+
+/**
+ * @property {String} PLOP
+ * @memberof BallAnimations
+ * @readonly
+ */
 ballpit.ballAnimations.PLOP = "plop";
+
+/**
+ * @property {String} SWIPE_FAIL
+ * @memberof BallAnimations
+ * @readonly
+ */
 ballpit.ballAnimations.SWIPE_FAIL = "swipefail";
 
 ballpit.BallView = (function () {
 
     /**
-     * @class ballmodel
+     * @class BallView
+     * @extends Display
      * @constructor
      * @param {BallModel} model - The model of the ball
      * @param {String} key - The key of the ballsprite
@@ -31,8 +54,8 @@ ballpit.BallView = (function () {
     var p = BallView.prototype;
 
      /**
-     * @method OnStateChange
-     * @memberof ballmodel
+     * @method _OnStateChange
+     * @memberof BallView
      * @private
      * @listens Event.ON_BALL_STATE_CHANGE
      * @param {Object} caller -  Dispatcher of the event.
@@ -48,8 +71,8 @@ ballpit.BallView = (function () {
     };
 
      /**
-     * @method OnDestroy
-     * @memberof ballmodel
+     * @method _OnDestroy
+     * @memberof BallView
      * @private
      * @listens Event.ON_BALL_DESTROY
      * @param {Object} caller -  Dispatcher of the event.
@@ -68,9 +91,11 @@ ballpit.BallView = (function () {
     };
 
     /**
-     * 'OnWrong'
-     * @params {BallModel} 'caller'
-     * @params {} 'params'
+     * @method _OnWrong
+     * @memberof BallView
+     * @private
+     * @param {BallModel} caller
+     * @param {Object} params
      */
     p._onWrong = function (caller, params) {
         this.Play(ballpit.ballAnimations.SWIPE_FAIL); 
@@ -78,7 +103,7 @@ ballpit.BallView = (function () {
 
      /**
      * @method Dispose
-     * @memberof ballmodel
+     * @memberof BallView
      * @public
      */
     p.__display_dispose = p.Dispose;

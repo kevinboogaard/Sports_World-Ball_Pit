@@ -8,7 +8,7 @@ var ballpit = ballpit || {};
 
 ballpit.TaskBoard = (function () {
 
-    /**'
+    /**
      * @class TaskBoard
      * @constructor 
      * @extends Interface
@@ -19,8 +19,16 @@ ballpit.TaskBoard = (function () {
     function TaskBoard(position, key, coach) {
         ballpit.Speech.call(this,position,key);
 
+        /**
+         * @property {CoachModel} _Coach
+         * @private
+         */
         this._coach = coach;
 
+        /**
+         * @property {Object} _CurrentTask
+         * @private
+         */
         this._currentTask = this._coach.activeTask;
     }
     TaskBoard.prototype = Object.create(ballpit.Speech.prototype);
@@ -28,7 +36,7 @@ ballpit.TaskBoard = (function () {
     var p = TaskBoard.prototype;
 
     /**
-     * @method Initialize
+     * @method _Initialize
      * @memberof Speech
      * @private
      * @ignore

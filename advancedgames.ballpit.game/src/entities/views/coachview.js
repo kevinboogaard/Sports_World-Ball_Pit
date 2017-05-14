@@ -8,15 +8,17 @@ var ballpit = ballpit || {};
 
 ballpit.CoachView = (function () {
 
-    /**'
+    /**
      * @class CoachView
-     * @constructor 
      * @extends Display
+     * @constructor 
      * @param {CoachModel} model
      * @param {String} key
      */
     function CoachView(model, key) {
         ADCore.Display.call( this, model, key + "coachbody" );
+
+        // Still needs an Initialize method.
 
         this.anchor.set(0.5, 1);
         this.scale.set(0.75, 0.75);
@@ -26,6 +28,10 @@ ballpit.CoachView = (function () {
         var offsetX = 5;
         var offsetY = 12.5;
 
+        /**
+         * @property {Interface} Mouth
+         * @public
+         */
         this.mouth = new ADCore.Interface(new Vector2(0, -(this.height / 2) - offsetY), key + "coachmouth");
         this.mouth.anchor.set(0.5, 0.5);
         this.mouth.x += offsetX;  
@@ -50,7 +56,11 @@ ballpit.CoachView = (function () {
     /**
      * @method Play
      * @memberof CoachView
+     * @public
      * @param {String} name
+     * @param {Integer} [frameRate = 30]
+     * @param {Boolean} [loop = false]
+     * @param {Boolean} [killOnComplete = false]
      * @returns {Phaser.Animation}
      */
     p.__display_play = p.Play;

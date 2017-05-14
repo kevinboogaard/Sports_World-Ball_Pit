@@ -133,6 +133,7 @@ ballpit.BallHelper = (function () {
 
         return aligned;
     };
+    
     /**
      * @method Dispose
      * @memberof BallHelper

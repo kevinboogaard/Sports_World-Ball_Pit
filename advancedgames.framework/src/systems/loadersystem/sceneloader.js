@@ -5,6 +5,20 @@
  * @ignore
  */
 var ADCore = ADCore || {};
+var scene = scene || {};
+
+/**
+ * @namespace {String} Event
+ * @memberof ADCore
+ * @typedef {(String)} Event
+ */
+scene.Event = scene.Event || {};
+
+/**
+ * @event ON_SCENE_SWITCH
+ * @memberof ADCore.Event
+ */
+scene.Event.ON_SCENE_SWITCH = "on_scene_switch";
 
 ADCore.Sceneloader = (function () {
 

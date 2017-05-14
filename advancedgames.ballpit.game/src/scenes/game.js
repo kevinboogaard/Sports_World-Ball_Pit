@@ -1,3 +1,9 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var scene = scene || {};
 
 scene.Names = scene.Names || {};
@@ -6,24 +12,38 @@ scene.Names.GAME = "Game";
 scene.Game = (function () {
 
     /**
-     * 'Game'
+     * This is the Game Scene. The main scene for the game.
+     * 
+     * @class Game
+     * @extends Phaser.Group
+     * @constructor
      */
     function Game() {
         Phaser.Group.call(this, ADCore.phaser, null, "Game");   
+        
+        /** @property {ViewContainer} */
         this.viewContainer = new ADCore.ViewContainer();
         this.addChild(this.viewContainer);
 
+        // Play in-game music.
         this.identifier = soundSystem.PlayMusic("ingamesound", 1, true);
 	
+        /** @property {Tilemap} */
         this.tilemap = new Tilemap(Global.Loaded.level.map);
-        
+    
+        /** @property {TaskHandler} */    
         this.taskHandler = new ballpit.TaskHandler(Global.Loaded.level.tasks);
 
+        /** @property {BallContainer} */
         this.ballContainer = new ballpit.BallContainer();
+
+        /** @property {BallController} */
         this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
 
+        /** @property {CoachModel} */
         this.coach = ballpit.EntityFactory.AddCoach(new Vector2( Config.Core.Dimensions.width * 0.8, Config.Core.Dimensions.height * 0.33), "soccer", this.taskHandler);
 
+        /** @property {Timer} */
         this.gameTimer = SetTimer(function () {
             Input.paused = true;
             setTimeout(function() {
@@ -32,14 +52,19 @@ scene.Game = (function () {
         }, Settings.Game.TIME, 1);
         this.gameTimer.Stop();
 
+        /** @property {ScoreHolder} */
         this.scoreHolder = new ballpit.ScoreHolder();
 
+        /** @property {InterfaceLayer} */
         this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder, this.coach);
         this.addChild(this.interfaceLayer);
 
         this.ballController.Initialize();
 
+        /** @property {Vector2} */
         this.selected = null;
+
+        /** @property {Vector2} */
         this.started = false;
 
         Input.paused = false;
@@ -55,15 +80,19 @@ scene.Game = (function () {
     var p = Game.prototype;
 
     /**
-     * 'Update'
-     * @param {int 'deltatime'
+     * @method Update
+     * @memberof Game
+     * @public
+     * @param {Integer} deltatime
      */
     p.Update = function (deltatime) {
         this.ballContainer.Update(deltatime);
     };
 
     /**
-     * 'Render'
+     * @method Render
+     * @memberof Game
+     * @public
      */
     p.Render = function () {
         this.viewContainer.Render();
@@ -71,9 +100,13 @@ scene.Game = (function () {
     };
 
     /**
-     * 'OnTap'
-     * @param {{}} 'caller'
-     * @param {{ {{}}: event, {Vector2}: position }} 'params'
+     * @method _OnTap
+     * @memberof Game 
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @param {Phaser.Event} params.event
+     * @param {Vector2} params.position
      */
     p._onTap = function (caller, params) {
         if (this.selected !== null) {
@@ -86,9 +119,14 @@ scene.Game = (function () {
     };
 
     /**
-     * 'OnSwipe'
-     * @param {{}} 'caller'
-     * @param {{ {{}}: event, {Vector2}: start, {Vector2}: end }} 'params'
+     * @method _OnSwipe
+     * @memberof Game 
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @param {Phaser.Event} params.event
+     * @param {Vector2} params.start
+     * @param {Vector2} params.direction
      */
     p._onSwipe = function (caller, params) {
         var start =  this.tilemap.mainLayer.GetTileByScreenPosition(params.start);
@@ -98,6 +136,7 @@ scene.Game = (function () {
 
     /**
      * @method OnBallAlign
+     * @memberof Game
      * @private
      * @param {Object} caller
      * @param {Object} params
@@ -112,9 +151,11 @@ scene.Game = (function () {
     };
 
     /**
-     * 'TrySwap'
-     * @param {TileModel} 'current'
-     * @param {TileModel} 'target'
+     * @method _TrySwap
+     * @memberof Game
+     * @private
+     * @param {TileModel} current
+     * @param {TileModel} target
      */
     p._trySwap = function (current, target) {
         if (!current || !target ||  !current.neighbours.contains(target)) return;
@@ -136,11 +177,27 @@ scene.Game = (function () {
         }
     };
 
+    /**
+     * @method _OnStageBegin
+     * @memberof Game
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @ignore 
+     */
     p._onStageBegin = function (caller, params) {
         this.interfaceLayer.watch.text.tint = 0xFF0000;
         this.gameTimer.multiplier = 2;
     };
 
+    /**
+     * @method _OnStageDone
+     * @memberof Game
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @ignore 
+     */
     p._onStageDone = function (caller, params) {
         this.interfaceLayer.watch.text.tint = 0xFFFFFF;
         this.gameTimer.multiplier = 1;
@@ -148,7 +205,9 @@ scene.Game = (function () {
     };
 
     /**
-     * 'Dispose'
+     * @method Dispose
+     * @memberof Game
+     * @public
      */
     p.Dispose = function () {
         this.identifier.stop.audio.pause();

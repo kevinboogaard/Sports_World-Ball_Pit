@@ -1,7 +1,6 @@
 /**
  * @ignore
  */
-
 var scene = scene || {};
 
 scene.Names = scene.Names || {};

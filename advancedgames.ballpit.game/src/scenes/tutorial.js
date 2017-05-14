@@ -1,3 +1,9 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var scene = scene || {};
 
 scene.Names = scene.Names || {};
@@ -6,10 +12,17 @@ scene.Names.TUTORIAL = "Tutorial";
 scene.Tutorial = (function () {
 
     /**
-     * 'Tutorial'
+     * This is the Tutorial Scene. 
+     * 
+     * @class Tutorial
+     * @extends scene.Game
+     * @constructor
      */
     function Tutorial() {
         Phaser.Group.call(this, ADCore.phaser, null, "Tutorial");
+        
+        // Still needs to extend scene.Game. Not going to comment this part.
+
         this.viewContainer = new ADCore.ViewContainer();
         this.addChild(this.viewContainer);
 
@@ -51,7 +64,8 @@ scene.Tutorial = (function () {
     var p = Tutorial.prototype;
 
     /**
-     * 'Initialize'
+     * @method Initialize
+     * @memberof Tutorial
      */
     p.Initialize = function () {
         this.overlay = new ADCore.Interface(new Vector2(0,0), "tutorialoverlaygame");
@@ -101,26 +115,25 @@ scene.Tutorial = (function () {
     };
 
     /**
-     * 'Update'
-     * @param {int} 'deltatime'
+     * @method Update
+     * @memberof Tutorial
+     * @public
+     * @param {Integer} deltatime
      */
     p.Update = function (deltatime) {
         this.ballContainer.Update(deltatime);
     };
 
     /**
-     * 'Render'
+     * @method Render
+     * @memberof Tutorial
+     * @public
      */
     p.Render = function () {
         this.viewContainer.render();
         this.interfaceLayer.Render();
     };
 
-    /**
-     * 'OnTap'
-     * @param {{}} 'caller'
-     * @param {{ {{}}: event, {Vector2}: position }} 'params'
-     */
     p._onTap = function (caller, params) {
         if (this.selected !== null) {
             var target = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
@@ -131,26 +144,12 @@ scene.Tutorial = (function () {
         }
     };
 
-    /**
-     * 'OnSwipe'
-     * @param {{}} 'caller'
-     * @param {{ {{}}: event, {Vector2}: start, {Vector2}: end }} 'params'
-     */
     p._onSwipe = function (caller, params) {
         var start =  this.tilemap.mainLayer.GetTileByScreenPosition(params.start);
         var end =  this.tilemap.mainLayer.GetTileByScreenPosition(params.end);
         this._trySwap(start, end);
     };
 
-    /**
-     * @method OnBallAlign
-     * @private
-     * @param {Object} caller
-     * @param {Object} params
-     * @param {TileModel} params.owner
-     * @param {Array} params.aligned
-     * @ignore
-     */
     p._onBallAlign = function (caller, params) {
         if (this.inTutorial === true) {
             this.inTutorial = false;
@@ -177,11 +176,6 @@ scene.Tutorial = (function () {
         this.scoreHolder.Add(score);
     };
 
-    /**
-     * 'TrySwap'
-     * @param {TileModel} 'current'
-     * @param {TileModel} 'target'
-     */
     p._trySwap = function (current, target) {
         if (!current || !target ||  !current.neighbours.contains(target)) return;
 
@@ -202,7 +196,9 @@ scene.Tutorial = (function () {
     };
 
     /**
-     * 'Dispose'
+     * @method Dispose
+     * @memberof Tutorial
+     * @public
      */
     p.Dispose = function () {
         this.tilemap.Dispose();

@@ -16,7 +16,7 @@ ballpit.TaskHandler = (function() {
     function TaskHandler(stages) {
         
         /**
-         * @property {Array} stages
+         * @property {Array} _Stages
          * @private
          */
         this._stages = stages;
@@ -47,7 +47,7 @@ ballpit.TaskHandler = (function() {
     };
 
     /**
-     * @method ParseTask
+     * @method _ParseTask
      * @memberof TaskHandler
      * @private
      * @param {Object} jsonTask

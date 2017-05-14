@@ -3,116 +3,170 @@
  * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
  * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
  * @ignore
- */
-
-
+ */ 
 var ballpit = ballpit || {};
-
 
 /**
  * @namespace Event
  */
 let Event = ballpit.Event || {};
 ballpit.Event = Event;
+
 /**
  * @property {String} ON_BALL_DESTINATION_REACHED
  * @memberof Event
  * @readonly
  */
 ballpit.Event.ON_BALL_DESTINATION_REACHED = "on_ball_destination_reached";
+
 /**
  * @property {String} ON_BALL_STATE_CHANGE
  * @memberof Event
  * @readonly
  */
 ballpit.Event.ON_BALL_STATE_CHANGE = "on_ball_state_change";
-/**
- * @property {String} ON_BALL_STATE_CHANGE
- * @memberof Event
- * @readonly
- */
-ballpit.Event.ON_BALL_DESTROY = "on_ball_destroy";
+
 /**
  * @property {String} ON_BALL_DESTROY
  * @memberof Event
  * @readonly
  */
-ballpit.Event.ON_BALL_SWAP_WRONG = "on_ball_swap_wrong";
+ballpit.Event.ON_BALL_DESTROY = "on_ball_destroy";
+
 /**
  * @property {String} ON_BALL_SWAP_WRONG
  * @memberof Event
  * @readonly
  */
+ballpit.Event.ON_BALL_SWAP_WRONG = "on_ball_swap_wrong";
 
 /**
- * Enum for map orientations.
- * @readonly
- * @enum {String}
- * @typedef {(String)} Orientation
+ * @namespace BallTypes;
  */
-ballpit.ballTypes = {
-    /** The SOCCERBALL of all the balls */
-    SOCCERBALL: "soccerball",
-    /** The BASKETBALL of all the balls */
-    BASKETBALL: "basketball",
-    /** The TENNISBALL of all the balls */
-    TENNISBALL : "tennisball",
-    /** The BOWLINGBALL of all the balls */
-    BOWLINGBALL : "bowlingball",
-    /** The BASEBALL of all the balls */
-    BASEBALL : "baseball"
-}
+let BallTypes = {};
+ballpit.BallTypes = BallTypes
 
-ballpit.BallStates = {
-    /** The idel state of the ball */
-    IDLING : "idling",
-    /** The swap state of the ball */
-    SWAPPING : "swapping",
-    /** The revert state of the ball */
-    REVERTING : "reverting",
-    /** The falling state of the ball */
-    FALLING : "falling"
-};
+/** 
+ * @property {String} SOCCERBALL
+ * @memberof BallTypes
+ * @readonly 
+ */
+ballpit.BallTypes.SOCCERBALL = "soccerball";
+
+/** 
+ * @property {String} BASKETBALL
+ * @memberof BallTypes
+ * @readonly 
+ */
+ballpit.BallTypes.BASKETBALL = "basketball";
+
+/** 
+ * @property {String} TENNISBALL
+ * @memberof BallTypes
+ * @readonly 
+ */
+ballpit.BallTypes.TENNISBALL = "tennisball";
+
+/** 
+ * @property {String} BOWLINGBALL
+ * @memberof BallTypes
+ * @readonly 
+ */
+ballpit.BallTypes.BOWLINGBALL = "bowlingball";
+
+/** 
+ * @property {String} BASEBALL
+ * @memberof BallTypes
+ * @readonly 
+ */
+ballpit.BallTypes.BASEBALL = "baseball";
+    
+
+/**
+ * @namespace BallStates;
+ */
+let BallStates = {};
+ballpit.BallStates = BallStates;
+
+/** 
+ * @property {String} IDLING
+ * @memberof BallStates
+ * @readonly 
+ */
+ballpit.BallStates.IDLING = "idling";
+
+/** 
+ * @property {String} SWAPPING
+ * @memberof BallStates
+ * @readonly 
+ */
+ballpit.BallStates.SWAPPING = "swapping";
+
+/** 
+ * @property {String} REVERTING
+ * @memberof BallStates
+ * @readonly 
+ */
+ballpit.BallStates.REVERTING = "reverting";
+
+/** 
+ * @property {String} FALLING
+ * @memberof BallStates
+ * @readonly 
+ */
+ballpit.BallStates.FALLING = "falling";
+
 ballpit.BallModel = (function () {
 
      /**
-     * @class ballmodel
+     * @class BallModel
+     * @extends Entity
      * @constructor
      * @param {Vector2} position - The position of the ball
-     * @param {type} type - Type of the ball
+     * @param {BallTypes} type - Type of the ball
      */
     function BallModel(position, type) {
         ADCore.Entity.call(this, position);
        
         /**
-        * @property {type} type - Type of the ball
+        * @property {BallTypes} Type - Type of the ball
+        * @readonly
         * @public
         */
         this._type = type;       
         
         /**
-        * @property {state} State - The states of the ball
-        * @private
+        * @property {BallStates} State - The states of the ball
+        * @public
         */
         this._state = ballpit.BallStates.IDLING;
         
         /**
-        * @property {number} velocity - The velocity of the ball
-        * @private
+        * @property {Number} _Velocity - The velocity of the ball
+        * @readonly
+        * @public
         */
-        this._velocity = Settings.Velocity.BALL;
+        this.Velocity = Settings.Velocity.BALL;
 
         /**
-        * @property {bool} beginning - The velocity of the ball
+        * @property {Boolean} Beginning - The velocity of the ball
         * @public
         */
         this.beginning = null;
 
         /**
-        * @property {bool} beginning - The velocity of the ball
+        * @property {Boolean} _Destination - The velocity of the ball
         * @private
         */
         this._destination = null;
+
+        /**
+         * @property {Boolean} IsMoving - True if the ball is moving.
+         * @memberof BallModel
+         * @public
+         * @instance
+         */
+        let IsMoving; // For documentation purposes.
     }
     BallModel.prototype = Object.create(ADCore.Entity.prototype);
     BallModel.prototype.constructor = BallModel;
@@ -120,7 +174,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method Update
-     * @memberof ballmodel
+     * @memberof BallModel
      * @public
      * @param {Number} deltaTime - The number deltatime is a multiplier to convert gametime in to realtime
      */
@@ -146,9 +200,9 @@ ballpit.BallModel = (function () {
 
      /**
      * @method MoveTo
-     * @memberof ballmodel
+     * @memberof BallModel
      * @public
-     * @param {vector2} vector - The destenation 
+     * @param {Vector2} vector - The destenation 
      */
     p.MoveTo = function (vector) {
         this._destination = vector.Clone();
@@ -156,9 +210,9 @@ ballpit.BallModel = (function () {
 
      /**
      * @method SwapTo
-     * @memberof Core
+     * @memberof BallModel
      * @public
-     * @param {vector2} vector - The destenation 
+     * @param {Vector2} vector - The destenation 
      */
     p.SwapTo = function (vector) {
         this._destination = vector.Clone();
@@ -166,8 +220,8 @@ ballpit.BallModel = (function () {
     };
 
      /**
-     * @method SwapTo
-     * @memberof ballmodel
+     * @method Revert
+     * @memberof BallModel
      * @public
      */
     p.Revert = function () {
@@ -175,10 +229,10 @@ ballpit.BallModel = (function () {
     };
 
      /**
-     * @method SwapTo
-     * @memberof ballmodel
+     * @method Destroy
+     * @memberof BallModel
      * @public
-     * @param {callback} callback - The destenation 
+     * @param {Function} callback - The destenation 
      */
     p.Destroy = function (callback) {
         Listener.Dispatch(ballpit.Event.ON_BALL_DESTROY, this, { "callback": callback });
@@ -186,7 +240,7 @@ ballpit.BallModel = (function () {
 
      /**
      * @method Dispose
-     * @memberof ballmodel
+     * @memberof BallModel
      * @public
      */
     p.__entity_dispose = p.Dispose;
@@ -201,7 +255,7 @@ ballpit.BallModel = (function () {
      * Getters & Setters internal function.
      * 
      * @method GettersAndSetters
-     * @memberof ballmodel
+     * @memberof BallModel
      * @private 
      * @ignore
      */

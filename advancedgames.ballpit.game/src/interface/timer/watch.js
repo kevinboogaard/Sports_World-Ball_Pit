@@ -8,7 +8,7 @@ var ballpit = ballpit || {};
 
 ballpit.Watch = (function () {
 
-    /**'
+    /**
      * @class Watch
      * @constructor 
      * @extends Interface
@@ -19,7 +19,16 @@ ballpit.Watch = (function () {
     function Watch(position, key, timer) {
         ADCore.Interface.call( this, position, key );
 
+        /**
+         * @property {Timer} _Timer
+         * @private
+         */
         this.timer = timer;
+        
+        /**
+         * @property {Text} _Text
+         * @private
+         */
         this.text = null;
 
         this._initialize();
@@ -29,7 +38,7 @@ ballpit.Watch = (function () {
     var p = Watch.prototype;
 
     /**
-     * @method _initialize
+     * @method _Initialize
      * @memberof Watch
      * @private
      * @ignore

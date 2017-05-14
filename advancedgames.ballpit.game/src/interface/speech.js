@@ -6,12 +6,22 @@
  */
 var ballpit = ballpit || {};
 
+/**
+ * @namespace {String} Event
+ * @memberof ballpit
+ * @typedef {(String)} Event
+ */
 ballpit.Event = ballpit.Event || {};
+
+/**
+ * @event ON_SPEECH_DONE
+ * @memberof ballpit.Event
+ */
 ballpit.Event.ON_SPEECH_DONE = "on_speech_done";
 
 ballpit.Speech = (function () {
 
-    /**'
+    /**
      * @class Speech
      * @constructor 
      * @extends Interface
@@ -21,12 +31,34 @@ ballpit.Speech = (function () {
     function Speech(position, key) {
         ADCore.Interface.call(this,position,key);
 
+        /**
+         * @property {Text} _Text
+         * @private
+         */
         this._text = null;
 
-        this._string = null;
+        /**
+         * @property {String} _String
+         * @private
+         */
+        this._string = "";
+        
+        /**
+         * @property {Integer} _Interval
+         * @private
+         */
         this._interval = -1;
 
+        /**
+         * @property {Integer} _Index
+         * @private
+         */
         this._index = 0;
+        
+        /**
+         * @property {Integer} _Id
+         * @private
+         */
         this._id = -1;
 
         this._initialize();
@@ -36,7 +68,7 @@ ballpit.Speech = (function () {
     var p = Speech.prototype;
 
     /**
-     * @method Initialize
+     * @method _Initialize
      * @memberof Speech
      * @private
      * @ignore
@@ -66,9 +98,9 @@ ballpit.Speech = (function () {
      * @public
      */
     p.Mute = function () { 
-            this._stop();
-            this._reset();
-            Listener.Dispatch(ballpit.Event.ON_SPEECH_DONE, this);
+        this._stop();
+        this._reset();
+        Listener.Dispatch(ballpit.Event.ON_SPEECH_DONE, this);
     };
 
     /**
@@ -82,7 +114,7 @@ ballpit.Speech = (function () {
     };
 
     /**
-     * @method Start
+     * @method _Start
      * @memberof Speech
      * @private
      */
@@ -91,7 +123,7 @@ ballpit.Speech = (function () {
     };
 
     /**
-     * @method Stop
+     * @method _Stop
      * @memberof Speech
      * @private
      */
@@ -101,16 +133,17 @@ ballpit.Speech = (function () {
     };
 
     /**
-     * @method AddLetter
+     * @method _AddLetter
      * @memberof Speech
      * @private
+     * @param {String} letter
      */
     p._addLetter = function(letter) {
           this._text.text += letter;
     };
     
     /**
-     * @method Update
+     * @method _Update
      * @memberof Speech
      * @private
      */
@@ -125,7 +158,7 @@ ballpit.Speech = (function () {
     };
 
     /**
-     * @method Reset
+     * @method _Reset
      * @memberof Speech
      * @private
      */

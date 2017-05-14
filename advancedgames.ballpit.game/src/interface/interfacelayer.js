@@ -8,7 +8,7 @@ var ballpit = ballpit || {};
 
 ballpit.InterfaceLayer = (function () {
 
-    /**'
+    /**
      * @class InterfaceLayer
      * @constructor 
      * @extends Phaser.Group
@@ -19,8 +19,22 @@ ballpit.InterfaceLayer = (function () {
     function InterfaceLayer(gameTimer, scoreHolder, coach) {
         Phaser.Group.call( this, ADCore.phaser, null, "Interface Layer" );
 
+        /**
+         * @property {Watch} watch 
+         * @public
+         */
         this.watch = null;
+
+        /**
+         * @property {ScoreBoard} ScoreBoard 
+         * @public
+         */
         this.scoreboard = null;
+
+        /**
+         * @property {TaskBoard} TaskBoard 
+         * @public
+         */
         this.taskboard = null;
 
         this._initialize(gameTimer, scoreHolder, coach);
@@ -30,7 +44,7 @@ ballpit.InterfaceLayer = (function () {
     var p = InterfaceLayer.prototype;
 
     /**
-     * @method _initialize
+     * @method _Initialize
      * @memberof InterfaceLayer
      * @private
      * @param {Timer} gameTimer 

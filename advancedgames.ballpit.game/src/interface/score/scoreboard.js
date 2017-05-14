@@ -8,7 +8,7 @@ var ballpit = ballpit || {};
 
 ballpit.ScoreBoard = (function () {
 
-    /**'
+    /**
      * @class ScoreBoard
      * @constructor 
      * @extends Interface
@@ -19,12 +19,34 @@ ballpit.ScoreBoard = (function () {
     function ScoreBoard(position, key, scoreHolder) {
         ADCore.Interface.call(this,position,key);
 
+        /**
+         * @property {ScoreHolder} _ScoreHolder
+         * @private
+         */
         this._scoreHolder = scoreHolder;
 
+        /**
+         * @property {Integer} _VisibleScore
+         * @private
+         */
         this._visibleScore = 0;
+        
+        /**
+         * @property {Integer} _StepSpeed
+         * @private
+         */
         this._stepSpeed = 16;
 
+        /**
+         * @property {Text} _ScoreText
+         * @public
+         */
         this.scoreText = null;
+        
+        /**
+         * @property {Text} _HighscoreText
+         * @public
+         */
         this.highscoreText = null;
 
         this._initialize();
@@ -34,7 +56,7 @@ ballpit.ScoreBoard = (function () {
     var p = ScoreBoard.prototype;
 
     /**
-     * @method Initialize
+     * @method _Initialize
      * @memberof ScoreBoard
      * @private
      * @ignore
@@ -78,7 +100,7 @@ ballpit.ScoreBoard = (function () {
     };
 
     /**
-     * @method CalculateStep
+     * @method _CalculateStep
      * @memberof ScoreBoard
      * @private
      */

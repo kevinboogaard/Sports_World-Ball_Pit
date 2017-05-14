@@ -13,7 +13,11 @@ ballpit.BallContainer = (function () {
      * @constructor
      */
     function BallContainer() {
-        this.balls = [];
+        /**
+         * @property {Array} _Balls;
+         * @private
+         */
+        this._balls = [];
     }
     var p = BallContainer.prototype;
     
@@ -21,13 +25,13 @@ ballpit.BallContainer = (function () {
      * @method Update
      * @memberof BallContainer
      * @public
-     * @param {int} 'deltatime'
+     * @param {Integer} deltaTime
      */
-    p.Update = function (deltatime) {
-        var len = this.balls.length;
+    p.Update = function (deltaTime) {
+        var len = this._balls.length;
         for (var i = len - 1; i >= 0; i--) {
-            var ball = this.balls[i];
-            ball.Update(deltatime);
+            var ball = this._balls[i];
+            ball.Update(deltaTime);
         }
     };
 
@@ -38,9 +42,9 @@ ballpit.BallContainer = (function () {
      * @param {Vector2} position - the position of the added ball
      * @param {type} type - The type of a ball
      */
-    p.AddBall = function(position,type){
+    p.AddBall = function(position, type){
         var ballModel = new ballpit.EntityFactory.AddBall(position,type);
-        this.balls.push(ballModel);
+        this._balls.push(ballModel);
         return ballModel;
     };
 
@@ -61,11 +65,11 @@ ballpit.BallContainer = (function () {
      * @method RemoveBall
      * @memberof BallContainer
      * @public
-     * @param {ball} ball - the ball
+     * @param {ball} ball
      */
     p.RemoveBall = function(ball){
-        var index = this.balls.indexOf(ball);
-        this.balls.splice(index, 1);
+        var index = this._balls.indexOf(ball);
+        this._balls.splice(index, 1);
 
         ball.Destroy( function () { 
             Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball});
@@ -73,15 +77,20 @@ ballpit.BallContainer = (function () {
         }.bind(this));
     };
 
+    /*
+     * @method Dispose
+     * @memberof BallContainer
+     * @public
+     */
     p.Dispose = function() {
-        var len = this.balls.length;
+        var len = this._balls.length;
         for (var i = len-1; i >= 0; i--) {
-            var ball = this.balls[i];
+            var ball = this._balls[i];
             ball.Dispose();
             Listener.Dispatch(ADCore.Event.ON_MODEL_REMOVE, this, { "model": ball });
-            this.balls.splice(i, 1);
+            this._balls.splice(i, 1);
         }
-        delete this.balls;
+        delete this._balls;
     };
 
     return BallContainer;

@@ -69,12 +69,12 @@ ballpit.Core = ( function () {
     };
 
     /**
-     * @method OnSceneSwitch
+     * @method _OnSceneSwitch
      * @memberof Core
      * @private 
      * @param {Object} caller
      * @param {Object} params
-     * @param {String} params.scene;
+     * @param {String} params.scene
      */
     p._onSceneSwitch = function (caller, params) {
         if (this.levelLoader.IsSceneLevel(params.scene)) {
