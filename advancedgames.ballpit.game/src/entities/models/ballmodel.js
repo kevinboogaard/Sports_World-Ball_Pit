@@ -41,10 +41,10 @@ ballpit.Event.ON_BALL_DESTROY = "on_ball_destroy";
 ballpit.Event.ON_BALL_SWAP_WRONG = "on_ball_swap_wrong";
 
 /**
- * @namespace BallTypes;
+ * @namespace BallTypes
  */
 let BallTypes = {};
-ballpit.BallTypes = BallTypes
+ballpit.BallTypes = BallTypes;
 
 /** 
  * @property {String} SOCCERBALL
@@ -83,7 +83,7 @@ ballpit.BallTypes.BASEBALL = "baseball";
     
 
 /**
- * @namespace BallStates;
+ * @namespace BallStates
  */
 let BallStates = {};
 ballpit.BallStates = BallStates;
@@ -139,7 +139,7 @@ ballpit.BallModel = (function () {
         * @readonly
         * @public
         */
-        this.Velocity = Settings.Velocity.BALL;
+        this._velocity = Settings.Velocity.BALL;
 
         /**
         * @property {Boolean} Beginning - The velocity of the ball
@@ -172,7 +172,7 @@ ballpit.BallModel = (function () {
      * @param {Number} deltaTime - The number deltatime is a multiplier to convert gametime in to realtime
      */
     p.Update = function (deltaTime) {
-        if (this.isMoving) {
+        if (this.isMoving) { 
             var distance = this.position.Distance(this._destination);
             
             var difference = new Vector2(this.position.x - this._destination.x, this.position.y - this._destination.y);
@@ -186,7 +186,7 @@ ballpit.BallModel = (function () {
                 this.position = this._destination.Clone();
                 this._destination = null;
 
-                this.state = ballpit.BallStates.IDLE;
+                this.state = ballpit.BallStates.IDLING;
                 Listener.Dispatch(ballpit.Event.ON_BALL_DESTINATION_REACHED, this, { "ball": this });
             }
         }
@@ -256,7 +256,7 @@ ballpit.BallModel = (function () {
                 return this._state;
             },
             "set": function (value) {
-                if (ADCore.Utilities.HasObjectValue(ballpit.BallStates, value) === false) throw new Error(state + ":State doesn't exist");
+                if (ADCore.Utilities.HasObjectValue(ballpit.BallStates, value) === false) throw new Error(this._state + ":State doesn't exist");
                 this._state = value;
                 Listener.Dispatch(ballpit.Event.ON_BALL_STATE_CHANGE, this, { "state": this.state });
             }

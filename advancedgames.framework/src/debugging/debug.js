@@ -26,11 +26,16 @@ ADCore.Debug = ( function () {
     }
     var p = Debug.prototype;
 
+	/**
+	 * T...
+	 * @typedef {} Args
+	 */
+
     /**
      * @method Log
      * @memberof Debug
      * @public
-     * @param {T...}
+     * @param {Args}
      */
     p.Log = function (/**/) {
         if ( this.ENABLED === false ) return;
@@ -41,7 +46,7 @@ ADCore.Debug = ( function () {
      * @method LogError
      * @memberof Debug
      * @public
-     * @param {T...}
+     * @param {Args}
      */
     p.LogError = function (/**/) {
         if ( this.ENABLED === false ) return;
@@ -52,7 +57,7 @@ ADCore.Debug = ( function () {
      * @method LogWarning
      * @memberof Debug
      * @public
-     * @param {T...}
+     * @param {Args}
      */
     p.LogWarning = function (/**/) {
         if ( this.ENABLED === false ) return;
@@ -63,7 +68,7 @@ ADCore.Debug = ( function () {
      * @method LogInfo
      * @memberof Debug
      * @public
-     * @param {T...}
+     * @param {Args}
      */
     p.LogInfo = function (/**/) {
         if ( this.ENABLED === false ) return;

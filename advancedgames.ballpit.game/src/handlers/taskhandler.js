@@ -57,8 +57,8 @@ ballpit.TaskHandler = (function() {
         var parsedTask = jsonTask;
 
         if (parsedTask.type === "random") {
-            var keys = Object.keys(ballpit.ballTypes);
-            parsedTask.type = ballpit.ballTypes[keys[ keys.length * Math.random() << 0]];
+            var keys = Object.keys(ballpit.BallTypes);
+            parsedTask.type = ballpit.BallTypes[keys[ keys.length * Math.random() << 0]];
         } 
 
         if (typeof parsedTask.amount === "object") {

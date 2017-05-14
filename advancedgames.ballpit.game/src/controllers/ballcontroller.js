@@ -160,7 +160,7 @@ ballpit.BallController = (function () {
         var lowest = this._helper.GetLowestBeneath(tile);
 
         if (tile !== lowest) {
-            tile.occupier.state = ballpit.BallStates.FALLING;
+            tile.occupier.state = ballpit.BallStates.MOVING;
             this.Move(tile, lowest);
         }
     };
@@ -203,7 +203,7 @@ ballpit.BallController = (function () {
                         tile.occupier = ball;
 
                         ball.MoveTo(tile.position);
-                        ball.state = ballpit.BallStates.FALLING;
+                        ball.state = ballpit.BallStates.MOVING;
                     }
                 }
             }
