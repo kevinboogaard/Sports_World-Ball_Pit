@@ -1,6 +1,19 @@
-# Sports World: Ball Pit
+<p align="center">
+  <img src="./advancedgames.ballpit.game/assets/ui/asset_logo.png" height="300" />
+</p>
 
-Sports World; Ball Pit is a puzzle game made for Cool Games. Ball Pit is a variant of Bejeweled in the intellectual property of Sports World. This project is for the 'Proeve van Bekwaamheid' of Mediacollege Amsterdam. 
+<br/>
+
+<p align="center">
+  Sports World; Ball Pit is a puzzle game made for Cool Games. Ball Pit is a variant of Bejeweled in the intellectual property of Sports World. This project is for the 'Proeve van Bekwaamheid' of Mediacollege Amsterdam. 
+</p>
+
+<br/>
+
+[![Build Passing](https://camo.githubusercontent.com/cfcaf3a99103d61f387761e5fc445d9ba0203b01/68747470733a2f2f7472617669732d63692e6f72672f6477796c2f657374612e7376673f6272616e63683d6d6173746572)](https://github.com/kevinboogaard/Sports_World-Ball_Pit)
+[![Coverage](https://camo.githubusercontent.com/facfcb6afd684d2c9701c7d6add65f391fdf86fc/68747470733a2f2f696d672e736869656c64732e696f2f636f6465636f762f632f6769746875622f6477796c2f686170692d617574682d6a7774322e7376673f6d61784167653d32353932303030)](https://github.com/kevinboogaard/Sports_World-Ball_Pit)
+[![Inline docs](https://camo.githubusercontent.com/5e1e40bde51a836bec3ce9c7493e453f64ac1f1b/687474703a2f2f696e63682d63692e6f72672f6769746875622f6477796c2f686170692d617574682d6a7774322e7376673f6272616e63683d6d6173746572)](https://github.com/kevinboogaard/Sports_World-Ball_Pit)
+
 
 ## Getting Started
 
