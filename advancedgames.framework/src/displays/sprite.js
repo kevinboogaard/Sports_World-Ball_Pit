@@ -1,17 +1,41 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ADCore = ADCore || {};
 
 ADCore.Sprite = (function () {
 
     /**
-     * 'Sprite'
+     * This is the basic sprite class used for both the views and the interfaces.
+     * 
+     * @class Sprite
+     * @constructor
+     * @extends Phaser.Sprite
+     * @abstract
+     * @param {Vector2} position
+     * @param {String} key
      */
     function Sprite(position, key) {
         Phaser.Sprite.call(this, ADCore.phaser, position.x, position.y, key);
 
+        /**
+         * @property {Array} _Animations - The animations of the sprite.
+         * @private
+         */
         this._animations = [];
+
+        /**
+         * @property {Boolean} Disposed - True if the spsrite has been disposed.
+         * @public
+         */
         this.disposed = false;
 
+        // Initialize the sprite by fetching its data.
         this._initializeSprite(key);
+        // Initialize the animations by fetching its data and loading the sprites in the AnimationManager.
         this._initializeAnimations(key);
     }
     Sprite.prototype = Object.create(Phaser.Sprite.prototype);
@@ -19,13 +43,18 @@ ADCore.Sprite = (function () {
     var p = Sprite.prototype;
 
     /**
-     * 'InitializeSprite'
-     * @param {String} 'key'
+     * @method _InitializeSprite
+     * @memberof Sprite
+     * @private
+     * @param {String} key
      */
     p._initializeSprite = function (key) {
         var data = Global.Loaded.generic.images[key];
-        if (!data) return;
-
+        if (!data) {
+            if (!Global.Loaded.level.sprites) return;
+            data = (Global.Loaded.level.sprites[key]);
+            if (!data) return;
+        }
         this.anchor.set(data.anchor.x, data.anchor.y);
         this.offset = data.offset;
         this.width = data.dimensions.width;
@@ -33,8 +62,10 @@ ADCore.Sprite = (function () {
     };
 
     /**
-     * 'InitializeAnimations'
-     * @param {String} 'key'
+     * @method _InitializeAnimations
+     * @memberof Sprite
+     * @private
+     * @param {String} key
      */
     p._initializeAnimations = function (key) {
         var data = Global.Loaded.generic.spritesheets[key];
@@ -51,18 +82,26 @@ ADCore.Sprite = (function () {
     };
 
     /**
-     * 'Play'
+     * Play an animation that has been registered at the initialize.
+     * 
+     * @method Play
+     * @memberof Sprite
+     * @param {String} name
+     * @param {Integer} [frameRate=30]
+     * @param {Boolean} [loop=false]
      * @returns {Phaser.Animation}
-     * @param {String} 'name'
      */
-    p.Play = function (name, frameRate, loop) {
+    p.Play = function (name, frameRate, loop, killOnComplete) {
         if (this._animations.contains(name) === false) throw new Error("Animation doesn't exist");
-        return this.animations.play(name, frameRate || 30, loop || false );
+        return this.animations.play(name, frameRate || 30, loop || false, killOnComplete || false);
     };
 
     /**
-     * 'Dispose'
-     *  With the dispose function you can clear all the data of an object before you destroy it.
+     * Dispose the sprite. Use this method to clean the sprite in order to avoid memory leaks.
+     *
+     * @method Dispose
+     * @memberof Sprite
+     * @public
      */
     p.Dispose = function () {
         delete this._animations;

@@ -1,9 +1,16 @@
+/**
+ * @ignore
+ */
 var scene = scene || {};
+
+scene.Names = scene.Names || {};
+scene.Names.UISCENE = "Uiscene";
 
 scene.Uiscene = (function () {
 
     /**
      * 'Entityscene'
+     * @ignore
      */
     function Uiscene() {
         Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");

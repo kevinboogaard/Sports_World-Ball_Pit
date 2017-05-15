@@ -1,9 +1,16 @@
+/**
+ * @ignore
+ */
 var scene = scene || {};
+
+scene.Names = scene.Names || {};
+scene.Names.GRIDSCENE = "Gridscene";
 
 scene.Gridscene = (function () {
 
     /**
      * 'Gridscene'
+     * @ignore
      */
     function Gridscene() {
         Phaser.Group.call(this, ADCore.phaser, null, "Gridscene");

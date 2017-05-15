@@ -1,12 +1,25 @@
 /**
- * Phaser Rephraser
- * Didn't like the look of some phaser functions.
- * I renamed them in this file and made some extra functionality. 
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
  */
-this.phaserExtension = {};
+var ADCore = ADCore || {};
 
-/** 
- * There is no Generic Get function in Phaser Cache. 
+/**
+ * @namespace
+ */
+let PhaserExtension = {}; // For documentation purposes.
+ADCore.PhaserExtension = {};
+
+/**
+ * @method Phaser.Cache.get
+ * @memberof PhaserExtension
+ * @override 
+ * @public
+ * @param {string} type - Type of the result you are trying to get.
+ * @param {string} key - Key of the result you are trying to get.
+ * @returns {T} result
  */
 Phaser.Cache.prototype.get = function ( type, key ) {
     switch ( type ) {
@@ -94,12 +107,25 @@ Phaser.Cache.prototype.get = function ( type, key ) {
         case "basetexture":
             return this.getBaseTexture( key );
 
+        case "audio": 
+            return this.getSound( key );
+
         default:
             throw new Error( "Type not known: Cache.Get()" );
     }
 };
 
-phaserExtension.CacheTypeToNumber = function ( type ) {
+/**
+ * Returns the corresponding number to the cache type.
+ * 
+ * @method PhaserExtension.CacheTypeToNumber
+ * @memberof PhaserExtension
+ * @override
+ * @static
+ * @param {string} type - Type of the result you are trying to get.
+ * @returns {Number} result
+ */
+ADCore.PhaserExtension.CacheTypeToNumber = function ( type ) {
     switch (type) {
         case "canvas":
             return 1;
@@ -113,7 +139,8 @@ phaserExtension.CacheTypeToNumber = function ( type ) {
         case "texture": 
             return 3;
 
-        case "sound": 
+        case "sound":
+        case "audio": 
             return 4;
 
         case "text": 

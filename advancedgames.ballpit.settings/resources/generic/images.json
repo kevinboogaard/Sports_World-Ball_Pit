@@ -2,36 +2,6 @@
     "base_path": "advancedgames.ballpit.game/assets/",
     "type": "image", 
     "resources": {
-        "bowlingball":{
-            "path": "balls/asset_bowlingball.png",
-            "dimensions": {"width": 45, "height":45},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-        "basketball":{
-            "path": "balls/asset_basketball.png",
-            "dimensions": {"width": 45, "height":45},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-         "soccerball":{
-            "path": "balls/asset_soccerball.png",
-            "dimensions": {"width":45, "height":45},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-         "tennisball":{
-            "path": "balls/asset_tennisball.png",
-            "dimensions": {"width":45, "height":45},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-         "baseball":{
-            "path": "balls/asset_baseball.png",
-            "dimensions": {"width":45, "height":45},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
         "startbutton-inactive":{
             "path": "buttons/asset_startbutton_inactive.png",
             "dimensions": {"width":108, "height":108},
@@ -74,33 +44,27 @@
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
-         "tutorialbackground":{
-            "path": "tutorial/asset_tutorial-screen_background.png",
-            "dimensions": {"width": 360, "height": 640},
+         "stopwatch":{
+            "path": "ui/asset_stopwatch.png",
+            "dimensions": {"width": 78, "height": 77},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
-         "tutorialscreen1":{
-            "path": "tutorial/asset_tutorial-screen-01.png",
-            "dimensions": {"width": 136, "height": 150},
+         "scoreboard":{
+            "path": "ui/asset_scoreboard.png",
+            "dimensions": {"width": 126, "height": 99},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
-         "tutorialscreen2":{
-            "path": "tutorial/asset_tutorial-screen-02.png",
-            "dimensions": {"width": 136, "height": 150},
+         "bubble":{
+            "path": "ui/asset_bubble.png",
+            "dimensions": {"width": 162, "height": 79 },
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
-         "tutorialscreen3":{
-            "path": "tutorial/asset_tutorial-screen-03.png",
-            "dimensions": {"width": 136, "height": 150},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-         "tutorialscreen4":{
-            "path": "tutorial/asset_tutorial-screen-04.png",
-            "dimensions": {"width": 136, "height": 150},
+         "tutorial":{
+            "path": "tutorial/tutorial.png",
+            "dimensions": {"width": 364, "height": 641 },
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         }

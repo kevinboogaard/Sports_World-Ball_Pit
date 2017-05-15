@@ -1,0 +1,5979 @@
+{"frames": [
+
+{
+	"filename": "animation angry mouth0001.png",
+	"frame": {"x":0,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0002.png",
+	"frame": {"x":31,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0003.png",
+	"frame": {"x":62,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0004.png",
+	"frame": {"x":93,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0005.png",
+	"frame": {"x":124,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0006.png",
+	"frame": {"x":155,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0007.png",
+	"frame": {"x":186,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0008.png",
+	"frame": {"x":217,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0009.png",
+	"frame": {"x":248,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0010.png",
+	"frame": {"x":279,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0011.png",
+	"frame": {"x":310,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0012.png",
+	"frame": {"x":341,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0013.png",
+	"frame": {"x":372,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0014.png",
+	"frame": {"x":403,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0015.png",
+	"frame": {"x":434,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0016.png",
+	"frame": {"x":465,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0017.png",
+	"frame": {"x":496,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0018.png",
+	"frame": {"x":527,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0019.png",
+	"frame": {"x":558,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0020.png",
+	"frame": {"x":589,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0021.png",
+	"frame": {"x":620,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0022.png",
+	"frame": {"x":651,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0023.png",
+	"frame": {"x":682,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0024.png",
+	"frame": {"x":713,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0025.png",
+	"frame": {"x":744,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0026.png",
+	"frame": {"x":775,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0027.png",
+	"frame": {"x":806,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0028.png",
+	"frame": {"x":837,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0029.png",
+	"frame": {"x":868,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0030.png",
+	"frame": {"x":899,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0031.png",
+	"frame": {"x":930,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0032.png",
+	"frame": {"x":961,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0033.png",
+	"frame": {"x":992,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0034.png",
+	"frame": {"x":1023,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0035.png",
+	"frame": {"x":1054,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0036.png",
+	"frame": {"x":1085,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0037.png",
+	"frame": {"x":1116,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0038.png",
+	"frame": {"x":1147,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0039.png",
+	"frame": {"x":1178,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation angry mouth0040.png",
+	"frame": {"x":1209,"y":0,"w":31,"h":11},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":11},
+	"sourceSize": {"w":31,"h":11},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0001.png",
+	"frame": {"x":1240,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0002.png",
+	"frame": {"x":1272,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0003.png",
+	"frame": {"x":1304,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0004.png",
+	"frame": {"x":1336,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0005.png",
+	"frame": {"x":1368,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0006.png",
+	"frame": {"x":1400,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0007.png",
+	"frame": {"x":1432,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0008.png",
+	"frame": {"x":1464,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0009.png",
+	"frame": {"x":1496,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0010.png",
+	"frame": {"x":1528,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0011.png",
+	"frame": {"x":1560,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0012.png",
+	"frame": {"x":1592,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0013.png",
+	"frame": {"x":1624,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0014.png",
+	"frame": {"x":1656,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0015.png",
+	"frame": {"x":1688,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0016.png",
+	"frame": {"x":1720,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0017.png",
+	"frame": {"x":1752,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0018.png",
+	"frame": {"x":1784,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0019.png",
+	"frame": {"x":1816,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0020.png",
+	"frame": {"x":1848,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0021.png",
+	"frame": {"x":1880,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0022.png",
+	"frame": {"x":1912,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0023.png",
+	"frame": {"x":1944,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0024.png",
+	"frame": {"x":1976,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0025.png",
+	"frame": {"x":2008,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0026.png",
+	"frame": {"x":2040,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0027.png",
+	"frame": {"x":2072,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0028.png",
+	"frame": {"x":2104,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0029.png",
+	"frame": {"x":2136,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0030.png",
+	"frame": {"x":2168,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0031.png",
+	"frame": {"x":2200,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0032.png",
+	"frame": {"x":2232,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0033.png",
+	"frame": {"x":2264,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0034.png",
+	"frame": {"x":2296,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0035.png",
+	"frame": {"x":2328,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0036.png",
+	"frame": {"x":2360,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0037.png",
+	"frame": {"x":2392,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0038.png",
+	"frame": {"x":2424,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0039.png",
+	"frame": {"x":2456,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation happy mouth0040.png",
+	"frame": {"x":2488,"y":0,"w":32,"h":13},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":13},
+	"sourceSize": {"w":32,"h":13},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0001.png",
+	"frame": {"x":2520,"y":0,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0002.png",
+	"frame": {"x":2742,"y":0,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0003.png",
+	"frame": {"x":2964,"y":0,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0004.png",
+	"frame": {"x":3186,"y":0,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0005.png",
+	"frame": {"x":3408,"y":0,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0006.png",
+	"frame": {"x":3630,"y":0,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0007.png",
+	"frame": {"x":0,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0008.png",
+	"frame": {"x":222,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0009.png",
+	"frame": {"x":444,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0010.png",
+	"frame": {"x":666,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0011.png",
+	"frame": {"x":888,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0012.png",
+	"frame": {"x":1110,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0013.png",
+	"frame": {"x":1332,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0014.png",
+	"frame": {"x":1554,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0015.png",
+	"frame": {"x":1776,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0016.png",
+	"frame": {"x":1998,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0017.png",
+	"frame": {"x":2220,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0018.png",
+	"frame": {"x":2442,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0019.png",
+	"frame": {"x":2664,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0020.png",
+	"frame": {"x":2886,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0021.png",
+	"frame": {"x":3108,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0022.png",
+	"frame": {"x":3330,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0023.png",
+	"frame": {"x":3552,"y":170,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0024.png",
+	"frame": {"x":0,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0025.png",
+	"frame": {"x":222,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0026.png",
+	"frame": {"x":444,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0027.png",
+	"frame": {"x":666,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0028.png",
+	"frame": {"x":888,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0029.png",
+	"frame": {"x":1110,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0030.png",
+	"frame": {"x":1332,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0031.png",
+	"frame": {"x":1554,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0032.png",
+	"frame": {"x":1776,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0033.png",
+	"frame": {"x":1998,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0034.png",
+	"frame": {"x":2220,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0035.png",
+	"frame": {"x":2442,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0036.png",
+	"frame": {"x":2664,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0037.png",
+	"frame": {"x":2886,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0038.png",
+	"frame": {"x":3108,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0039.png",
+	"frame": {"x":3330,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle angry0040.png",
+	"frame": {"x":3552,"y":340,"w":222,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":222,"h":170},
+	"sourceSize": {"w":222,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0001.png",
+	"frame": {"x":3774,"y":340,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0002.png",
+	"frame": {"x":0,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0003.png",
+	"frame": {"x":125,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0004.png",
+	"frame": {"x":250,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0005.png",
+	"frame": {"x":375,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0006.png",
+	"frame": {"x":500,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0007.png",
+	"frame": {"x":625,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0008.png",
+	"frame": {"x":750,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0009.png",
+	"frame": {"x":875,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0010.png",
+	"frame": {"x":1000,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0011.png",
+	"frame": {"x":1125,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0012.png",
+	"frame": {"x":1250,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0013.png",
+	"frame": {"x":1375,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0014.png",
+	"frame": {"x":1500,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0015.png",
+	"frame": {"x":1625,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0016.png",
+	"frame": {"x":1750,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0017.png",
+	"frame": {"x":1875,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0018.png",
+	"frame": {"x":2000,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0019.png",
+	"frame": {"x":2125,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0020.png",
+	"frame": {"x":2250,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0021.png",
+	"frame": {"x":2375,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0022.png",
+	"frame": {"x":2500,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0023.png",
+	"frame": {"x":2625,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0024.png",
+	"frame": {"x":2750,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0025.png",
+	"frame": {"x":2875,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0026.png",
+	"frame": {"x":3000,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0027.png",
+	"frame": {"x":3125,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0028.png",
+	"frame": {"x":3250,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0029.png",
+	"frame": {"x":3375,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0030.png",
+	"frame": {"x":3500,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0031.png",
+	"frame": {"x":3625,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0032.png",
+	"frame": {"x":3750,"y":510,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0033.png",
+	"frame": {"x":0,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0034.png",
+	"frame": {"x":125,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0035.png",
+	"frame": {"x":250,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0036.png",
+	"frame": {"x":375,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0037.png",
+	"frame": {"x":500,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0038.png",
+	"frame": {"x":625,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0039.png",
+	"frame": {"x":750,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle happy0040.png",
+	"frame": {"x":875,"y":680,"w":125,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":170},
+	"sourceSize": {"w":125,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0001.png",
+	"frame": {"x":1000,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0002.png",
+	"frame": {"x":1128,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0003.png",
+	"frame": {"x":1256,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0004.png",
+	"frame": {"x":1384,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0005.png",
+	"frame": {"x":1512,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0006.png",
+	"frame": {"x":1640,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0007.png",
+	"frame": {"x":1768,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0008.png",
+	"frame": {"x":1896,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0009.png",
+	"frame": {"x":2024,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0010.png",
+	"frame": {"x":2152,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0011.png",
+	"frame": {"x":2280,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0012.png",
+	"frame": {"x":2408,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0013.png",
+	"frame": {"x":2536,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0014.png",
+	"frame": {"x":2664,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0015.png",
+	"frame": {"x":2792,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0016.png",
+	"frame": {"x":2920,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0017.png",
+	"frame": {"x":3048,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0018.png",
+	"frame": {"x":3176,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0019.png",
+	"frame": {"x":3304,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0020.png",
+	"frame": {"x":3432,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0021.png",
+	"frame": {"x":3560,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0022.png",
+	"frame": {"x":3688,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0023.png",
+	"frame": {"x":3816,"y":680,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0024.png",
+	"frame": {"x":0,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0025.png",
+	"frame": {"x":128,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0026.png",
+	"frame": {"x":256,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0027.png",
+	"frame": {"x":384,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0028.png",
+	"frame": {"x":512,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0029.png",
+	"frame": {"x":640,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0030.png",
+	"frame": {"x":768,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0031.png",
+	"frame": {"x":896,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0032.png",
+	"frame": {"x":1024,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0033.png",
+	"frame": {"x":1152,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0034.png",
+	"frame": {"x":1280,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0035.png",
+	"frame": {"x":1408,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0036.png",
+	"frame": {"x":1536,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0037.png",
+	"frame": {"x":1664,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0038.png",
+	"frame": {"x":1792,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0039.png",
+	"frame": {"x":1920,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle neutral0040.png",
+	"frame": {"x":2048,"y":850,"w":128,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":170},
+	"sourceSize": {"w":128,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0001.png",
+	"frame": {"x":2176,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0002.png",
+	"frame": {"x":2394,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0003.png",
+	"frame": {"x":2612,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0004.png",
+	"frame": {"x":2830,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0005.png",
+	"frame": {"x":3048,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0006.png",
+	"frame": {"x":3266,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0007.png",
+	"frame": {"x":3484,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0008.png",
+	"frame": {"x":3702,"y":850,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0009.png",
+	"frame": {"x":0,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0010.png",
+	"frame": {"x":218,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0011.png",
+	"frame": {"x":436,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0012.png",
+	"frame": {"x":654,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0013.png",
+	"frame": {"x":872,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0014.png",
+	"frame": {"x":1090,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0015.png",
+	"frame": {"x":1308,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0016.png",
+	"frame": {"x":1526,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0017.png",
+	"frame": {"x":1744,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0018.png",
+	"frame": {"x":1962,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0019.png",
+	"frame": {"x":2180,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0020.png",
+	"frame": {"x":2398,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0021.png",
+	"frame": {"x":2616,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0022.png",
+	"frame": {"x":2834,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0023.png",
+	"frame": {"x":3052,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0024.png",
+	"frame": {"x":3270,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0025.png",
+	"frame": {"x":3488,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0026.png",
+	"frame": {"x":3706,"y":1020,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0027.png",
+	"frame": {"x":0,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0028.png",
+	"frame": {"x":218,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0029.png",
+	"frame": {"x":436,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0030.png",
+	"frame": {"x":654,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0031.png",
+	"frame": {"x":872,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0032.png",
+	"frame": {"x":1090,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0033.png",
+	"frame": {"x":1308,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0034.png",
+	"frame": {"x":1526,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0035.png",
+	"frame": {"x":1744,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0036.png",
+	"frame": {"x":1962,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0037.png",
+	"frame": {"x":2180,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0038.png",
+	"frame": {"x":2398,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0039.png",
+	"frame": {"x":2616,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super angry0040.png",
+	"frame": {"x":2834,"y":1190,"w":218,"h":170},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":170},
+	"sourceSize": {"w":218,"h":170},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0001.png",
+	"frame": {"x":3052,"y":1190,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0002.png",
+	"frame": {"x":3172,"y":1190,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0003.png",
+	"frame": {"x":3292,"y":1190,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0004.png",
+	"frame": {"x":3412,"y":1190,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0005.png",
+	"frame": {"x":3532,"y":1190,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0006.png",
+	"frame": {"x":3652,"y":1190,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0007.png",
+	"frame": {"x":3772,"y":1190,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0008.png",
+	"frame": {"x":0,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0009.png",
+	"frame": {"x":120,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0010.png",
+	"frame": {"x":240,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0011.png",
+	"frame": {"x":360,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0012.png",
+	"frame": {"x":480,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0013.png",
+	"frame": {"x":600,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0014.png",
+	"frame": {"x":720,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0015.png",
+	"frame": {"x":840,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0016.png",
+	"frame": {"x":960,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0017.png",
+	"frame": {"x":1080,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0018.png",
+	"frame": {"x":1200,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0019.png",
+	"frame": {"x":1320,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0020.png",
+	"frame": {"x":1440,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0021.png",
+	"frame": {"x":1560,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0022.png",
+	"frame": {"x":1680,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0023.png",
+	"frame": {"x":1800,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0024.png",
+	"frame": {"x":1920,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0025.png",
+	"frame": {"x":2040,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0026.png",
+	"frame": {"x":2160,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0027.png",
+	"frame": {"x":2280,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0028.png",
+	"frame": {"x":2400,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0029.png",
+	"frame": {"x":2520,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0030.png",
+	"frame": {"x":2640,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0031.png",
+	"frame": {"x":2760,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0032.png",
+	"frame": {"x":2880,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0033.png",
+	"frame": {"x":3000,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0034.png",
+	"frame": {"x":3120,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0035.png",
+	"frame": {"x":3240,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0036.png",
+	"frame": {"x":3360,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0037.png",
+	"frame": {"x":3480,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0038.png",
+	"frame": {"x":3600,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0039.png",
+	"frame": {"x":3720,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle super happy0040.png",
+	"frame": {"x":3840,"y":1361,"w":120,"h":171},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":171},
+	"sourceSize": {"w":120,"h":171},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0001.png",
+	"frame": {"x":0,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0002.png",
+	"frame": {"x":22,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0003.png",
+	"frame": {"x":44,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0004.png",
+	"frame": {"x":66,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0005.png",
+	"frame": {"x":88,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0006.png",
+	"frame": {"x":110,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0007.png",
+	"frame": {"x":132,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0008.png",
+	"frame": {"x":154,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0009.png",
+	"frame": {"x":176,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0010.png",
+	"frame": {"x":198,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0011.png",
+	"frame": {"x":220,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0012.png",
+	"frame": {"x":242,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0013.png",
+	"frame": {"x":264,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0014.png",
+	"frame": {"x":286,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0015.png",
+	"frame": {"x":308,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0016.png",
+	"frame": {"x":330,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0017.png",
+	"frame": {"x":352,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0018.png",
+	"frame": {"x":374,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0019.png",
+	"frame": {"x":396,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0020.png",
+	"frame": {"x":418,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0021.png",
+	"frame": {"x":440,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0022.png",
+	"frame": {"x":462,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0023.png",
+	"frame": {"x":484,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0024.png",
+	"frame": {"x":506,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0025.png",
+	"frame": {"x":528,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0026.png",
+	"frame": {"x":550,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0027.png",
+	"frame": {"x":572,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0028.png",
+	"frame": {"x":594,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0029.png",
+	"frame": {"x":616,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0030.png",
+	"frame": {"x":638,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0031.png",
+	"frame": {"x":660,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0032.png",
+	"frame": {"x":682,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0033.png",
+	"frame": {"x":704,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0034.png",
+	"frame": {"x":726,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0035.png",
+	"frame": {"x":748,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0036.png",
+	"frame": {"x":770,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0037.png",
+	"frame": {"x":792,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0038.png",
+	"frame": {"x":814,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0039.png",
+	"frame": {"x":836,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation neutral mouth0040.png",
+	"frame": {"x":858,"y":1532,"w":22,"h":5},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":5},
+	"sourceSize": {"w":22,"h":5},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0001.png",
+	"frame": {"x":880,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0002.png",
+	"frame": {"x":926,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0003.png",
+	"frame": {"x":972,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0004.png",
+	"frame": {"x":1018,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0005.png",
+	"frame": {"x":1064,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0006.png",
+	"frame": {"x":1110,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0007.png",
+	"frame": {"x":1156,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0008.png",
+	"frame": {"x":1202,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0009.png",
+	"frame": {"x":1248,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0010.png",
+	"frame": {"x":1294,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0011.png",
+	"frame": {"x":1340,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0012.png",
+	"frame": {"x":1386,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0013.png",
+	"frame": {"x":1432,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0014.png",
+	"frame": {"x":1478,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0015.png",
+	"frame": {"x":1524,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0016.png",
+	"frame": {"x":1570,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0017.png",
+	"frame": {"x":1616,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0018.png",
+	"frame": {"x":1662,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0019.png",
+	"frame": {"x":1708,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0020.png",
+	"frame": {"x":1754,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0021.png",
+	"frame": {"x":1800,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0022.png",
+	"frame": {"x":1846,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0023.png",
+	"frame": {"x":1892,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0024.png",
+	"frame": {"x":1938,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0025.png",
+	"frame": {"x":1984,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0026.png",
+	"frame": {"x":2030,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0027.png",
+	"frame": {"x":2076,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0028.png",
+	"frame": {"x":2122,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0029.png",
+	"frame": {"x":2168,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0030.png",
+	"frame": {"x":2214,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0031.png",
+	"frame": {"x":2260,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0032.png",
+	"frame": {"x":2306,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0033.png",
+	"frame": {"x":2352,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0034.png",
+	"frame": {"x":2398,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0035.png",
+	"frame": {"x":2444,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0036.png",
+	"frame": {"x":2490,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0037.png",
+	"frame": {"x":2536,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0038.png",
+	"frame": {"x":2582,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0039.png",
+	"frame": {"x":2628,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super angry mouth0040.png",
+	"frame": {"x":2674,"y":1532,"w":46,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":46,"h":44},
+	"sourceSize": {"w":46,"h":44},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0001.png",
+	"frame": {"x":2720,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0002.png",
+	"frame": {"x":2845,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0003.png",
+	"frame": {"x":2970,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0004.png",
+	"frame": {"x":3095,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0005.png",
+	"frame": {"x":3220,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0006.png",
+	"frame": {"x":3345,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0007.png",
+	"frame": {"x":3470,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0008.png",
+	"frame": {"x":3595,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0009.png",
+	"frame": {"x":3720,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0010.png",
+	"frame": {"x":3845,"y":1532,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0011.png",
+	"frame": {"x":0,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0012.png",
+	"frame": {"x":125,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0013.png",
+	"frame": {"x":250,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0014.png",
+	"frame": {"x":375,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0015.png",
+	"frame": {"x":500,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0016.png",
+	"frame": {"x":625,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0017.png",
+	"frame": {"x":750,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0018.png",
+	"frame": {"x":875,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0019.png",
+	"frame": {"x":1000,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0020.png",
+	"frame": {"x":1125,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0021.png",
+	"frame": {"x":1250,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0022.png",
+	"frame": {"x":1375,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0023.png",
+	"frame": {"x":1500,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0024.png",
+	"frame": {"x":1625,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0025.png",
+	"frame": {"x":1750,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0026.png",
+	"frame": {"x":1875,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0027.png",
+	"frame": {"x":2000,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0028.png",
+	"frame": {"x":2125,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0029.png",
+	"frame": {"x":2250,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0030.png",
+	"frame": {"x":2375,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0031.png",
+	"frame": {"x":2500,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0032.png",
+	"frame": {"x":2625,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0033.png",
+	"frame": {"x":2750,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0034.png",
+	"frame": {"x":2875,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0035.png",
+	"frame": {"x":3000,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0036.png",
+	"frame": {"x":3125,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0037.png",
+	"frame": {"x":3250,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0038.png",
+	"frame": {"x":3375,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0039.png",
+	"frame": {"x":3500,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy hand0040.png",
+	"frame": {"x":3625,"y":1604,"w":125,"h":72},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":72},
+	"sourceSize": {"w":125,"h":72},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0001.png",
+	"frame": {"x":3750,"y":1604,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0002.png",
+	"frame": {"x":3800,"y":1604,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0003.png",
+	"frame": {"x":3850,"y":1604,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0004.png",
+	"frame": {"x":3900,"y":1604,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0005.png",
+	"frame": {"x":0,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0006.png",
+	"frame": {"x":50,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0007.png",
+	"frame": {"x":100,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0008.png",
+	"frame": {"x":150,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0009.png",
+	"frame": {"x":200,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0010.png",
+	"frame": {"x":250,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0011.png",
+	"frame": {"x":300,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0012.png",
+	"frame": {"x":350,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0013.png",
+	"frame": {"x":400,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0014.png",
+	"frame": {"x":450,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0015.png",
+	"frame": {"x":500,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0016.png",
+	"frame": {"x":550,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0017.png",
+	"frame": {"x":600,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0018.png",
+	"frame": {"x":650,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0019.png",
+	"frame": {"x":700,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0020.png",
+	"frame": {"x":750,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0021.png",
+	"frame": {"x":800,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0022.png",
+	"frame": {"x":850,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0023.png",
+	"frame": {"x":900,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0024.png",
+	"frame": {"x":950,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0025.png",
+	"frame": {"x":1000,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0026.png",
+	"frame": {"x":1050,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0027.png",
+	"frame": {"x":1100,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0028.png",
+	"frame": {"x":1150,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0029.png",
+	"frame": {"x":1200,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0030.png",
+	"frame": {"x":1250,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0031.png",
+	"frame": {"x":1300,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0032.png",
+	"frame": {"x":1350,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0033.png",
+	"frame": {"x":1400,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0034.png",
+	"frame": {"x":1450,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0035.png",
+	"frame": {"x":1500,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0036.png",
+	"frame": {"x":1550,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0037.png",
+	"frame": {"x":1600,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0038.png",
+	"frame": {"x":1650,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0039.png",
+	"frame": {"x":1700,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation super happy mouth0040.png",
+	"frame": {"x":1750,"y":1676,"w":50,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":22},
+	"sourceSize": {"w":50,"h":22},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0001.png",
+	"frame": {"x":1800,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0002.png",
+	"frame": {"x":1834,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0003.png",
+	"frame": {"x":1868,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0004.png",
+	"frame": {"x":1902,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0005.png",
+	"frame": {"x":1936,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0006.png",
+	"frame": {"x":1970,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0007.png",
+	"frame": {"x":2004,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0008.png",
+	"frame": {"x":2038,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0009.png",
+	"frame": {"x":2072,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0010.png",
+	"frame": {"x":2106,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0011.png",
+	"frame": {"x":2140,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0012.png",
+	"frame": {"x":2174,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0013.png",
+	"frame": {"x":2208,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0014.png",
+	"frame": {"x":2242,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0015.png",
+	"frame": {"x":2276,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0016.png",
+	"frame": {"x":2310,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0017.png",
+	"frame": {"x":2344,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0018.png",
+	"frame": {"x":2378,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0019.png",
+	"frame": {"x":2412,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0020.png",
+	"frame": {"x":2446,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0021.png",
+	"frame": {"x":2480,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0022.png",
+	"frame": {"x":2514,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation talk0023.png",
+	"frame": {"x":2548,"y":1676,"w":34,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":16},
+	"sourceSize": {"w":34,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0001.png",
+	"frame": {"x":2582,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0002.png",
+	"frame": {"x":2724,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0003.png",
+	"frame": {"x":2866,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0004.png",
+	"frame": {"x":3008,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0005.png",
+	"frame": {"x":3150,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0006.png",
+	"frame": {"x":3292,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0007.png",
+	"frame": {"x":3434,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0008.png",
+	"frame": {"x":3576,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0009.png",
+	"frame": {"x":3718,"y":1676,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0010.png",
+	"frame": {"x":0,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0011.png",
+	"frame": {"x":142,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0012.png",
+	"frame": {"x":284,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0013.png",
+	"frame": {"x":426,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0014.png",
+	"frame": {"x":568,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0015.png",
+	"frame": {"x":710,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0016.png",
+	"frame": {"x":852,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0017.png",
+	"frame": {"x":994,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0018.png",
+	"frame": {"x":1136,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0019.png",
+	"frame": {"x":1278,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0020.png",
+	"frame": {"x":1420,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0021.png",
+	"frame": {"x":1562,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0022.png",
+	"frame": {"x":1704,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0023.png",
+	"frame": {"x":1846,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0024.png",
+	"frame": {"x":1988,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0025.png",
+	"frame": {"x":2130,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0026.png",
+	"frame": {"x":2272,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0027.png",
+	"frame": {"x":2414,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0028.png",
+	"frame": {"x":2556,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0029.png",
+	"frame": {"x":2698,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0030.png",
+	"frame": {"x":2840,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0031.png",
+	"frame": {"x":2982,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0032.png",
+	"frame": {"x":3124,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0033.png",
+	"frame": {"x":3266,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0034.png",
+	"frame": {"x":3408,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0035.png",
+	"frame": {"x":3550,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0036.png",
+	"frame": {"x":3692,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0037.png",
+	"frame": {"x":3834,"y":1862,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0038.png",
+	"frame": {"x":0,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0039.png",
+	"frame": {"x":142,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk angry0040.png",
+	"frame": {"x":284,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0001.png",
+	"frame": {"x":426,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0002.png",
+	"frame": {"x":568,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0003.png",
+	"frame": {"x":710,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0004.png",
+	"frame": {"x":852,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0005.png",
+	"frame": {"x":994,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0006.png",
+	"frame": {"x":1136,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0007.png",
+	"frame": {"x":1278,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0008.png",
+	"frame": {"x":1420,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0009.png",
+	"frame": {"x":1562,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0010.png",
+	"frame": {"x":1704,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0011.png",
+	"frame": {"x":1846,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0012.png",
+	"frame": {"x":1988,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0013.png",
+	"frame": {"x":2130,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0014.png",
+	"frame": {"x":2272,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0015.png",
+	"frame": {"x":2414,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0016.png",
+	"frame": {"x":2556,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0017.png",
+	"frame": {"x":2698,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0018.png",
+	"frame": {"x":2840,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0019.png",
+	"frame": {"x":2982,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0020.png",
+	"frame": {"x":3124,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0021.png",
+	"frame": {"x":3266,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0022.png",
+	"frame": {"x":3408,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0023.png",
+	"frame": {"x":3550,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0024.png",
+	"frame": {"x":3692,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0025.png",
+	"frame": {"x":3834,"y":2048,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0026.png",
+	"frame": {"x":0,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0027.png",
+	"frame": {"x":142,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0028.png",
+	"frame": {"x":284,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0029.png",
+	"frame": {"x":426,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0030.png",
+	"frame": {"x":568,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0031.png",
+	"frame": {"x":710,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0032.png",
+	"frame": {"x":852,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0033.png",
+	"frame": {"x":994,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0034.png",
+	"frame": {"x":1136,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0035.png",
+	"frame": {"x":1278,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0036.png",
+	"frame": {"x":1420,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0037.png",
+	"frame": {"x":1562,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0038.png",
+	"frame": {"x":1704,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0039.png",
+	"frame": {"x":1846,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk happy0040.png",
+	"frame": {"x":1988,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0001.png",
+	"frame": {"x":2130,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0002.png",
+	"frame": {"x":2272,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0003.png",
+	"frame": {"x":2414,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0004.png",
+	"frame": {"x":2556,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0005.png",
+	"frame": {"x":2698,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0006.png",
+	"frame": {"x":2840,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0007.png",
+	"frame": {"x":2982,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0008.png",
+	"frame": {"x":3124,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0009.png",
+	"frame": {"x":3266,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0010.png",
+	"frame": {"x":3408,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0011.png",
+	"frame": {"x":3550,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0012.png",
+	"frame": {"x":3692,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0013.png",
+	"frame": {"x":3834,"y":2234,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0014.png",
+	"frame": {"x":0,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0015.png",
+	"frame": {"x":142,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0016.png",
+	"frame": {"x":284,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0017.png",
+	"frame": {"x":426,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0018.png",
+	"frame": {"x":568,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0019.png",
+	"frame": {"x":710,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0020.png",
+	"frame": {"x":852,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0021.png",
+	"frame": {"x":994,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0022.png",
+	"frame": {"x":1136,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0023.png",
+	"frame": {"x":1278,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0024.png",
+	"frame": {"x":1420,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0025.png",
+	"frame": {"x":1562,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0026.png",
+	"frame": {"x":1704,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0027.png",
+	"frame": {"x":1846,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0028.png",
+	"frame": {"x":1988,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0029.png",
+	"frame": {"x":2130,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0030.png",
+	"frame": {"x":2272,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0031.png",
+	"frame": {"x":2414,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0032.png",
+	"frame": {"x":2556,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0033.png",
+	"frame": {"x":2698,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0034.png",
+	"frame": {"x":2840,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0035.png",
+	"frame": {"x":2982,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0036.png",
+	"frame": {"x":3124,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0037.png",
+	"frame": {"x":3266,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0038.png",
+	"frame": {"x":3408,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0039.png",
+	"frame": {"x":3550,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk neutral0040.png",
+	"frame": {"x":3692,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0001.png",
+	"frame": {"x":3834,"y":2420,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0002.png",
+	"frame": {"x":0,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0003.png",
+	"frame": {"x":142,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0004.png",
+	"frame": {"x":284,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0005.png",
+	"frame": {"x":426,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0006.png",
+	"frame": {"x":568,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0007.png",
+	"frame": {"x":710,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0008.png",
+	"frame": {"x":852,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0009.png",
+	"frame": {"x":994,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0010.png",
+	"frame": {"x":1136,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0011.png",
+	"frame": {"x":1278,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0012.png",
+	"frame": {"x":1420,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0013.png",
+	"frame": {"x":1562,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0014.png",
+	"frame": {"x":1704,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0015.png",
+	"frame": {"x":1846,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0016.png",
+	"frame": {"x":1988,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0017.png",
+	"frame": {"x":2130,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0018.png",
+	"frame": {"x":2272,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0019.png",
+	"frame": {"x":2414,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0020.png",
+	"frame": {"x":2556,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0021.png",
+	"frame": {"x":2698,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0022.png",
+	"frame": {"x":2840,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0023.png",
+	"frame": {"x":2982,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0024.png",
+	"frame": {"x":3124,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0025.png",
+	"frame": {"x":3266,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0026.png",
+	"frame": {"x":3408,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0027.png",
+	"frame": {"x":3550,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0028.png",
+	"frame": {"x":3692,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0029.png",
+	"frame": {"x":3834,"y":2606,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0030.png",
+	"frame": {"x":0,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0031.png",
+	"frame": {"x":142,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0032.png",
+	"frame": {"x":284,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0033.png",
+	"frame": {"x":426,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0034.png",
+	"frame": {"x":568,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0035.png",
+	"frame": {"x":710,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0036.png",
+	"frame": {"x":852,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0037.png",
+	"frame": {"x":994,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0038.png",
+	"frame": {"x":1136,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0039.png",
+	"frame": {"x":1278,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super angry0040.png",
+	"frame": {"x":1420,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0001.png",
+	"frame": {"x":1562,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0002.png",
+	"frame": {"x":1704,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0003.png",
+	"frame": {"x":1846,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0004.png",
+	"frame": {"x":1988,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0005.png",
+	"frame": {"x":2130,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0006.png",
+	"frame": {"x":2272,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0007.png",
+	"frame": {"x":2414,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0008.png",
+	"frame": {"x":2556,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0009.png",
+	"frame": {"x":2698,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0010.png",
+	"frame": {"x":2840,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0011.png",
+	"frame": {"x":2982,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0012.png",
+	"frame": {"x":3124,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0013.png",
+	"frame": {"x":3266,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0014.png",
+	"frame": {"x":3408,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0015.png",
+	"frame": {"x":3550,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0016.png",
+	"frame": {"x":3692,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0017.png",
+	"frame": {"x":3834,"y":2792,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0018.png",
+	"frame": {"x":0,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0019.png",
+	"frame": {"x":142,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0020.png",
+	"frame": {"x":284,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0021.png",
+	"frame": {"x":426,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0022.png",
+	"frame": {"x":568,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0023.png",
+	"frame": {"x":710,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0024.png",
+	"frame": {"x":852,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0025.png",
+	"frame": {"x":994,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0026.png",
+	"frame": {"x":1136,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0027.png",
+	"frame": {"x":1278,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0028.png",
+	"frame": {"x":1420,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0029.png",
+	"frame": {"x":1562,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0030.png",
+	"frame": {"x":1704,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0031.png",
+	"frame": {"x":1846,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0032.png",
+	"frame": {"x":1988,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0033.png",
+	"frame": {"x":2130,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0034.png",
+	"frame": {"x":2272,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0035.png",
+	"frame": {"x":2414,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0036.png",
+	"frame": {"x":2556,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0037.png",
+	"frame": {"x":2698,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0038.png",
+	"frame": {"x":2840,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0039.png",
+	"frame": {"x":2982,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation walk super happy0040.png",
+	"frame": {"x":3124,"y":2978,"w":142,"h":186},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":142,"h":186},
+	"sourceSize": {"w":142,"h":186},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "soccercoach large.png",
+	"format": "RGBA8888",
+	"size": {"w":3976,"h":3164},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8f640fe754bbe564a49be1ece2cde0f0:fbfaaa780219f3f4edc72d03d814f63c:12787b62442021f023093b8814b6b075$"
+}
+}

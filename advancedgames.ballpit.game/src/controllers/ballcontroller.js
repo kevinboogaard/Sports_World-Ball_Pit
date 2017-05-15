@@ -1,21 +1,63 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
+/**
+ * @namespace Event
+ */
+this.Event; // For documentation purposes.
 ballpit.Event = ballpit.Event || {};
+
+/**
+ * @property {String} ON_BALL_ALIGN
+ * @memberof Event
+ * @readonly
+ */
 ballpit.Event.ON_BALL_ALIGN = "on_ball_align";
+
+/**
+ * @property {String} ON_BALLS_SPAWNED
+ * @memberof Event
+ * @readonly
+ */
 ballpit.Event.ON_BALLS_SPAWNED = "on_balls_spawned";
 
 ballpit.BallController = (function () {
 
-    /**'
-     * 'BallController'
-     * @param {TileLayer} 'layer'
-     * @param {BallContainer} 'ballcontainer'
+     /**
+     * @class BallController
+     * @constructor
+     * @param {TileLayer} layer - The layer that the ballcontroller is controlling. 
+     * @param {BallContainer} ballContainer - The ball container.
      */
     function BallController(layer, ballContainer) {
+                
+        /**
+        * @property {TileLayer} _Layer - The layer that the ballcontroller is controlling.
+        * @private
+        */
         this._layer = layer;
+
+        /**
+        * @property {BallContainer} _BallContainer - The ball container given.
+        * @private
+        */
         this._ballContainer = ballContainer;
 
+        /**
+        * @property {Array} _Rows - The tiles of the Main Layer.
+        * @private
+        */
         this._rows = this._layer.tiledata;
+
+        /**
+        * @property {BallHelper} _Helper - The ball helper of the controller.
+        * @private
+        */
         this._helper = new ballpit.BallHelper(this._layer, this._ballContainer);
 
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this), this);
@@ -23,22 +65,24 @@ ballpit.BallController = (function () {
     }
     var p = BallController.prototype;
 
-    /**
-     * 'Initialize'
-     * Method to Initialize the balls on the grid.
-     * Use this method before you allow the player to move balls!
+     /**
+     * @method Initialize
+     * @memberof BallController
+     * @public
      */
     p.Initialize = function () {
         var len = this._layer.width;
         for (var x = 0; x < len; x++) {
-            this.RestoreColumn(x);
+            this.RestoreColumn(x, true);
         }
     };
     
-    /**
-     * 'Swap'
-     * @param {TileModel} 'selected'.
-     * @param {TileModel} 'targeted'.
+     /**
+     * @method Swap
+     * @memberof BallController
+     * @public
+     * @param {TileModel} selected - The selected tile.
+     * @param {TileModel} targeted - The targeted tile.
      */
     p.Swap = function (selected, targeted) {
         if (selected === targeted) throw new Error("Can't swap the selected with the selected");
@@ -59,10 +103,12 @@ ballpit.BallController = (function () {
         if (targeted_occupier) targeted_occupier.SwapTo(selected.position);
     };
 
-    /**
-     * 'Move'
-     * @param {TileModel} 'selected'.
-     * @param {TileModel} 'targeted'.
+     /**
+     * @method Move
+     * @memberof BallController
+     * @public
+     * @param {TileModel} selected - The selected tile.
+     * @param {TileModel} targeted - The targeted tile.
      */
     p.Move = function (selected, targeted) {
         if (selected === targeted) throw new Error("Can't swap the selected with the selected");
@@ -80,9 +126,11 @@ ballpit.BallController = (function () {
         if (targeted_occupier) targeted_occupier.MoveTo(selected.position);
     };
 
-    /**
-     * 'DropColumn'
-     * @param {Int} 'tileX'.
+     /**
+     * @method DropColumn
+     * @memberof BallController
+     * @public
+     * @param {Number} tileX - The x position of the column the controller needs to drop.
      */
     p.DropColumn = function (tileX) {
         var len = this._rows.length;
@@ -94,7 +142,7 @@ ballpit.BallController = (function () {
                 if (x === tileX) {
                     var tile = row[x];
 
-                    if (this.CanSwap(tile)) {
+                    if (this.CanMove(tile)) {
                         this.DropBall(tile);
                     }
                 }
@@ -102,24 +150,29 @@ ballpit.BallController = (function () {
         }
     };
 
-    /**
-     * 'DropBall'
-     * @param {TileModel} 'tile'.
+     /**
+     * @method DropBall
+     * @memberof BallController
+     * @public
+     * @param {TileModel} tile - The tile the controller needs to drop.
      */
     p.DropBall = function (tile) {
         var lowest = this._helper.GetLowestBeneath(tile);
 
         if (tile !== lowest) {
-            tile.occupier.state = ballpit.BallStates.FALLING;
+            tile.occupier.state = ballpit.BallStates.MOVING;
             this.Move(tile, lowest);
         }
     };
-    
-    /**
-     * 'RestoreColumn'
-     * @param {Int} 'tileX'.
+
+     /**
+     * @method RestoreColumn
+     * @memberof BallController
+     * @public
+     * @param {Number} tileX - The x position of the column the controller needs to restore.
+     * @param {Boolean} [forceType = false]
      */
-    p.RestoreColumn = function (tileX) {
+    p.RestoreColumn = function (tileX, forceType) {
         var y_spawns = [];
 
         var len = this._rows.length;
@@ -133,15 +186,24 @@ ballpit.BallController = (function () {
                 if (x === tileX) {
                     var tile = row[x];
 
-                    if (this.CanSwap(tile) === false) {
+                    if (this.CanMove(tile) === false) {
                         var position = this._layer.TilePositionToScreenPosition(new Vector2(tile.tileposition.x,  y_spawns[x]));
                         y_spawns[x]--;
 
-                        var ball = this._ballContainer.AddRandomBall(position);
+                        var ball = null;
+                        var type = tile.properties.type || "random";
+
+                        if (forceType !== true) type = "random";
+
+                        if (type === "random") {
+                            ball = this._ballContainer.AddRandomBall(position);
+                        } else {
+                            ball = this._ballContainer.AddBall(position, type);
+                        }
                         tile.occupier = ball;
 
                         ball.MoveTo(tile.position);
-                        ball.state = ballpit.BallStates.FALLING;
+                        ball.state = ballpit.BallStates.MOVING;
                     }
                 }
             }
@@ -149,53 +211,72 @@ ballpit.BallController = (function () {
     };
    
     /**
-     * 'CanSwap'
-     * @param {TileModel} 'tile'.
+     * @method CanMove
+     * @memberof BallController
+     * @param {TileModel} tile
+     * @returns {Boolean}
      */
-    p.CanSwap = function (tile) {
+    p.CanMove = function (tile) {
         return (tile !== null && tile.occupier instanceof ballpit.BallModel);
     };
 
     /**
-     * 'OnBallDestinationReached'
-     * @param { {} } 'caller'.
-     * @param { {BallModel}: "ball" } 'params'.
+     * @method CanSwap
+     * @memberof BallController
+     * @param {TileModel} tile
+     * @param {TileModel} target
+     * @returns {Boolean}
+     */
+    p.CanSwap = function (tile, target) {
+         if (!this.CanMove(tile) || !this.CanMove(target)) return false;
+
+        var ball_current = tile.occupier;
+        var ball_target = target.occupier;
+        
+        tile.occupier = ball_target;
+        target.occupier = ball_current;
+         
+        var tile_aligned = this._helper.GetAligned(tile);
+        var target_aligned = this._helper.GetAligned(target);
+
+        tile.occupier = ball_current;
+        target.occupier = ball_target;
+
+        if (tile_aligned.length === 0 && target_aligned.length === 0) return false;
+        else return true;
+    };
+
+     /**
+     * @method _OnBallDestinationReached
+     * @memberof BallController
+     * @private
+     * @param {Object} caller -  The caller of the event
+     * @param {Object} params -  The parameters the caller has given.
+     * @param {BallModel} params.ball 
+     * @ignore
      */
     p._onBallDestinationReached = function (caller, params) {
         var tile_current = this._layer.GetTileByOccupier(params.ball);
         var ball_current = params.ball;
 
-        var tile_other = params.ball.beginning;
-        var ball_other = (tile_other) ? tile_other.occupier : null;
-
-        var aligned = this._helper.GetAligned(tile_current);
-
+        ball_current.position = tile_current.position.Clone();
+        ball_current.state = ballpit.BallStates.IDLING; 
+            
+        var aligned = this._helper.GetAligned(tile_current, ball_current.type);
         if (aligned.length > 0) {
-            ball_current.position = tile_current.position.Clone();
-            ball_current.state = ballpit.BallStates.IDLING; 
-
-            Debug.LogWarning("Warning: I'm idling the other his movement and thus 2 ball aligns can NEVER happen.");
-            if (ball_other) {
-                ball_other.position = tile_other.position.Clone();
-                ball_other.state = ballpit.BallStates.IDLING; 
-            }
-        
             Listener.Dispatch(ballpit.Event.ON_BALL_ALIGN, this, { "owner": tile_current, "aligned": aligned });
-        } else {
-            if (ball_current.state === ballpit.BallStates.SWAPPING) {
-                if (ball_other.state === ballpit.BallStates.REVERTING) {
-                    this.Move(tile_current, tile_other);
-                } else {
-                    ball_current.state = ballpit.BallStates.REVERTING;
-                }
-            }
         }
     };
 
-    /**
-     * 'OnBallAlign'
-     * @param { {} } 'caller'.
-     * @param { {TileModel}: "owner", {TileModel[]}: "aligned" } 'params'.
+     /**
+     * @method _OnBallAlign
+     * @memberof BallController
+     * @private
+     * @param {Object} caller -  The caller of the event
+     * @param {Object} params -  The parameters the caller has given.
+     * @param {TileModel} params.owner
+     * @param {Array} params.aligned - Array of TIleModels that are aligned with the owner.
+     * @ignore
      */
     p._onBallAlign = function (caller, params) {
         var tiles = params.aligned;
@@ -223,10 +304,22 @@ ballpit.BallController = (function () {
     };
 
     /**
-     * 'Dispose'
+     * @method Dispose
+     * @memberof BallController
+     * @public
      */
-    p.dispose = function () {
-        throw new Error("NOT MADE YET");
+    p.Dispose = function () {
+        delete this._layer;
+        delete this._ballContainer;
+
+        delete this._rows;
+
+        this._helper.Dispose();
+        delete this._helper;
+        
+        Listener.Mute(ballpit.Event.ON_BALL_ALIGN, this);
+        Listener.Mute(ballpit.Event.ON_BALL_DESTINATION_REACHED, this);
+    
     };
 
     return BallController;

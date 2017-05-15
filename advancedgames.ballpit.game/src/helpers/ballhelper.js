@@ -1,22 +1,40 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
 ballpit.BallHelper = (function () {
 
-    /**'
-     * 'BallHelper'
-     * @param {Tilemap} 'tilemap'
-     * @param {BallContainer} 'ballcontainer'
+    /**
+     * @class BallHelper
+     * @constructor
+     * @param {TileLayer} layer - 
+     * @param {BallContainer} ballContainer - 
      */
     function BallHelper(layer, ballContainer) {
-        this.layer = layer;
+         /**
+         * @property {layer} layer - A layer of the game
+         * @public
+         */
+        this.layer = layer; 
+        
+        /**
+         * @property {ballContainer} ballContainer - The container of the balls
+         * @public
+         */
         this.ballContainer = ballContainer;
     }
     var p = BallHelper.prototype;
-
-    /**'
-    * 'GetLowestBeneath'
-    * @param {tile} 'tile'
-    */
+    
+    /**
+     * @method GetLowestBeneath
+     * @memberof BallHelper
+     * @public
+     * @param {tile} tile - This is one of the tiles
+     */
     p.GetLowestBeneath = function (tile) {
         var result = tile;
         var direction = new Vector2(0, 1);
@@ -30,11 +48,13 @@ ballpit.BallHelper = (function () {
         return result;
     };
 
-    /**' 
-    * 'GetTilesByDirection'
-    * @param {tile} 'tile'
-    * @param {vector2} 'direction'
-    */
+    /**
+     * @method GetTilesByDirection
+     * @memberof BallHelper
+     * @public
+     * @param {tile} tile - This is one of the tiles
+     * @param {number} direction - This is one of the tiles
+     */
     p.GetTilesByDirection = function (tile, direction ) {
         var tiles = [];
 
@@ -47,10 +67,12 @@ ballpit.BallHelper = (function () {
         return tiles;  
     };
 
-    /**' 
-    * 'GetAligned'
-    * @param {tile} 'tile'
-    */
+     /**
+     * @method GetAligned
+     * @memberof BallHelper
+     * @public
+     * @param {tile} tile - This is one of the tiles
+     */
     p.GetAligned = function (tile) {
         if (tile.occupier === null) throw new Error("Tile doesn't have a ball on it.");
         var aligned = [];
@@ -64,11 +86,13 @@ ballpit.BallHelper = (function () {
         return aligned;
     };
 
-    /**' 
-    * 'GetAlignedByDirection'
-    * @param {tile} 'tile'
-    * @param {vector2} 'direction'
-    */
+    /**
+     * @method GetAlignedByDirection
+     * @memberof BallHelper
+     * @public
+     * @param {tile} tile - This is one of the tiles
+     * @param {number} direction - This is one of the tiles
+     */
     p.GetAlignedByDirection = function (tile, direction) {
         if (tile.occupier === null) throw new Error("Tile doesn't have a ball on it.");
         var occupier = tile.occupier;
@@ -86,9 +110,11 @@ ballpit.BallHelper = (function () {
     };
 
     /**
-     * 'GetAlignedByAxis'
-     * @param {TileModel} 'tile' 
-     * @param {int} 'axis' : 0 = Horizontal | 1 = Vertical
+     * @method GetAlignedByAxis
+     * @memberof BallHelper
+     * @public
+     * @param {tile} tile - This is one of the tiles
+     * @param {number} axis - The direction
      */
     p.GetAlignedByAxis = function (tile, axis) {
         if (tile.occupier === null) throw new Error("Tile doesn't have a ball on it.");
@@ -107,7 +133,12 @@ ballpit.BallHelper = (function () {
 
         return aligned;
     };
-
+    
+    /**
+     * @method Dispose
+     * @memberof BallHelper
+     * @public
+     */
     p.Dispose = function () {
         delete this.layer;
         delete this.ballContainer;
