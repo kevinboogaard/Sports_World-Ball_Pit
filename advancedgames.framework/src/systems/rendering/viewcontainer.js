@@ -1,22 +1,75 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ADCore = ADCore || {};
 
+/**
+ * @namespace {String} Event
+ * @memberof ADCore
+ * @typedef {(String)} Event
+ */
 ADCore.Event = ADCore.Event || {};
+
+/**
+ * @event ON_MODEL_ADD
+ * @memberof ADCore.Event
+ * @param {T} model 
+ * @param {string} key 
+ */
 ADCore.Event.ON_MODEL_ADD = "on_model_add";
+
+/**
+ * @event ON_MODEL_REMOVE
+ * @memberof ADCore.Event
+ * @param {T} model 
+ * @param {string} key 
+ */
 ADCore.Event.ON_MODEL_REMOVE = "on_model_remove";
 
+/**
+ * @event ON_LOWER_MODEL_ADD
+ * @memberof ADCore.Event
+ * @param {T} model 
+ */
 ADCore.Event.ON_LOWER_MODEL_ADD = "on_lower_model_add";
+
+/**
+ * @event ON_LOWER_MODEL_REMOVE
+ * @memberof ADCore.Event
+ * @param {T} model 
+ */
 ADCore.Event.ON_LOWER_MODEL_REMOVE = "on_lower_model_remove";
 
 ADCore.ViewContainer = (function () {
 
-     /**
-     * 'Viewcontainer'
-     *  @extends {Phaser.Group}
+    /**
+     * Container of all the views in game. 
+     * This class renders and depthsorts all the views in game. Follows the MVC-pattern.
+     * It is important to construct this class at the beginning of a scene before any models are made.
+     * Add this as a child to a scene so that all the views in-game are visible.
+     * There are two type of groups in the container: Normal groups and the Lower groups.
+     * The lower groups isn't depthsorted. This functionality is great for background images and/or tiles.
+     *
+     * @class ViewContainer
+     * @constructor
+     * @extends {Phaser.Group}
      */
     function ViewContainer() {
         Phaser.Group.call(this, ADCore.phaser, null, "ViewContainer");
         
+        /**
+        * @property {Phaser.Group} _Views - Normal group of views.
+        * @private
+        */
         this._views = new Phaser.Group( ADCore.phaser, null, "Views");
+
+        /**
+        * @property {Phaser.Group} _LowerViews - Lower group of views.
+        * @private
+        */
         this._lowerviews = new Phaser.Group( ADCore.phaser, null, "LowerViews");
 
         this.addChild( this._lowerviews );
@@ -32,10 +85,15 @@ ADCore.ViewContainer = (function () {
     ViewContainer.prototype.constructor = ViewContainer;
     var p = ViewContainer.prototype;
 
-     /**
-     * 'render'
+    /**
+     * Call this function to render all the views in the scene.
+     * The lower views are rendered before the normal views.
+     * 
+     * @method Render
+     * @memberof ViewContainer
+     * @public 
      */
-    p.render = function () {
+    p.Render = function () {
         var l_len = this._lowerviews.children.length;
         for ( var i = 0; i < l_len; i++ ) {
             var l_view = this._lowerviews.children[i];
@@ -47,13 +105,19 @@ ADCore.ViewContainer = (function () {
             var v_view = this._views.children[j];
             v_view.Render();
         }
+
+        this._views.sort( "y", Phaser.Group.SORT_ASCENDING );
     };
 
      /**
-     * '_onModelAdd '
-     *  @private
-     * @param {caller} 'name', 
-     * @param {params} 'params'
+     * @method _OnModelAdd
+     * @memberof ViewContainer
+     * @private
+     * @listens Event.ON_MODEL_ADD
+     * @param {Object} caller -  Dispatcher of the event.
+     * @param {Object} params - The given parameters.
+     * @param {T} params.model - Model of the view being added.
+     * @param {string} params.key - Key of the sprite that the view needs.
      */
     p._onModelAdd = function ( caller, params ) {
         var view = new params.viewtype( params.model, params.key );
@@ -61,21 +125,28 @@ ADCore.ViewContainer = (function () {
     };
 
      /**
-     * '_onLowerModelAdd '
-     *  @private
-     * @param {caller} 'name', 
-     * @param {params} 'params'
+     * @method _OnLowerModelAdd
+     * @memberof ViewContainer
+     * @private
+     * @listens Event.ON_LOWER_MODEL_ADD
+     * @param {Object} caller -  Dispatcher of the event.
+     * @param {Object} params - The given parameters.
+     * @param {T} params.model - Model of the view being added.
+     * @param {string} params.key - Key of the sprite that the view needs.
      */
     p._onLowerModelAdd = function ( caller, params ) {
         var view = new params.viewtype( params.model, params.key );
         this._lowerviews.addChild( view );
     };
-
+  
      /**
-     * '_onModelRemove '
-     *  @private
-     * @param {caller} 'name', 
-     * @param {params} 'params'
+     * @method _OnModelRemove
+     * @memberof ViewContainer
+     * @private
+     * @listens Event.ON_MODEL_REMOVE
+     * @param {Object} caller -  Dispatcher of the event., 
+     * @param {Object} params - The given parameters.
+     * @param {T} params.model - Model of the view being removed.
      */
     p._onModelRemove = function ( caller, params ) {
         var views_children = this._views.children;
@@ -93,12 +164,15 @@ ADCore.ViewContainer = (function () {
             }
         }
     };
-
+    
      /**
-     * '_onLowerModelRemove '
-     *  @private
-     * @param {caller} 'name', 
-     * @param {params} 'params'
+     * @method _OnLowerModelRemove
+     * @memberof ViewContainer
+     * @private
+     * @listens Event.ON_LOWER_MODEL_REMOVE
+     * @param {Object} caller -  Dispatcher of the event., 
+     * @param {Object} params - The given parameters.
+     * @param {T} params.model - Model of the view being removed.
      */
     p._onLowerModelRemove = function ( caller, params ) {
         var views_children = this._lowerviews.children;
@@ -118,10 +192,23 @@ ADCore.ViewContainer = (function () {
     };
 
     /**
-     * 'dispose'
+     * Dispose the ViewContainer. Use this method to clean the ViewContainer and the views in order to avoid memory leaks.
+     *
+     * @method Dispose
+     * @memberof ViewContainer
+     * @public
      */
-    p.dispose = function () {
-        throw new Error( "NO DISPOSE WRITTEN YET !" );
+    p.Dispose = function () {
+        Listener.Mute( ADCore.Event.ON_MODEL_ADD, this );
+        Listener.Mute( ADCore.Event.ON_MODEL_REMOVE, this );
+        Listener.Mute( ADCore.Event.ON_LOWER_MODEL_ADD, this );
+        Listener.Mute( ADCore.Event.ON_LOWER_MODEL_REMOVE, this );
+
+        this.removeChild(this._views);
+        delete this._views;
+
+        this.removeChild(this._lowerviews);
+        delete this._lowerviews;
     };
 
     return ViewContainer;

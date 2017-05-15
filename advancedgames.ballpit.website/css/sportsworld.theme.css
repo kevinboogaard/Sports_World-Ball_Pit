@@ -1,0 +1,173 @@
+ @media screen and (max-width: 380px), screen and (max-height: 640px) {
+	 #sw-container {
+		overflow: hidden;
+		position: relative;
+	 }
+
+	#sw-sky {
+		width: 100%;
+		height: 100%;
+		
+		background-color: #46B6FF;
+	}
+
+	#sw-grass-bg {
+		width: 100%;
+		height: 27.14%;
+		
+		bottom: 0;
+		position: absolute;
+
+		background-color: #0B601D;
+	}
+
+	#sw-grass-fg {
+		width: 100%;
+		height: 18.05%;
+
+		bottom: 0;
+		position: absolute;
+
+		background-color: #238F38;
+	}
+ }
+
+@media screen and (min-width: 381px) and (min-height: 641px) {
+	#sw-container {
+		overflow: hidden;
+		position: relative;
+	}
+
+	#sw-sky {
+		width: 100%;
+		height: 100%;
+		
+		background: #46B6FF url("../images/asset_sky.png");
+		background-size: cover;
+	}
+
+	#sw-grass-bg {
+		width: 100%;
+		height: 206px;
+		
+		bottom: 0;
+		position: absolute;
+
+		background: url("../images/asset_bg_grass.png");
+	}
+
+	#sw-grass-fg {
+		width: 100%;
+		height: 137px;
+
+		bottom: 0;
+		position: absolute;
+
+		background: url("../images/asset_fg_grass.png");
+	}
+
+	#sw-building-rugby {
+		width: 187px;
+		height: 391px;
+
+		bottom: 206px;
+		left: 0;
+		position: absolute;
+
+		background: url("../images/asset_building_rugby.png") no-repeat;
+	}
+
+	#sw-building-tower {
+		width: 83px;
+		height: 349px;
+
+		bottom: 203px;
+		left: 270px;
+		position: absolute;
+
+		background: url("../images/asset_building_tower.png") no-repeat;
+	}
+
+	#sw-building-soccer {
+		width: 276px;
+		height: 291px;
+
+		bottom: 170px;
+		left: 300px;
+		position: absolute;
+
+		background: url("../images/asset_building_soccer.png") no-repeat;
+	}
+
+	#sw-building-bowling {
+		width: 355px;
+		height: 543px;
+
+		bottom: 80px;
+		right: 180px;
+		position: absolute;
+
+		background: url("../images/asset_building_bowling.png") no-repeat;
+	}
+
+	#sw-building-stadium {
+		width: 115px;
+		height: 198px;
+
+		bottom: 206px;
+		right: 0;
+		position: absolute;
+
+		background: url("../images/asset_building_stadium.png") no-repeat;
+	}
+
+	.sw-zeppelin {
+		width: 90px;
+		height: 33px;
+
+		position: absolute;
+
+		background: url("../images/asset_zeppelin.png") no-repeat;
+	}
+
+	.sw-zeppelin.left {
+		left: 100%;
+	}
+
+	.sw-zeppelin.right {
+		left: -90px;
+	}
+
+	.sw-cloud {
+		position: absolute;
+	}
+
+	.sw-cloud.left {
+		left: 100%;
+	}
+
+	.sw-cloud.right {
+		left: -350px;
+	}
+
+	.sw-cloud.i1{
+		width: 22.33%;
+		height: 7.77%;
+		background: url("../images/asset_cloud_1.png") no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.sw-cloud.i2{
+		width: 14.71%;
+		height: 4.61%;
+		background: url("../images/asset_cloud_2.png") no-repeat;
+		background-size: 100% 100%;
+	}
+
+	.sw-cloud.i3{
+		width: 14.19%;
+		height: 3.69%;
+		background: url("../images/asset_cloud_3.png") no-repeat;
+		background-size: 100% 100%;
+	}
+}

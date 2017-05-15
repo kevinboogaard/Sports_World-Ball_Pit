@@ -1,35 +1,52 @@
+/**
+ * @author      Kevin Boogaard <{@link http://www.kevinboogaard.com/}>
+ * @author      Alex Antonides <{@link http://www.alex-antonides.com/}>
+ * @license     {@link https://github.com/kevinboogaard/Sports_World-Ball_Pit/blob/master/LICENSE}
+ * @ignore
+ */
 var ballpit = ballpit || {};
 
 ballpit.Core = ( function () {
 
     /**
-     * 'Core'
+     * @class Core
+     * @constructor
      */
     function Core() {
         this.levelLoader = new ballpit.LevelLoader();
+        Listener.Listen(scene.Event.ON_SCENE_SWITCH, this, this._onSceneSwitch.bind(this) );
     }
     var p = Core.prototype;
-
-    /**
-     * 'Start'
+    
+     /**
+     * This function starts the game scene
+     *    
+     * @method Start
+     * @memberof Core
+     * @public
      */
     p.Start = function () {
         this.levelLoader.Initialize();
-        
-        sceneLoader.Load( scene.MainMenu );
-        Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
-            sceneLoader.DisposeCurrent();
-            sceneLoader.Load( scene.Tutorialscene );
-            Listener.ListenOnce(scene.Event.ON_SCENE_SWITCH, this, function () {
-                sceneLoader.DisposeCurrent();
-                this.levelLoader.level = 0;
-                this.levelLoader.LoadLevel();
-            }.bind(this));
-        }.bind(this), sceneLoader.current);
+
+        if (Debug.FORCE_LOAD_DEBUG_LEVEL) this.levelLoader.level = Debug.DEBUG_LEVEL;
+        else this.levelLoader.level = 0;
+
+        if (Debug.FORCE_LOAD_SCENE) {
+            if (this.levelLoader.IsSceneLevel(Debug.DEBUG_SCENE)) {
+                this.levelLoader.LoadLevel(Debug.DEBUG_SCENE);
+            }  else {
+                sceneLoader.Load(Debug.DEBUG_SCENE);
+            }
+        } else {
+            sceneLoader.Load( scene.Names.MAINMENU );
+        }
     };
 
-    /**
-     * 'Update'
+     /**
+     * @method Update
+     * @memberof Core
+     * @public
+     * @param {Number} deltaTime - The number deltatime is a multiplier to convert gametime in to realtime
      */
     p.Update = function ( deltaTime ) {
         var currentScene = sceneLoader.current;
@@ -38,14 +55,33 @@ ballpit.Core = ( function () {
         }
     };
 
-    /**
-     * 'Render'
+     /**
+     * @method Render
+     * @memberof Core
+     * @public
      */
     p.Render = function () {
         var currentScene = sceneLoader.current;
 
         if ( currentScene && currentScene.Render ) {
             currentScene.Render();
+        }
+    };
+
+    /**
+     * @method _OnSceneSwitch
+     * @memberof Core
+     * @private 
+     * @param {Object} caller
+     * @param {Object} params
+     * @param {String} params.scene
+     */
+    p._onSceneSwitch = function (caller, params) {
+        if (this.levelLoader.IsSceneLevel(params.scene)) {
+            sceneLoader.DisposeCurrent();
+            this.levelLoader.LoadLevel(params.scene);
+        }  else {
+            sceneLoader.Switch(params.scene);
         }
     };
 

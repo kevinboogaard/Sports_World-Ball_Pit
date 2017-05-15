@@ -57,6 +57,19 @@
          "width":7,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+         "height":7,
+         "name":"balllayer",
+         "offsetx":20,
+         "offsety":286,
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":false,
+         "width":7,
+         "x":0,
+         "y":0
         }],
  "nextobjectid":1,
  "orientation":"orthogonal",
@@ -147,6 +160,34 @@
          "tilecount":0,
          "tileheight":668,
          "tilewidth":658,
+         "transparentcolor":"#120d39"
+        }, 
+        {
+         "columns":1,
+         "firstgid":3,
+         "image":"..\/..\/..\/..\/advancedgames.ballpit.game\/assets\/balls\/asset_randomball.png",
+         "imageheight":45,
+         "imagewidth":45,
+         "margin":0,
+         "name":"asset_randomball",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":45,
+         "tileproperties":
+            {
+             "0":
+                {
+                 "type":"random"
+                }
+            },
+         "tilepropertytypes":
+            {
+             "0":
+                {
+                 "type":"string"
+                }
+            },
+         "tilewidth":45,
          "transparentcolor":"#120d39"
         }],
  "tilewidth":45,
