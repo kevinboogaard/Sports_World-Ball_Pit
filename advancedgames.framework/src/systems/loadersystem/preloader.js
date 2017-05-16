@@ -27,17 +27,24 @@ ADCore.Event.ON_PRELOAD_START = "on_preload_start";
 ADCore.Event.ON_PRELOAD_UPDATE = "on_preload_update";
 
 /**
- * @property {String} ON_PRELOAD_COMLETE
+ * @property {String} ON_PRELOAD_COMPLETE
  * @memberof Event
  * @readonly
  */
-ADCore.Event.ON_PRELOAD_COMLETE = "on_preload_complete";
+ADCore.Event.ON_PRELOAD_COMPLETE = "on_preload_complete";
 
 /**
  * @namespace PreloadCategories
  */
 let PreloadCategories = ADCore.PreloadCategories || {};
 ADCore.PreloadCategories = PreloadCategories;
+
+/**
+ * @property {String} CORE
+ * @memberof PreloadCategories
+ * @readonly
+ */
+ADCore.PreloadCategories.CORE = "core";
 
 /**
  * @property {String} GENERIC
@@ -52,7 +59,6 @@ ADCore.PreloadCategories.GENERIC = "generic";
  * @readonly
  */
 ADCore.PreloadCategories.LEVEL = "level";
-
 
 /**
  * @namespace PreloadTypes
@@ -131,6 +137,8 @@ ADCore.Preloader = (function(){
         this._load = this._phaser.load;        
         this._load.onFileComplete.add( this._onFileComplete.bind( this ), this );
         this._load.onFileError.add( this._onFileError.bind( this ), this );
+        this._load.onLoadStart.add(function() { Listener.Dispatch(ADCore.Event.ON_PRELOAD_START, this ); }.bind(this), this);
+        this._load.onLoadComplete.add(function() { Listener.Dispatch(ADCore.Event.ON_PRELOAD_COMPLETE, this ); }.bind(this), this);
 
         this.initialized = true;
     };
@@ -176,6 +184,8 @@ ADCore.Preloader = (function(){
      */
     p._onFileComplete = function ( progress, savekey, success ) {
         var data = this._file_load_data[savekey];
+
+        Listener.Dispatch(ADCore.Event.ON_PRELOAD_UPDATE, this, { "progress": progress, "savekey": savekey, "success": success });
 
         switch ( data.type ) {
             case ADCore.PreloadTypes.RESOURCE_LIST:
@@ -242,11 +252,8 @@ ADCore.Preloader = (function(){
         // Phaser parses the file and stores it in the cache. So, I get the file out of there using its key.
         var json = this._phaser.cache.getJSON( savekey );
 
-        // If the loader key already exists, throw an error.
-        if ( typeof Global.Loaded[data.loadedtype][data.filekey] !== "undefined" ) throw "Duplicate key found in Loaded files";
-
-        // Create new object inside Global namespace.
-        Global.Loaded[data.loadedtype][data.filekey] = {};
+        // Create new object or use the existing one inside the namespace.
+        Global.Loaded[data.loadedtype][data.filekey] = (Global.Loaded[data.loadedtype][data.filekey]) ? Global.Loaded[data.loadedtype][data.filekey] : {};
 
         // Get the basepath, type and resources from the json file.
         var resource_basepath = json["base_path"];

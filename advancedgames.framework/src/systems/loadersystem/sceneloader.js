@@ -46,12 +46,16 @@ ADCore.Sceneloader = (function () {
      * @memberof Sceneloader
      * @public
      * @param {Scene} scene - Scene to be loaded.
+     * @param {Object} args - Arguments given to the scene.
      */
-    p.Load = function(constructor) {
+    p.Load = function(constructor, args) {
+        args = args || [];
+
         if (typeof constructor === "undefined") throw new Error("Scene doesn't exist: " + constructor);
         if (typeof constructor === "string") constructor = scene[constructor];
 
-        this.current = new constructor();
+        this.current = new constructor(...args);
+    
         ADCore.phaser.add.existing(this.current);
     };
    
@@ -62,10 +66,11 @@ ADCore.Sceneloader = (function () {
      * @memberof Sceneloader
      * @public
      * @param {Scene} scene - New scene to be loaded.
+     * @param {Object} args - Arguments given to the scene.
      */
-    p.Switch = function(scene) {
+    p.Switch = function(scene, args) {
         this.DisposeCurrent();
-        this.Load(scene);
+        this.Load(scene, args);
     };
 
     /**

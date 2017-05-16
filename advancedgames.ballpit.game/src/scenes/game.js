@@ -210,7 +210,7 @@ scene.Game = (function () {
      * @public
      */
     p.Dispose = function () {
-        this.identifier.stop.audio.pause();
+        this.identifier.audio.pause();
 
         this.tilemap.Dispose();
         delete this.tilemap;
