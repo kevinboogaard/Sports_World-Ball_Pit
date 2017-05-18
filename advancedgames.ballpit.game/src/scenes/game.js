@@ -46,10 +46,13 @@ scene.Game = (function () {
         /** @property {Timer} */
         this.gameTimer = SetTimer(function () {
             Input.paused = true;
-            setTimeout(function() {
-                Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
-            }.bind(this), 10000);
-        }, Settings.Game.TIME, 1);
+            
+            net.SAVE_HIGHSCORE.Send( { "name": "User", "score": this.scoreHolder.score} , function(result) {
+                setTimeout(function() {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                }.bind(this), 1000);
+            }.bind(this));
+        }.bind(this), Settings.Game.TIME, 1);
         this.gameTimer.Stop();
 
         /** @property {ScoreHolder} */
@@ -210,7 +213,7 @@ scene.Game = (function () {
      * @public
      */
     p.Dispose = function () {
-        this.identifier.stop.audio.pause();
+        this.identifier.audio.pause();
 
         this.tilemap.Dispose();
         delete this.tilemap;

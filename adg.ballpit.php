@@ -18,6 +18,7 @@
         
         <script src="plugins/game/phaser.js"></script>
         <script src="plugins/game/webfont.js"></script>
+        <script src="plugins/website/jquery-3.2.1.min.js"></script>
 
         <script src="advancedgames.framework/src/utilities/utilities.js"></script>
         <script src="advancedgames.framework/src/utilities/rephraser.js"></script>
@@ -63,6 +64,7 @@
 
         <script src="advancedgames.framework/src/displays/tileview.js"></script>
 
+        <script src="advancedgames.framework/src/post.js"></script>
         <script src="advancedgames.framework/core.js"></script>
 
         <script src="advancedgames.ballpit.settings/global.js"></script>
@@ -101,6 +103,8 @@
 
         <script src="advancedgames.ballpit.game/src/factories/entityfactory.js"></script>       
         <script src="advancedgames.ballpit.game/src/handlers/taskhandler.js"></script>   
+
+        <script src="advancedgames.ballpit.game/src/adgserver.js"></script>
 
         <script src="advancedgames.ballpit.settings/debugging/debugsettings.js"></script>
         <script src="advancedgames.ballpit.settings/debugging/debugcommands.js"></script>

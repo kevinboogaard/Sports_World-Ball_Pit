@@ -1,6 +1,5 @@
 <?php namespace App\Controllers;
 
-use App\Models\Highscore;
 use App\Models\Highscoremanager;
 
 class Controller {
@@ -14,6 +13,14 @@ class Controller {
     }
 
     public function GetHighscores($amount) {
-        return $this->manager->GetTopHighscore($amount);
+        return $this->manager->GetTopHighscores($amount);
+    }
+
+    public function SaveHighscore($name, $score) {
+        return $this->manager->SaveHighscore($name, $score);
+    }
+
+    public function SaveHighscoreFromPost($name, $score) {
+        $this->SaveHighscore($name, $score);
     }
 }

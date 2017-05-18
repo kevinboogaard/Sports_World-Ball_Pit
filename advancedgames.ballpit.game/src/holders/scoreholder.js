@@ -28,6 +28,13 @@ ballpit.ScoreHolder = (function () {
         this._highscores = [];
 
         /**
+         * @property {Integer} _MaxHighscores
+         * @private
+         * @readonly
+         */
+        this._maxHighscores = 1;
+
+        /**
          * @property {Integer} _Highscore
          * @memberof ScoreHolder
          * @public
@@ -36,15 +43,28 @@ ballpit.ScoreHolder = (function () {
          */
         let highscore = 0; // For documentation purposes.
 
+        this._initialize();
         ADCore.EnableMutators( this );
     }
     var p = ScoreHolder.prototype;
+
+    /**
+     * @method _initialize
+     * @memberof ScoreHolder
+     * @private
+     */
+    p._initialize = function () {
+        net.GET_HIGHSCORES.Send( {"amount": this._maxHighscores} , function(result) {
+            this._highscores = JSON.parse(result);
+        }.bind(this));
+    };
 
     /**
      * Add is used to add the points to the score.
      * 
      * @method Add
      * @memberof ScoreHolder
+     * @public 
      * @param {Integer} n
      */
     p.Add = function (n) {
@@ -54,6 +74,7 @@ ballpit.ScoreHolder = (function () {
     /**'
      * @method CalculateScoreByAmountAligned
      * @memberof ScoreHolder
+     * @public 
      * @param {Integer} amountAligned
      */
     p.CalculateScoreByAmountAligned = function (amountAligned) {

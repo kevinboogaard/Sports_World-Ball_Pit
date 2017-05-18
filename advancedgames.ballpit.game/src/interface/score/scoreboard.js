@@ -93,8 +93,8 @@ ballpit.ScoreBoard = (function () {
         var shownScore = parseInt(this._visibleScore);
         this.scoreText.text = shownScore;
 
-        if (this._scoreHolder.score < this._scoreHolder.highscore) {
-            this.highscoreText.text = this._scoreHolder.highscore;
+        if (this._scoreHolder.highscore && this._scoreHolder.score < this._scoreHolder.highscore.score) {
+            this.highscoreText.text = this._scoreHolder.highscore.score;
         } else {
             this.highscoreText.text = shownScore;
         }

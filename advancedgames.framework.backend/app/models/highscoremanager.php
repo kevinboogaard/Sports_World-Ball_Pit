@@ -11,9 +11,14 @@ class HighscoreManager
 
         $this->data = $raw;
     }
-
-    public function GetTopHighscore($amount) {
+    
+    public function GetTopHighscores($amount) {
         $results = array_slice($this->data, 0, $amount); 
-        return json_encode($results);
+        return $results;
+    }
+
+    public function SaveHighscore($name, $score) {
+        $query = "INSERT INTO ballpit( score, name ) VALUES( ?, ? )";
+        DB::query($query, array($score, $name));
     }
 }

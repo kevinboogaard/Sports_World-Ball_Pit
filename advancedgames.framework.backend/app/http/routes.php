@@ -16,7 +16,19 @@ $route->get("/", function() {
     return $controller->GetGame();
 });
 
-$route->get("/GetHighscores/{amount}", function($request, $response, $arguments) {
+$route->post("/SaveHighscoreFromPost", function ($request, $response, $args) {
+    $name = $request->getParam("name");
+    $score = $request->getParam("score");
+
     $controller = new Controller();
-    return $controller->GetHighscores($arguments["amount"]);
+    $controller->SaveHighscoreFromPost($name, $score);
+});
+
+$route->post("/GetHighscores", function ($request, $response, $args) {
+    $amount = $request->getParam("amount");
+
+    $controller = new Controller();
+    $highscores = $controller->GetHighscores($amount);
+
+    return json_encode($highscores);
 });
