@@ -51,11 +51,20 @@ function _preload () {
 
 // Called by Phaser after preload.
 // This function will be called once the game has been preloaded by Phaser. 
-function _create () {
+function _create () {    
+    // Align the canvas horizontally and refresh the scale.
+    ADCore.phaser.scale.pageAlignHorizontally = true;
+    ADCore.phaser.scale.pageAlignVertically = true;
+    ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+    ADCore.phaser.scale.refresh();
+
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
     // Create the sound system.
     this.soundSystem = new ADCore.SoundSystem(ADCore.phaser.sound);
+
+    // Load all the fonts in game before the application starts.
+    ADCore.FontLoader.LoadFonts();
 
     // If the main is started immediately some things will bug out.
     // To prevent any errors from happening we use a timeout.

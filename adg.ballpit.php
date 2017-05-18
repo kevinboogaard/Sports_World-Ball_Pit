@@ -18,7 +18,11 @@
         
         <script src="plugins/game/phaser.js"></script>
         <script src="plugins/game/webfont.js"></script>
+        
         <script src="plugins/website/jquery-3.2.1.min.js"></script>
+        <script src="plugins/website/tweenlite.min.js"></script>
+        <script src="plugins/website/tweenlite.easepack.min.js"></script>
+        <script src="plugins/website/tweenlite.customease.min.js"></script>
 
         <script src="advancedgames.framework/src/utilities/utilities.js"></script>
         <script src="advancedgames.framework/src/utilities/rephraser.js"></script>

@@ -3,3 +3,4 @@ var ballpit = ballpit || {};
 ballpit.BASE_URL = "http://localhost:8080/";
 
 // Settings:
+//Debug.ENABLED = true;
