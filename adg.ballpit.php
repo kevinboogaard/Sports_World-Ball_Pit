@@ -39,6 +39,7 @@
 
         <script src="advancedgames.framework/src/systems/loadersystem/preloader.js"></script>
         <script src="advancedgames.framework/src/systems/loadersystem/sceneloader.js"></script>
+        <script src="advancedgames.framework/src/systems/loadersystem/fontloader.js"></script>
         
         <script src="advancedgames.framework/src/systems/inputsystem/inputtypes.js"></script>
         <script src="advancedgames.framework/src/systems/inputsystem/inputsystem.js"></script>
@@ -108,8 +109,6 @@
 
         <script src="advancedgames.ballpit.settings/debugging/debugsettings.js"></script>
         <script src="advancedgames.ballpit.settings/debugging/debugcommands.js"></script>
-        
-        <script src="advancedgames.ballpit.game/fonts/fonts.js"></script>
     </head>
 
     <body>
