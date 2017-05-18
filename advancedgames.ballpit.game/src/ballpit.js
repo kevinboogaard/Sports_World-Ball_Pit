@@ -19,14 +19,34 @@ ballpit.Core = ( function () {
     var p = Core.prototype;
     
      /**
-     * This function starts the game scene
+     * This method calls when the framework has been loaded.
      *    
-     * @method Start
+     * @method Initialize
      * @memberof Core
      * @public
      */
-    p.Start = function () {
-        this.levelLoader.Initialize();
+    p.Initialize = function () {
+        // Load the preloader.
+        sceneLoader.Load( scene.Names.PRELOADER, [ this._create.bind(this) ] );
+
+        // The framework has loaded- now let's preload our own files now.
+        this._preload();
+    };
+
+    p._preload = function () {
+        // Preload the generic files.
+        var len = Config.ResourceLists.GENERIC.length;
+        if ( len > 0 ) {
+            preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategories.GENERIC  );
+        }
+    };
+
+    p._create = function () {
+        // Dispose the preloader scene.
+        sceneLoader.DisposeCurrent();
+
+        // Load the generic sounds.
+        soundSystem.Load(Global.Loaded.generic.sounds);
 
         if (Debug.FORCE_LOAD_DEBUG_LEVEL) this.levelLoader.level = Debug.DEBUG_LEVEL;
         else this.levelLoader.level = 0;
@@ -62,7 +82,6 @@ ballpit.Core = ( function () {
      */
     p.Render = function () {
         var currentScene = sceneLoader.current;
-
         if ( currentScene && currentScene.Render ) {
             currentScene.Render();
         }

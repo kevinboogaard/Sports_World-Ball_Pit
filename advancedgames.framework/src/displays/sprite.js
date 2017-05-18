@@ -49,12 +49,9 @@ ADCore.Sprite = (function () {
      * @param {String} key
      */
     p._initializeSprite = function (key) {
-        var data = Global.Loaded.generic.images[key];
-        if (!data) {
-            if (!Global.Loaded.level.sprites) return;
-            data = (Global.Loaded.level.sprites[key]);
-            if (!data) return;
-        }
+        var data = this._getLoadedData("images", key);
+        if (!data) return;
+
         this.anchor.set(data.anchor.x, data.anchor.y);
         this.offset = data.offset;
         this.width = data.dimensions.width;
@@ -68,7 +65,7 @@ ADCore.Sprite = (function () {
      * @param {String} key
      */
     p._initializeAnimations = function (key) {
-        var data = Global.Loaded.generic.spritesheets[key];
+        var data = this._getLoadedData("spritesheets", key);
         if (!data) return;
 
         for ( var anim_key in data ) {
@@ -79,6 +76,32 @@ ADCore.Sprite = (function () {
                 this._animations.push(anim_key);
             }
         }
+    };
+
+    /**
+     * @method _GetLoadedData
+     * @memberof Sprite
+     * @private
+     * @param {String} list
+     * @param {String} key
+     * @returns {(Object | null)}
+     */
+    p._getLoadedData = function(list, key) {
+        var data = null;
+
+        if (Global.Loaded.core[list]) {
+            if (Global.Loaded.core[list][key]) data = Global.Loaded.core[list][key];
+        }
+
+        if (Global.Loaded.generic[list]) {
+            if (Global.Loaded.generic[list][key]) data = Global.Loaded.generic[list][key];
+        }
+
+        if (Global.Loaded.level[list]) {
+            if (Global.Loaded.level[list][key]) data = Global.Loaded.level[list][key];
+        }
+        
+        return data;
     };
 
     /**

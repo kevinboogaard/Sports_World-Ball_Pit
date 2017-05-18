@@ -24,7 +24,7 @@ function Initialize() {
         create: _create.bind(this),
         update: _update.bind(this),
         render: _render.bind(this)
-    });
+    }, true);
 
     // Initialize the main of the game.
     this.main = new ballpit.Core();
@@ -42,36 +42,25 @@ function _preload () {
     // Initialize the preloader.
     this.preloader.Initialize();
 
-    // Preload the generic files.
-    var len = Config.ResourceLists.GENERIC.length;
+    // Preload the core files.
+    var len = Config.ResourceLists.CORE.length;
     if ( len > 0 ) {
-        preloader.Preload( Config.ResourceLists.GENERIC, ADCore.PreloadCategories.GENERIC  );
+        preloader.Preload( Config.ResourceLists.CORE, ADCore.PreloadCategories.CORE  );
     }
 }
 
 // Called by Phaser after preload.
 // This function will be called once the game has been preloaded by Phaser. 
 function _create () {
-    // Align the canvas horizontally and refresh the scale.
-    ADCore.phaser.scale.pageAlignHorizontally = true;
-    ADCore.phaser.scale.pageAlignVertically = true;
-    ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
-    ADCore.phaser.scale.refresh();
-
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
     // Create the sound system.
     this.soundSystem = new ADCore.SoundSystem(ADCore.phaser.sound);
-    // Load the generic sounds.
-    this.soundSystem.Load(Global.Loaded.generic.music);
 
-    // Load the fonts before launching the application.
-    ADCore.FontLoader.LoadFonts();
-    
     // If the main is started immediately some things will bug out.
     // To prevent any errors from happening we use a timeout.
     setTimeout(function () {
-        this.main.Start();
+        this.main.Initialize();
     }.bind(this), 1);
 }
  
