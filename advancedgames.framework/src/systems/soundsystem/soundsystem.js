@@ -37,6 +37,12 @@ ADCore.SoundSystem = (function () {
          * @private
          */
         this._sounds = [];
+
+        /**
+         * @property {Array} _ListsLoaded
+         * @private
+         */
+        this._listsLoaded = [];
     }
     var p = SoundSystem.prototype;
 
@@ -49,8 +55,9 @@ ADCore.SoundSystem = (function () {
      * @param {Object} list - Preloaded json list.
      */
     p.Load = function (list) {
-        Debug.LogWarning("SoundSystem.js: 50. If I load generic a second time- i will have duplicate keys in the sound array.");
-
+        if (this._listsLoaded.indexOf(list) != -1) return;
+        else this._listsLoaded.push(list);
+        
         for ( var key in list ) {
             if ( list.hasOwnProperty( key ) ) {
                 this._soundManager.add(key);

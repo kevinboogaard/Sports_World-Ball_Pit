@@ -65,8 +65,9 @@ function _create () {
     // Load the generic sounds.
     this.soundSystem.Load(Global.Loaded.generic.music);
 
-    Debug.LogWarning("Core.js:66 Sound system is currently loading the generic music @ _create function instead of 'preload'");
-
+    // Load the fonts before launching the application.
+    ADCore.FontLoader.LoadFonts();
+    
     // If the main is started immediately some things will bug out.
     // To prevent any errors from happening we use a timeout.
     setTimeout(function () {
