@@ -3,11 +3,6 @@
 	height: 100%;
 }
 
-#bp-holder canvas {
-	width: 100% !important; 
-	height: 100% !important;
-}
-
 @media screen {
 	#bp-container {
 		width: 36.07%;
@@ -30,6 +25,11 @@
 		margin-left: 17.6%;
 		margin-top: 9.1%;
 	}
+}
+
+#bp-holder canvas {
+	width: 100% !important; 
+	height: 100% !important;
 }
  
 @media screen and (max-width: 380px), screen and (max-height: 640px) {

@@ -1,0 +1,42 @@
+{
+    "base_path": "advancedgames.ballpit.game/assets/tutorial/",
+    "type": "image", 
+    "resources": {
+        "tutorialoverlaygame":{
+            "path": "tutorialoverlaygame.png",
+            "dimensions": {"width":360, "height":640},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "tutorialoverlayscore":{
+            "path": "tutorialoverlaygame.png",
+            "dimensions": {"width":360, "height":640},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "tutorialoverlaytasks":{
+            "path": "tutorialoverlaygame.png",
+            "dimensions": {"width":360, "height":640},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "tutorialoverlaytimer":{
+            "path": "tutorialoverlaygame.png",
+            "dimensions": {"width":360, "height":640},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "tutorialbubble":{
+            "path": "tutorialbubble.png",
+            "dimensions": {"width":172, "height":72},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "tutorialchoice":{
+            "path": "tutorialchoice.png",
+            "dimensions": {"width":5, "height":6},
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        }
+    }
+}
