@@ -28,6 +28,12 @@ ADCore.Sprite = (function () {
         this._animations = [];
 
         /**
+         * @property {Function} OnAnimationComplete - Do somthing after the animantion is done
+         * @public
+         */
+        this.onAnimationComplete = null;
+
+        /**
          * @property {Boolean} Disposed - True if the spsrite has been disposed.
          * @public
          */
@@ -75,6 +81,14 @@ ADCore.Sprite = (function () {
 
                 this._animations.push(anim_key);
             }
+        }
+
+       this.events.onAnimationComplete.add(this._onAnimationComplete.bind(this));
+    };
+
+    p._onAnimationComplete = function(){
+        if(this.onAnimationComplete){
+            this.onAnimationComplete();
         }
     };
 

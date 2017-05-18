@@ -1,0 +1,30 @@
+{"frames": [
+
+{
+	"filename": "asset_gameplaybuttonactive_v3.png",
+	"frame": {"x":0,"y":0,"w":108,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":108,"h":108},
+	"sourceSize": {"w":108,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_gameplaybuttoninactive_v3.png",
+	"frame": {"x":108,"y":0,"w":108,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":108,"h":108},
+	"sourceSize": {"w":108,"h":108},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "atlas_mainmenubutton_v1.png",
+	"format": "RGBA8888",
+	"size": {"w":216,"h":108},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ee7c6d410d784e73f507e4362224b49f:178229967b5f884633f09d45e9ce0043:32c31013dda875cb05442fbf8df12bf1$"
+}
+}
