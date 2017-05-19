@@ -42,7 +42,7 @@ ballpit.TaskBoard = (function () {
      * @ignore
      */
     p._initialize = function () { 
-        this._text = new ADCore.Text().Position(new Vector2(30, 10)).Size(12).Font("comfortaa").Wrap(this.width).Finish();
+        this._text = new ADCore.Text().Position(new Vector2(30, 10)).Size(12).Font("djb-bbi").Wrap(this.width).Finish();
         this._text.anchor.set(0, 0);
         this.addChild(this._text);
     };

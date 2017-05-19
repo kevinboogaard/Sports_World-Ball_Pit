@@ -76,6 +76,8 @@ ADCore.Sprite = (function () {
                 this._animations.push(anim_key);
             }
         }
+        
+        if ( this._animations.contains("idle") ) this.Play("idle");
     };
 
     /**

@@ -65,13 +65,13 @@ ballpit.ScoreBoard = (function () {
     p._initialize = function () { 
         var offset = 10;
 
-        this.scoreText = new ADCore.Text().Value("0").Size(45).Font("dsdigi").Color("#FFFFFF").Finish();
+        this.scoreText = new ADCore.Text().Value("0").Size(45).Font("digital-7").Color("#FFFFFF").Finish();
         this.scoreText.x = (this.scoreText.width * 0.75) + offset;
         this.scoreText.y = this.height - (this.scoreText.height / 2) + offset;
         this.scoreText.anchor.set(0, 0.5);
         this.addChild(this.scoreText);
 
-        this.highscoreText = new ADCore.Text().Value("0").Size(45).Font("dsdigi").Color("#FFFFFF").Finish();
+        this.highscoreText = new ADCore.Text().Value("0").Size(45).Font("digital-7").Color("#FFFFFF").Finish();
         this.highscoreText.x = (this.highscoreText.width * 0.75) + offset;
         this.highscoreText.y = this.height + this.highscoreText.height + offset;
         this.highscoreText.anchor.set(0, 0.5);

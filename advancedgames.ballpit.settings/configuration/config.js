@@ -12,7 +12,7 @@ Config.Core.Renderer = 0;
 Config.Core.Parent = "Container";
 
 Config.Fonts = {
-	families: ["comfortaa", "dsdigi"],
+	families: ["djb-bbi", "digital-7", "digital-7-mono"],
 	urls: ["advancedgames.ballpit.game/fonts/fonts.css"]
 };
 

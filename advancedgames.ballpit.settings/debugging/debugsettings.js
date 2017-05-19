@@ -1,5 +1,5 @@
 var Debug = new ADCore.Debug();
-Debug.ENABLED = false;
+Debug.ENABLED = true;
 
 Debug.FORCE_LOAD_DEBUG_LEVEL = false;
 Debug.DEBUG_LEVEL = 0;

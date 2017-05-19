@@ -24,7 +24,7 @@ net.ADServer = (function () {
 		 * @default environment.BASE_URL;
          */
         this._baseURL = ballpit.BASE_URL;
-    };
+    }
     ADServer.prototype = Object.create(net.Post.prototype);
     ADServer.prototype.constructor = ADServer;
     var p = ADServer.prototype;
