@@ -47,7 +47,7 @@ ballpit.Watch = (function () {
     p._initialize = function () {
         var offset = 2;
 
-        this.text = new ADCore.Text().Value("00:00").Size(17).Font("dsdigi").Color("#FFFFFF").Finish();
+        this.text = new ADCore.Text().Value("00:00").Size(17).Font("digital-7").Color("#FFFFFF").Finish();
         this.text.x = this.width / 2;
         this.text.y = (this.height / 2) + offset;
         this.text.anchor.setTo(0.5, 0.5);

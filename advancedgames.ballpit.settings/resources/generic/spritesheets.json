@@ -112,6 +112,90 @@
                 "active": [0],
                 "inactive": [1]
             }
+        },
+        "ps_highscorebutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [0],
+                "inactive": [1]
+            }
+        },
+        "ps_playbutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [8],
+                "inactive": [9]
+            }
+        },
+        "ps_quitbutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [10],
+                "inactive": [11]
+            }
+        },
+        "ps_pausebutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [5],
+                "inactive": [6]
+            }
+        },
+        "ps_replaybutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [12],
+                "inactive": [13]
+            }
+        },
+        "ps_settingsbutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [14],
+                "inactive": [15]
+            }
+        },
+        "ps_crossbutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [16],
+                "inactive": [17]
+            }
+        },
+        "ps_pausebackground":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "idle": [7]
+            }
+        },
+        "ps_optionsbackground":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "idle": [4]
+            }
+        },
+        "ps_musicslider":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "idle": [2]
+            }
+        },
+        "ps_sliderhandle":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "idle": [3]
+            }
         }
      }
 }

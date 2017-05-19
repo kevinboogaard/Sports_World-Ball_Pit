@@ -25,8 +25,8 @@ scene.Game = (function () {
         this.viewContainer = new ADCore.ViewContainer();
         this.addChild(this.viewContainer);
 
-        // Play in-game music.
-        this.identifier = soundSystem.PlayMusic("ingamesound", 1, true);
+        /** @property {PauseSystem} */
+        this.pauseSystem = new ADCore.PauseSystem();
 	
         /** @property {Tilemap} */
         this.tilemap = new Tilemap(Global.Loaded.level.map);
@@ -62,6 +62,10 @@ scene.Game = (function () {
         this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder, this.coach);
         this.addChild(this.interfaceLayer);
 
+        /** @property {PopupContainer} */
+        this.popupContainer = new ADCore.PopupContainer(this.pauseSystem);
+        this.addChild(this.popupContainer);
+
         this.ballController.Initialize();
 
         /** @property {Vector2} */
@@ -70,10 +74,15 @@ scene.Game = (function () {
         /** @property {Vector2} */
         this.started = false;
 
+        // Put the input paused on false.
         Input.paused = false;
+
+        // Play in-game music.
+        this.identifier = soundSystem.PlayMusic("ingamesound", 1, true);
 
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
+        Listener.Listen(ballpit.Event.ON_PAUSE_BUTTON_UP, this, this._onPauseButtonUp.bind(this));
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
         Listener.Listen(ballpit.Event.ON_STAGE_BEGIN, this, this._onStageBegin.bind(this));
         Listener.Listen(ballpit.Event.ON_STAGE_DONE, this, this._onStageDone.bind(this));
@@ -133,6 +142,8 @@ scene.Game = (function () {
      */
     p._onSwipe = function (caller, params) {
         var start =  this.tilemap.mainLayer.GetTileByScreenPosition(params.start);
+        
+        if (!start) return;
         var end = this.tilemap.mainLayer.GetNeighbourFromTileByDirection( start, params.direction );
         this._trySwap(start, end);
     };
@@ -208,6 +219,82 @@ scene.Game = (function () {
     };
 
     /**
+     * @method _OnPauseButtonUp
+     * @memberof Game
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @ignore 
+     */
+    p._onPauseButtonUp = function(caller, params) {
+        var pausePopup = new ballpit.PausePopup( this._onPauseInput.bind(this) );
+        this.popupContainer.DisplayPopup( pausePopup );
+    };
+
+    /**
+     * @method _OnPauseInput
+     * @memberof Game
+     * @private
+     * @param {PauseInputs} input
+     * @ignore 
+     */
+    p._onPauseInput = function(input) {
+        switch ( input ) {
+            case ballpit.PauseInputs.PLAY:
+                this.popupContainer.ConcealPopup();
+                break;
+
+            case ballpit.PauseInputs.OPTIONS:
+                var optionsPopup = new ballpit.OptionsPopup( this._onOptionsInput.bind(this) );
+                this.popupContainer.DisplayPopup( optionsPopup );
+                break;
+
+            case ballpit.PauseInputs.MENU:
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                });
+                break;
+        } 
+    };
+
+    /**
+     * @method _OnOptionsInput
+     * @memberof Game
+     * @private
+     * @param {PauseInputs} input
+     * @ignore 
+     */
+    p._onOptionsInput = function(input) {
+        switch ( input ) {
+            case ballpit.OptionsInputs.PLAY:
+                this.popupContainer.ConcealAllPopups();
+                break;
+
+            case ballpit.OptionsInputs.MENU:
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                });
+                break;
+
+            case ballpit.OptionsInputs.REDO:
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.GAME });
+                });
+                break;
+
+            case ballpit.OptionsInputs.CROSS:
+                this.popupContainer.ConcealPopup();
+                break;
+
+            case ballpit.OptionsInputs.HIGHSCORE:
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                });
+                break;
+        }
+    };
+
+    /**
      * @method Dispose
      * @memberof Game
      * @public
@@ -232,7 +319,10 @@ scene.Game = (function () {
         
         Listener.Mute(ADCore.InputEvent.ON_TAP, this);
         Listener.Mute(ADCore.InputEvent.ON_SWIPE, this);
+        Listener.Mute(ballpit.Event.ON_PAUSE_BUTTON_UP, this);
         Listener.Mute(ballpit.Event.ON_BALL_ALIGN, this);
+        Listener.Mute(ballpit.Event.ON_STAGE_BEGIN, this);
+        Listener.Mute(ballpit.Event.ON_STAGE_DONE, this);
     };
 
     return Game;

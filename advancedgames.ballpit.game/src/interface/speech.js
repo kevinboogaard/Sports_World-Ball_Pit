@@ -74,7 +74,7 @@ ballpit.Speech = (function () {
      * @ignore
      */
     p._initialize = function () { 
-        this._text = new ADCore.Text().Position(new Vector2( this.width / 2, 10)).Font("comfortaa").Wrap(this.width * 0.9).Finish();
+        this._text = new ADCore.Text().Position(new Vector2( this.width / 2, 10)).Font("djb-bbi").Wrap(this.width * 0.9).Finish();
         this._text.anchor.set(0.5, 0);
         this.addChild(this._text);
     };

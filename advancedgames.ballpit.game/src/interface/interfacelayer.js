@@ -6,6 +6,18 @@
  */
 var ballpit = ballpit || {};
 
+/**
+ * @namespace {String} Event
+ * @memberof ballpit
+ */
+ballpit.Event = ballpit.Event || {};
+
+/**
+ * @event ON_PAUSE_BUTTON_UP
+ * @memberof Event
+ */
+ballpit.Event.ON_PAUSE_BUTTON_UP = "on_pause_button_clicked";
+
 ballpit.InterfaceLayer = (function () {
 
     /**
@@ -37,6 +49,12 @@ ballpit.InterfaceLayer = (function () {
          */
         this.taskboard = null;
 
+        /**
+         * @property {Button} PauseButton 
+         * @public
+         */
+        this.pausebutton = null;
+
         this._initialize(gameTimer, scoreHolder, coach);
     }
     InterfaceLayer.prototype = Object.create( Phaser.Group.prototype );
@@ -63,6 +81,13 @@ ballpit.InterfaceLayer = (function () {
         this.taskboard = new ballpit.TaskBoard(new Vector2(Config.Core.Dimensions.width * 0.33, 125), "bubble", coach);
         this.taskboard.x -= this.taskboard.width * 0.33;
         this.addChild(this.taskboard);
+
+        this.pausebutton = new ADCore.Button(new Vector2(Config.Core.Dimensions.width * 0.82, 10), "ps_pausebutton");
+        this.pausebutton.onInputUp = function () {
+            if ( Input.paused ) return;
+            Listener.Dispatch( ballpit.Event.ON_PAUSE_BUTTON_UP, this );
+        }.bind(this);
+        this.addChild(this.pausebutton);
     };
 
     /**

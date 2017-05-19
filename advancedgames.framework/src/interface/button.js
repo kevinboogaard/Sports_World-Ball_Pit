@@ -76,6 +76,8 @@ ADCore.Button = (function () {
          */
         this.onInputLeave = null;
 
+        if (this._animations.contains("inactive")) this.Play("inactive");
+
         // Enable the button when it is constructed.
         this.Enable();
     }
@@ -135,6 +137,7 @@ ADCore.Button = (function () {
      * @private
      */
     p._onInputDown = function () {
+        if ( this._animations.contains("active") ) this.Play("active");
         if ( typeof this.onInputDown === "function" ) this.onInputDown( this );
     };
     
@@ -146,6 +149,7 @@ ADCore.Button = (function () {
      * @private
      */
     p._onInputUp = function () {
+        if ( this._animations.contains("inactive") ) this.Play("inactive");
         if ( typeof this.onInputUp === "function" ) this.onInputUp( this );
     };
     

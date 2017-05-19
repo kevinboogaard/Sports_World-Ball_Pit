@@ -90,6 +90,8 @@ ADCore.Sprite = (function () {
         if(this.onAnimationComplete){
             this.onAnimationComplete();
         }
+        
+        if ( this._animations.contains("idle") ) this.Play("idle");
     };
 
     /**

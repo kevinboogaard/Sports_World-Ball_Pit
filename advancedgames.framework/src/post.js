@@ -33,7 +33,7 @@ net.Post = (function () {
          * @private
          */
         this._beforeSend = null;
-	};
+	}
 	var p = Post.prototype;
 
     /**
@@ -79,7 +79,7 @@ net.Post = (function () {
 	p._onComplete = function ( response, textStatus, request ) {
 	    if (this.callback) this.callback.call( null, response );
 	    else this.defaultCallback.call( null, response );
-	}
+	};
 
     /**
      * @method _OnError
@@ -93,7 +93,7 @@ net.Post = (function () {
 		if ( this.timeoutId ) clearTimeout( this.timeoutId );
 		if ( this.callback ) this.callback.call( null, { "success": false, "error": "Error: " + xhr.status + ". Something went wrong. Please try again later." } );
 		this.Cancel();
-	}
+	};
 	
     /**
      * @method Cancel
@@ -105,7 +105,7 @@ net.Post = (function () {
 		this.params = null;
 		this.callback = null;
 		clearTimeout( this.timeoutId );
-	}
+	};
 	
 	return Post;
 })();
