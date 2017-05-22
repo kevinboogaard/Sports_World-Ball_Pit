@@ -26,8 +26,8 @@
             "anchor":{"x":0,"y":0.5},
             "offset":{"x": 0, "y":0}
         },
-        "preloader_football":{
-            "path": "asset_preloader_football.png",
+        "preloader_soccerball":{
+            "path": "asset_preloader_soccerball.png",
             "dimensions": {"width": 39, "height": 39 },
             "anchor":{"x":0.5,"y":0.5},
             "offset":{"x": 0, "y":0}
@@ -60,6 +60,18 @@
             "path": "asset_preloader_ball_white_border.png",
             "dimensions": {"width": 46, "height": 47 },
             "anchor":{"x":0.5,"y":0.5},
+            "offset":{"x": 0, "y":0}
+        },
+        "preloader_bg":{
+            "path": "asset_preloader_bg.png",
+            "dimensions": {"width": 360, "height": 640 },
+            "anchor":{"x":0,"y":0},
+            "offset":{"x": 0, "y":0}
+        },
+        "preloader_logo":{
+            "path": "asset_preloader_logo.png",
+            "dimensions": {"width": 245, "height": 165 },
+            "anchor":{"x":0.5,"y": 0.5},
             "offset":{"x": 0, "y":0}
         }
     }

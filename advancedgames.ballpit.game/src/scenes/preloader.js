@@ -29,6 +29,18 @@ scene.Preloader = (function () {
         this._callback = callback;
 
         /**
+         * @property {Interface} _Background
+         * @private
+         */
+        this._background = null;
+
+        /**
+         * @property {Interface} _Logo
+         * @private
+         */
+        this._logo = null;
+
+        /**
          * @property {Interface} _BarBackground
          * @private
          */
@@ -117,6 +129,12 @@ scene.Preloader = (function () {
      * @public {Object} params
      */
     p._onPreloadStart = function (caller, params) {
+        this._background = new ADCore.Interface(new Vector2(), "preloader_bg");
+        this.addChild(this._background);
+
+        this._logo = new ADCore.Interface(new Vector2(Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height * 0.2), "preloader_logo");
+        this.addChild(this._logo);
+
         this._barBackground = new ADCore.Interface(this._barPosition, "bar_bg");
         this._barBackground.x -= this._barBackground.width / 2;
 
@@ -212,7 +230,15 @@ scene.Preloader = (function () {
         Listener.Mute(ADCore.Event.ON_PRELOAD_START, this);
         Listener.Mute(ADCore.Event.ON_PRELOAD_UPDATE, this);
 
-        delete this._callback;
+        delete this._callback
+        
+        this._background.Dispose();
+        this.removeChild(this._background);
+        delete this._background;
+
+        this._logo.Dispose();
+        this.removeChild(this._logo);
+        delete this._logo;
 
         this._barBackground.Dispose();
         this.removeChild(this._barBackground);

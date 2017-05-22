@@ -44,15 +44,9 @@
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
-         "stopwatch":{
-            "path": "ui/asset_stopwatch.png",
-            "dimensions": {"width": 78, "height": 77},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-         "scoreboard":{
-            "path": "ui/asset_scoreboard.png",
-            "dimensions": {"width": 126, "height": 99},
+         "infobar":{
+            "path": "ui/asset_infobar.png",
+            "dimensions": {"width": 290, "height": 70},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },

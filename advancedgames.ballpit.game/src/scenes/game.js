@@ -78,7 +78,7 @@ scene.Game = (function () {
         Input.paused = false;
 
         // Play in-game music.
-        this.identifier = soundSystem.PlayMusic("ingamesound", 1, true);
+        this.identifier = soundSystem.PlayMusic("music_ingame", 1, true);
 
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
@@ -123,10 +123,13 @@ scene.Game = (function () {
     p._onTap = function (caller, params) {
         if (this.selected !== null) {
             var target = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
+            if (target) soundSystem.PlaySound("sound_ballselect", 3, false);
+
             this._trySwap(this.selected, target);
             this.selected = null;
         } else {
             this.selected = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
+            if (this.selected) soundSystem.PlaySound("sound_ballselect", 3, false);
         }
     };
 
@@ -181,11 +184,15 @@ scene.Game = (function () {
         } 
 
         if (this.ballController.CanSwap(current, target)) {
+            soundSystem.PlaySound("sound_combinationcorrect", 3, false);
+
             current.occupier.beginning = current;
             target.occupier.beginning = target;
 
             this.ballController.Swap(current, target);
         } else if (this.ballController.CanMove(target)){
+            soundSystem.PlaySound("sound_combinationerror", 1, false);
+
             Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current.occupier);
             Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target.occupier);
         }
@@ -200,7 +207,6 @@ scene.Game = (function () {
      * @ignore 
      */
     p._onStageBegin = function (caller, params) {
-        this.interfaceLayer.watch.text.tint = 0xFF0000;
         this.gameTimer.multiplier = 2;
     };
 
@@ -213,7 +219,6 @@ scene.Game = (function () {
      * @ignore 
      */
     p._onStageDone = function (caller, params) {
-        this.interfaceLayer.watch.text.tint = 0xFFFFFF;
         this.gameTimer.multiplier = 1;
         this.gameTimer.Add(20);
     };
@@ -245,7 +250,7 @@ scene.Game = (function () {
                 break;
 
             case ballpit.PauseInputs.OPTIONS:
-                var optionsPopup = new ballpit.OptionsPopup( this._onOptionsInput.bind(this) );
+                var optionsPopup = new ballpit.OptionsPopup( soundSystem, this._onOptionsInput.bind(this) );
                 this.popupContainer.DisplayPopup( optionsPopup );
                 break;
 
@@ -312,6 +317,10 @@ scene.Game = (function () {
         delete this.ballController;
 
         delete this.swipePositions;
+
+       this.interfaceLayer.Dispose();
+       this.removeChild(this.interfaceLayer);
+       delete this.interfaceLayer;
 
         this.viewContainer.Dispose();
         this.removeChild(this.viewContainer);

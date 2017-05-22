@@ -1,15 +1,40 @@
 {
-    "base_path": "advancedgames.ballpit.game/assets/sounds/",
+    "base_path": "advancedgames.ballpit.game/audio/",
     "type": "audio", 
     "resources": {
-        "ingamesound":{
+        "sound_ballselect":{
             "path":[ 
-                "ingamemusic.mp3"
+                "sound_ball_select.wav"
             ]
         },
-        "menusound":{
+        "sound_buttonselect":{
             "path":[ 
-                "menumusic.mp3"
+                "sound_button_select.wav"
+            ]
+        },
+        "sound_combinationcorrect":{
+            "path":[ 
+                "sound_combination_correct.wav"
+            ]
+        },
+        "sound_combinationerror":{
+            "path":[ 
+                "sound_combination_error.wav"
+            ]
+        },
+        "music_endscreen":{
+            "path":[ 
+                "music_endscreen.mp3"
+            ]
+        },
+        "music_ingame":{
+            "path":[ 
+                "music_ingame.mp3"
+            ]
+        },
+        "music_menu":{
+            "path":[ 
+                "music_menu.mp3"
             ]
         }
     }

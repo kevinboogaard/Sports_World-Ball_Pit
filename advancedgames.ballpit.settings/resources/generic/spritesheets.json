@@ -6,7 +6,7 @@
             "json_path": "logo/spritesheet_logo.json",
             "atlas_path": "logo/spritesheet_logo.png",
             "animations": {
-                "idle": [50],
+                "idle": [0],
                 "entry": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
             }
         },
@@ -53,9 +53,9 @@
                 "swipefail": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] 
             }
         },
-        "bowlingball":{
-            "json_path": "balls/bowlingball/spritesheet_bowlingball.json",
-            "atlas_path": "balls/bowlingball/spritesheet_bowlingball.png",
+        "volleyball":{
+            "json_path": "balls/volleyball/spritesheet_volleyball.json",
+            "atlas_path": "balls/volleyball/spritesheet_volleyball.png",
             "animations": {
                 "hint": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                 "plop": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
@@ -99,7 +99,37 @@
                 "inactive": [1]
             }
         },
+        "ps_soundofficon":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "idle": [2]
+            }
+        },
+        "ps_soundonicon":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "idle": [3]
+            }
+        },
         "ps_playbutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [11],
+                "inactive": [12]
+            }
+        },
+        "ps_quitbutton":{
+            "json_path": "pausescene/atlas_pausescreen.json",
+            "atlas_path": "pausescene/atlas_pausescreen.png",
+            "animations": {
+                "active": [13],
+                "inactive": [14]
+            }
+        },
+        "ps_pausebutton":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
@@ -107,72 +137,57 @@
                 "inactive": [9]
             }
         },
-        "ps_quitbutton":{
-            "json_path": "pausescene/atlas_pausescreen.json",
-            "atlas_path": "pausescene/atlas_pausescreen.png",
-            "animations": {
-                "active": [10],
-                "inactive": [11]
-            }
-        },
-        "ps_pausebutton":{
-            "json_path": "pausescene/atlas_pausescreen.json",
-            "atlas_path": "pausescene/atlas_pausescreen.png",
-            "animations": {
-                "active": [5],
-                "inactive": [6]
-            }
-        },
         "ps_replaybutton":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
-                "active": [12],
-                "inactive": [13]
+                "active": [15],
+                "inactive": [16]
             }
         },
         "ps_settingsbutton":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
-                "active": [14],
-                "inactive": [15]
+                "active": [17],
+                "inactive": [18]
             }
         },
         "ps_crossbutton":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
-                "active": [16],
-                "inactive": [17]
+                "active": [19],
+                "inactive": [20]
             }
         },
         "ps_pausebackground":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
-                "idle": [7]
+                "idle": [10]
             }
         },
         "ps_optionsbackground":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
-                "idle": [4]
+                "idle": [7]
             }
         },
-        "ps_musicslider":{
+        "ps_soundslider":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
-                "idle": [2]
+                "idle": [4]
             }
         },
         "ps_sliderhandle":{
             "json_path": "pausescene/atlas_pausescreen.json",
             "atlas_path": "pausescene/atlas_pausescreen.png",
             "animations": {
-                "idle": [3]
+                "inactive": [5],
+                "active": [6]
             }
         }
      }

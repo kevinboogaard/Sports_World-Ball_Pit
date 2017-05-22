@@ -37,6 +37,8 @@ ADCore.Sprite = (function () {
         this._initializeSprite(key);
         // Initialize the animations by fetching its data and loading the sprites in the AnimationManager.
         this._initializeAnimations(key);
+
+        ADCore.EnableMutators(this);
     }
     Sprite.prototype = Object.create(Phaser.Sprite.prototype);
     Sprite.prototype.constructor = Sprite;
@@ -81,6 +83,21 @@ ADCore.Sprite = (function () {
     };
 
     /**
+     * Play an animation that has been registered at the initialize.
+     * 
+     * @method Play
+     * @memberof Sprite
+     * @param {String} name
+     * @param {Integer} [frameRate=30]
+     * @param {Boolean} [loop=false]
+     * @returns {Phaser.Animation}
+     */
+    p.Play = function (name, frameRate, loop, killOnComplete) {
+        if (this._animations.contains(name) === false) throw new Error("Animation doesn't exist");
+        return this.animations.play(name, frameRate || 30, loop || false, killOnComplete || false);
+    };
+
+    /**
      * @method _GetLoadedData
      * @memberof Sprite
      * @private
@@ -107,21 +124,6 @@ ADCore.Sprite = (function () {
     };
 
     /**
-     * Play an animation that has been registered at the initialize.
-     * 
-     * @method Play
-     * @memberof Sprite
-     * @param {String} name
-     * @param {Integer} [frameRate=30]
-     * @param {Boolean} [loop=false]
-     * @returns {Phaser.Animation}
-     */
-    p.Play = function (name, frameRate, loop, killOnComplete) {
-        if (this._animations.contains(name) === false) throw new Error("Animation doesn't exist");
-        return this.animations.play(name, frameRate || 30, loop || false, killOnComplete || false);
-    };
-
-    /**
      * Dispose the sprite. Use this method to clean the sprite in order to avoid memory leaks.
      *
      * @method Dispose
@@ -131,6 +133,37 @@ ADCore.Sprite = (function () {
     p.Dispose = function () {
         delete this._animations;
         this.disposed = true;
+    };
+
+    /**
+     * Internal function getters & setters.
+     * 
+     * @method GettersAndSetters
+     * @private 
+     * @ignore
+     */
+    p.gettersAndSetters = function () {
+        this.Define("absoluteX", {
+            get: function() {
+                return this.world.x;
+            },
+            set: function(value) {
+                var bounds = this.getBounds();
+                this.world.x = value;
+                this.x = this.input.globalToLocalX(value) + (this.x - bounds.centerX) - (this.width * this.anchor.x);
+            }
+        });
+
+        this.Define("absoluteY", {
+            get: function() {
+                return this.world.y;
+            },
+            set: function(value) {
+                var bounds = this.getBounds();
+                this.world.y = value;
+                this.y = this.input.globalToLocalY(value) + (this.y - bounds.centerY) - (this.height * this.anchor.y);
+            }
+        });
     };
 
     return Sprite;

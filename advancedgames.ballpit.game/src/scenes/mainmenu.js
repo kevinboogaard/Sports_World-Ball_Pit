@@ -19,10 +19,9 @@ scene.MainMenu = (function () {
      * @constructor
      */
     function MainMenu() {
-        Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");
+        Phaser.Group.call(this, ADCore.phaser, null, "MainMenu");
 
         var halfWidth = Config.Core.Dimensions.width/2;
-        this.identifier = soundSystem.PlayMusic("menusound", 1, true);
 
         /** @property {Interface} */
         this.background = new ADCore.Interface(new Vector2(0, 0),"menubackground");
@@ -35,12 +34,13 @@ scene.MainMenu = (function () {
         this.logo.y = this.logo.height / 2;
         this.addChild(this.logo);
 
-        this.logo.Play("entry");
-
         /** @property {Button} */
         this.startButton = new ADCore.Button(new Vector2(this.logo.x, this.logo.y + this.logo.height * 0.70),"startbutton-inactive");
         this.startButton.onInputUp = this._onStartButtonInputUp.bind(this);
         this.addChild(this.startButton);
+
+        this.logo.Play("entry");
+        this.identifier = soundSystem.PlayMusic("music_menu", 1, true);
     }
     MainMenu.prototype = Object.create(Phaser.Group.prototype);
     MainMenu.prototype.constructor = MainMenu; 

@@ -32,16 +32,10 @@ ballpit.InterfaceLayer = (function () {
         Phaser.Group.call( this, ADCore.phaser, null, "Interface Layer" );
 
         /**
-         * @property {Watch} watch 
+         * @property {Infobar} Infobar 
          * @public
          */
-        this.watch = null;
-
-        /**
-         * @property {ScoreBoard} ScoreBoard 
-         * @public
-         */
-        this.scoreboard = null;
+        this.infobar = null;
 
         /**
          * @property {TaskBoard} TaskBoard 
@@ -71,12 +65,8 @@ ballpit.InterfaceLayer = (function () {
      * @ignore
      */
     p._initialize = function (gameTimer, scoreHolder, coach) {
-        this.scoreboard = new ballpit.ScoreBoard(new Vector2(10, 10), "scoreboard", scoreHolder);
-        this.addChild(this.scoreboard);
-
-        this.watch = new ballpit.Watch(new Vector2(this.scoreboard.width, 10), "stopwatch", gameTimer);
-        this.watch.x += this.watch.width * 0.33;
-        this.addChild(this.watch);
+        this.infobar = new ballpit.Infobar(new Vector2(), "infobar", gameTimer, scoreHolder);
+        this.addChild(this.infobar);
 
         this.taskboard = new ballpit.TaskBoard(new Vector2(Config.Core.Dimensions.width * 0.33, 125), "bubble", coach);
         this.taskboard.x -= this.taskboard.width * 0.33;
@@ -96,9 +86,27 @@ ballpit.InterfaceLayer = (function () {
      * @public
      */
     p.Render = function () {
-        this.watch.Render();
-        this.scoreboard.Render();
+        this.infobar.Render();
         this.taskboard.Render();
+    };
+
+    /**
+     * @method Dispose
+     * @memberof InterfaceLayer
+     * @public
+     */
+    p.Dispose = function () {
+        this.infobar.Dispose();
+        this.removeChild(this.infoBar);
+        delete this.infobar;
+
+        this.taskboard.Dispose();
+        this.removeChild(this.taskboard);
+        delete this.taskboard;
+
+        this.pausebutton.Dispose();
+        this.removeChild(this.pausebutton);
+        delete this.pausebutton;
     };
 
     return InterfaceLayer;

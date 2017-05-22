@@ -70,7 +70,7 @@ ADCore.PauseSystem = ( function () {
     p.UnpauseBy = function ( caller ) {
         var index = this._registry.indexOf( caller );
 
-        if ( index == -1 ) throw new Error( "Caller has never called pause." );
+        if ( index === -1 ) throw new Error( "Caller has never called pause." );
         if ( !caller ) throw new Error( "Caller isn't an object" );
 
         this._registry.splice( index, 1 );

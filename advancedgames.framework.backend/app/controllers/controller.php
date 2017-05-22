@@ -12,6 +12,10 @@ class Controller {
         return include("adg.website.php");
     }
 
+    public function GetGameWithoutTheme() {
+        return include("adg.ballpit.php");
+    }
+
     public function GetHighscores($amount) {
         return $this->manager->GetTopHighscores($amount);
     }

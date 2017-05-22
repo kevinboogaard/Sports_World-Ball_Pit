@@ -45,6 +45,9 @@ ballpit.BallView = (function () {
     function BallView(model, key) {
         ADCore.Display.call( this, model, key );
 
+        this.width = 45;
+        this.height = 45;
+
         Listener.Listen(ballpit.Event.ON_BALL_STATE_CHANGE, this, this._onStateChange.bind(this), model);
         Listener.Listen(ballpit.Event.ON_BALL_DESTROY, this, this._onDestroy.bind(this), model);
         Listener.Listen(ballpit.Event.ON_BALL_SWAP_WRONG, this, this._onWrong.bind(this), model);
