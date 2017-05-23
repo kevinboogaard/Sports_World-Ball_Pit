@@ -68,11 +68,11 @@ ballpit.BallTypes.BASKETBALL = "basketball";
 ballpit.BallTypes.TENNISBALL = "tennisball";
 
 /** 
- * @property {String} BOWLINGBALL
+ * @property {String} VOLLEYBALL
  * @memberof BallTypes
  * @readonly 
  */
-ballpit.BallTypes.BOWLINGBALL = "bowlingball";
+ballpit.BallTypes.VOLLEYBALL = "volleyball";
 
 /** 
  * @property {String} BASEBALL

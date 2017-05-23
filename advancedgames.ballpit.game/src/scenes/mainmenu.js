@@ -19,12 +19,11 @@ scene.MainMenu = (function () {
      * @constructor
      */
     function MainMenu() {
-        Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");
+        Phaser.Group.call(this, ADCore.phaser, null, "MainMenu");
 
         var halfWidth = Config.Core.Dimensions.width / 2;
         var halfHeight = Config.Core.Dimensions.height / 2;
 
-        this.identifier = soundSystem.PlayMusic("menusound", 1, true);
 
         /** @property {Interface} */
         this.background = new ADCore.Interface(new Vector2(0, 0),"menubackground");

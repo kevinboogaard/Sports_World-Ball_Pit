@@ -7,5 +7,3 @@ Debug.ENABLED = true;
 
 Debug.FORCE_LOAD_SCENE = true;
 Debug.DEBUG_SCENE = scene.Game;
-
-console.log("DECLARATION " + ballpit.BASE_URL);

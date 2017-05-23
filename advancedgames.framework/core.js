@@ -24,7 +24,7 @@ function Initialize() {
         create: _create.bind(this),
         update: _update.bind(this),
         render: _render.bind(this)
-    }, true);
+    });
 
     // Initialize the main of the game.
     this.main = new ballpit.Core();

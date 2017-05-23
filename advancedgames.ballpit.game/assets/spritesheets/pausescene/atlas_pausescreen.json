@@ -19,21 +19,48 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "asset_musicoptions_v1.png",
-	"frame": {"x":110,"y":0,"w":219,"h":18},
+	"filename": "asset_musicofficon_v1.png",
+	"frame": {"x":110,"y":0,"w":15,"h":17},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":219,"h":18},
-	"sourceSize": {"w":219,"h":18},
+	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":17},
+	"sourceSize": {"w":15,"h":17},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_musiconicon_v1.png",
+	"frame": {"x":125,"y":0,"w":14,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":16},
+	"sourceSize": {"w":14,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_musicoptionsbar_v1.png",
+	"frame": {"x":139,"y":0,"w":182,"h":17},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":182,"h":17},
+	"sourceSize": {"w":182,"h":17},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "asset_musicoptionsslider_v1.png",
-	"frame": {"x":329,"y":0,"w":19,"h":28},
+	"frame": {"x":321,"y":0,"w":19,"h":28},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":19,"h":28},
 	"sourceSize": {"w":19,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_musicoptionsslider_v2.png",
+	"frame": {"x":340,"y":0,"w":18,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":28},
+	"sourceSize": {"w":18,"h":28},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
@@ -169,6 +196,6 @@
 	"format": "RGBA8888",
 	"size": {"w":443,"h":583},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:a2e9beed3e78e1b7a2714ae33b1abced:1b458a4e6d270879c9bc91501bb6cbe2:80c706a78572be3cf0807f504525b9e9$"
+	"smartupdate": "$TexturePacker:SmartUpdate:dddaf914322d02a4cc058209c52d2f6d:bd56de4da9fb8f83416778855a16ee5f:80c706a78572be3cf0807f504525b9e9$"
 }
 }

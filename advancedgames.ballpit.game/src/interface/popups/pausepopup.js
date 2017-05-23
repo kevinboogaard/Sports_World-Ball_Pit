@@ -30,7 +30,7 @@ ballpit.PauseInputs.OPTIONS = "options";
  */
 ballpit.PauseInputs.MENU = "menu";
 
-ballpit.PausePopup = ( function (callback) {
+ballpit.PausePopup = ( function () {
 
     /**
      * @class PausePopup
@@ -97,18 +97,27 @@ ballpit.PausePopup = ( function (callback) {
         this.playButton.anchor.set(0.5, 0.5);
         this.playButton.x -= this.background.width * 0.25;
         this.playButton.y += this.background.height * 0.1;
-        this.playButton.onInputUp = function() { this._callback(ballpit.PauseInputs.PLAY) }.bind(this);
+        this.playButton.onInputUp = function() { 
+            if (!this.hasFocus) return;
+            this._callback(ballpit.PauseInputs.PLAY) 
+        }.bind(this);
         this.background.addChild(this.playButton);
 
         this.optionsButton = new ADCore.Button(new Vector2(0, this.playButton.y), "ps_settingsbutton");
         this.optionsButton.anchor.set(0.5, 0.5);
-        this.optionsButton.onInputUp  = function() { this._callback(ballpit.PauseInputs.OPTIONS) }.bind(this);
+        this.optionsButton.onInputUp  = function() { 
+            if (!this.hasFocus) return;
+            this._callback(ballpit.PauseInputs.OPTIONS) 
+        }.bind(this);
         this.background.addChild(this.optionsButton);
 
         this.menuButton = new ADCore.Button(new Vector2(0, this.playButton.y), "ps_quitbutton");
         this.menuButton.anchor.set(0.5, 0.5);
         this.menuButton.x += this.background.width * 0.25;
-        this.menuButton.onInputUp = function() { this._callback(ballpit.PauseInputs.MENU) }.bind(this);
+        this.menuButton.onInputUp = function() { 
+            if (!this.hasFocus) return;
+            this._callback(ballpit.PauseInputs.MENU) 
+        }.bind(this);
         this.background.addChild(this.menuButton);
 
         this.background.scale.set(0.01, 0.01);  
