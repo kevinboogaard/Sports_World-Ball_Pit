@@ -14,3 +14,6 @@ Settings.Velocity.BALL = 300;
 
 Settings.Stopwatch = {};
 Settings.Stopwatch.WARNING = 55;
+
+Settings.HighscoreScene = {};
+Settings.HighscoreScene.AMOUNT_SCORES_SHOWN = 10;

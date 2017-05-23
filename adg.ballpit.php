@@ -88,6 +88,7 @@
         <script src="advancedgames.ballpit.game/src/scenes/game.js"></script>
         <script src="advancedgames.ballpit.game/src/scenes/preloader.js"></script>
         <script src="advancedgames.ballpit.game/src/scenes/tutorial.js"></script>
+        <script src="advancedgames.ballpit.game/src/scenes/highscore.js"></script>
 
         <script src="advancedgames.ballpit.game/src/entities/models/ballmodel.js"></script>
         <script src="advancedgames.ballpit.game/src/entities/models/coachmodel.js"></script>

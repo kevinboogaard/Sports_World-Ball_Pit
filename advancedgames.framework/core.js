@@ -42,6 +42,8 @@ function _preload () {
     // Initialize the preloader.
     this.preloader.Initialize();
 
+    ADCore.phaser.time.advancedTiming = true;
+
     // Preload the core files.
     var len = Config.ResourceLists.CORE.length;
     if ( len > 0 ) {
@@ -57,7 +59,7 @@ function _create () {
     ADCore.phaser.scale.pageAlignVertically = true;
     ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
     ADCore.phaser.scale.refresh();
-    
+
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
     // Create the sound system.
@@ -98,6 +100,8 @@ function _update () {
 function _render () {
     // Render main.
     this.main.Render();
+
+    ADCore.phaser.debug.text('render FPS: ' + (ADCore.phaser.time.fps || '--') , 2, 14, "#00ff00");
 }
 
 /**
