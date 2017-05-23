@@ -85,15 +85,14 @@ ADCore.Sprite = (function () {
             }
         }
 
-       this.events.onAnimationComplete.add(this._onAnimationComplete.bind(this));
+        if ( this._animations.contains("idle") ) this.Play("idle");
+        this.events.onAnimationComplete.add(this._onAnimationComplete.bind(this));
     };
 
     p._onAnimationComplete = function(){
         if(this.onAnimationComplete){
             this.onAnimationComplete();
         }
-        
-        if ( this._animations.contains("idle") ) this.Play("idle");
     };
 
     /**

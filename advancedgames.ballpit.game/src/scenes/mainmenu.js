@@ -86,7 +86,7 @@ scene.MainMenu = (function () {
     p._onStartButtonInputUp = function () {
         Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIALSCENE });
     };
-
+5
     /**
      * @method Dispose
      * @memberof MainMenu

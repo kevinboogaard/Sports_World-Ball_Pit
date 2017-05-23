@@ -237,14 +237,16 @@
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "idle": [7]
+                "inactive": [7],
+                "active": [8]
             }
         },
         "hs_quitbutton":{
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "idle": [9]
+                "active": [10],
+                "inactive": [9]
             }
         },
         "hs_background":{
