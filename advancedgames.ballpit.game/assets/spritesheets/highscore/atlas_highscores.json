@@ -46,17 +46,26 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "asset_highscorescreenpopup_v2.png",
-	"frame": {"x":0,"y":1199,"w":322,"h":489},
+	"filename": "asset_highscorescreenpopuppartdown_v1.png",
+	"frame": {"x":0,"y":1199,"w":322,"h":100},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":322,"h":489},
-	"sourceSize": {"w":322,"h":489},
+	"spriteSourceSize": {"x":0,"y":0,"w":322,"h":100},
+	"sourceSize": {"w":322,"h":100},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_highscorescreenpopuppartup_v1.png",
+	"frame": {"x":0,"y":1299,"w":322,"h":122},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":322,"h":122},
+	"sourceSize": {"w":322,"h":122},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "asset_highscoreslogo_v1.png",
-	"frame": {"x":0,"y":1688,"w":279,"h":87},
+	"frame": {"x":0,"y":1421,"w":279,"h":87},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":279,"h":87},
@@ -64,8 +73,17 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
+	"filename": "asset_highscoresnamesandscores_v1.png",
+	"frame": {"x":0,"y":1508,"w":273,"h":279},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":273,"h":279},
+	"sourceSize": {"w":273,"h":279},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
 	"filename": "asset_replaybuttonactive_v1.png",
-	"frame": {"x":279,"y":1688,"w":54,"h":54},
+	"frame": {"x":273,"y":1508,"w":54,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
@@ -74,7 +92,7 @@
 },
 {
 	"filename": "asset_replaybuttoninactive_v1.png",
-	"frame": {"x":333,"y":1688,"w":54,"h":55},
+	"frame": {"x":327,"y":1508,"w":54,"h":55},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":55},
@@ -83,7 +101,7 @@
 },
 {
 	"filename": "asset_xbuttonactive_v1.png",
-	"frame": {"x":387,"y":1688,"w":55,"h":54},
+	"frame": {"x":381,"y":1508,"w":55,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":55,"h":54},
@@ -92,7 +110,7 @@
 },
 {
 	"filename": "asset_xbuttoninactive_v1.png",
-	"frame": {"x":442,"y":1688,"w":55,"h":54},
+	"frame": {"x":436,"y":1508,"w":55,"h":54},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":55,"h":54},
@@ -104,8 +122,8 @@
 	"version": "1.0",
 	"image": "atlas_highscores_v1.png",
 	"format": "RGBA8888",
-	"size": {"w":497,"h":1775},
+	"size": {"w":491,"h":1787},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:9747a65e3cd1b01ff5efa2b1b10a989e:e6830d8bd8a1bf6658666c928d5598f0:07e3a0699f75c951222aaef0682422fb$"
+	"smartupdate": "$TexturePacker:SmartUpdate:1ec3a57bb003bc9d41dcdd5b62425c8c:9bfba8ab93b4d87f40318f51b9b5c463:07e3a0699f75c951222aaef0682422fb$"
 }
 }

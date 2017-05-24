@@ -56,7 +56,7 @@ scene.Highscore = (function () {
         var offsetX = 40;
         var offsetY = 27;
         var scoreOffset = 210;
-        var startY = 202;
+        var startY = 190;
 
         var textSize = 11;
         var fontName = "djb-bbi";
@@ -119,12 +119,18 @@ scene.Highscore = (function () {
             scoretext["y"] = y;
             this.scoretextsdata.push(scoretext);
         }
-        this.logo = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.highscoreBackground.y - this.highscoreBackground.height / 2), "hs_highscorelogo")
+        this.toppartofmenu = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.highscoreBackground.y - this.highscoreBackground.height / 1.4),"hs_toppartofmenu")
+        this.toppartofmenu.anchor.set(0.5, 0.5);
+
+        this.bottompartofmenu = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.highscoreBackground.y + this.highscoreBackground.height / 1.5),"hs_bottompartofmenu")
+        this.bottompartofmenu.anchor.set(0.5, 0.5);
+
+        this.logo = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.highscoreBackground.y - this.highscoreBackground.height / 1.1), "hs_highscorelogo")
         this.logo.anchor.set(0.5, 0.5);
         this.logo.scale.setTo(0.01,0.01);
         TweenLite.to(this.logo.scale,0.2,{ease: Back.easeInOut.config(1.7), x:1,y:1});
    
-        this.restartButton = new ADCore.Button(new Vector2(this.highscoreBackground.x - this.highscoreBackground.width * 0.25, this.highscoreBackground.y + this.highscoreBackground.height * 0.40),"hs_restartbutton")
+        this.restartButton = new ADCore.Button(new Vector2(this.highscoreBackground.x - this.highscoreBackground.width * 0.25, this.highscoreBackground.y + this.highscoreBackground.height * 0.67),"hs_restartbutton")
         this.restartButton.onInputUp = this._onRestartButtonInputUp.bind(this);
         Debug.Log("onrestart");
         this.restartButton.anchor.set(0.5, 0.5);
@@ -140,7 +146,7 @@ scene.Highscore = (function () {
 
         this.text_name = new ADCore.Text()
                 .Value("Name")
-                .Position(new Vector2(halfWidth - this.highscoreBackground.width * 0.22, this.highscoreBackground.y - this.highscoreBackground.height * 0.325))
+                .Position(new Vector2(halfWidth - this.highscoreBackground.width * 0.28, this.highscoreBackground.y - this.highscoreBackground.height * 0.62))
                 .Anchor(new Vector2(0.5, 0.5))
                 .Size(13)
                 .Color(textColor)
@@ -149,13 +155,15 @@ scene.Highscore = (function () {
 
         this.text_score = new ADCore.Text()
                 .Value("Score")
-                .Position(new Vector2(halfWidth + this.highscoreBackground.width * 0.22, this.highscoreBackground.y - this.highscoreBackground.height * 0.325))
+                .Position(new Vector2(halfWidth + this.highscoreBackground.width * 0.28, this.text_name.y))
                 .Anchor(new Vector2(0.5, 0.5))
                 .Size(13)
                 .Color(textColor)
                 .Font(fontName)
                 .Finish();
             
+        this.addChild(this.toppartofmenu);
+        this.addChild(this.bottompartofmenu);
         this.addChild(this.logo);
         this.addChild(this.quitButton);
         this.addChild(this.restartButton);

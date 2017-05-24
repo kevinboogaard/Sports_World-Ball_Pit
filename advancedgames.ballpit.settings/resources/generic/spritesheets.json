@@ -216,7 +216,7 @@
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "idle": [5]
+                "idle": [8]
             }
         },
         "hs_finishlogo":{
@@ -230,23 +230,23 @@
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "idle": [6]
+                "idle": [7]
             }
         },
         "hs_restartbutton":{
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "inactive": [7],
-                "active": [8]
+                "inactive": [9],
+                "active": [10]
             }
         },
         "hs_quitbutton":{
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "active": [10],
-                "inactive": [9]
+                "active": [11],
+                "inactive": [12]
             }
         },
         "hs_background":{
@@ -254,6 +254,20 @@
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
                 "idle": [1]
+            }
+        },
+        "hs_bottompartofmenu":{
+            "json_path": "highscore/atlas_highscores.json",
+            "atlas_path": "highscore/atlas_highscores.png",
+            "animations": {
+                "idle": [5]
+            }
+        },
+        "hs_toppartofmenu":{
+            "json_path": "highscore/atlas_highscores.json",
+            "atlas_path": "highscore/atlas_highscores.png",
+            "animations": {
+                "idle": [6]
             }
         }
      }
