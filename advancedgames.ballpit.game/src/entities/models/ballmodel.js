@@ -142,6 +142,41 @@ ballpit.BallModel = (function () {
         this._velocity = Settings.Velocity.BALL;
 
         /**
+        * @property {Number} ScaleX - The x-axis scale of the ball.
+        * @public
+        * @default 0.95
+        */
+        this.scaleX = 0.95;
+
+        /**
+        * @property {Number} ScaleY - The y-axis scale of the ball.
+        * @public
+        * @default 0.95
+        */
+        this.scaleY = 0.95;
+
+        /**
+        * @property {Number} AnchorX - The x-axis anchor point of the ball.
+        * @public
+        * @default 0
+        */
+        this.anchorX = 0;
+
+        /**
+        * @property {Number} AnchorY - The y-axis anchor point of the ball.
+        * @public
+        * @default 0
+        */
+        this.anchorY = 0;
+
+        /**
+        * @property {Number} Angle - The angle of the ball.
+        * @public
+        * @default 1
+        */
+        this.angle = 1;
+
+        /**
         * @property {Boolean} Beginning - The velocity of the ball
         * @public
         */
@@ -196,7 +231,7 @@ ballpit.BallModel = (function () {
      * @method MoveTo
      * @memberof BallModel
      * @public
-     * @param {Vector2} vector - The destenation 
+     * @param {Vector2} vector - The destination 
      */
     p.MoveTo = function (vector) {
         this._destination = vector.Clone();

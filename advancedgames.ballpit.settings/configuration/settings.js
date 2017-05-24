@@ -5,6 +5,7 @@ var Settings = {};
 
 Settings.Game = {};
 Settings.Game.TIME = 120;
+Settings.Game.DELAY_PER_ROUND = 10;
 
 /**
  * value = pixels per second.

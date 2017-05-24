@@ -74,6 +74,9 @@ scene.Game = (function () {
         /** @property {Vector2} */
         this.started = false;
 
+        /** @property {TileLayer} */
+        this.tileLayer = this.tilemap.GetLayerByName("tilelayer");
+
         // Put the input paused on false.
         Input.paused = false;
 
@@ -123,13 +126,31 @@ scene.Game = (function () {
     p._onTap = function (caller, params) {
         if (this.selected !== null) {
             var target = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
-            if (target) soundSystem.PlaySound("sound_ballselect", 3, false);
+            
+            if (target) {
+                if (this.selected.neighbours.contains(target)) {
+                    if (this.selected !== target) {
+                        soundSystem.PlaySound("sound_ballselect", 3, false);
+                        this._trySwap(this.selected, target);
+                    }
+                } else {
+                    this.UnselectTile(this.selected);
+                    this.selected = null;
 
-            this._trySwap(this.selected, target);
+                    this._onTap(caller, params);
+                    return;
+                }
+            }
+
+            this.UnselectTile(this.selected);
             this.selected = null;
         } else {
             this.selected = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
-            if (this.selected) soundSystem.PlaySound("sound_ballselect", 3, false);
+
+            if (this.selected) { 
+                this.SelectTile(this.selected);
+                soundSystem.PlaySound("sound_ballselect", 3, false);
+            }
         }
     };
 
@@ -149,6 +170,11 @@ scene.Game = (function () {
         if (!start) return;
         var end = this.tilemap.mainLayer.GetNeighbourFromTileByDirection( start, params.direction );
         this._trySwap(start, end);
+
+        if (this.selected) {
+            this.UnselectTile(this.selected);
+            this.selected = null;
+        }
     };
 
     /**
@@ -165,6 +191,56 @@ scene.Game = (function () {
         var amount = params.aligned.length + 1; // + 1 = owner.
         var score = this.scoreHolder.CalculateScoreByAmountAligned(amount);
         this.scoreHolder.Add(score);
+
+        var type = params.owner.occupier.type;
+        var task = this.coach.activeTask;
+
+        if (task && type === task.type) {
+            var tiles = params.aligned.slice();
+            tiles.push(params.owner);
+            this._createBallEffectByTiles(tiles);
+        }
+    };
+
+    /**
+     * @method SelectTile
+     * @memberof Game 
+     * @public
+     */
+    p.SelectTile = function(tile) {
+        var antitype = this.tileLayer.GetTileByTilePosition(tile.tileposition.Clone());
+
+        var glow = new ADCore.Interface(new Vector2(0,0), "fx_ball_select");
+        glow.Play("spark", 30, true);
+        antitype.effect = glow;
+    };
+
+    /**
+     * @method UnselectTile
+     * @memberof Game 
+     * @public
+     */
+    p.UnselectTile = function(tile) {
+        var antitype = this.tileLayer.GetTileByTilePosition(tile.tileposition.Clone());
+        antitype.effect = null;
+    };
+
+    /**
+     * @method _CreateBallEffectByTiles
+     * @memberof Game
+     * @private
+     * @param {Array} tiles
+     */
+    p._createBallEffectByTiles = function (tiles) {
+        var destination = this.interfaceLayer.taskboard.effectLocation;
+        var len = tiles.length;
+        
+        for (var i = len - 1; i >= 0; i--) {
+            var tile = tiles[i];
+            var ball = tile.occupier;
+
+            this.ballContainer.AddBallEffect(ball.position, ball.type, destination);
+        }
     };
 
     /**
@@ -193,8 +269,14 @@ scene.Game = (function () {
         } else if (this.ballController.CanMove(target)){
             soundSystem.PlaySound("sound_combinationerror", 1, false);
 
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current.occupier);
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target.occupier);
+            var current_dir = target.position.Clone().Substract(current.position);
+            current_dir = current_dir.Normalize();
+            
+            var target_dir = current.position.Clone().Substract(target.position);
+            target_dir = target_dir.Normalize();
+
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current.occupier, { "direction": current_dir });
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target.occupier, {"direction": target_dir});
         }
     };
 

@@ -90,11 +90,14 @@ ADCore.Sprite = (function () {
      * @param {String} name
      * @param {Integer} [frameRate=30]
      * @param {Boolean} [loop=false]
+     * @param {Boolean} [toIdleOnComplete=false]
      * @returns {Phaser.Animation}
      */
-    p.Play = function (name, frameRate, loop, killOnComplete) {
+    p.Play = function (name, frameRate, loop, killOnComplete, toIdleOnComplete) {
         if (this._animations.contains(name) === false) throw new Error("Animation doesn't exist");
-        return this.animations.play(name, frameRate || 30, loop || false, killOnComplete || false);
+        var animation = this.animations.play(name, frameRate || 30, loop || false, killOnComplete || false);
+        if (toIdleOnComplete) animation.onComplete.add(function(){ this.Play("idle") }, this);
+        return animation;
     };
 
     /**
@@ -112,11 +115,11 @@ ADCore.Sprite = (function () {
             if (Global.Loaded.core[list][key]) data = Global.Loaded.core[list][key];
         }
 
-        if (Global.Loaded.generic[list]) {
+        if (!data && Global.Loaded.generic[list]) {
             if (Global.Loaded.generic[list][key]) data = Global.Loaded.generic[list][key];
         }
 
-        if (Global.Loaded.level[list]) {
+        if (!data &&Global.Loaded.level[list]) {
             if (Global.Loaded.level[list][key]) data = Global.Loaded.level[list][key];
         }
         

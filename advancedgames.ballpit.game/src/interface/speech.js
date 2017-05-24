@@ -177,5 +177,9 @@ ballpit.Speech = (function () {
         
     };
 
+    p.Dispose = function() {
+        throw new Error("NO DISPOSE!");
+    };
+
     return Speech;
 }());

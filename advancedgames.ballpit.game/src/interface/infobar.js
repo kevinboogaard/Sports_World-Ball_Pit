@@ -14,24 +14,11 @@ ballpit.Infobar = (function () {
      * @extends Interface
      * @param {Vector2} position
      * @param {String} key
-     * @param {Timer} timer
      * @param {ScoreHolder} scoreHolder
      */
-    function Infobar(position, key, timer, scoreHolder) {
+    function Infobar(position, key, scoreHolder) {
         ADCore.Interface.call( this, position, key );
 
-        /**
-         * @property {Timer} _Timer
-         * @private
-         */
-        this._timer = timer;
-        
-        /**
-         * @property {Text} _TimerText
-         * @private
-         */
-        this._timerText = null;
-        
         /**
          * @property {ScoreHolder} _ScoreHolder
          * @private
@@ -74,22 +61,16 @@ ballpit.Infobar = (function () {
      * @private
      * @ignore
      */
-    p._initialize = function () {
-        this._timerText = new ADCore.Text().Value("00:00").Size(23).Font("digital-7").Color("#FFFFFF").Finish();
-        this._timerText.x = this.width / 2;
-        this._timerText.y = this.height * 0.55;
-        this._timerText.anchor.setTo(0.5, 0.5);
-        this.addChild(this._timerText);
-        
+    p._initialize = function () {       
         this._scoreText = new ADCore.Text().Value("0").Size(23).Font("digital-7").Color("#FFFFFF").Finish();
         this._scoreText.x = 15;
-        this._scoreText.y = this._timerText.y;
+        this._scoreText.y = this.height * 0.55;
         this._scoreText.anchor.set(0, 0.5);
         this.addChild(this._scoreText);
 
         this._highscoreText = new ADCore.Text().Value("0").Size(23).Font("digital-7").Color("#FFFFFF").Finish();
-        this._highscoreText.x = this._timerText.x + 57;
-        this._highscoreText.y = this._timerText.y;
+        this._highscoreText.x = this._scoreText.x + 95;
+        this._highscoreText.y = this._scoreText.y;
         this._highscoreText.anchor.set(0, 0.5);
         this.addChild(this._highscoreText);
     };
@@ -100,8 +81,6 @@ ballpit.Infobar = (function () {
      * @public
      */
     p.Render = function () {
-        this._timerText.text = ADCore.Utilities.MsToTime(this._timer.count, [ "minutes", "seconds" ]);
-        
         var score = this._scoreHolder.score;
         if (this._visibleScore !== score) { 
             var step = this._calculateStep( this._visibleScore, score);
@@ -135,10 +114,15 @@ ballpit.Infobar = (function () {
      * @public
      */
     p.Dispose = function () {
-        this.removeChild(this._timerText);
-        delete this._timerText;
+        delete this._scoreHolder;
+        delete this._visibleScore;
+        delete this._stepSpeed;
 
-        delete this._timer;
+        this.removeChild(this._scoreText);
+        delete this._scoreText;
+        
+        this.removeChild(this._highscoreText);
+        delete this._highscoreText;
     };
     
     return Infobar;

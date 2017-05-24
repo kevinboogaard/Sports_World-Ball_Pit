@@ -120,7 +120,7 @@ ADCore.SoundSystem = (function () {
         if (!identifier) throw new Error("Identifier is null/undefined");     
         var key = this._getKeyByIdentifier(identifier);
 
-        if (this._isKeyKnown(key) === false) throw new Error(key + " is not known to the soundSystem."); 
+        if (this._isKeyKnown(key) === false) return; //throw new Error(key + " is not known to the soundSystem."); 
         if (this._isIdentifierActive(identifier) === true) throw new Error(key + " is already playing.");
 
         // Create functionality that only one music can be played. Not multiple.

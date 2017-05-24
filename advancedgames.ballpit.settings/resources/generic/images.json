@@ -22,7 +22,7 @@
         },
          "gridborder":{
             "path": "grid/asset_gridborder.png",
-            "dimensions": {"width":330, "height":334},
+            "dimensions": {"width":327, "height":327},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },
@@ -41,12 +41,6 @@
          "gridpart2":{
             "path": "grid/asset_gridpart2.png",
             "dimensions": {"width":45, "height":45},
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-         "infobar":{
-            "path": "ui/asset_infobar.png",
-            "dimensions": {"width": 290, "height": 70},
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         },

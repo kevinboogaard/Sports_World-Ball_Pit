@@ -16,7 +16,7 @@ ADCore.Slider = (function () {
      * @param {Integer} min
      * @param {Integer} max
      * @param {String} key_bg - The background key from the preloader.
-     * @param {String} key_handle - The handle key from the preloader.
+     * @param {String} [key_handle] - The handle key from the preloader.
      */
     function Slider(position, min, max, key_bg, key_handle) {
         ADCore.Interface.call(this, position, key_bg);
@@ -87,14 +87,16 @@ ADCore.Slider = (function () {
      * @param {String} key_handle
      */
     p._initialize = function (key_handle) {
-        this._handle = new ADCore.Button(new Vector2(0, 0), key_handle);
-        this._handle.anchor.set(0, 0.5);
-        this._handle.input.enableDrag();
-        this._handle.input.boundsRect = new Phaser.Rectangle(0, -(this._handle.height / 2), this.width, this.height * 2);
-        this._handle.input.allowVerticalDrag = false;
-        this._handle.events.onDragUpdate.add(this._onDragUpdate, this);
-        this.addChild(this._handle);
-
+        if (key_handle) {
+            this._handle = new ADCore.Button(new Vector2(0, 0), key_handle);
+            this._handle.anchor.set(0, 0.5);
+            this._handle.input.enableDrag();
+            this._handle.input.boundsRect = new Phaser.Rectangle(0, -(this._handle.height / 2), this.width, this.height * 2);
+            this._handle.input.allowVerticalDrag = false;
+            this._handle.events.onDragUpdate.add(this._onDragUpdate, this);
+            this.addChild(this._handle);
+        }
+    
         this.events.onInputUp.add( this._onInputUp, this );
     };
 
@@ -104,7 +106,7 @@ ADCore.Slider = (function () {
      * @private
      */
     p._updateByPercentage = function () {
-        this._handle.absoluteX =  ((this.absoluteX + this.width) / 100) * this._percentage;
+        if (this._handle) this._handle.absoluteX =  ((this.absoluteX + this.width) / 100) * this._percentage;
         this._value = ((this._max) / 100) * this._percentage;
     };
 
@@ -145,11 +147,14 @@ ADCore.Slider = (function () {
      * @private
      * @param {Object} caller
      * @param {Vector2} position
+     * @todo UpdatePosition when click should not be set here. It should be outside of the class.
      */
     p._onInputUp = function(caller, position) {
-        this._handle.absoluteX = position.x;
+        if (this._handle) { 
+            this._handle.absoluteX = position.x;
+            this._updateByPosition();
+        }
 
-        this._updateByPosition();
         if (this.onInputUp) this.onInputUp(this._value);
     };
 
@@ -162,7 +167,18 @@ ADCore.Slider = (function () {
      */
     p.__interface_dispose = p.Dispose;
     p.Dispose = function(){
-        
+        delete this.inputEnabled;
+        delete this._min;
+        delete this._max;
+        delete this._value;
+        delete this._percentage;
+
+        this.removeChild(this._handle);
+        delete this._handle;
+
+        delete this.onDragUpdate;
+        delete this.onInputUp;
+
         this.__interface_dispose();
     };
 

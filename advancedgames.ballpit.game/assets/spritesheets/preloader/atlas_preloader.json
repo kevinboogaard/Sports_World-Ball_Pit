@@ -1,0 +1,120 @@
+{"frames": [
+
+{
+	"filename": "asset_baseball_v1.png",
+	"frame": {"x":335,"y":58,"w":38,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":38},
+	"sourceSize": {"w":38,"h":38},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_basketball_v1.png",
+	"frame": {"x":373,"y":58,"w":39,"h":39},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":39},
+	"sourceSize": {"w":39,"h":39},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_loadingscreenbackground_v1.png",
+	"frame": {"x":45,"y":97,"w":360,"h":640},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":360,"h":640},
+	"sourceSize": {"w":360,"h":640},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_preloader1_v2.png",
+	"frame": {"x":252,"y":0,"w":252,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":252,"h":28},
+	"sourceSize": {"w":252,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_preloaderbackground_v1.png",
+	"frame": {"x":0,"y":0,"w":252,"h":27},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":252,"h":27},
+	"sourceSize": {"w":252,"h":27},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_preloaderblackboarder_v1.png",
+	"frame": {"x":0,"y":28,"w":256,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":30},
+	"sourceSize": {"w":256,"h":30},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_preloaderfootball_v1.png",
+	"frame": {"x":451,"y":58,"w":39,"h":39},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":39},
+	"sourceSize": {"w":39,"h":39},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_preloaderwhiteboarder2_v1.png",
+	"frame": {"x":0,"y":97,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_preloaderwhiteborder_v1.png",
+	"frame": {"x":0,"y":58,"w":260,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":260,"h":35},
+	"sourceSize": {"w":260,"h":35},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_tennisball_v1.png",
+	"frame": {"x":412,"y":58,"w":39,"h":39},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":39},
+	"sourceSize": {"w":39,"h":39},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_volleyball_v1.png",
+	"frame": {"x":260,"y":58,"w":38,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":38},
+	"sourceSize": {"w":38,"h":38},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_volleyball_v2.png",
+	"frame": {"x":298,"y":58,"w":37,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":38},
+	"sourceSize": {"w":37,"h":38},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "preloader.png",
+	"format": "RGBA8888",
+	"size": {"w":504,"h":737},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:c708fb90fe55fca341a83009848de578:fa29c26770bc45c19155e742163eac14:b6cdaa10a06bef6f46bf15cd0aaf732b$"
+}
+}

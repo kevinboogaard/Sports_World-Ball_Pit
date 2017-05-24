@@ -18,7 +18,7 @@ Config.Fonts = {
 
 Config.ResourceLists = {
     "CORE": [
-        { "key":"images", "type": "resourcelist", "path":"advancedgames.ballpit.settings/resources/core/images.json"}
+        { "key":"spritesheets", "type": "atlaslist", "path":"advancedgames.ballpit.settings/resources/core/spritesheets.json"}
     ],
     "GENERIC": [
         { "key":"images", "type": "resourcelist", "path":"advancedgames.ballpit.settings/resources/generic/images.json"},
