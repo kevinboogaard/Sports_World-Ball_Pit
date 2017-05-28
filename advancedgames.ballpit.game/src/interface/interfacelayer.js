@@ -152,6 +152,13 @@ ballpit.InterfaceLayer = (function () {
 
         this.timeBarBackground.value = this.gameTimer.count;
         this.timeBar.scale.x = (1 / 100) * this.timeBarBackground.percentage;
+        if(this.timeBar.scale.x > 1) this.timeBar.scale.x = 1;
+
+        if (this.timeBarBackground.percentage <= Settings.Stopwatch.WARNING) {
+            this.timeBar.tint = 0xEC5147;
+        } else {
+            this.timeBar.tint = 0xFFFFFF;
+        }
     };
 
     /**

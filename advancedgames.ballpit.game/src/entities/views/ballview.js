@@ -112,6 +112,8 @@ ballpit.BallView = (function () {
         this.addChild(explosion);
         explosion.Play("explosion", null, null, true);
 
+        soundSystem.PlaySound("sound_ballexplosion", 3, false);
+
         explosion.bringToTop();
     };
 

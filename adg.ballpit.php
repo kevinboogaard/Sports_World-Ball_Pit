@@ -69,6 +69,7 @@
         <script src="advancedgames.framework/src/interface/text.js"></script>
         <script src="advancedgames.framework/src/interface/popup.js"></script>
         <script src="advancedgames.framework/src/interface/slider.js"></script>
+        <script src="advancedgames.framework/src/interface/overlay.js"></script>
 
         <script src="advancedgames.framework/src/displays/tileview.js"></script>
 

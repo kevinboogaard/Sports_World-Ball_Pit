@@ -27,14 +27,24 @@
                 "music_endscreen.mp3"
             ]
         },
-        "music_ingame":{
-            "path":[ 
-                "music_ingame.mp3"
-            ]
-        },
         "music_menu":{
             "path":[ 
                 "music_menu.mp3"
+            ]
+        },
+        "sound_ballexplosion": {
+            "path": [
+                "sound_ball_explosion.mp3"
+            ]
+        },
+        "sound_timertick": {
+            "path": [
+                "sound_timer_tick.mp3"
+            ]
+        },
+        "sound_timerdone": {
+            "path": [
+                "sound_timer_done.mp3"
             ]
         }
     }

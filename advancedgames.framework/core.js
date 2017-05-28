@@ -56,6 +56,7 @@ function _create () {
     ADCore.phaser.scale.pageAlignHorizontally = true;
     ADCore.phaser.scale.pageAlignVertically = true;
     ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+    ADCore.phaser.stage.disableVisibilityChange = true;
     ADCore.phaser.scale.refresh();
 
     // Create the input system.

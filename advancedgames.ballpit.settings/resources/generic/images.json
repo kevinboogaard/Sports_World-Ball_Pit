@@ -1,19 +1,7 @@
 {
     "base_path": "advancedgames.ballpit.game/assets/",
     "type": "image", 
-    "resources": {
-        "startbutton-inactive":{
-            "path": "buttons/asset_startbutton_inactive.png",
-            "dimensions": {"width":108, "height":108},
-            "anchor":{"x":0.5,"y":0.5},
-            "offset":{"x": 0, "y":0}
-        },
-        "startbutton-active":{
-            "path": "buttons/asset_startbutton_active.png",
-            "dimensions": {"width":108, "height":108},
-            "anchor":{"x":0.5,"y":0.5},
-            "offset":{"x": 0, "y":0}
-        },
+    "resources": {  
          "menubackground":{
             "path": "backgrounds/asset_menubackground.png",
             "dimensions": {"width": 360, "height": 640},
@@ -47,12 +35,6 @@
          "bubble":{
             "path": "ui/asset_bubble.png",
             "dimensions": {"width": 162, "height": 79 },
-            "anchor":{"x":0,"y":0},
-            "offset":{"x": 0, "y":0}
-        },
-         "tutorial":{
-            "path": "tutorial/tutorial.png",
-            "dimensions": {"width": 364, "height": 641 },
             "anchor":{"x":0,"y":0},
             "offset":{"x": 0, "y":0}
         }

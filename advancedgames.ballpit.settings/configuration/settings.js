@@ -13,5 +13,8 @@ Settings.Game.DELAY_PER_ROUND = 10;
 Settings.Velocity = {};
 Settings.Velocity.BALL = 300;
 
+/**
+ * value = percentage.
+ */
 Settings.Stopwatch = {};
-Settings.Stopwatch.WARNING = 55;
+Settings.Stopwatch.WARNING = 10;

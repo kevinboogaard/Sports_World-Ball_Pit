@@ -94,8 +94,11 @@ ballpit.Core = ( function () {
      * @param {Object} caller
      * @param {Object} params
      * @param {String} params.scene
+     * @param {Boolean} params.levelUp
      */
     p._onSceneSwitch = function (caller, params) {
+        if (params.levelUp) this.levelLoader.level++;
+
         if (this.levelLoader.IsSceneLevel(params.scene)) {
             sceneLoader.DisposeCurrent();
             this.levelLoader.LoadLevel(params.scene);

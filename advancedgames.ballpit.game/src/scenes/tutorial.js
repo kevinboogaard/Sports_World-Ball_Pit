@@ -19,179 +19,432 @@ scene.Tutorial = (function () {
      * @constructor
      */
     function Tutorial() {
-        Phaser.Group.call(this, ADCore.phaser, null, "Tutorial");
+        scene.Game.call(this);
         
-        // Still needs to extend scene.Game. Not going to comment this part.
+        /** @property {Overlay} */
+        this.overlay = new ballpit.Overlay(0x000000, 0.7);
+        this.addChild(this.overlay);
 
-        this.viewContainer = new ADCore.ViewContainer();
-        this.addChild(this.viewContainer);
+        /** @property {Interface} */
+        this.chatCloud = new ballpit.Speech(new Vector2(50, 100), "tut_bubble", 6);
+        this.chatCloud.alpha = 0.01;
+        this.overlay.addChild(this.chatCloud);
 
-        this.tilemap = new Tilemap(Global.Loaded.level.map);
-        
-        this.taskHandler = new ballpit.TaskHandler(Global.Loaded.level.tasks);
+        /** @property {Interface} */
+        this.trainer = new ADCore.Interface(new Vector2(this.chatCloud.x + this.chatCloud.width, this.chatCloud.y + this.chatCloud.height), "tut_trainer");
+        this.trainer.scale.set(0.3, 0.3);
+        this.trainer.alpha = 0.01;
+        this.trainer.y -= this.trainer.height * 0.9;
+        this.overlay.addChild(this.trainer);
 
-        this.ballContainer = new ballpit.BallContainer();
-        this.ballController = new ballpit.BallController(this.tilemap.mainLayer, this.ballContainer);
+        /** @property {Button} */
+        this.acceptButton = null;
 
-        this.coach = ballpit.EntityFactory.AddCoach(new Vector2( Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height * 0.33), "soccer", this.taskHandler);
+        /** @property {Button} */
+        this.rejectButton = null;
 
+        /** @property {Boolean} */
+        this.inTutorial = true;
+
+        /** @property {Integer} */
+        this.tutorialCount = 0;
+
+        /** @property {Timer} */
+        ClearTimer(this.gameTimer);
         this.gameTimer = SetTimer(function () {
-            console.log("GAME DONE!");
-        }, Settings.Game.TIME, 0);
-        this.gameTimer.Stop();
-
-        this.scoreHolder = new ballpit.ScoreHolder();
-
-        this.interfaceLayer = new ballpit.InterfaceLayer(this.gameTimer, this.scoreHolder, this.coach);
-        this.addChild(this.interfaceLayer);
-
-        this.ballController.Initialize();
-
-        this.selected = null;
-        this.started = false;
-
-        this.inTutorial = false;
+            Input.paused = true;
+            setTimeout(function() {
+                soundSystem.PlaySound("sound_timerdone", 1, false);
+                Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU, "levelUp": true });
+            }.bind(this), 1000);
+        }.bind(this), Settings.Game.TIME, 1);
 
         Input.paused = true;
-        this.Initialize();
 
-        Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
-        Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
-        Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
+        setTimeout( function () { 
+            this.SwitchExplanation();
+        }.bind(this), 1000);
     }
-    Tutorial.prototype = Object.create(Phaser.Group.prototype);
+    Tutorial.prototype = Object.create(scene.Game.prototype);
     Tutorial.prototype.constructor = Tutorial; 
     var p = Tutorial.prototype;
 
     /**
-     * @method Initialize
-     * @memberof Tutorial
-     */
-    p.Initialize = function () {
-        this.overlay = new ADCore.Interface(new Vector2(0,0), "tutorialoverlaygame");
-        this.overlay.visible = false;
-        this.addChild(this.overlay);
-
-        this.bubble = new ballpit.Speech(new Vector2( 100,125), "tutorialbubble");
-        this.addChild(this.bubble);
-
-        this.bubble.Talk( "Hallo! Wilt u de tutorial volgen of wilt u de tutorial overslaan?", 2 );
-        
-        Listener.ListenOnce( ballpit.Event.ON_SPEECH_DONE, this, function () {
-            this.followButton = new ADCore.Button(new Vector2(this.bubble.x + this.bubble.width * 0.1, this.bubble.y + 50), "tutorialchoice");
-            this.followButton.onInputUp = function () {
-                this.removeChild(this.followButton);
-                this.removeChild(this.followText);
-                this.removeChild(this.skipButton);
-                this.removeChild(this.skipText);
-                this.bubble.Talk("Verschuif naast elkaar gelegen ballen zodat deze van plek verwisselen.");
-                
-                Listener.ListenOnce( ballpit.Event.ON_SPEECH_DONE, this, function () {
-                    this.overlay.visible = true;
-                    this.inTutorial = true;
-                    Input.paused = false;
-                }.bind(this));
-            }.bind(this);
-            this.addChild(this.followButton);
-
-            this.followText = new ADCore.Text().value("Volgen").font("comfortaa").finish();
-            this.followText.x = this.followButton.x + 10;
-            this.followText.y =  this.followButton.y + 5;
-            this.followText.anchor.set(0, 0.5);
-            this.addChild(this.followText);
-
-            this.skipButton = new ADCore.Button(new Vector2(this.bubble.x + this.bubble.width * 0.55, this.bubble.y + 50), "tutorialchoice");
-            this.skipButton.onInputUp = function () {
-                Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.GAME });
-            }.bind(this);
-            this.addChild(this.skipButton);
-
-            this.skipText = new ADCore.Text().value("Overslaan").font("comfortaa").finish();
-            this.skipText.x = this.skipButton.x + 10;
-            this.skipText.y =  this.skipButton.y + 5;
-            this.skipText.anchor.set(0, 0.5);
-            this.addChild(this.skipText);
-        }.bind(this));
-    };
-
-    /**
-     * @method Update
-     * @memberof Tutorial
-     * @public
-     * @param {Integer} deltatime
-     */
-    p.Update = function (deltatime) {
-        this.ballContainer.Update(deltatime);
-    };
-
-    /**
-     * @method Render
+     * @method SwitchExplanation
      * @memberof Tutorial
      * @public
      */
-    p.Render = function () {
-        this.viewContainer.render();
-        this.interfaceLayer.Render();
-    };
+    p.SwitchExplanation = function () {
+        switch(this.tutorialCount) {
+            case 0:
+                this.AskForTutorial();
+                break;
 
-    p._onTap = function (caller, params) {
-        if (this.selected !== null) {
-            var target = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
-            this._trySwap(this.selected, target);
-            this.selected = null;
-        } else {
-            this.selected = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
+            case 1: 
+                this.ExplainCombination();
+                break;
+
+            case 2:
+                this.ExplainTimer();
+                break;
+
+            case 3: 
+                this.ExplainInfobar();
+                break;
+
+            case 4:
+                this.ExplainCoach();
+                break;
+
+            case 5: 
+                this.StartGame();
+                break;
         }
     };
 
-    p._onSwipe = function (caller, params) {
-        var start =  this.tilemap.mainLayer.GetTileByScreenPosition(params.start);
-        var end =  this.tilemap.mainLayer.GetTileByScreenPosition(params.end);
-        this._trySwap(start, end);
+    /**
+     * @method AskForTutorial
+     * @memberof Tutorial
+     * @public
+     */
+    p.AskForTutorial = function() {
+        // Accept / Reject tutorial
+        this.overlay.TransitionIn(function () {
+
+            this.acceptButton = new ADCore.Button(new Vector2(this.chatCloud.x + this.chatCloud.width / 2, this.chatCloud.y + this.chatCloud.height), "tut_v_button");
+            this.acceptButton.anchor.set(0.5, 0.5);
+            this.acceptButton.x += this.acceptButton.width / 2;
+            this.acceptButton.y += this.acceptButton.height / 2;
+            this.acceptButton.scale.set(0, 0);
+            this.acceptButton.onInputUp = function () {
+                this.ClearAskForTutorial(function () {
+                    this.tutorialCount++;
+                    this.SwitchExplanation();
+                }.bind(this));
+            }.bind(this);
+            this.overlay.addChild(this.acceptButton);
+
+            this.rejectButton = new ADCore.Button(new Vector2(this.chatCloud.x + this.chatCloud.width / 2, this.chatCloud.y + this.chatCloud.height), "tut_x_button");
+            this.rejectButton.anchor.set(0.5, 0.5);
+            this.rejectButton.x -= this.rejectButton.width / 2;
+            this.rejectButton.y += this.rejectButton.height / 2;
+            this.rejectButton.scale.set(0, 0);        
+            this.rejectButton.onInputUp = function () {
+                this.ClearAskForTutorial(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.GAME, "levelUp": true });
+                }.bind(this));
+            }.bind(this);
+            this.overlay.addChild(this.rejectButton);
+
+            TweenLite.to(this.trainer, 0.5, { alpha: 1, onComplete: function () { 
+                TweenLite.to(this.chatCloud, 0.5, { alpha: 1, onComplete: function () { 
+                    this.trainer.Play("talk", 30, true);
+                    this.chatCloud.Talk("Wilt u de tutorial spelen?", 30, function () {
+                        this.trainer.Play("idle", 30, true);
+                        TweenLite.to(this.rejectButton.scale, 0.5, { x: 1, y: 1 });
+                        TweenLite.to(this.acceptButton.scale, 0.5, { x: 1, y: 1 });
+                    }.bind(this));
+                }.bind(this)});
+            }.bind(this)});
+        }.bind(this));
+    };
+    
+    /**
+     * @method ClearAskForTutorial
+     * @memberof Tutorial
+     * @public
+     * @param {Function} callback
+     */
+    p.ClearAskForTutorial = function (callback) {
+        this.acceptButton.onInputUp = null;
+        this.rejectButton.onInputUp = null;
+
+        TweenLite.to(this.rejectButton.scale, 0.5, { x: 0, y: 0 });
+        TweenLite.to(this.acceptButton.scale, 0.5, { x: 0, y: 0 });
+
+        this.overlay.Clear();
+        this.overlay.Draw();
+
+         this.chatCloud.Clear();
+        TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () {
+            callback();
+        }.bind(this)});
     };
 
-    p._onBallAlign = function (caller, params) {
-        if (this.inTutorial === true) {
-            this.inTutorial = false;
-            this.overlay.visible = false;
-            Input.paused = true;
-            this.bubble.Talk( "Goed gedaan!", 2 );
-            Listener.ListenOnce( ballpit.Event.ON_SPEECH_DONE, this, function () {
-                this.bubble.Talk("Zorg er op deze manier voor dat je drie dezelfde ballen naast of boven elkaar plaatst. Hier krijg je punten voor.", 2);
-        
-                Listener.ListenOnce( ballpit.Event.ON_SPEECH_DONE, this, function () {
-                    this.bubble.Talk("Voor een rij van vier of vijf dezelfde ballen krijg je zelfs meer punten!", 2);
-                
-                    Listener.ListenOnce( ballpit.Event.ON_SPEECH_DONE, this, function () {
-                        this.bubble.Talk("Probeer zo veel mogelijk punten te scoren voordat de timer om is.", 2);
-                        this.overlay.loadTexture("tutorialoverlaytimer",0);
-                        this.overlay.visible = true;
+    /**
+     * @method ExplainCombination
+     * @memberof Tutorial
+     * @public
+     */
+    p.ExplainCombination = function () { 
+        TweenLite.to(this.chatCloud, 0.5, { alpha: 1, onComplete: function () {
+            this.trainer.Play("talk", 30, true);
+            this.chatCloud.Talk("Verschuif naast elkaar gelegen ballen zodat deze van plek verwisselen.", 30, function () {
+                this.overlay.Clear();
+                // First combination tutorial
+                var tileWidth = this.tilemap.tilewidth;
+                var tileHeight = this.tilemap.tileheight;
+                var tile_1 = this.tilemap.mainLayer.GetTileByTilePosition(new Vector2(4, 1));
+                this.overlay.ExcludeRect({ position: { x: tile_1.x, y: tile_1.y }, dimensions: { width: tileWidth, height: tileHeight } });
+                var tile_2 = this.tilemap.mainLayer.GetTileByTilePosition(new Vector2(3, 1));
+                this.overlay.ExcludeRect({ position: { x: tile_2.x, y: tile_2.y }, dimensions: { width: tileWidth, height: tileHeight } });
+                var tile_3 = this.tilemap.mainLayer.GetTileByTilePosition(new Vector2(3, 2));
+                this.overlay.ExcludeRect({ position: { x: tile_3.x, y: tile_3.y }, dimensions: { width: tileWidth, height: tileHeight } });
+                var tile_4 = this.tilemap.mainLayer.GetTileByTilePosition(new Vector2(3, 3));
+                this.overlay.ExcludeRect({ position: { x: tile_4.x, y: tile_4.y }, dimensions: { width: tileWidth, height: tileHeight } });
+                this.overlay.Draw();
+
+                Input.paused = false;
+
+                this.chatCloud.Talk("Zorg er op deze manier voor dat je drie dezelfde ballen naast of boven elkaar plaatst. Hier krijg je punten voor.", 30, function () {
+                    this.chatCloud.Talk("Voor een rij van vier of vijf dezelfde ballen krijg je zelfs meer punten!", 30, function () {
+                        this.trainer.Play("idle", 30, true);
                     }.bind(this));
                 }.bind(this));
             }.bind(this));
-        }
-
-        var amount = params.aligned.length + 1; // + 1 = owner.
-        var score = this.scoreHolder.CalculateScoreByAmountAligned(amount);
-        this.scoreHolder.Add(score);
+        }.bind(this)});
     };
 
-    p._trySwap = function (current, target) {
-        if (!current || !target ||  !current.neighbours.contains(target)) return;
+    /**
+     * @method ExplainTimer
+     * @memberof Tutorial
+     * @public
+     */
+    p.ExplainTimer = function () {
+        TweenLite.to(this.chatCloud, 0.5, { alpha: 1, onComplete: function () {
+            // Timer tutorial
+            var timebar = this.interfaceLayer.timeBarBackground;
+            this.overlay.Clear();
+            this.overlay.ExcludeRect({ position: { x: timebar.x - 5, y: timebar.y - 5 - (timebar.height / 2) }, dimensions: { width: timebar.width + 10, height: timebar.height + 10 } });
+            this.overlay.Draw();
 
-        if (this.started === false) {
-            this.gameTimer.Start();
-            this.started = true;
-        } 
+            this.trainer.Play("talk", 30, true);
+            this.chatCloud.Talk("Dit is de timer, hier kun je zien hoeveel tijd je nog over hebt.", 30, function () {
+                this.trainer.Play("idle", 30, true);
 
-        if (this.ballController.CanSwap(current, target)) {
-            current.occupier.beginning = current;
-            target.occupier.beginning = target;
+                this.gameTimer.Start();
+                this.gameTimer.multiplier = 20;
+                setTimeout( function () {
+                    this.gameTimer.multiplier = -20;
+                    setTimeout( function () {
+                        TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                            this.overlay.Clear();
+                            this.overlay.Draw();
 
-            this.ballController.Swap(current, target);
-        } else if (this.ballController.CanMove(target)){
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current);
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target);
+                            setTimeout(function () {
+                                this.tutorialCount++;
+                                this.SwitchExplanation();
+                            }.bind(this), 1000);
+                        }.bind(this) });
+                    }.bind(this), 2000);
+                }.bind(this), 2000);
+            }.bind(this));
+        }.bind(this)});
+    };
+
+    /**
+     * @method ExplainInfobar
+     * @memberof Tutorial
+     * @public
+     */
+    p.ExplainInfobar = function () {
+        TweenLite.to(this.chatCloud, 0.5, { alpha: 1, onComplete: function () {
+            // Infobar tutorial
+            var infobar = this.interfaceLayer.infobar;
+            this.overlay.Clear();
+            this.overlay.ExcludeRect({ position: { x: infobar.x - 5, y: infobar.y - 5 }, dimensions: { width: infobar.width + 10, height: infobar.height + 10 } });
+            this.overlay.Draw();
+
+            this.trainer.Play("talk", 30, true);
+            this.chatCloud.Talk("Hier kun je je eigen score en de highscore terug zien.", 30, function () {
+                this.trainer.Play("idle", 30, true);
+                setTimeout(function () {
+                    this.scoreHolder.Add(1000);
+                }.bind(this), 1000);
+
+                setTimeout(function () {
+                    this.chatCloud.Clear();
+                    TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                        this.overlay.Clear();
+                        this.overlay.Draw();
+
+                        setTimeout(function () {
+                            this.tutorialCount++;
+                            this.SwitchExplanation();
+                        }.bind(this), 1000);
+                    }.bind(this) });
+                }.bind(this), 4000);
+            }.bind(this));
+        }.bind(this)});
+    };
+
+    /**
+     * @method ExplainCoach
+     * @memberof Tutorial
+     * @public
+     */
+    p.ExplainCoach = function () {
+        var offset = 150;
+
+        this.chatCloud.y += offset;
+        this.trainer.y += offset;
+
+        TweenLite.to(this.chatCloud, 0.5, { alpha: 1, onComplete: function () {
+            // Coach tutorial
+            this.overlay.Clear();
+            this.overlay.ExcludeRect({ position: { x: Config.Core.Dimensions.width * 0.05, y: 80 }, dimensions: { width: Config.Core.Dimensions.width * 0.9, height:  140 } });
+            this.overlay.Draw();
+
+            this.trainer.Play("talk", 30, true);
+            this.chatCloud.Talk("Hier staat de coach. De coach geeft bepaalde opdrachten die je moet uitvoeren zodat je meer tijd en punten krijgt.", 30, function () {
+                this.chatCloud.Talk("Pas op! Zolang de opdrachten blijven staan , loopt de tijd sneller!", 30, function () {
+                    this.trainer.Play("idle", 30, true);
+                    this.coach.Start();
+
+                    setTimeout(function () {
+                        this.chatCloud.Clear();
+                        TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                            this.overlay.Clear();
+                            this.overlay.Draw();
+
+                            this.chatCloud.y -= offset;
+                            this.trainer.y -= offset;
+
+                            setTimeout(function () {
+                                this.tutorialCount++;
+                                this.SwitchExplanation();
+                            }.bind(this), 1000);
+                        }.bind(this) });
+                    }.bind(this), 4000);
+                }.bind(this));
+            }.bind(this));
+        }.bind(this) });
+    };
+    
+    /**
+     * @method StartGame
+     * @memberof Tutorial
+     * @public
+     */
+    p.StartGame = function () {
+        TweenLite.to(this.chatCloud, 0.5, { alpha: 1, onComplete: function () {
+            this.trainer.Play("talk", 30, true);
+            this.chatCloud.Talk("Oke, de tutorial is nu afgerond. Je kan nu de game vrij spelen totdat de timer is afgelopen.", 30, function () {
+                this.chatCloud.Talk("Omdat dit nog het tutorial level is zal de timer sneller lopen en zal je scoren niet deelnemen aan het highscore lijst.", 30, function () {
+                    this.chatCloud.Talk("Succes! De game begint in 3. 2. 1.", 30, function () {
+                        this.trainer.Play("idle", 30, true);
+                        setTimeout(function () {
+                            TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                                TweenLite.to(this.trainer, 0.5, { alpha: 0 });
+                                this.overlay.TransitionOut( function () {
+                                    this.inTutorial = false;
+                                    this.gameTimer.multiplier = 5;
+                                    Input.paused = false;
+                                }.bind(this));
+                            }.bind(this) });
+                        }.bind(this), 2000);
+                    }.bind(this));
+                }.bind(this));
+            }.bind(this));
+        }.bind(this)});
+    };
+
+    /**
+     * @method OnBallAlign
+     * @memberof Game
+     * @private
+     * @param {Object} caller
+     * @param {Object} params
+     * @param {TileModel} params.owner
+     * @param {Array} params.aligned
+     * @ignore
+     */
+    p.__game_onBallAlign = p._onBallAlign;
+    p._onBallAlign = function (caller, params) {
+        this.__game_onBallAlign(caller, params);
+
+        if (this.inTutorial) {
+            this.chatCloud.Mute();
+            this.chatCloud.Clear();
+            
+            Input.paused = true;
+            this.trainer.Play("idle", 30, true);
+
+            TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                this.overlay.Clear();
+                this.overlay.Draw();
+
+                setTimeout(function () {
+                    this.tutorialCount++;
+                    this.SwitchExplanation();
+                }.bind(this), 1000);
+            }.bind(this) });
+        }
+    };
+
+    /**
+     * @method _CheckGameTimer
+     * @memberof Tutorial
+     * @private
+     * @override 
+     */
+    p.__game_checkGameTimer = p._checkGameTimer;
+    p._checkGameTimer = function () {
+        if (this.inTutorial === false) this.__game_checkGameTimer();
+    };
+
+    /**
+     * @method _OnStageBegin
+     * @memberof Game
+     * @override 
+     * @private
+     * @ignore 
+     */
+    p._onStageBegin = function () {};
+
+    /**
+     * @method _OnStageDone
+     * @memberof Game
+     * @override 
+     * @private
+     * @ignore 
+     */
+    p._onStageDone = function () {};
+
+    /**
+     * @method _OnOptionsInput
+     * @memberof Game
+     * @private
+     * @param {PauseInputs} input
+     * @ignore 
+     */
+    p._onOptionsInput = function(input) {
+        switch ( input ) {
+            case ballpit.OptionsInputs.PLAY:
+                this.popupContainer.ConcealAllPopups();
+                break;
+
+            case ballpit.OptionsInputs.MENU:
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                });
+                break;
+
+            case ballpit.OptionsInputs.REDO:
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIAL });
+                });
+                break;
+
+            case ballpit.OptionsInputs.CROSS:
+                this.popupContainer.ConcealPopup();
+                break;
+
+            case ballpit.OptionsInputs.HIGHSCORE:
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                });
+                break;
         }
     };
 
@@ -200,25 +453,32 @@ scene.Tutorial = (function () {
      * @memberof Tutorial
      * @public
      */
+    p.__game_dispose = p.Dispose;
     p.Dispose = function () {
-        this.tilemap.Dispose();
-        delete this.tilemap;
+        this.chatCloud.Dispose();
+        this.overlay.removeChild(this.chatCloud);
+        delete this.chatCloud;
 
-        this.ballContainer.Dispose();
-        delete this.ballContainer;
+        this.trainer.Dispose();
+        this.overlay.removeChild(this.trainer);
+        delete this.trainer;
 
-        this.ballController.Dispose();
-        delete this.ballController;
+        this.acceptButton.Dispose();
+        this.overlay.removeChild(this.acceptButton);
+        delete this.acceptButton;
+                                    
+        this.rejectButton.Dispose();
+        this.overlay.removeChild(this.rejectButton);
+        delete this.rejectButton;
 
-        delete this.swipePositions;
+        this.overlay.Dispose();
+        this.removeChild(this.overlay);
+        delete this.overlay;
 
-        this.viewContainer.Dispose();
-        this.removeChild(this.viewContainer);
-        delete this.viewContainer;
-        
-        Listener.Mute(ADCore.InputEvent.ON_TAP, this);
-        Listener.Mute(ADCore.InputEvent.ON_SWIPE, this);
-        Listener.Mute(ballpit.Event.ON_BALL_ALIGN, this);
+        delete this.inTutorial;
+        delete this.tutorialCount;
+
+        this.__game_dispose();
     };
 
     return Tutorial;
