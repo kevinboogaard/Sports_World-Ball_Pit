@@ -38,6 +38,12 @@ ADCore.Timer = (function () {
         this.count = startTime; 
 
         /**
+        * @property {Number} Elapsed 
+        * @public
+        */
+        this.elapsed = 0; 
+
+        /**
         * @property {Boolean} _TimerStarted
         * @private
         */
@@ -100,7 +106,10 @@ ADCore.Timer = (function () {
      */
     p.Update = function(deltaTime){
         if(this._timerStarted === true){
-            this.count -= (deltaTime * this.multiplier);
+            var delta = (deltaTime * this.multiplier);
+            
+            this.count -= delta;
+            this.elapsed += delta;
 
             if (this.count <= 0) {
                 ClearTimer(this);

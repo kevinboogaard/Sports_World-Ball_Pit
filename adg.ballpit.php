@@ -102,6 +102,7 @@
 
         <script src="advancedgames.ballpit.game/src/interface/popups/pausepopup.js"></script>
         <script src="advancedgames.ballpit.game/src/interface/popups/optionspopup.js"></script>
+        <script src="advancedgames.ballpit.game/src/interface/popups/finishpopup.js"></script>
 
         <script src="advancedgames.ballpit.game/src/levelloader.js"></script>
         <script src="advancedgames.ballpit.game/src/ballpit.js"></script>

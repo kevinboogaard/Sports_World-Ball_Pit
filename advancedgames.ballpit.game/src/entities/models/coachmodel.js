@@ -166,6 +166,18 @@ ballpit.CoachModel = (function () {
          */
         this._stopwatch = SetStopwatch();
 
+        /**
+         * @property {Integer} AmoundCombos
+         * @public
+         */
+        this.amountCombos = 0;
+
+        /**
+         * @property {Integer} AmoundTasks
+         * @public
+         */
+        this.amountTasks = 0;
+
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
     }
     CoachModel.prototype = Object.create(ADCore.Entity.prototype);
@@ -242,6 +254,7 @@ ballpit.CoachModel = (function () {
             console.log("CURRENT TASK: " + this._tasks[0].type + ", amount left:" + this._tasks[0].amount );
             if (current_task.amount <= 0) {
                 Listener.Dispatch(ballpit.Event.ON_TASK_DONE, this);
+                this.amountTasks++;
 
                 this._tasks.splice(0, 1);
 
@@ -257,6 +270,8 @@ ballpit.CoachModel = (function () {
                 console.log("NEW TASK: " + this._tasks[0].type + ", amount: " + this._tasks[0].amount );
             }
         }
+
+        this.amountCombos++;
     };
     
     /**

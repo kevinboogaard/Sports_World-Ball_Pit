@@ -49,7 +49,8 @@ scene.Game = (function () {
             
             net.SAVE_HIGHSCORE.Send( { "name": "User", "score": this.scoreHolder.score} , function(result) {
                 setTimeout(function() {
-                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                    this._onGameDone();
+                    //Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
                 }.bind(this), 1000);
             }.bind(this));
         }.bind(this), Settings.Game.TIME, 1);
@@ -297,6 +298,24 @@ scene.Game = (function () {
                 });
                 break;
         }
+    };
+
+    p._onEndgameInput = function(input){
+        switch(input){
+             case ballpit.FinishInputs.CROSS:
+                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                break;
+            case ballpit.FinishInputs.HIGHSCORE:
+                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.HIGHSCORE });
+                 break;
+            case ballpit.FinishInputs.REDO:
+                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.GAME });
+        }
+    };
+
+    p._onGameDone = function(){
+        var finishpopup = new ballpit.FinishPopup( this._onEndgameInput.bind(this), this.gameTimer,this.coach,this.scoreHolder);
+        this.popupContainer.DisplayPopup( finishpopup );
     };
 
     /**

@@ -237,7 +237,7 @@
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "inactive": [9],
+                "idle": [9],
                 "active": [10]
             }
         },
@@ -245,7 +245,7 @@
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "active": [11],
+                "idle": [11],
                 "inactive": [12]
             }
         },
@@ -268,6 +268,21 @@
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
                 "idle": [6]
+            }
+        },
+        "scorebord":{
+            "json_path": "highscore/atlas_highscores.json",
+            "atlas_path": "highscore/atlas_highscores.png",
+            "animations": {
+                "idle": [4]
+            }
+        },
+        "highscorebutton":{
+            "json_path": "highscore/atlas_highscores.json",
+            "atlas_path": "highscore/atlas_highscores.png",
+            "animations": {
+                "idle": [3],
+                "active": [2]
             }
         }
      }
