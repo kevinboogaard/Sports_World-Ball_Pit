@@ -60,7 +60,6 @@ scene.MainMenu = (function () {
         this.startButton.anchor.set(0.5, 0.5);
         this.startButton.scale.setTo(0.01,0.01);
         this.addChild(this.startButton);
-        this.startButton.Play("active");
 
         this.identifier = soundSystem.PlayMusic("music_menu", 1, true);
 

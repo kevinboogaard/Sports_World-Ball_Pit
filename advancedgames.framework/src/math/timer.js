@@ -47,7 +47,7 @@ ADCore.Timer = (function () {
         * @property {Boolean} _TimerStarted
         * @private
         */
-        this._timerStarted = false;
+        this.timerStarted = false;
     }
     var p = Timer.prototype;
 
@@ -57,7 +57,7 @@ ADCore.Timer = (function () {
      * @public 
      */
     p.Start = function(){
-        this._timerStarted = true;
+        this.timerStarted = true;
     };
     
     /**
@@ -66,7 +66,7 @@ ADCore.Timer = (function () {
      * @public 
      */
     p.Stop = function(){
-        this._timerStarted = false;
+        this.timerStarted = false;
     };
 
     /**
@@ -105,7 +105,7 @@ ADCore.Timer = (function () {
      * @param {Integer} deltaTime
      */
     p.Update = function(deltaTime){
-        if(this._timerStarted === true){
+        if(this.timerStarted === true){
             var delta = (deltaTime * this.multiplier);
             
             this.count -= delta;

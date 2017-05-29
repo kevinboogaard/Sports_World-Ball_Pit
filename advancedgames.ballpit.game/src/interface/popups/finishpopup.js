@@ -30,10 +30,81 @@ ballpit.FinishPopup = (function(){
 
     function FinishPopup(callback, gameTimer, coach, scoreHolder){
         ADCore.Popup.call(this, callback);
+
+        /** @property {Timer}  */
         this.gameTimer = gameTimer;
+
+        /** @property {CoachModel}  */
         this.coach = coach;
+        
+        /** @property {ScoreHolder}  */
         this.scoreHolder = scoreHolder;
     
+        /** @property {Interface}  */
+        this.background = null;
+
+        /** @property {Interface}  */
+        this.finishlogo = null;
+
+        /** @property {Button}  */
+        this.highscoreButton = null;
+
+        /** @property {Button}  */
+        this.restartButton = null;
+
+        /** @property {Interface}  */
+        this.quitButton = null;
+
+        /** @property {Text}  */
+        this.resulttext = null;
+
+        /** @property {Text}  */
+        this.taskscompletedtext = null;
+
+        /** @property {Text}  */
+        this.timeplayedtext = null;
+        
+        /** @property {Text}  */
+        this.combotext = null;
+
+        /** @property {Text}  */
+        this.finalscoretext = null;
+
+        /** @property {Integer}  */
+        this.finalscore_value = -1;
+
+        /** @property {Integer}  */
+        this.finalscore_current = -1;
+
+        /** @property {Text}  */
+        this.finalscore = null;
+        
+        /** @property {Integer}  */
+        this.timeplayed_value  = -1;
+
+        /** @property {Integer}  */
+        this.timeplayed_current = -1;
+        
+        /** @property {Text}  */
+        this.timeplayed = null;
+
+        /** @property {Integer}  */
+        this.combo_value = -1;
+
+        /** @property {Integer}  */
+        this.combo_current = -1;
+
+        /** @property {Text}  */
+        this.combo = null;
+
+        /** @property {Integer}  */
+        this.tasks_value = -1;
+
+        /** @property {Integer}  */
+        this.tasks_current = -1;
+
+        /** @property {Text}  */
+        this.tasks = null;
 
          this._initialize();
     }
@@ -42,36 +113,36 @@ ballpit.FinishPopup = (function(){
     var p = FinishPopup.prototype;
 
     p._initialize = function () {
-        this.background = new ADCore.Interface(new Vector2(Config.Core.Dimensions.width / 2,Config.Core.Dimensions.height /2),"scorebord"); 
+        this.background = new ADCore.Interface(new Vector2(Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height / 2),"scorebord"); 
         this.background.anchor.set(0.5, 0.5);
         this.addChild(this.background);
 
-        this.finishlogo = new ADCore.Interface(new Vector2(this.background.x,this.background.y*0.25),"hs_finishlogo");
-        this.finishlogo.anchor.set(0.5,0.5);
-        this.finishlogo.scale.setTo(0.01,0.01);
+        this.finishlogo = new ADCore.Interface(new Vector2(this.background.x, this.background.y * 0.20), "hs_finishlogo");
+        this.finishlogo.anchor.set(0.5, 0.5);
+        this.finishlogo.scale.setTo(0.01, 0.01);
         this.addChild(this.finishlogo);
 
-        this.highscorebutton = new ADCore.Button(new Vector2(this.background.x,this.background.y * 1.6),"highscorebutton");
-        this.highscorebutton.anchor.set(0.5,0.5);
-        this.highscorebutton.scale.setTo(0.01,0.01);
-        this.highscorebutton.onInputUp = function () { this._callback(ballpit.FinishInputs.HIGHSCORE) }.bind(this);
-        this.addChild(this.highscorebutton);
+        this.highscoreButton = new ADCore.Button(new Vector2(this.background.x,this.background.y * 1.58),"highscorebutton");
+        this.highscoreButton.anchor.set(0.5,0.5);
+        this.highscoreButton.scale.setTo(0.01,0.01);
+        this.highscoreButton.onInputUp = function () { this._callback(ballpit.FinishInputs.HIGHSCORE) }.bind(this);
+        this.addChild(this.highscoreButton);
 
-        this.restartlogo = new ADCore.Button(new Vector2(this.highscorebutton.x/2,this.highscorebutton.y),"hs_restartbutton");
-        this.restartlogo.anchor.set(0.5,0.5);
-        this.restartlogo.scale.setTo(0.01,0.01);
-        this.restartlogo.onInputUp = function () { this._callback(ballpit.FinishInputs.REDO) }.bind(this);
-        this.addChild(this.restartlogo);
+        this.restartButton = new ADCore.Button(new Vector2(this.highscoreButton.x/2,this.highscoreButton.y),"hs_restartbutton");
+        this.restartButton.anchor.set(0.5,0.5);
+        this.restartButton.scale.setTo(0.01,0.01);
+        this.restartButton.onInputUp = function () { this._callback(ballpit.FinishInputs.REDO) }.bind(this);
+        this.addChild(this.restartButton);
 
-        this.quitbutton = new ADCore.Button(new Vector2(this.highscorebutton.x*1.5,this.highscorebutton.y),"hs_quitbutton");
-        this.quitbutton.anchor.set(0.5,0.5);
-        this.quitbutton.scale.setTo(0.01,0.01);
-        this.quitbutton.onInputUp = function () { this._callback(ballpit.FinishInputs.CROSS) }.bind(this);
-        this.addChild(this.quitbutton);
+        this.quitButton = new ADCore.Button(new Vector2(this.highscoreButton.x*1.5,this.highscoreButton.y),"hs_quitbutton");
+        this.quitButton.anchor.set(0.5,0.5);
+        this.quitButton.scale.setTo(0.01,0.01);
+        this.quitButton.onInputUp = function () { this._callback(ballpit.FinishInputs.CROSS) }.bind(this);
+        this.addChild(this.quitButton);
 
         this.resulttext = new ADCore.Text()               
             .Value("Results")
-            .Position(new Vector2(this.background.x, this.background.y * 0.45))
+            .Position(new Vector2(this.background.x, this.background.y * 0.44))
             .Anchor(new Vector2(0.5,0.5))
             .Font("djb-bbi")
             .Size(25)
@@ -81,7 +152,7 @@ ballpit.FinishPopup = (function(){
 
         this.taskscompletedtext = new ADCore.Text()
             .Value("Tasks Completed")           
-            .Position(new Vector2(this.resulttext.x, this.background.y * 0.6))
+            .Position(new Vector2(this.resulttext.x, this.background.y * 0.58))
             .Anchor(new Vector2(0.5,0.5))
             .Font("djb-bbi")
             .Size(10)
@@ -91,7 +162,7 @@ ballpit.FinishPopup = (function(){
 
         this.timeplayedtext = new ADCore.Text()
             .Value("Time Played")
-            .Position(new Vector2(this.resulttext.x, this.background.y * 0.775))
+            .Position(new Vector2(this.resulttext.x, this.background.y * 0.78))
             .Anchor(new Vector2(0.5,0.5))
             .Font("djb-bbi")        
             .Size(10)
@@ -101,7 +172,7 @@ ballpit.FinishPopup = (function(){
         
         this.combotext = new ADCore.Text()
             .Value("Combo's")
-            .Position(new Vector2(this.resulttext.x, this.background.y * 0.950))
+            .Position(new Vector2(this.resulttext.x, this.background.y * 0.96))
             .Anchor(new Vector2(0.5,0.5))
             .Font("djb-bbi")        
             .Size(10)
@@ -111,7 +182,7 @@ ballpit.FinishPopup = (function(){
 
         this.finalscoretext = new ADCore.Text()               
             .Value("Final Score")
-            .Position(new Vector2(this.background.x, this.background.y * 1.175))
+            .Position(new Vector2(this.background.x, this.background.y * 1.18))
             .Anchor(new Vector2(0.5,0.5))
             .Font("djb-bbi")
             .Size(20)
@@ -123,7 +194,7 @@ ballpit.FinishPopup = (function(){
         this.finalscore_current = 0;
         this.finalscore = new ADCore.Text()
             .Value(this.finalscore_current)
-            .Position(new Vector2(this.finalscoretext.x, this.finalscoretext.y + 70))
+            .Position(new Vector2(this.finalscoretext.x, this.finalscoretext.y + 65))
             .Anchor(new Vector2(0.5,0.5))
             .Font("djb-bbi")
             .Size(20)
@@ -159,7 +230,7 @@ ballpit.FinishPopup = (function(){
         this.tasks_current = 0;
         this.tasks = new ADCore.Text()
             .Value(this.tasks_current)
-            .Position(new Vector2(this.taskscompletedtext.x, this.taskscompletedtext.y + 30))
+            .Position(new Vector2(this.taskscompletedtext.x, this.taskscompletedtext.y + 35))
             .Anchor(new Vector2(0.5,0.5))
             .Font("djb-bbi")
             .Size(10)
@@ -181,8 +252,8 @@ ballpit.FinishPopup = (function(){
                                     this.combo.text = Math.round(this.combo_current);
                                 }.bind(this), onComplete: function () { // 9 - > 10
                                     TweenLite.to(this.finalscore, 0.2, { alpha: 1, onComplete: function () { // 11
-                                        TweenLite.to(this, 1, { timeplayed_current: this.timeplayed_value, onUpdate: function () { // 12
-                                            this.finalscore.text = Math.round( this.timeplayed_current );
+                                        TweenLite.to(this, 1, { finalscore_current: this.finalscore_value, onUpdate: function () { // 12
+                                            this.finalscore.text = parseInt(this.finalscore_current);
                                         }.bind(this) }); // 12
                                     }.bind(this)}); // 11
                                 }.bind(this)}); // 10
@@ -192,6 +263,79 @@ ballpit.FinishPopup = (function(){
                 }.bind(this) }); // 4
             }.bind(this)}); // 2
         }.bind(this), 1000); // 1
+    };
+
+     /**
+     * @method Dispose
+     * @memberof OptionsPopup
+     * @public
+     */
+    p.__popup_dispose = p.Dispose;
+    p.Dispose = function () {
+        delete this.gameTimer;
+        delete this.coach;
+        delete this.scoreHolder;
+    
+        this.removeChild(this.background);
+        this.background.Dispose();
+        this.background = null;
+
+        this.removeChild(this.finishlogo);
+        this.finishlogo.Dispose();
+        this.finishlogo = null;
+
+        this.removeChild(this.highscoreButton);
+        this.highscoreButton.Dispose();
+        this.highscoreButton = null;
+
+        this.removeChild(this.restartButton);
+        this.restartButton.Dispose();
+        this.restartButton = null;
+
+        this.removeChild(this.quitButton);
+        this.quitButton.Dispose();
+        this.quitButton = null;
+
+        this.removeChild(this.resulttext);
+        this.resulttext = null;
+
+        this.removeChild(this.taskscompletedtext);
+        this.taskscompletedtext = null;
+
+        this.removeChild(this.timeplayedtext);
+        this.timeplayedtext = null;
+        
+        this.removeChild(this.combotext);
+        this.combotext = null;
+
+        this.removeChild(this.finalscoretext);
+        this.finalscoretext = null;
+
+        delete this.finalscore_value;
+        delete this.finalscore_current;
+
+        this.removeChild(this.finalscore);
+        this.finalscore = null;
+        
+        delete this.timeplayed_value;
+        delete this.timeplayed_current;
+        
+        this.removeChild(this.timeplayed);
+        this.timeplayed = null;
+
+        delete this.combo_value;
+        delete this.combo_current;
+
+        this.removeChild(this.combo);
+        this.combo = null;
+
+        delete this.tasks_value;
+        delete this.tasks_current;
+
+        this.removeChild(this.tasks);
+        this.tasks = null;
+
+        this.__popup_dispose();
     };
 
     return FinishPopup;

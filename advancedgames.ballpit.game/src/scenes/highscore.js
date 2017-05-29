@@ -37,7 +37,6 @@ scene.Highscore = (function () {
          */
         this.background = null;
 
-
         /**
          * @property {Interface} HighscoreBackground
          * @public
@@ -65,11 +64,14 @@ scene.Highscore = (function () {
         var halfWidth = Config.Core.Dimensions.width / 2;
         var halfHeight = Config.Core.Dimensions.height / 2;
 
-        this.background = new ADCore.Interface(new Vector2(0,0),"hs_background")        
+        this.background = new ADCore.Interface(new Vector2(0,0),"hs_background")        ;
         this.addChild(this.background);
 
         this.highscoreBackground = new ADCore.Interface(new Vector2(halfWidth, halfHeight), "hs_highscorescreenpopup");
-        this.highscoreBackground.anchor.set(0.5, 0.5);
+        this.highscoreBackground.y -= this.highscoreBackground.height / 2;
+        var hs_bg_height = this.highscoreBackground.height;
+        this.highscoreBackground.anchor.set(0.5, 0);
+        this.highscoreBackground.scale.set(1, 0);
         this.addChild(this.highscoreBackground);
 
         var len = parsed_highscores.length;
@@ -91,6 +93,7 @@ scene.Highscore = (function () {
                 .Color(textColor)
                 .Font(fontName)
                 .Finish();
+            text_order.alpha = 0;
             this.addChild(text_order);
             scoretext["textOrder"] = text_order;
 
@@ -102,6 +105,7 @@ scene.Highscore = (function () {
                 .Font(fontName)
                 .Finish();
             this.addChild(text_user_name);
+            text_user_name.alpha = 0;
             scoretext["textUserName"] = text_user_name;
 
             var text_user_score = new ADCore.Text()
@@ -113,45 +117,50 @@ scene.Highscore = (function () {
                 .Font(fontName)
                 .Finish();
             this.addChild(text_user_score);
+            text_user_score.alpha = 0;
             scoretext["textUserScore"] = text_user_score;
 
             scoretext["x"] = x;
             scoretext["y"] = y;
             this.scoretextsdata.push(scoretext);
         }
-        this.toppartofmenu = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.highscoreBackground.y - this.highscoreBackground.height / 1.4),"hs_toppartofmenu")
+        this.toppartofmenu = new ADCore.Interface(new Vector2(this.highscoreBackground.x, Config.Core.Dimensions.height * 0.1),"hs_toppartofmenu");
+        this.toppartofmenu.y += this.toppartofmenu.height / 2;
         this.toppartofmenu.anchor.set(0.5, 0.5);
 
-        this.bottompartofmenu = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.highscoreBackground.y + this.highscoreBackground.height / 1.5),"hs_bottompartofmenu")
+        this.bottompartofmenu = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.toppartofmenu.y ),"hs_bottompartofmenu");
+        this.bottompartofmenu.y += this.bottompartofmenu.height;
         this.bottompartofmenu.anchor.set(0.5, 0.5);
 
-        this.logo = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.highscoreBackground.y - this.highscoreBackground.height / 1.1), "hs_highscorelogo")
+        this.logo = new ADCore.Interface(new Vector2(this.highscoreBackground.x, this.toppartofmenu.y ), "hs_highscorelogo");
+        this.logo.y -= this.logo.height / 2;
         this.logo.anchor.set(0.5, 0.5);
         this.logo.scale.setTo(0.01,0.01);
         TweenLite.to(this.logo.scale,0.2,{ease: Back.easeInOut.config(1.7), x:1,y:1});
    
-        this.restartButton = new ADCore.Button(new Vector2(this.highscoreBackground.x - this.highscoreBackground.width * 0.25, this.highscoreBackground.y + this.highscoreBackground.height * 0.67),"hs_restartbutton")
+        this.restartButton = new ADCore.Button(new Vector2(this.highscoreBackground.x - this.highscoreBackground.width * 0.25, this.bottompartofmenu.y),"hs_restartbutton");
+        this.restartButton.y += this.restartButton.height * 0.1;
         this.restartButton.onInputUp = this._onRestartButtonInputUp.bind(this);
-        Debug.Log("onrestart");
         this.restartButton.anchor.set(0.5, 0.5);
         this.restartButton.scale.setTo(0.01,0.01);
         TweenLite.to(this.restartButton.scale,0.2,{ease: Back.easeInOut.config(1.7), x:1,y:1});
 
-        this.quitButton = new ADCore.Button(new Vector2(this.highscoreBackground.x + this.highscoreBackground.width * 0.25, this.restartButton.y),"hs_quitbutton")        
+        this.quitButton = new ADCore.Button(new Vector2(this.highscoreBackground.x + this.highscoreBackground.width * 0.25, this.restartButton.y), "hs_quitbutton");        
         this.quitButton.onInputUp = this._onQuitButtonInputUp.bind(this);
         this.quitButton.anchor.set(0.5, 0.5);
         this.quitButton.scale.setTo(0.01,0.01);
         TweenLite.to(this.quitButton.scale,0.2,{ease: Back.easeInOut.config(1.7), x:1,y:1});
 
-
         this.text_name = new ADCore.Text()
                 .Value("Name")
-                .Position(new Vector2(halfWidth - this.highscoreBackground.width * 0.28, this.highscoreBackground.y - this.highscoreBackground.height * 0.62))
+                .Position(new Vector2(halfWidth - this.highscoreBackground.width * 0.28, this.toppartofmenu.y))
                 .Anchor(new Vector2(0.5, 0.5))
                 .Size(13)
                 .Color(textColor)
                 .Font(fontName)
                 .Finish();
+        this.text_name.y += this.text_name.height * 0.75;
+        this.text_name.scale.set(0.01, 0.01);
 
         this.text_score = new ADCore.Text()
                 .Value("Score")
@@ -161,6 +170,7 @@ scene.Highscore = (function () {
                 .Color(textColor)
                 .Font(fontName)
                 .Finish();
+        this.text_score.scale.set(0.01, 0.01);
             
         this.addChild(this.toppartofmenu);
         this.addChild(this.bottompartofmenu);
@@ -169,6 +179,26 @@ scene.Highscore = (function () {
         this.addChild(this.restartButton);
         this.addChild(this.text_name);
         this.addChild(this.text_score);
+
+        TweenLite.to(this.text_score.scale, 0.15, { x: 1, y: 1});
+        TweenLite.to(this.text_name.scale, 0.15, { x: 1, y: 1, onComplete: function () {
+            setTimeout(function() {
+                TweenLite.to(this.highscoreBackground.scale, 0.5, { y: 1 });
+                TweenLite.to(this.bottompartofmenu, 0.5, { y: this.bottompartofmenu.y + hs_bg_height, onUpdate: function () {
+                    this.restartButton.y = this.bottompartofmenu.y;
+                    this.quitButton.y = this.bottompartofmenu.y;
+                }.bind(this), onComplete: function () {
+                    var len = this.scoretextsdata.length;
+                    for (var i = 0; i < len; i++) {
+                        setTimeout(function(i) {
+                            TweenLite.to(this.scoretextsdata[i].textOrder, 0.5, { alpha: 1 });
+                            TweenLite.to(this.scoretextsdata[i].textUserName, 0.5, { alpha: 1 });
+                            TweenLite.to(this.scoretextsdata[i].textUserScore, 0.5, { alpha: 1 });
+                        }.bind(this, i), 250 * i);
+                    }
+                }.bind(this) });
+            }.bind(this), 1000);
+        }.bind(this) });
     };
 
     p._onRestartButtonInputUp = function () {

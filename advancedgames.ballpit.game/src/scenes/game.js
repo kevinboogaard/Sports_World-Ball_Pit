@@ -107,6 +107,14 @@ scene.Game = (function () {
      */
     p.Update = function (deltatime) {
         this.ballContainer.Update(deltatime);
+
+        if (this.started) {
+            if (Input.paused && this.gameTimer.timerStarted) {
+                this.gameTimer.Stop();
+            } else if (Input.paused === false && this.gameTimer.timerStarted === false) {
+                this.gameTimer.Start();
+            }
+        }
     };
 
     /**
@@ -390,28 +398,47 @@ scene.Game = (function () {
 
             case ballpit.OptionsInputs.HIGHSCORE:
                 this.popupContainer.ConcealAllPopups(function () {
-                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.HIGHSCORE });
                 });
                 break;
         }
     };
 
+    /**
+     * @method _OnGameDone
+     * @memberof Game
+     * @private
+     */
+    p._onGameDone = function(){
+        var finishPopup = new ballpit.FinishPopup( this._onEndgameInput.bind(this), this.gameTimer,this.coach,this.scoreHolder);
+        this.popupContainer.DisplayPopup( finishPopup );
+    };
+
+    /**
+     * @method _OnEndgameInput
+     * @memberof Game
+     * @private
+     * @param {FinishInputs} input
+     * @ignore 
+     */
     p._onEndgameInput = function(input){
         switch(input){
              case ballpit.FinishInputs.CROSS:
-                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
+                });
                 break;
             case ballpit.FinishInputs.HIGHSCORE:
-                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.HIGHSCORE });
-                 break;
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.HIGHSCORE });
+                });
+                break;
             case ballpit.FinishInputs.REDO:
-                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.GAME });
+                this.popupContainer.ConcealAllPopups(function () {
+                    Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.GAME });
+                });
+                break;
         }
-    };
-
-    p._onGameDone = function(){
-        var finishpopup = new ballpit.FinishPopup( this._onEndgameInput.bind(this), this.gameTimer,this.coach,this.scoreHolder);
-        this.popupContainer.DisplayPopup( finishpopup );
     };
 
     /**

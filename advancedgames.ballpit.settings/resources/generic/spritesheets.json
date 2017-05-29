@@ -242,15 +242,15 @@
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "idle": [9],
-                "active": [10]
+                "inactive": [10],
+                "active": [9]
             }
         },
         "hs_quitbutton":{
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "idle": [11],
+                "active": [11],
                 "inactive": [12]
             }
         },
@@ -286,8 +286,8 @@
             "json_path": "highscore/atlas_highscores.json",
             "atlas_path": "highscore/atlas_highscores.png",
             "animations": {
-                "idle": [3],
-                "active": [2]
+                "active": [2],
+                "inactive": [3]
             }
         },
         "ui_pausebutton":{

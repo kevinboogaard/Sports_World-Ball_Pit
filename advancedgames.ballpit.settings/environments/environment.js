@@ -6,6 +6,6 @@ ballpit.BASE_URL = "http://localhost:8080/";
 Debug.ENABLED = true;
 
 Debug.FORCE_LOAD_SCENE = true;
-Debug.DEBUG_SCENE = scene.Game;
+Debug.DEBUG_SCENE = scene.Tutorial;
 
-Settings.Game.TIME = 10;
+Settings.Game.TIME = 120;
