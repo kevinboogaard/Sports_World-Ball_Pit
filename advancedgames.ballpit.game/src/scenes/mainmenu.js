@@ -24,7 +24,6 @@ scene.MainMenu = (function () {
         var halfWidth = Config.Core.Dimensions.width / 2;
         var halfHeight = Config.Core.Dimensions.height / 2;
 
-
         /** @property {Interface} */
         this.background = new ADCore.Interface(new Vector2(0, 0),"menubackground");
         this.addChild(this.background);
@@ -63,11 +62,13 @@ scene.MainMenu = (function () {
         this.addChild(this.startButton);
         this.startButton.Play("active");
 
+        this.identifier = soundSystem.PlayMusic("music_menu", 1, true);
+
         setTimeout(function(){
-            TweenLite.to(this.logo.scale,0.2,{ease: Back.easeInOut.config(1.7), x:1,y:1,onComplete: function(){ 
+            TweenLite.to(this.logo.scale,0.2,{ ease: Back.easeInOut.config(1.7), x:1,y:1,onComplete: function(){ 
                 this.logo.Play("entry");
                 setTimeout(function(){
-                TweenLite.to(this.startButton.scale, 0.2, {ease: Back.easeInOut.config(1.7), x:1,y:1});
+                    TweenLite.to(this.startButton.scale, 0.2, { ease: Back.easeInOut.config(1.7), x:1,y:1});
                }.bind(this),700);
             }.bind(this)});
         }.bind(this),100);
@@ -84,7 +85,7 @@ scene.MainMenu = (function () {
      * @ignore
      */
     p._onStartButtonInputUp = function () {
-        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIALSCENE });
+        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIAL });
     };
 5
     /**

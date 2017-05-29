@@ -68,8 +68,6 @@ ballpit.FinishPopup = (function(){
         this.quitbutton.scale.setTo(0.01,0.01);
         this.quitbutton.onInputUp = function () { this._callback(ballpit.FinishInputs.CROSS) }.bind(this);
         this.addChild(this.quitbutton);
-        
-
 
         this.resulttext = new ADCore.Text()               
             .Value("Results")

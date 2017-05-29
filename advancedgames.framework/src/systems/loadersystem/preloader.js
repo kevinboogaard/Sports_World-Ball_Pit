@@ -167,7 +167,7 @@ ADCore.Preloader = (function(){
             var savekey = file.key + " | " + file.path;
             this._preload_resource(file.type, file.path, file.key, savekey, category, null);
         }
-
+        
         this._load.start();
     };
 

@@ -70,6 +70,8 @@ ballpit.LevelLoader = ( function () {
      */
     p._onLoadComplete = function ( ) {
         sceneLoader.DisposeCurrent();
+        
+        if (Global.Loaded.level.sounds) soundSystem.Load(Global.Loaded.level.sounds);
 
         sceneLoader.Load(this._sceneToBeLoaded);
         this._sceneToBeLoaded = null;

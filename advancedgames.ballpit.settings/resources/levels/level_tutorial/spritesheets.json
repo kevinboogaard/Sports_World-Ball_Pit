@@ -1,0 +1,51 @@
+{
+    "base_path": "advancedgames.ballpit.game/assets/spritesheets/tutorial/",
+    "type": "atlas", 
+    "resources": {
+        "tut_bubble":{
+            "json_path": "atlas_tutorial.json",
+            "atlas_path": "atlas_tutorial.png",
+            "animations": {
+                "idle": [4]
+            }
+        },
+        "tut_arrow_small":{
+            "json_path": "atlas_tutorial.json",
+            "atlas_path": "atlas_tutorial.png",
+            "animations": {
+                "idle": [5]
+            }
+        },
+        "tut_arrow_large":{
+            "json_path": "atlas_tutorial.json",
+            "atlas_path": "atlas_tutorial.png",
+            "animations": {
+                "idle": [6]
+            }
+        },
+        "tut_v_button":{
+            "json_path": "atlas_tutorial.json",
+            "atlas_path": "atlas_tutorial.png",
+            "animations": {
+                "inactive": [2],
+                "active": [0]
+            }
+        },
+        "tut_x_button":{
+            "json_path": "atlas_tutorial.json",
+            "atlas_path": "atlas_tutorial.png",
+            "animations": {
+                "inactive": [3],
+                "active": [1]
+            }
+        },
+        "tut_trainer":{
+            "json_path": "atlas_trainer.json",
+            "atlas_path": "atlas_trainer.png",
+            "animations": {
+                "idle": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+                "talk": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+            }
+        }
+    }
+}

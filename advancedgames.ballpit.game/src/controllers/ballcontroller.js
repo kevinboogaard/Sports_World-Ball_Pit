@@ -324,7 +324,7 @@ ballpit.BallController = (function () {
         tiles.push(params.owner);
 
         var len = tiles.length;
-        for (var i = 0; i < len; i++) {
+        for (var i = len - 1; i >= 0; i--) {
             var tile = tiles[i];
             var occupier = tile.occupier;
 

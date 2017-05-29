@@ -25,6 +25,14 @@ ADCore.TileView = (function () {
         * @ignore
         */
         this.visible = model.layer.visible;
+
+        /**
+         * @property {Object|Integer} effect
+         * @public
+         */
+        this.effect = null;
+
+        Listener.Listen(ADCore.Event.ON_EFFECT_SET, this, this._onEffectSet.bind(this), this.model);
     }
     TileView.prototype = Object.create(ADCore.Display.prototype);
     TileView.prototype.constructor = TileView;
@@ -39,6 +47,37 @@ ADCore.TileView = (function () {
     p.Render = function () {
         if (!this.visible) return;
         this.__display_render();
+    }
+    
+    /**
+     * @method _OnEffectSet
+     * @memberof TileView
+     * @private
+     * @ignore
+     */
+    p._onEffectSet = function () {
+        if (isNaN(this.model.effect)) {
+            if (this.effect === this.model.effect) return;
+            else if (this.effect && this.effect !== this.model.effect) {
+                this.removeChild(this.effect);
+                this.effect.Dispose();
+                this.effect = null;
+            }
+
+            if (this.effect === null) {
+                this.effect = this.model.effect;
+
+                this.addChild(this.effect);
+                this.effect.x = -8; // offsetX;
+                this.effect.y = -9; // offsetY;
+            } 
+        } else if (this.model.effect !== null) {
+            this.tint = this.model.effect;
+        } else if (this.effect) {
+            this.removeChild(this.effect);
+            this.effect.Dispose();
+            this.effect = null;
+        }
     };
 
     /**

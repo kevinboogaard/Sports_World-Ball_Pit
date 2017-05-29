@@ -27,8 +27,9 @@ ballpit.Speech = (function () {
      * @extends Interface
      * @param {Vector2} position
      * @param {String} key
+     * @param {Integer} fontSize
      */
-    function Speech(position, key) {
+    function Speech(position, key, fontSize) {
         ADCore.Interface.call(this,position,key);
 
         /**
@@ -60,8 +61,14 @@ ballpit.Speech = (function () {
          * @private
          */
         this._id = -1;
+        
+        /**
+         * @property {Function} _Callback
+         * @private
+         */
+        this._callback = null;
 
-        this._initialize();
+        this._initialize(fontSize);
     }
     Speech.prototype = Object.create(ADCore.Interface.prototype);
     Speech.prototype.constructor = Speech;
@@ -71,11 +78,15 @@ ballpit.Speech = (function () {
      * @method _Initialize
      * @memberof Speech
      * @private
+     * @param {Integer} fontSize
      * @ignore
      */
-    p._initialize = function () { 
-        this._text = new ADCore.Text().Position(new Vector2( this.width / 2, 10)).Font("djb-bbi").Wrap(this.width * 0.9).Finish();
+    p._initialize = function (fontSize) { 
+        fontSize = fontSize || 10;
+
+        this._text = new ADCore.Text().Position(new Vector2( this.width / 2, 10)).Size(fontSize).Font("djb-bbi").Wrap(this.width * 0.9).Finish();
         this._text.anchor.set(0.5, 0);
+        this._text.lineSpacing = -3;
         this.addChild(this._text);
     };
 
@@ -84,11 +95,12 @@ ballpit.Speech = (function () {
      * @memberof Speech
      * @public
      */
-    p.Talk = function (text, interval) { 
+    p.Talk = function (text, interval, callback) { 
         if (this._id !== -1) throw new Error("The speech is already talking");
-        this._text.text = ""; 
+        this.Clear(); 
         this._string = text;
         this._interval = interval;
+        if (callback) this._callback = callback;
         this._start();
     };
 
@@ -101,6 +113,15 @@ ballpit.Speech = (function () {
         this._stop();
         this._reset();
         Listener.Dispatch(ballpit.Event.ON_SPEECH_DONE, this);
+    };
+
+    /**
+     * @method Clear
+     * @memberof Speech
+     * @public
+     */
+    p.Clear = function () {
+        this._text.text = ""; 
     };
 
     /**
@@ -154,6 +175,13 @@ ballpit.Speech = (function () {
 
         if (this._index === this._string.length) {
             this.Mute();
+            
+            if (this._callback) {
+                var callback = this._callback;
+                this._callback = null;
+                
+                callback();
+            }
         }
     };
 
@@ -168,13 +196,22 @@ ballpit.Speech = (function () {
         this._index = 0;
     };
 
-    /**
-     * @method Render
-     * @memberof Speech
-     * @public
-     */
-    p.Render = function () {
+    p.Dispose = function() {
+        this._stop();
+        this._reset();
+
+        delete this._text ;
+
+        this.removeChild(this._string);
+        delete this._string;
         
+        delete this._interval;
+
+        delete this._index;
+        
+        delete this._id;
+        
+        delete this._callback;
     };
 
     return Speech;

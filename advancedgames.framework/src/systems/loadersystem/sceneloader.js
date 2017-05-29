@@ -82,9 +82,8 @@ ADCore.Sceneloader = (function () {
      */
     p.DisposeCurrent = function(){
         this.current.Dispose();
+        this.current.pendingDestroy = true;
         this.current = null;
-
-        Debug.LogWarning("Phaser add existing. There is no remove existing in the disposeCurrent.");
     };
 
     return Sceneloader;

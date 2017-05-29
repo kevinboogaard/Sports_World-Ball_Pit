@@ -149,6 +149,7 @@ ADCore.Button = (function () {
      * @private
      */
     p._onInputUp = function () {
+        soundSystem.PlaySound("sound_buttonselect", 1, false);
         if ( this._animations.contains("inactive") ) this.Play("inactive");
         if ( typeof this.onInputUp === "function" ) this.onInputUp( this );
     };

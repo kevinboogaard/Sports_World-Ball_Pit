@@ -41,6 +41,7 @@ ballpit.BallContainer = (function () {
      * @public
      * @param {Vector2} position - the position of the added ball
      * @param {type} type - The type of a ball
+     * @return {BallModel}
      */
     p.AddBall = function(position, type){
         var ballModel = new ballpit.EntityFactory.AddBall(position,type);
@@ -53,12 +54,34 @@ ballpit.BallContainer = (function () {
      * @memberof BallContainer
      * @public
      * @param {Vector2} position - the position of the added ball
+     * @return {BallModel}
      */
     p.AddRandomBall = function (position) {
         var keys = Object.keys(ballpit.BallTypes);
         var randomType = ballpit.BallTypes[keys[ keys.length * Math.random() << 0]];
 
         return this.AddBall(position, randomType);
+    };
+
+    /**
+     * @method AddRandomBall
+     * @memberof BallContainer
+     * @public
+     * @param {Vector2} position - the position of the added ball
+     * @param {type} type - The type of the ball
+     * @param {Vector2} destination - The destination of the ball
+     * @return {BallModel}
+     */
+    p.AddBallEffect = function (position, type, destination) {
+        var ballEffect = this.AddBall(position.Clone(), type);
+        
+        ballEffect.anchorX = 0.5;
+        ballEffect.anchorY = 0.5;
+            
+        TweenLite.to(ballEffect, 1, { x: destination.x, y: destination.y, angle: 360 });
+        TweenLite.to(ballEffect, 1, { scaleX: 0, scaleY: 0, ease: Power3.easeIn });
+
+        return ballEffect;
     };
     
     /**

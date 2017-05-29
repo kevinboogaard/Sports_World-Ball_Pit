@@ -1,0 +1,75 @@
+{"frames": [
+
+{
+	"filename": "asset_activevbutton_v1.png",
+	"frame": {"x":0,"y":0,"w":56,"h":56},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":56},
+	"sourceSize": {"w":56,"h":56},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_activexbutton_v1.png",
+	"frame": {"x":56,"y":0,"w":56,"h":56},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":56},
+	"sourceSize": {"w":56,"h":56},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_inactivevbutton_v1.png",
+	"frame": {"x":112,"y":0,"w":56,"h":56},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":56},
+	"sourceSize": {"w":56,"h":56},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_inactivexbutton_v1.png",
+	"frame": {"x":168,"y":0,"w":56,"h":56},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":56},
+	"sourceSize": {"w":56,"h":56},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_tutorialbubble_v3.png",
+	"frame": {"x":0,"y":56,"w":198,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":100},
+	"sourceSize": {"w":198,"h":100},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_tutorialchoicefb_v2.png",
+	"frame": {"x":198,"y":56,"w":5,"h":6},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":5,"h":6},
+	"sourceSize": {"w":5,"h":6},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "asset_tutorialcontinuetext_v2.png",
+	"frame": {"x":203,"y":56,"w":14,"h":14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":14},
+	"sourceSize": {"w":14,"h":14},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "atlas_tutorial_v1.png",
+	"format": "RGBA8888",
+	"size": {"w":224,"h":156},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:bb0016fcce93957f8eec47bfb1e9fa13:e52bb1a2831f122e2559127aa5037224:87ad0bab0d08abd3928a6691212f38ce$"
+}
+}

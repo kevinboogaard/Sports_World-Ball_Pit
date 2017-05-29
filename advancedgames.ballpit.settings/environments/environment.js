@@ -7,3 +7,5 @@ Debug.ENABLED = true;
 
 Debug.FORCE_LOAD_SCENE = true;
 Debug.DEBUG_SCENE = scene.Game;
+
+Settings.Game.TIME = 10;

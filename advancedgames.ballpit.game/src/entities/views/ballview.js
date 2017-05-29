@@ -45,8 +45,14 @@ ballpit.BallView = (function () {
     function BallView(model, key) {
         ADCore.Display.call( this, model, key );
 
-        this.width = 45;
-        this.height = 45;
+        this.scale.set(this.model.scaleX, this.model.scaleY);
+
+        /**
+         * @property {Boolean} InAnim
+         * @private
+         * @default false
+         */
+        this._inAnim = false;
 
         Listener.Listen(ballpit.Event.ON_BALL_STATE_CHANGE, this, this._onStateChange.bind(this), model);
         Listener.Listen(ballpit.Event.ON_BALL_DESTROY, this, this._onDestroy.bind(this), model);
@@ -55,6 +61,24 @@ ballpit.BallView = (function () {
     BallView.prototype = Object.create(ADCore.Display.prototype);
     BallView.prototype.constructor = BallView;
     var p = BallView.prototype;
+
+    /** 
+     * @method Render
+     * @memberof BallView
+     * @public
+     */
+    p.__display_render = p.Render;
+    p.Render = function () {
+        if (this._inAnim) return;
+
+        if(this.scale.x != this.model.scaleX) this.scale.x = this.model.scaleX;
+        if(this.scale.y != this.model.scaleY) this.scale.y = this.model.scaleY;
+        if(this.anchor.x != this.model.anchorX) this.anchor.x = this.model.anchorX;
+        if(this.anchor.y != this.model.anchorY) this.anchor.y = this.model.anchorY;
+        if(this.angle != this.model.angle) this.angle = this.model.angle;
+
+        this.__display_render();
+    };
 
      /**
      * @method _OnStateChange
@@ -67,9 +91,7 @@ ballpit.BallView = (function () {
      */
     p._onStateChange = function (caller, params) {
         switch (params.state) {
-            case ballpit.BallStates.REVERTING:
-                this.Play(ballpit.ballAnimations.SWIPE_FAIL);
-            break;
+
         }
     };
 
@@ -90,6 +112,8 @@ ballpit.BallView = (function () {
         this.addChild(explosion);
         explosion.Play("explosion", null, null, true);
 
+        soundSystem.PlaySound("sound_ballexplosion", 3, false);
+
         explosion.bringToTop();
     };
 
@@ -99,9 +123,24 @@ ballpit.BallView = (function () {
      * @private
      * @param {BallModel} caller
      * @param {Object} params
+     * @param {Vector2} params.direction
      */
     p._onWrong = function (caller, params) {
-        this.Play(ballpit.ballAnimations.SWIPE_FAIL); 
+        var startpos = new Vector2(this.model.x, this.model.y);
+
+        params.direction.Exponentiate(3);
+
+        this._inAnim = true;
+        TweenLite.to(this, 0.1, { x: params.direction.x + startpos.x, y: params.direction.y + startpos.y, onComplete: function(startpos) {
+            params.direction.Exponentiate(1);
+            TweenLite.to(this, 0.2, { ease: Bounce.easeInOut, x: params.direction.y + startpos.x, onComplete: function(startpos) {
+                params.direction.Exponentiate(-1);
+                TweenLite.to(this, 0.2, { ease: Bounce.easeInOut, x: params.direction.y + startpos.x, onComplete: function(startpos) {
+                    TweenLite.to(this, 0.1, { x: startpos.x, y: startpos.y });
+                    this._inAnim = false;
+                }.bind(this, startpos)});
+            }.bind(this, startpos)});
+        }.bind(this, startpos)});
     };
 
      /**

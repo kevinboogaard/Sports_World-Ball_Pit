@@ -7,20 +7,21 @@
             "atlas_path": "logo/spritesheet_logo.png",
             "animations": {
                 "idle": [0],
-                "entry": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+                "entry": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
             }
         },
         "explosion":{
-            "json_path": "balls/explosion/spritesheet_explosion.json",
-            "atlas_path": "balls/explosion/spritesheet_explosion.png",
+            "json_path": "effects/spritesheet_explosion.json",
+            "atlas_path": "effects/spritesheet_explosion.png",
             "animations": {
-                "explosion": []
+                "explosion": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
             }
         },
         "tennisball":{
             "json_path": "balls/tennisball/spritesheet_tennisball.json",
             "atlas_path": "balls/tennisball/spritesheet_tennisball.png",
             "animations": {
+                "idle": [0],
                 "hint": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                 "plop": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
                 "swipefail": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] 
@@ -30,6 +31,7 @@
             "json_path": "balls/basketball/spritesheet_basketball.json",
             "atlas_path": "balls/basketball/spritesheet_basketball.png",
             "animations": {
+                "idle": [0],
                 "hint": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                 "plop": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
                 "swipefail": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] 
@@ -39,6 +41,7 @@
             "json_path": "balls/baseball/spritesheet_baseball.json",
             "atlas_path": "balls/baseball/spritesheet_baseball.png",
             "animations": {
+                "idle": [0],
                 "hint": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                 "plop": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
                 "swipefail": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] 
@@ -48,6 +51,7 @@
             "json_path": "balls/soccerball/spritesheet_soccerball.json",
             "atlas_path": "balls/soccerball/spritesheet_soccerball.png",
             "animations": {
+                "idle": [0],
                 "hint": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                 "plop": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
                 "swipefail": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] 
@@ -57,6 +61,7 @@
             "json_path": "balls/volleyball/spritesheet_volleyball.json",
             "atlas_path": "balls/volleyball/spritesheet_volleyball.png",
             "animations": {
+                "idle": [0],
                 "hint": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                 "plop": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
                 "swipefail": [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44] 
@@ -106,8 +111,8 @@
             }
         },
         "mainmenubutton":{
-            "json_path": "mainmenu/atlas_mainmenubutton_v1.json",
-            "atlas_path": "mainmenu/atlas_mainmenubutton_v1.png",
+            "json_path": "mainmenu/atlas_mainmenu.json",
+            "atlas_path": "mainmenu/atlas_mainmenu.png",
             "animations": {
                 "active": [0],
                 "inactive": [1]
@@ -283,6 +288,50 @@
             "animations": {
                 "idle": [3],
                 "active": [2]
+            }
+        },
+        "ui_pausebutton":{
+            "json_path": "gameui/atlas_gameui.json",
+            "atlas_path": "gameui/atlas_gameui.png",
+            "animations": {
+                "inactive": [3],
+                "active": [4]
+            }
+        },
+        "ui_infobar_bg":{
+            "json_path": "gameui/atlas_gameui.json",
+            "atlas_path": "gameui/atlas_gameui.png",
+            "animations": {
+                "idle": [5]
+            }
+        },
+        "ui_timerbar":{
+            "json_path": "gameui/atlas_gameui.json",
+            "atlas_path": "gameui/atlas_gameui.png",
+            "animations": {
+                "idle": [2]
+            }
+        },
+        "ui_timerbar_bg":{
+            "json_path": "gameui/atlas_gameui.json",
+            "atlas_path": "gameui/atlas_gameui.png",
+            "animations": {
+                "idle": [0]
+            }
+        },
+        "ui_timerbar_border":{
+            "json_path": "gameui/atlas_gameui.json",
+            "atlas_path": "gameui/atlas_gameui.png",
+            "animations": {
+                "idle": [1]
+            }
+        },
+        "fx_ball_select":{
+            "json_path": "effects/spritesheet_ball_select.json",
+            "atlas_path": "effects/spritesheet_ball_select.png",
+            "animations": {
+                "idle": [0],
+                "spark": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
             }
         }
      }

@@ -48,6 +48,7 @@ scene.Game = (function () {
             Input.paused = true;
             
             net.SAVE_HIGHSCORE.Send( { "name": "User", "score": this.scoreHolder.score} , function(result) {
+                soundSystem.PlaySound("sound_timerdone", 1, false);
                 setTimeout(function() {
                     this._onGameDone();
                     //Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
@@ -75,11 +76,17 @@ scene.Game = (function () {
         /** @property {Vector2} */
         this.started = false;
 
+        /** @property {TileLayer} */
+        this.tileLayer = this.tilemap.GetLayerByName("tilelayer");
+
         // Put the input paused on false.
         Input.paused = false;
 
         // Play in-game music.
-        this.identifier = soundSystem.PlayMusic("music_ingame", 1, true);
+        this.music_identifier = soundSystem.PlayMusic("music_ingame", 1, true);
+
+        // Time identifier
+        this.time_identifier = null;
 
         Listener.Listen(ADCore.InputEvent.ON_TAP, this, this._onTap.bind(this));
         Listener.Listen(ADCore.InputEvent.ON_SWIPE, this, this._onSwipe.bind(this));
@@ -124,13 +131,31 @@ scene.Game = (function () {
     p._onTap = function (caller, params) {
         if (this.selected !== null) {
             var target = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
-            if (target) soundSystem.PlaySound("sound_ballselect", 3, false);
+            
+            if (target) {
+                soundSystem.PlaySound("sound_ballselect", 3, false);
+                if (this.selected.neighbours.contains(target)) {
+                    if (this.selected !== target) {
+                        this._trySwap(this.selected, target);
+                    }
+                } else {
+                    this.UnselectTile(this.selected);
+                    this.selected = null;
 
-            this._trySwap(this.selected, target);
+                    this._onTap(caller, params);
+                    return;
+                }
+            }
+
+            this.UnselectTile(this.selected);
             this.selected = null;
         } else {
             this.selected = this.tilemap.mainLayer.GetTileByScreenPosition(params.position);
-            if (this.selected) soundSystem.PlaySound("sound_ballselect", 3, false);
+
+            if (this.selected) { 
+                this.SelectTile(this.selected);
+                soundSystem.PlaySound("sound_ballselect", 3, false);
+            }
         }
     };
 
@@ -150,6 +175,11 @@ scene.Game = (function () {
         if (!start) return;
         var end = this.tilemap.mainLayer.GetNeighbourFromTileByDirection( start, params.direction );
         this._trySwap(start, end);
+
+        if (this.selected) {
+            this.UnselectTile(this.selected);
+            this.selected = null;
+        }
     };
 
     /**
@@ -166,6 +196,56 @@ scene.Game = (function () {
         var amount = params.aligned.length + 1; // + 1 = owner.
         var score = this.scoreHolder.CalculateScoreByAmountAligned(amount);
         this.scoreHolder.Add(score);
+
+        var type = params.owner.occupier.type;
+        var task = this.coach.activeTask;
+
+        if (task && type === task.type) {
+            var tiles = params.aligned.slice();
+            tiles.push(params.owner);
+            this._createBallEffectByTiles(tiles);
+        }
+    };
+
+    /**
+     * @method SelectTile
+     * @memberof Game 
+     * @public
+     */
+    p.SelectTile = function(tile) {
+        var antitype = this.tileLayer.GetTileByTilePosition(tile.tileposition.Clone());
+
+        var glow = new ADCore.Interface(new Vector2(0,0), "fx_ball_select");
+        glow.Play("spark", 30, true);
+        antitype.effect = glow;
+    };
+
+    /**
+     * @method UnselectTile
+     * @memberof Game 
+     * @public
+     */
+    p.UnselectTile = function(tile) {
+        var antitype = this.tileLayer.GetTileByTilePosition(tile.tileposition.Clone());
+        antitype.effect = null;
+    };
+
+    /**
+     * @method _CreateBallEffectByTiles
+     * @memberof Game
+     * @private
+     * @param {Array} tiles
+     */
+    p._createBallEffectByTiles = function (tiles) {
+        var destination = this.interfaceLayer.taskboard.effectLocation;
+        var len = tiles.length;
+        
+        for (var i = len - 1; i >= 0; i--) {
+            var tile = tiles[i];
+            var ball = tile.occupier;
+
+            this.ballContainer.AddBallEffect(ball.position, ball.type, destination);
+        }
     };
 
     /**
@@ -178,11 +258,7 @@ scene.Game = (function () {
     p._trySwap = function (current, target) {
         if (!current || !target ||  !current.neighbours.contains(target)) return;
 
-        if (this.started === false) {
-            this.coach.Start();
-            this.gameTimer.Start();
-            this.started = true;
-        } 
+        this._checkGameTimer();
 
         if (this.ballController.CanSwap(current, target)) {
             soundSystem.PlaySound("sound_combinationcorrect", 3, false);
@@ -194,9 +270,29 @@ scene.Game = (function () {
         } else if (this.ballController.CanMove(target)){
             soundSystem.PlaySound("sound_combinationerror", 1, false);
 
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current.occupier);
-            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target.occupier);
+            var current_dir = target.position.Clone().Substract(current.position);
+            current_dir = current_dir.Normalize();
+            
+            var target_dir = current.position.Clone().Substract(target.position);
+            target_dir = target_dir.Normalize();
+
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, current.occupier, { "direction": current_dir });
+            Listener.Dispatch(ballpit.Event.ON_BALL_SWAP_WRONG, target.occupier, {"direction": target_dir});
         }
+    };
+
+    /**
+     * @method _CheckGameTimer
+     * @memberof Game
+     * @private
+     */
+    p._checkGameTimer = function() {
+        if (this.started === false) {
+            this.coach.Start();
+            this.gameTimer.Start();
+            this.started = true;
+            this.time_identifier = soundSystem.PlaySound("sound_timertick", 1, true);
+        } 
     };
 
     /**
@@ -280,7 +376,7 @@ scene.Game = (function () {
                 this.popupContainer.ConcealAllPopups(function () {
                     Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
                 });
-                break;
+                break;  
 
             case ballpit.OptionsInputs.REDO:
                 this.popupContainer.ConcealAllPopups(function () {
@@ -324,7 +420,8 @@ scene.Game = (function () {
      * @public
      */
     p.Dispose = function () {
-        this.identifier.audio.pause();
+        this.music_identifier.audio.pause();
+        if (this.time_identifier) this.time_identifier.audio.pause();
 
         this.tilemap.Dispose();
         delete this.tilemap;
