@@ -1,0 +1,90 @@
+{
+    "base_path": "advancedgames.ballpit.game/assets/spritesheets/",
+    "type": "atlas", 
+    "resources": {
+        "bar":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [3]
+            }
+        },
+        "bar_bg":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [4]
+            }
+        },
+        "bar_black_border":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [5]
+            }
+        },
+        "bar_white_border":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [8]
+            }
+        },
+        "preloader_soccerball":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [6]
+            }
+        },
+        "preloader_baseball":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [0]
+            }
+        },
+        "preloader_basketball":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [1]
+            }
+        },
+        "preloader_tennisball":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [9]
+            }
+        },
+        "preloader_volleyball":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [11]
+            }
+        },
+        "preloader_ball_white_border":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [7]
+            }
+        },
+        "preloader_bg":{
+            "json_path": "preloader/atlas_preloader.json",
+            "atlas_path": "preloader/atlas_preloader.png",
+            "animations": {
+                "idle": [2]
+            }
+        },
+        "preloader_logo":{
+            "json_path": "logo/spritesheet_logo.json",
+            "atlas_path": "logo/spritesheet_logo.png",
+            "animations": {
+                "idle": [0]
+            }
+        }
+    }
+}

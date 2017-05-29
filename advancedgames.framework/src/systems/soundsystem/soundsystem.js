@@ -37,6 +37,8 @@ ADCore.SoundSystem = (function () {
          * @private
          */
         this._sounds = [];
+
+        ADCore.EnableMutators(this);
     }
     var p = SoundSystem.prototype;
 
@@ -49,10 +51,9 @@ ADCore.SoundSystem = (function () {
      * @param {Object} list - Preloaded json list.
      */
     p.Load = function (list) {
-        Debug.LogWarning("SoundSystem.js: 50. If I load generic a second time- i will have duplicate keys in the sound array.");
-
         for ( var key in list ) {
             if ( list.hasOwnProperty( key ) ) {
+                if (this._sounds.contains(key)) return;
                 this._soundManager.add(key);
                 this._sounds.push(key);
             }
@@ -96,7 +97,13 @@ ADCore.SoundSystem = (function () {
         }
         
         if (typeof identifier !== "string") sound = identifier;
-        this._activeSounds.push(music);
+
+        if (loop) {
+            if (this._activeSounds.contains(sound) === false) {
+                this._activeSounds.push(sound);
+            }
+        } 
+
         return sound;
     };
 
@@ -139,7 +146,13 @@ ADCore.SoundSystem = (function () {
         }
         
         if (typeof identifier !== "string") music = identifier;
-        this._activeSounds.push(music);
+
+        if (loop) {
+            if (this._activeSounds.contains(music) === false) {
+                this._activeSounds.push(music);
+            }
+        } 
+
         return music;
     };
 
@@ -213,6 +226,25 @@ ADCore.SoundSystem = (function () {
         else key = identifier.key;
 
         return key;
+    };
+
+    /**
+     * Getters & Setters internal function.
+     * 
+     * @method GettersAndSetters
+     * @memberof SoundSystem
+     * @private 
+     * @ignore
+     */
+    p.gettersAndSetters = function () {
+        this.Define( "volume", {
+            get: function () {
+                return this._soundManager.volume;
+            },
+            set: function (v) {
+                this._soundManager.volume = v;
+            }
+        } );
     };
 
     return SoundSystem;

@@ -40,6 +40,13 @@ ballpit.Event.ON_STAGE_BEGIN = "on_stage_begin";
  */
 ballpit.Event.ON_STAGE_DONE = "on_stage_done";
 
+/**
+ * @property {String} ON_COACH_STATE_EMOTION_CHANGE
+ * @memberof Event
+ * @readonly
+ */
+ballpit.Event.ON_COACH_STATE_EMOTION_CHANGE = "on_coach_state_emotion_change";
+
 
 ballpit.Coach = ballpit.Coach || {};
 
@@ -167,6 +174,8 @@ ballpit.CoachModel = (function () {
         this._stopwatch = SetStopwatch();
 
         Listener.Listen(ballpit.Event.ON_BALL_ALIGN, this, this._onBallAlign.bind(this));
+        Listener.Listen(ballpit.Event.ON_STAGE_BEGIN, this, this._onStageBegin.bind(this));
+        Listener.Listen(ballpit.Event.ON_STAGE_DONE, this, this._onStageDone.bind(this));
     }
     CoachModel.prototype = Object.create(ADCore.Entity.prototype);
     CoachModel.prototype.constructor = CoachModel;
@@ -183,7 +192,6 @@ ballpit.CoachModel = (function () {
         if (this._tasks.length === 0) {
             this._tasks = this._taskhandler.GetNewStage();
             Listener.Dispatch(ballpit.Event.ON_STAGE_BEGIN, this);
-            console.log("NEW STAGE: " + this._tasks[0].type + ", amount: " + this._tasks[0].amount );
         }
 
         if(this._stopwatch) this._stopwatch.Start();
@@ -239,7 +247,6 @@ ballpit.CoachModel = (function () {
             current_task.amount -= amount;
             if (current_task.amount < 0) current_task.amount = 0;
 
-            console.log("CURRENT TASK: " + this._tasks[0].type + ", amount left:" + this._tasks[0].amount );
             if (current_task.amount <= 0) {
                 Listener.Dispatch(ballpit.Event.ON_TASK_DONE, this);
 
@@ -250,13 +257,40 @@ ballpit.CoachModel = (function () {
 
                     this.Stop();
                     this._stopwatch.Round();
-                    this.Start();
+
+                    setTimeout(function () {
+                        this.Start();
+                    }.bind(this), Settings.Game.DELAY_PER_ROUND * 1000);
+                    return;
                 }
 
                 Listener.Dispatch(ballpit.Event.ON_TASK_BEGIN, this);
-                console.log("NEW TASK: " + this._tasks[0].type + ", amount: " + this._tasks[0].amount );
             }
         }
+    };
+
+    /**
+     * @method _OnStageBegin
+     * @memberof CoachModel
+     * @private
+     * @ignore
+     */
+    p._onStageBegin = function () {
+        this.emotion = ballpit.Coach.Emotions.NEUTRAL;
+        this.state = ballpit.Coach.States.IDLE;
+        Listener.Dispatch(ballpit.Event.ON_COACH_STATE_EMOTION_CHANGE, this);
+    };
+    
+    /**
+     * @method _OnStageDone
+     * @memberof CoachModel
+     * @private
+     * @ignore
+     */
+    p._onStageDone = function () {
+        this.emotion = ballpit.Coach.Emotions.HAPPY;
+        this.state = ballpit.Coach.States.IDLE;
+        Listener.Dispatch(ballpit.Event.ON_COACH_STATE_EMOTION_CHANGE, this, { "loop": false });
     };
     
     /**

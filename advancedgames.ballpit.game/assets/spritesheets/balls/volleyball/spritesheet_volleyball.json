@@ -1,0 +1,408 @@
+{"frames": [
+
+{
+	"filename": "animation idle hint0001.png",
+	"frame": {"x":0,"y":0,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0002.png",
+	"frame": {"x":0,"y":48,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0003.png",
+	"frame": {"x":0,"y":96,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0004.png",
+	"frame": {"x":0,"y":144,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0005.png",
+	"frame": {"x":0,"y":192,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0006.png",
+	"frame": {"x":0,"y":240,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0007.png",
+	"frame": {"x":0,"y":288,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0008.png",
+	"frame": {"x":0,"y":336,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0009.png",
+	"frame": {"x":0,"y":384,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0010.png",
+	"frame": {"x":0,"y":432,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0011.png",
+	"frame": {"x":0,"y":480,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0012.png",
+	"frame": {"x":0,"y":528,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0013.png",
+	"frame": {"x":0,"y":576,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0014.png",
+	"frame": {"x":0,"y":624,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0015.png",
+	"frame": {"x":0,"y":672,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation idle hint0016.png",
+	"frame": {"x":0,"y":720,"w":47,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":48},
+	"sourceSize": {"w":47,"h":48},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0001.png",
+	"frame": {"x":0,"y":768,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0002.png",
+	"frame": {"x":0,"y":814,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0003.png",
+	"frame": {"x":0,"y":860,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0004.png",
+	"frame": {"x":0,"y":906,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0005.png",
+	"frame": {"x":0,"y":952,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0006.png",
+	"frame": {"x":0,"y":998,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0007.png",
+	"frame": {"x":0,"y":1044,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0008.png",
+	"frame": {"x":0,"y":1090,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0009.png",
+	"frame": {"x":0,"y":1136,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation plop0010.png",
+	"frame": {"x":0,"y":1182,"w":47,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":46},
+	"sourceSize": {"w":47,"h":46},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0001.png",
+	"frame": {"x":0,"y":1228,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0002.png",
+	"frame": {"x":0,"y":1270,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0003.png",
+	"frame": {"x":0,"y":1312,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0004.png",
+	"frame": {"x":0,"y":1354,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0005.png",
+	"frame": {"x":0,"y":1396,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0006.png",
+	"frame": {"x":0,"y":1438,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0007.png",
+	"frame": {"x":0,"y":1480,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0008.png",
+	"frame": {"x":0,"y":1522,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0009.png",
+	"frame": {"x":0,"y":1564,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0010.png",
+	"frame": {"x":0,"y":1606,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0011.png",
+	"frame": {"x":0,"y":1648,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0012.png",
+	"frame": {"x":0,"y":1690,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0013.png",
+	"frame": {"x":0,"y":1732,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0014.png",
+	"frame": {"x":0,"y":1774,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0015.png",
+	"frame": {"x":0,"y":1816,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0016.png",
+	"frame": {"x":0,"y":1858,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0017.png",
+	"frame": {"x":0,"y":1900,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "animation swipe fail0018.png",
+	"frame": {"x":0,"y":1942,"w":48,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "volleyball atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":48,"h":1984},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3bc71e52bf6f8f260191ff4b45036175:ff98632261ead5e202c76106fbff72fe:f07420629942c59f64337907beee31a1$"
+}
+}

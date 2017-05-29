@@ -24,7 +24,7 @@ function Initialize() {
         create: _create.bind(this),
         update: _update.bind(this),
         render: _render.bind(this)
-    }, true);
+    });
 
     // Initialize the main of the game.
     this.main = new ballpit.Core();
@@ -56,6 +56,7 @@ function _create () {
     ADCore.phaser.scale.pageAlignHorizontally = true;
     ADCore.phaser.scale.pageAlignVertically = true;
     ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+    ADCore.phaser.stage.disableVisibilityChange = true;
     ADCore.phaser.scale.refresh();
     
     // Create the input system.

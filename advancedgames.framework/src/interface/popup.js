@@ -63,7 +63,7 @@ ADCore.Popup = ( function () {
         for (var i = 0; i < len; i++) {
             var current = this.children[i];
             TweenLite.to(current.scale, 0.3, { x: 1, y: 1 });
-        };
+        }
     };
 
      /**
@@ -76,7 +76,7 @@ ADCore.Popup = ( function () {
         for (var i = 0; i < len; i++) {
             var current = this.children[i];
             TweenLite.to(current.scale, 0.3, { x: 0.01, y: 0.01 });
-        };
+        }
 
         setTimeout(callback, 350);
     };

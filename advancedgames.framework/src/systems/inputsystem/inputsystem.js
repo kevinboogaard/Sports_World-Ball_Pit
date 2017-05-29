@@ -105,6 +105,12 @@ ADCore.InputSystem = (function () {
         this._inputDown = false;
 
         /**
+        * @property {Integer} SwipeTreshold - The Swipe treshold is the treshold when to detect a swipe.
+        * @public
+        */
+        this.swipeTreshold = 25;
+
+        /**
         * @property {Boolean} _StartPosition  - True if any input is down.
         * @private
         */
@@ -174,12 +180,15 @@ ADCore.InputSystem = (function () {
         this._inputDown = false;
         Listener.Dispatch( ADCore.InputEvent.ON_UP, this, { "event": event, "position": position }, false);
 
-        if (this._startPosition !== null && this._startPosition.x !== position.x && this._startPosition.y !== position.y) {
-            var direction = position.Clone().Substract(this._startPosition);
-            direction = direction.Normalize();
-
-            Listener.Dispatch( ADCore.InputEvent.ON_SWIPE, this, { "event": event, "start": this._startPosition, "end": position, "direction": direction }, false);
+        if (this._startPosition !== null) {
+             if ( position.x >= (this._startPosition.x + this.swipeTreshold) || position.x <= (this._startPosition.x - this.swipeTreshold) || position.y >= (this._startPosition.y + this.swipeTreshold) || position.y <= (this._startPosition.y - this.swipeTreshold) ) {
+                var direction = position.Clone().Substract(this._startPosition);
+                direction = direction.Normalize();
+                
+                Listener.Dispatch( ADCore.InputEvent.ON_SWIPE, this, { "event": event, "start": this._startPosition, "end": position, "direction": direction }, false);
+             }
         }  
+
         this._startPosition = null;
     };
 
@@ -193,6 +202,7 @@ ADCore.InputSystem = (function () {
      */
     p._onInputTap = function ( event ) {
         if ( Input.paused ) return;
+
         Listener.Dispatch( ADCore.InputEvent.ON_TAP, this, { "event": event, "position": new Vector2(ADCore.phaser.input.x, ADCore.phaser.input.y) }, false);
     };
 

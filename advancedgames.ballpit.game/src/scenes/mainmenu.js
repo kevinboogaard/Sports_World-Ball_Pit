@@ -19,12 +19,10 @@ scene.MainMenu = (function () {
      * @constructor
      */
     function MainMenu() {
-        Phaser.Group.call(this, ADCore.phaser, null, "Entityscene");
+        Phaser.Group.call(this, ADCore.phaser, null, "MainMenu");
 
         var halfWidth = Config.Core.Dimensions.width / 2;
         var halfHeight = Config.Core.Dimensions.height / 2;
-
-        this.identifier = soundSystem.PlayMusic("menusound", 1, true);
 
         /** @property {Interface} */
         this.background = new ADCore.Interface(new Vector2(0, 0),"menubackground");
@@ -62,13 +60,14 @@ scene.MainMenu = (function () {
         this.startButton.anchor.set(0.5, 0.5);
         this.startButton.scale.setTo(0.01,0.01);
         this.addChild(this.startButton);
-        this.startButton.Play("active");
+
+        this.identifier = soundSystem.PlayMusic("music_menu", 1, true);
 
         setTimeout(function(){
-            TweenLite.to(this.logo.scale,0.2,{ease: Back.easeInOut.config(1.7), x:1,y:1,onComplete: function(){ 
+            TweenLite.to(this.logo.scale,0.2,{ ease: Back.easeInOut.config(1.7), x:1,y:1,onComplete: function(){ 
                 this.logo.Play("entry");
                 setTimeout(function(){
-                TweenLite.to(this.startButton.scale, 0.2, {ease: Back.easeInOut.config(1.7), x:1,y:1});
+                    TweenLite.to(this.startButton.scale, 0.2, { ease: Back.easeInOut.config(1.7), x:1,y:1});
                }.bind(this),700);
             }.bind(this)});
         }.bind(this),100);
@@ -85,7 +84,7 @@ scene.MainMenu = (function () {
      * @ignore
      */
     p._onStartButtonInputUp = function () {
-        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIALSCENE });
+        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIAL });
     };
 
     /**

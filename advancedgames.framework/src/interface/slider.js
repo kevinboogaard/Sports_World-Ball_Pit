@@ -12,15 +12,21 @@ ADCore.Slider = (function () {
      * @class Slider
      * @constructor
      * @extends Interface
+     * @param {Vector2} position
      * @param {Integer} min
      * @param {Integer} max
-     * @param {Vector2} position
      * @param {String} key_bg - The background key from the preloader.
-     * @param {String} key_handle - The handle key from the preloader.
+     * @param {String} [key_handle] - The handle key from the preloader.
      */
-    function Slider(min, max, position, key_bg, key_handle) {
-        ADCore.Interface.call(this, position, key_bg, key_handle);
+    function Slider(position, min, max, key_bg, key_handle) {
+        ADCore.Interface.call(this, position, key_bg);
 
+        /**
+         * @property {Boolean} InputEnabled - Need to put input enabled for Phaser Input System. 
+         * @ignore
+         */
+        this.inputEnabled = true;
+        
         /**
          * @property {Integer} Min
          * @public
@@ -36,11 +42,16 @@ ADCore.Slider = (function () {
         this._max = max;
 
         /**
-         * @property {Integer} Current
+         * @property {Integer} Value
          * @public
-         * @readonly 
          */
-        this._current = this_min;
+        this._value = this._min;
+
+        /**
+         * @property {Integer} Percentage
+         * @public
+         */
+        this._percentage = 0;
 
         /**
          * @property {Button} _Handle
@@ -49,8 +60,21 @@ ADCore.Slider = (function () {
          */
         this._handle = null;
 
+        /**
+         * @property {Function} OnDragUpdate
+         * @public
+         * @default  null
+         */
+        this.onDragUpdate = null;
+
+        /**
+         * @property {Function} OnInputUp - Set this variable with a function to listen to the call.
+         * @public
+         * @default null
+         */
+        this.onInputUp = null;
+
         this._initialize(key_handle);
-        ADCore.EnableMutators(this);
     }
     Slider.prototype = Object.create(ADCore.Interface.prototype);
     Slider.prototype.constructor = Slider;
@@ -63,19 +87,75 @@ ADCore.Slider = (function () {
      * @param {String} key_handle
      */
     p._initialize = function (key_handle) {
-            this._handle = new ADCore.Button(new Vector2(0,0), key_handle);
-            this._handle.onInputUp = this._onHandleUp.bind(this);
+        if (key_handle) {
+            this._handle = new ADCore.Button(new Vector2(0, 0), key_handle);
+            this._handle.anchor.set(0, 0.5);
+            this._handle.input.enableDrag();
+            this._handle.input.boundsRect = new Phaser.Rectangle(0, -(this._handle.height / 2), this.width, this.height * 2);
+            this._handle.input.allowVerticalDrag = false;
+            this._handle.events.onDragUpdate.add(this._onDragUpdate, this);
             this.addChild(this._handle);
+        }
+    
+        this.events.onInputUp.add( this._onInputUp, this );
     };
 
     /**
-     * @method _OnHandleUp
+     * @method _UpdateByPercentage
      * @memberof Slider
      * @private
-     * @param {Button} caller
      */
-    p._onHandleUp = function(caller) {
-        var inputPositionCurrent = inputSystem.inputPosition;
+    p._updateByPercentage = function () {
+        if (this._handle) this._handle.absoluteX =  ((this.absoluteX + this.width) / 100) * this._percentage;
+        this._value = ((this._max) / 100) * this._percentage;
+    };
+
+    /**
+     * @method _UpdateByValue
+     * @memberof Slider
+     * @private
+     */
+    p._updateByValue = function () {
+        this._percentage = (100 / (this._max)) * this._value;
+        this._updateByPercentage();
+    };
+    
+    /**
+     * @method _UpdateByPosition
+     * @memberof Slider
+     * @private
+     */
+    p._updateByPosition = function () {
+        this._percentage = (100 / this.width) * this._handle.x ;
+        this._value = ((this._max) / 100) * this._percentage;
+    };
+
+    /**
+     * @method _OnDragUpdate
+     * @memberof Slider
+     * @private
+     * @param {Object} caller
+     */
+    p._onDragUpdate = function(caller) {
+        this._updateByPosition();
+        if (this.onDragUpdate) this.onDragUpdate(this._value);
+    };
+
+    /**
+     * @method _OnInputUp
+     * @memberof Slider
+     * @private
+     * @param {Object} caller
+     * @param {Vector2} position
+     * @todo UpdatePosition when click should not be set here. It should be outside of the class.
+     */
+    p._onInputUp = function(caller, position) {
+        if (this._handle) { 
+            this._handle.absoluteX = position.x;
+            this._updateByPosition();
+        }
+
+        if (this.onInputUp) this.onInputUp(this._value);
     };
 
     /**
@@ -87,13 +167,17 @@ ADCore.Slider = (function () {
      */
     p.__interface_dispose = p.Dispose;
     p.Dispose = function(){
+        delete this.inputEnabled;
         delete this._min;
         delete this._max;
-        delete this._current;
+        delete this._value;
+        delete this._percentage;
 
-        this._handle.Dispose();
         this.removeChild(this._handle);
         delete this._handle;
+
+        delete this.onDragUpdate;
+        delete this.onInputUp;
 
         this.__interface_dispose();
     };
@@ -105,7 +189,10 @@ ADCore.Slider = (function () {
      * @private 
      * @ignore
      */
+    p.__interface_gettersAndSetters = p.gettersAndSetters;
     p.gettersAndSetters = function () {
+        this.__interface_gettersAndSetters();
+
         this.Get("min", function () {
             return this._min;
         });
@@ -114,12 +201,23 @@ ADCore.Slider = (function () {
             return this._max;
         });
 
-        this.Define("current", {
+        this.Define("value", {
             get: function () {
-                return this._current;
+                return this._value;
             },
-            set: function (val) {
-                this._current = val;
+            set: function (value) {
+                this._value = value;
+                this._updateByValue();
+            }
+        });
+
+        this.Define("percentage", {
+            get: function () {
+                return this._percentage;
+            },
+            set: function (value) {
+                this._percentage = value;
+                this._updateByPercentage();
             }
         });
     };

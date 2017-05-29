@@ -29,6 +29,18 @@ scene.Preloader = (function () {
         this._callback = callback;
 
         /**
+         * @property {Interface} _Background
+         * @private
+         */
+        this._background = null;
+
+        /**
+         * @property {Interface} _Logo
+         * @private
+         */
+        this._logo = null;
+
+        /**
          * @property {Interface} _BarBackground
          * @private
          */
@@ -117,26 +129,41 @@ scene.Preloader = (function () {
      * @public {Object} params
      */
     p._onPreloadStart = function (caller, params) {
+        this._background = new ADCore.Interface(new Vector2(), "preloader_bg");
+        this.addChild(this._background);
+
+        this._logo = new ADCore.Interface(new Vector2(Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height * 0.2), "preloader_logo");
+        this._logo.anchor.set(0.5, 0.5);
+        this.addChild(this._logo);
+
         this._barBackground = new ADCore.Interface(this._barPosition, "bar_bg");
         this._barBackground.x -= this._barBackground.width / 2;
+        this._barBackground.anchor.set(0, 0.5);
 
         this._barPosition.x -= this._barBackground.width / 2;
 
         this._bar = new ADCore.Interface(this._barPosition, "bar");
+        this._bar.anchor.set(0, 0.5);
         this._bar.width = 0;
 
         this._barWhiteBorder = new ADCore.Interface(this._barPosition, "bar_white_border");
         this._barWhiteBorder.x -= 2;
         this._barWhiteBorder.y += .025;
+        this._barWhiteBorder.anchor.set(0, 0.5);
+
         this._barBlackBorder = new ADCore.Interface(this._barPosition, "bar_black_border");
+        this._barBlackBorder.anchor.set(0, 0.5);
         
         var keys = Object.keys(ballpit.BallTypes);
         var randomType = ballpit.BallTypes[keys[ keys.length * Math.random() << 0]];
         var ball_key = "preloader_" + randomType;
 
         this._preloaderBall = new ADCore.Interface(this._barPosition, ball_key);
+        this._preloaderBall.anchor.set(0.5, 0.5);
+
         this._preloaderBallWhiteBorder = new ADCore.Interface(this._barPosition, "preloader_ball_white_border");
-        
+        this._preloaderBallWhiteBorder.anchor.set(0.5, 0.5);
+
         this.addChild(this._preloaderBallWhiteBorder); 
         this.addChild(this._barBackground);
         this.addChild(this._bar);
@@ -182,7 +209,7 @@ scene.Preloader = (function () {
             this._started = false;
 
             setTimeout(function () {
-               this._callback();
+                this._callback();
             }.bind(this), this._delay);
         }
 
@@ -212,7 +239,15 @@ scene.Preloader = (function () {
         Listener.Mute(ADCore.Event.ON_PRELOAD_START, this);
         Listener.Mute(ADCore.Event.ON_PRELOAD_UPDATE, this);
 
-        delete this._callback;
+        delete this._callback
+        
+        this._background.Dispose();
+        this.removeChild(this._background);
+        delete this._background;
+
+        this._logo.Dispose();
+        this.removeChild(this._logo);
+        delete this._logo;
 
         this._barBackground.Dispose();
         this.removeChild(this._barBackground);

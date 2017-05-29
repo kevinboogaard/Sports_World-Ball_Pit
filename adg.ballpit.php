@@ -69,6 +69,7 @@
         <script src="advancedgames.framework/src/interface/text.js"></script>
         <script src="advancedgames.framework/src/interface/popup.js"></script>
         <script src="advancedgames.framework/src/interface/slider.js"></script>
+        <script src="advancedgames.framework/src/interface/overlay.js"></script>
 
         <script src="advancedgames.framework/src/displays/tileview.js"></script>
 
@@ -96,8 +97,7 @@
         
         <script src="advancedgames.ballpit.game/src/interface/interfacelayer.js"></script>
         <script src="advancedgames.ballpit.game/src/interface/speech.js"></script>
-        <script src="advancedgames.ballpit.game/src/interface/timer/watch.js"></script>
-        <script src="advancedgames.ballpit.game/src/interface/score/scoreboard.js"></script>
+        <script src="advancedgames.ballpit.game/src/interface/infobar.js"></script>
         <script src="advancedgames.ballpit.game/src/interface/tasks/taskboard.js"></script>
 
         <script src="advancedgames.ballpit.game/src/interface/popups/pausepopup.js"></script>

@@ -73,7 +73,7 @@ ballpit.BallController = (function () {
     p.Initialize = function () {
         var len = this._layer.width;
         for (var x = 0; x < len; x++) {
-            this.RestoreColumn(x, true);
+            this._spawnColumn(x, true);
         }
     };
     
@@ -209,6 +209,46 @@ ballpit.BallController = (function () {
             }
         }
     };
+
+     /**
+     * @method _SpawnColumn
+     * @memberof BallController
+     * @public
+     * @param {Number} tileX - The x position of the column the controller needs to restore.
+     * @param {Boolean} [forceType = false]
+     */
+    p._spawnColumn = function (tileX, forceType) {
+        var len = this._rows.length;
+        for (var y = len -1; y >= 0; y--) {
+            var row = this._rows[y];
+
+            var row_len = row.length;
+            for (var x = 0; x < row_len ; x++) {
+                if (x === tileX) {
+                    var tile = row[x];
+
+                    if (this.CanMove(tile) === false) {
+                        var position = this._layer.TilePositionToScreenPosition(new Vector2(tile.tileposition.x,  tile.tileposition.y));
+
+                        var ball = null;
+                        var type = tile.properties.type || "random";
+
+                        if (forceType !== true) type = "random";
+
+                        if (type === "random") {
+                            ball = this._ballContainer.AddRandomBall(position);
+                        } else {
+                            ball = this._ballContainer.AddBall(position, type);
+                        }
+                        tile.occupier = ball;
+
+                        ball.MoveTo(tile.position);
+                        ball.state = ballpit.BallStates.MOVING;
+                    }
+                }
+            }
+        }
+    };
    
     /**
      * @method CanMove
@@ -284,7 +324,7 @@ ballpit.BallController = (function () {
         tiles.push(params.owner);
 
         var len = tiles.length;
-        for (var i = 0; i < len; i++) {
+        for (var i = len - 1; i >= 0; i--) {
             var tile = tiles[i];
             var occupier = tile.occupier;
 

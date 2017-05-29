@@ -18,11 +18,6 @@ if (typeof Debug !== "undefined" && Debug.ENABLED) {
             get: function () {
                 return "HELLO WORLD!";
             }
-        },
-        "addscore": {
-            set: function(n){
-                __GLOBAL__HACK_SCORE_HOLDER.Add(n);
-            }
         }
     });
 } else if (typeof Debug === "undefined") {

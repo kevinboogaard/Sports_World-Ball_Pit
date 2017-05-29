@@ -6,6 +6,19 @@
  */
 var ADCore = ADCore || {};
 
+/**
+ * @namespace Event
+ */
+this.Event; // For documentation purposes.
+ADCore.Event = ADCore.Event || {};
+
+/**
+ * @property {String} ON_EFFECT_SET
+ * @memberof Event
+ * @readonly
+ */
+ADCore.Event.ON_EFFECT_SET = "on_effect_set";
+
 ADCore.TileModel = (function () {
 
     /**
@@ -136,6 +149,12 @@ ADCore.TileModel = (function () {
          */
         this.parent = null;
 
+         /**
+         * @property {Object|Integer} Effect
+         * @public
+         */
+        this._effect = null;
+
         /**
          * @property {Array} neighbours - The neighbours are the neighbour tile models of this model.
          * @public
@@ -186,7 +205,6 @@ ADCore.TileModel = (function () {
         return false;
     };
 
-
     /**
      * Used in A* Pathfinding Algorithm. 
      * Resets the R, G, F, Closed, Open and Parent values.
@@ -230,6 +248,16 @@ ADCore.TileModel = (function () {
         this.Get( "gid", function () {
             return this._gid;
         } );
+        
+        this.Define( "effect", {
+            get: function () {
+                return this._effect;
+            },
+            set: function (value) {
+                this._effect = value;
+                Listener.Dispatch(ADCore.Event.ON_EFFECT_SET, this);
+            }
+        });
 
         this.__entity_gettersAndSetters();
     };
