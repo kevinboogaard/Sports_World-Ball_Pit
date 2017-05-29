@@ -6,6 +6,7 @@ var Settings = {};
 Settings.Game = {};
 Settings.Game.TIME = 120;
 Settings.Game.DELAY_PER_ROUND = 10;
+Settings.Game.TIME_BACK_AFTER_COMBO = 15;
 
 /**
  * value = pixels per second.
