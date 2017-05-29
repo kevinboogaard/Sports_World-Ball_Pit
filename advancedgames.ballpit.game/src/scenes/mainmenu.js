@@ -53,7 +53,7 @@ scene.MainMenu = (function () {
      * @ignore
      */
     p._onStartButtonInputUp = function () {
-        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIALSCENE });
+        Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.TUTORIAL });
     };
 
     /**
