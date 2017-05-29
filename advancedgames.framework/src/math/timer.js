@@ -26,10 +26,10 @@ ADCore.Timer = (function () {
         this.multiplier = multiplier;
         
         /**
-        * @property {Function} _Callback
-        * @private
+        * @property {Function} Callback
+        * @public
         */
-        this._callback = callback;
+        this.callback = callback;
 
         /**
         * @property {Number} Count 
@@ -104,7 +104,7 @@ ADCore.Timer = (function () {
 
             if (this.count <= 0) {
                 ClearTimer(this);
-                this._callback();
+                this.callback();
             }
         }
     };

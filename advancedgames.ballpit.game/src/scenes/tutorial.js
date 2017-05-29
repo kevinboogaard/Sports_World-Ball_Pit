@@ -26,15 +26,13 @@ scene.Tutorial = (function () {
         this.addChild(this.overlay);
 
         /** @property {Interface} */
-        this.chatCloud = new ballpit.Speech(new Vector2(50, 100), "tut_bubble", 6);
+        this.chatCloud = new ballpit.Speech(new Vector2(40, 100), "tut_bubble", 6);
         this.chatCloud.alpha = 0.01;
         this.overlay.addChild(this.chatCloud);
 
         /** @property {Interface} */
-        this.trainer = new ADCore.Interface(new Vector2(this.chatCloud.x + this.chatCloud.width, this.chatCloud.y + this.chatCloud.height), "tut_trainer");
-        this.trainer.scale.set(0.3, 0.3);
+        this.trainer = new ADCore.Interface(new Vector2(this.chatCloud.x + this.chatCloud.width, this.chatCloud.y), "tut_trainer");
         this.trainer.alpha = 0.01;
-        this.trainer.y -= this.trainer.height * 0.9;
         this.overlay.addChild(this.trainer);
 
         /** @property {Button} */
@@ -49,15 +47,13 @@ scene.Tutorial = (function () {
         /** @property {Integer} */
         this.tutorialCount = 0;
 
-        /** @property {Timer} */
-        ClearTimer(this.gameTimer);
-        this.gameTimer = SetTimer(function () {
+       this.gameTimer.callback = function () {
             Input.paused = true;
             setTimeout(function() {
                 soundSystem.PlaySound("sound_timerdone", 1, false);
                 Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU, "levelUp": true });
             }.bind(this), 1000);
-        }.bind(this), Settings.Game.TIME, 1);
+        }.bind(this);
 
         Input.paused = true;
 
@@ -181,6 +177,7 @@ scene.Tutorial = (function () {
             this.trainer.Play("talk", 30, true);
             this.chatCloud.Talk("Verschuif naast elkaar gelegen ballen zodat deze van plek verwisselen.", 30, function () {
                 this.overlay.Clear();
+
                 // First combination tutorial
                 var tileWidth = this.tilemap.tilewidth;
                 var tileHeight = this.tilemap.tileheight;
@@ -195,12 +192,15 @@ scene.Tutorial = (function () {
                 this.overlay.Draw();
 
                 Input.paused = false;
-
-                this.chatCloud.Talk("Zorg er op deze manier voor dat je drie dezelfde ballen naast of boven elkaar plaatst. Hier krijg je punten voor.", 30, function () {
-                    this.chatCloud.Talk("Voor een rij van vier of vijf dezelfde ballen krijg je zelfs meer punten!", 30, function () {
-                        this.trainer.Play("idle", 30, true);
+                setTimeout( function () { 
+                    this.chatCloud.Talk("Zorg er op deze manier voor dat je drie dezelfde ballen naast of boven elkaar plaatst. Hier krijg je punten voor.", 30, function () {
+                        setTimeout( function () { 
+                            this.chatCloud.Talk("Voor een rij van vier of vijf dezelfde ballen krijg je zelfs meer punten!", 30, function () {
+                                this.trainer.Play("idle", 30, true);
+                            }.bind(this));
+                        }.bind(this), 1000);
                     }.bind(this));
-                }.bind(this));
+                }.bind(this), 1000);
             }.bind(this));
         }.bind(this)});
     };
@@ -228,6 +228,8 @@ scene.Tutorial = (function () {
                     this.gameTimer.multiplier = -20;
                     setTimeout( function () {
                         TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                            this.chatCloud.Clear();
+
                             this.overlay.Clear();
                             this.overlay.Draw();
 
@@ -297,26 +299,28 @@ scene.Tutorial = (function () {
 
             this.trainer.Play("talk", 30, true);
             this.chatCloud.Talk("Hier staat de coach. De coach geeft bepaalde opdrachten die je moet uitvoeren zodat je meer tijd en punten krijgt.", 30, function () {
-                this.chatCloud.Talk("Pas op! Zolang de opdrachten blijven staan , loopt de tijd sneller!", 30, function () {
-                    this.trainer.Play("idle", 30, true);
-                    this.coach.Start();
+                setTimeout( function () {
+                    this.chatCloud.Talk("Pas op! Zolang de opdrachten blijven staan , loopt de tijd sneller!", 30, function () {
+                        this.trainer.Play("idle", 30, true);
+                        this.coach.Start();
 
-                    setTimeout(function () {
-                        this.chatCloud.Clear();
-                        TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
-                            this.overlay.Clear();
-                            this.overlay.Draw();
+                        setTimeout(function () {
+                            this.chatCloud.Clear();
+                            TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                                this.overlay.Clear();
+                                this.overlay.Draw();
 
-                            this.chatCloud.y -= offset;
-                            this.trainer.y -= offset;
+                                this.chatCloud.y -= offset;
+                                this.trainer.y -= offset;
 
-                            setTimeout(function () {
-                                this.tutorialCount++;
-                                this.SwitchExplanation();
-                            }.bind(this), 1000);
-                        }.bind(this) });
-                    }.bind(this), 4000);
-                }.bind(this));
+                                setTimeout(function () {
+                                    this.tutorialCount++;
+                                    this.SwitchExplanation();
+                                }.bind(this), 1000);
+                            }.bind(this) });
+                        }.bind(this), 4000);
+                    }.bind(this));
+                }.bind(this), 1000);
             }.bind(this));
         }.bind(this) });
     };
@@ -330,21 +334,25 @@ scene.Tutorial = (function () {
         TweenLite.to(this.chatCloud, 0.5, { alpha: 1, onComplete: function () {
             this.trainer.Play("talk", 30, true);
             this.chatCloud.Talk("Oke, de tutorial is nu afgerond. Je kan nu de game vrij spelen totdat de timer is afgelopen.", 30, function () {
-                this.chatCloud.Talk("Omdat dit nog het tutorial level is zal de timer sneller lopen en zal je scoren niet deelnemen aan het highscore lijst.", 30, function () {
-                    this.chatCloud.Talk("Succes! De game begint in 3. 2. 1.", 30, function () {
-                        this.trainer.Play("idle", 30, true);
-                        setTimeout(function () {
-                            TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
-                                TweenLite.to(this.trainer, 0.5, { alpha: 0 });
-                                this.overlay.TransitionOut( function () {
-                                    this.inTutorial = false;
-                                    this.gameTimer.multiplier = 5;
-                                    Input.paused = false;
-                                }.bind(this));
-                            }.bind(this) });
-                        }.bind(this), 2000);
+                setTimeout(function() {
+                    this.chatCloud.Talk("Omdat dit nog het tutorial level is zal de timer sneller lopen en zal je scoren niet deelnemen aan het highscore lijst.", 30, function () {
+                        setTimeout(function() {
+                            this.chatCloud.Talk("Succes! De game begint in 3. 2. 1.", 30, function () {
+                                this.trainer.Play("idle", 30, true);
+                                setTimeout(function () {
+                                    TweenLite.to(this.chatCloud, 0.5, { alpha: 0, onComplete: function () { 
+                                        TweenLite.to(this.trainer, 0.5, { alpha: 0 });
+                                        this.overlay.TransitionOut( function () {
+                                            this.inTutorial = false;
+                                            this.gameTimer.multiplier = 5;
+                                            Input.paused = false;
+                                        }.bind(this));
+                                    }.bind(this) });
+                                }.bind(this), 2000);
+                            }.bind(this));
+                        }.bind(this), 1000);
                     }.bind(this));
-                }.bind(this));
+                }.bind(this), 1000);
             }.bind(this));
         }.bind(this)});
     };

@@ -100,7 +100,11 @@ ballpit.CoachView = (function () {
      * @public
      */
     p.Dispose = function () {
-        throw new Error("NO DISPOSE!");
+        this.removeChild(this.mouth);
+        this.mouth.Dispose();
+        delete this.mouth;
+
+        Listener.Mute(ballpit.Event.ON_COACH_STATE_EMOTION_CHANGE, this);
     };
 
     return CoachView;

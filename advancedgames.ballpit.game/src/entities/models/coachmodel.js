@@ -290,7 +290,7 @@ ballpit.CoachModel = (function () {
     p._onStageDone = function () {
         this.emotion = ballpit.Coach.Emotions.HAPPY;
         this.state = ballpit.Coach.States.IDLE;
-        Listener.Dispatch(ballpit.Event.ON_COACH_STATE_EMOTION_CHANGE, this, { "loop": false });
+        Listener.Dispatch(ballpit.Event.ON_COACH_STATE_EMOTION_CHANGE, this);
     };
     
     /**
@@ -299,7 +299,18 @@ ballpit.CoachModel = (function () {
      * @public
      */
     p.Dispose = function () {
-        throw new Error("Dispose not made yet");
+        delete this.inTraining;
+        delete this.state;
+        delete this.emotion;
+        delete this._taskhandler;
+        delete this._tasks;
+
+        ClearStopwtach(this._stopwatch);
+        delete this._stopwatch;
+
+        Listener.Mute(ballpit.Event.ON_BALL_ALIGN, this);
+        Listener.Mute(ballpit.Event.ON_STAGE_BEGIN, this);
+        Listener.Mute(ballpit.Event.ON_STAGE_DONE, this);
     };
 
     /**
