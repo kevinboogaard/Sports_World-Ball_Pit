@@ -11,10 +11,10 @@
             }
         },
         "explosion":{
-            "json_path": "balls/explosion/spritesheet_explosion.json",
-            "atlas_path": "balls/explosion/spritesheet_explosion.png",
+            "json_path": "effects/spritesheet_explosion.json",
+            "atlas_path": "effects/spritesheet_explosion.png",
             "animations": {
-                "explosion": []
+                "explosion": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
             }
         },
         "tennisball":{
