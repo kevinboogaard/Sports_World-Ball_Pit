@@ -58,7 +58,7 @@ function _create () {
     ADCore.phaser.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
     ADCore.phaser.stage.disableVisibilityChange = true;
     ADCore.phaser.scale.refresh();
-
+    
     // Create the input system.
     this.inputSystem = new ADCore.InputSystem(ADCore.phaser.input);
     // Create the sound system.

@@ -28,6 +28,12 @@ ADCore.Sprite = (function () {
         this._animations = [];
 
         /**
+         * @property {Function} OnAnimationComplete - Do somthing after the animantion is done
+         * @public
+         */
+        this.onAnimationComplete = null;
+
+        /**
          * @property {Boolean} Disposed - True if the spsrite has been disposed.
          * @public
          */
@@ -78,6 +84,15 @@ ADCore.Sprite = (function () {
                 this._animations.push(anim_key);
             }
         }
+
+        if ( this._animations.contains("idle") ) this.Play("idle");
+       this.events.onAnimationComplete.add(this._onAnimationComplete.bind(this));
+    };
+
+    p._onAnimationComplete = function(){
+        if(this.onAnimationComplete){
+            this.onAnimationComplete();
+        }
         
         if ( this._animations.contains("idle") ) this.Play("idle");
     };
@@ -96,7 +111,7 @@ ADCore.Sprite = (function () {
     p.Play = function (name, frameRate, loop, killOnComplete, toIdleOnComplete) {
         if (this._animations.contains(name) === false) throw new Error("Animation doesn't exist");
         var animation = this.animations.play(name, frameRate || 30, loop || false, killOnComplete || false);
-        if (toIdleOnComplete) animation.onComplete.add(function(){ this.Play("idle") }, this);
+        if (toIdleOnComplete) animation.onComplete.add(function(){ this.Play("idle"); }, this);
         return animation;
     };
 
