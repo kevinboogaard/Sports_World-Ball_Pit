@@ -317,7 +317,7 @@ scene.Game = (function () {
      */
     p._onStageDone = function (caller, params) {
         this.gameTimer.multiplier = 1;
-        this.gameTimer.Add(20);
+        this.gameTimer.Add(Settings.Game.TIME_BACK_AFTER_COMBO);
     };
 
     /**
