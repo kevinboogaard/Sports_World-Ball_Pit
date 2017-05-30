@@ -9,12 +9,12 @@ var ADCore = ADCore || {};
 /**
  * @namespace
  */
-let FontLoader;
+let FontLoader = {}; // For documentation purposes.
 ADCore.FontLoader = {};
 
 /**
  * @method LoadFonts
- * @memberof Fonts
+ * @memberof FontLoader
  * @static
  */
 ADCore.FontLoader.LoadFonts = function () {
