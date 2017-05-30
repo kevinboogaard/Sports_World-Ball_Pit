@@ -25,6 +25,13 @@ ballpit.Event.ON_OPTIONS_POPUP_INPUT = "on_options_popup_input";
 ballpit.OptionsInputs = ballpit.OptionsInputs || {};
 
 /**
+ * @namespace OptionsInputs
+ */
+
+let OptionsInputs = {};
+ballpit.OptionsInputs.Buttons = OptionsInputs;
+
+/**
  * @property PLAY
  * @memberof OptionsInputs
  */
