@@ -101,8 +101,6 @@ function _update () {
 function _render () {
     // Render main.
     this.main.Render();
-
-    ADCore.phaser.debug.text('render FPS: ' + (ADCore.phaser.time.fps || '--') , 2, 14, "#00ff00");
 }
 
 /**
