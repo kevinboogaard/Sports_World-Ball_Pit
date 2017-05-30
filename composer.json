@@ -1,0 +1,20 @@
+{
+	"name": "Sports World: Ball Pit",
+	"description": "Sports World; Ball Pit is a puzzle game made for Cool Games. Ball Pit is a variant of Bejeweled in the intellectual property of Sports World. This project is for the 'Proeve van Bekwaamheid' of Mediacollege Amsterdam.",
+	"keywords": ["Sports", "World", "Ball", "Pit"],
+	"homepage": "http://pvb.alex-antonides.com/",
+	"license": "MIT",
+	"type": "project",
+    "require": {
+        "symfony/http-foundation": "^3.2",
+        "slim/slim": "3.0",
+		"usmanhalalit/pixie": "2.*@dev",
+		"josegonzalez/dotenv": "dev-master",
+		"curl/curl": "^1.6"
+    },
+	"autoload": {
+		"psr-4": {
+			"App\\": "advancedgames.framework.backend/app/"
+		}
+	}
+}

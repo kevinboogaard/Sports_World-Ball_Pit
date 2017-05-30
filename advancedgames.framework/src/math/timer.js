@@ -26,10 +26,10 @@ ADCore.Timer = (function () {
         this.multiplier = multiplier;
         
         /**
-        * @property {Function} _Callback
-        * @private
+        * @property {Function} Callback
+        * @public
         */
-        this._callback = callback;
+        this.callback = callback;
 
         /**
         * @property {Number} Count 
@@ -38,10 +38,16 @@ ADCore.Timer = (function () {
         this.count = startTime; 
 
         /**
+        * @property {Number} Elapsed 
+        * @public
+        */
+        this.elapsed = 0; 
+
+        /**
         * @property {Boolean} _TimerStarted
         * @private
         */
-        this._timerStarted = false;
+        this.timerStarted = false;
     }
     var p = Timer.prototype;
 
@@ -51,7 +57,7 @@ ADCore.Timer = (function () {
      * @public 
      */
     p.Start = function(){
-        this._timerStarted = true;
+        this.timerStarted = true;
     };
     
     /**
@@ -60,7 +66,7 @@ ADCore.Timer = (function () {
      * @public 
      */
     p.Stop = function(){
-        this._timerStarted = false;
+        this.timerStarted = false;
     };
 
     /**
@@ -99,12 +105,15 @@ ADCore.Timer = (function () {
      * @param {Integer} deltaTime
      */
     p.Update = function(deltaTime){
-        if(this._timerStarted === true){
-            this.count -= (deltaTime * this.multiplier);
+        if(this.timerStarted === true){
+            var delta = (deltaTime * this.multiplier);
+            
+            this.count -= delta;
+            this.elapsed += delta;
 
             if (this.count <= 0) {
                 ClearTimer(this);
-                this._callback();
+                this.callback();
             }
         }
     };

@@ -17,8 +17,6 @@ ballpit.TaskBoard = (function () {
      * @param {CoachModel} coach
      */
     function TaskBoard(position, key, coach) {
-        ballpit.Speech.call(this,position,key);
-
         /**
          * @property {CoachModel} _Coach
          * @private
@@ -26,10 +24,37 @@ ballpit.TaskBoard = (function () {
         this._coach = coach;
 
         /**
+         * @property {Interface} _Icon
+         * @private
+         */
+        this._icon = null;
+
+        /**
+         * @property {Integer} _Amount
+         * @private
+         */
+        this._amount = 0;
+
+        /**
+         * @property {String} _Type
+         * @private
+         */
+        this._type = "";
+
+        /**
          * @property {Object} _CurrentTask
          * @private
          */
         this._currentTask = this._coach.activeTask;
+
+        /**
+         * @property {Boolean} HasTransitioned
+         * @public
+         * @default false
+         */
+        this.hasTransitioned = false;
+
+        ballpit.Speech.call(this,position,key);
     }
     TaskBoard.prototype = Object.create(ballpit.Speech.prototype);
     TaskBoard.prototype.constructor = TaskBoard;
@@ -42,8 +67,18 @@ ballpit.TaskBoard = (function () {
      * @ignore
      */
     p._initialize = function () { 
-        this._text = new ADCore.Text().Position(new Vector2(30, 10)).Size(12).Font("comfortaa").Wrap(this.width).Finish();
-        this._text.anchor.set(0, 0);
+        this._icon = new ADCore.Interface(new Vector2(-this.width / 2, - this.height / 2), "tennisball");
+        this._icon.width = 40;
+        this._icon.height = 40;
+        this._icon.x += this._icon.width / 2;
+        this._icon.y += this._icon.height / 2;
+        this._icon.anchor.set(0.5, 0.5);
+        this.addChild(this._icon);
+
+        this._text = new ADCore.Text().Position(new Vector2(this._icon.x, this._icon.y)).Size(12).Font("djb-bbi").Wrap(this.width).Finish();
+        this._text.x += this._icon.width * 0.75;
+        this._text.y += this._icon.height * 0.15;
+        this._text.anchor.set(0, 0.5);
         this.addChild(this._text);
     };
 
@@ -53,10 +88,11 @@ ballpit.TaskBoard = (function () {
      * @public
      */
     p.Render = function () {
-        if (this._coach.activeTask !== this._currentTask) {
-            this._currentTask = this._coach.activeTask; 
-
-            var message = "Collect " + this._currentTask.amount + " " + this._currentTask.type + "s";
+        this._currentTask = this._coach.activeTask;
+        
+        if (this._currentTask.amount != this._amount) {
+            this._amount = this._currentTask.amount;
+            var message = this._amount.toString();
             var speed = 50;
 
             if (this.IsTalking()) { 
@@ -66,6 +102,45 @@ ballpit.TaskBoard = (function () {
                 this.Talk(message, speed);
             }
         }
+
+        if (this._currentTask.type != this._type) {
+            this._type = this._currentTask.type;
+            this._icon.loadTexture(this._type);
+        }
+    };
+
+    /**
+     * @method TransitionIn
+     * @memberof TaskBoard
+     * @public 
+     */
+    p.TransitionIn = function () {
+        this.hasTransitioned = true;
+        TweenLite.to(this.scale, 0.2, { x: 1, y: 1 })
+    };
+
+    /**
+     * @method TransitionOut
+     * @memberof TaskBoard
+     * @public 
+     */
+    p.TransitionOut = function () {
+        this.hasTransitioned = false;
+        TweenLite.to(this.scale, 0.2, { x: 0, y: 0 })
+    };
+
+    p.__speech_dispose = p.Dispose;
+    p.Dispose = function () {
+        this.__speech_dispose();
+    };
+
+    p.__speech_gettersAndSetters = p.gettersAndSetters;
+    p.gettersAndSetters = function () {
+        this.__speech_gettersAndSetters();
+
+        this.Get("effectLocation", function () {
+            return new Vector2(this._icon.absoluteX, this._icon.absoluteY);
+        });
     };
 
     return TaskBoard;

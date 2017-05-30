@@ -6,6 +6,18 @@
  */
 var ballpit = ballpit || {};
 
+/**
+ * @namespace {String} Event
+ * @memberof ballpit
+ */
+ballpit.Event = ballpit.Event || {};
+
+/**
+ * @event ON_PAUSE_BUTTON_UP
+ * @memberof Event
+ */
+ballpit.Event.ON_PAUSE_BUTTON_UP = "on_pause_button_clicked";
+
 ballpit.InterfaceLayer = (function () {
 
     /**
@@ -20,16 +32,34 @@ ballpit.InterfaceLayer = (function () {
         Phaser.Group.call( this, ADCore.phaser, null, "Interface Layer" );
 
         /**
-         * @property {Watch} watch 
+         * @property {Infobar} Infobar 
          * @public
          */
-        this.watch = null;
+        this.infobar = null;
 
         /**
-         * @property {ScoreBoard} ScoreBoard 
+         * @property {CoachModel} coach 
          * @public
          */
-        this.scoreboard = null;
+        this.coach = coach;
+
+        /**
+         * @property {Interface} TimeBar
+         * @public
+         */
+        this.timeBar = null;
+
+        /**
+         * @property {Interface} TimeBarBackground
+         * @public
+         */
+        this.timeBarBackground = null;
+
+        /**
+         * @property {Interface} TimeBarBorder
+         * @public
+         */
+        this.timeBarBorder = null;
 
         /**
          * @property {TaskBoard} TaskBoard 
@@ -37,7 +67,19 @@ ballpit.InterfaceLayer = (function () {
          */
         this.taskboard = null;
 
-        this._initialize(gameTimer, scoreHolder, coach);
+        /**
+         * @property {Button} PauseButton 
+         * @public
+         */
+        this.pausebutton = null;
+
+        /**
+         * @property {Time} GameTimer 
+         * @public
+         */
+        this.gameTimer = gameTimer;
+
+        this._initialize(scoreHolder);
     }
     InterfaceLayer.prototype = Object.create( Phaser.Group.prototype );
     InterfaceLayer.prototype.constructor = InterfaceLayer;
@@ -47,22 +89,45 @@ ballpit.InterfaceLayer = (function () {
      * @method _Initialize
      * @memberof InterfaceLayer
      * @private
-     * @param {Timer} gameTimer 
      * @param {ScoreHolder} scoreHolder
-     * @param {CoachModel} coach
      * @ignore
      */
-    p._initialize = function (gameTimer, scoreHolder, coach) {
-        this.scoreboard = new ballpit.ScoreBoard(new Vector2(10, 10), "scoreboard", scoreHolder);
-        this.addChild(this.scoreboard);
+    p._initialize = function (scoreHolder) {
+        this.infobar = new ballpit.Infobar(new Vector2(Config.Core.Dimensions.width / 2, 0), "ui_infobar_bg", scoreHolder);
+        this.infobar.x -= this.infobar.width / 2;
+        this.addChild(this.infobar);
 
-        this.watch = new ballpit.Watch(new Vector2(this.scoreboard.width, 10), "stopwatch", gameTimer);
-        this.watch.x += this.watch.width * 0.33;
-        this.addChild(this.watch);
+        this.timeBar = new ADCore.Interface(new Vector2(Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height * 0.96), "ui_timerbar");
+        this.timeBar.x -= this.timeBar.width / 2;
+        this.timeBar.anchor.set(0, 0.5);
+        this.timeBar.scale.set(0, 1);
 
-        this.taskboard = new ballpit.TaskBoard(new Vector2(Config.Core.Dimensions.width * 0.33, 125), "bubble", coach);
+        this.timeBarBackground  = new ADCore.Slider(new Vector2(Config.Core.Dimensions.width / 2, this.timeBar.y), 0, this.gameTimer.startTime, "ui_timerbar_bg");
+        this.timeBarBackground.x -= this.timeBarBackground.width / 2;        
+        this.timeBarBackground.value = this.gameTimer.count;
+        this.timeBarBackground.anchor.set(0, 0.5);
+
+        this.timeBarBorder  = new ADCore.Interface(new Vector2(Config.Core.Dimensions.width / 2, this.timeBar.y), "ui_timerbar_border");
+        this.timeBarBorder.x -= this.timeBarBorder.width / 2;
+        this.timeBarBorder.anchor.set(0, 0.5);
+
+        this.taskboard = new ballpit.TaskBoard(new Vector2(Config.Core.Dimensions.width / 2, 150), "bubble", this.coach);
         this.taskboard.x -= this.taskboard.width * 0.33;
+        this.taskboard.anchor.set(0.5, 0.5);
+        this.taskboard.scale.set(0,0);
         this.addChild(this.taskboard);
+
+        this.pausebutton = new ADCore.Button(new Vector2(this.infobar.x + this.infobar.width * 0.79, this.infobar.y), "ui_pausebutton");
+        this.pausebutton.y += this.pausebutton.height / 2;
+        this.pausebutton.onInputUp = function () {
+            if ( Input.paused ) return;
+            Listener.Dispatch( ballpit.Event.ON_PAUSE_BUTTON_UP, this );
+        }.bind(this);
+        this.addChild(this.pausebutton);
+
+        this.addChild(this.timeBarBackground);
+        this.addChild(this.timeBar);
+        this.addChild(this.timeBarBorder);
     };
 
     /**
@@ -71,9 +136,48 @@ ballpit.InterfaceLayer = (function () {
      * @public
      */
     p.Render = function () {
-        this.watch.Render();
-        this.scoreboard.Render();
-        this.taskboard.Render();
+        this.infobar.Render();
+
+        if (this.coach.activeTask) {
+            if (this.taskboard.hasTransitioned) {
+                this.taskboard.Render();
+            } else {
+                this.taskboard.TransitionIn();
+            }
+        } else {
+            if (this.taskboard.hasTransitioned) {
+                this.taskboard.TransitionOut();
+            }
+        }
+
+        this.timeBarBackground.value = this.gameTimer.count;
+        this.timeBar.scale.x = (1 / 100) * this.timeBarBackground.percentage;
+        if(this.timeBar.scale.x > 1) this.timeBar.scale.x = 1;
+
+        if (this.timeBarBackground.percentage <= Settings.Stopwatch.WARNING) {
+            this.timeBar.tint = 0xEC5147;
+        } else {
+            this.timeBar.tint = 0xFFFFFF;
+        }
+    };
+
+    /**
+     * @method Dispose
+     * @memberof InterfaceLayer
+     * @public
+     */
+    p.Dispose = function () {
+        this.infobar.Dispose();
+        this.removeChild(this.infoBar);
+        delete this.infobar;
+
+        this.taskboard.Dispose();
+        this.removeChild(this.taskboard);
+        delete this.taskboard;
+
+        this.pausebutton.Dispose();
+        this.removeChild(this.pausebutton);
+        delete this.pausebutton;
     };
 
     return InterfaceLayer;

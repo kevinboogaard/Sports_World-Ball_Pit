@@ -25,12 +25,7 @@ ADCore.Debug = ( function () {
         this.ENABLED = false;
     }
     var p = Debug.prototype;
-
-	/**
-	 * T...
-	 * @typedef {} Args
-	 */
-
+    
     /**
      * @method Log
      * @memberof Debug

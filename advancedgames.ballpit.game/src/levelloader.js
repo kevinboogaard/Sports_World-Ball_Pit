@@ -32,16 +32,6 @@ ballpit.LevelLoader = ( function () {
     var p = LevelLoader.prototype;
 
     /**
-     * @method Initialize
-     * @memberof LevelLoader
-     * @public
-     */
-    p.Initialize = function () {
-        var load = ADCore.phaser.load;
-        load.onLoadComplete.add( this._onLoadComplete.bind( this ), this );
-    };
-
-    /**
      * @method IsSceneLevel
      * @memberof LevelLoader
      * @public 
@@ -66,28 +56,12 @@ ballpit.LevelLoader = ( function () {
         var resources =  Config.ResourceLists.LEVELS[this.level];
         if (typeof resources === "undefined") throw new Error("Level is not known.");
 
-        if (sceneLoader.current === null) sceneLoader.Load( scene.Preloader );
-        else sceneLoader.switch ( scene.PreLoader); 
+        if (sceneLoader.current === null) sceneLoader.Load( scene.Names.PRELOADER, [ this._onLoadComplete.bind(this) ] );
+        else sceneLoader.switch ( scene.Names.PRELOADER, [ this._onLoadComplete.bind(this) ]); 
 
          this._sceneToBeLoaded = levelscene;
-        preloader.Preload( resources, ADCore.PreloadCategories.LEVEL );
+         preloader.Preload( resources, ADCore.PreloadCategories.LEVEL );
     };
-    
-    /**
-     * @method _OnLoadUpdate
-     * @memberof LevelLoader
-     * @private
-     * @param {Integer} progress
-     * @ignore
-     */
-    /*
-    p._onLoadUpdate = function ( progress ) {
-        if ( !sceneLoader.current || sceneLoader.current.constructor !== scene.Preloader ) return;
-
-        var currentScene = sceneLoader.current;
-        currentScene.update( progress );
-    };
-    */
 
     /**
      * @method _OnLoadComplete
@@ -95,8 +69,9 @@ ballpit.LevelLoader = ( function () {
      * @private
      */
     p._onLoadComplete = function ( ) {
-        sceneLoader.current.Complete();
         sceneLoader.DisposeCurrent();
+        
+        if (Global.Loaded.level.sounds) soundSystem.Load(Global.Loaded.level.sounds);
 
         sceneLoader.Load(this._sceneToBeLoaded);
         this._sceneToBeLoaded = null;
