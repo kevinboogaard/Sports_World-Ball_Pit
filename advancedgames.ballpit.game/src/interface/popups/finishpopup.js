@@ -6,20 +6,53 @@
  */
 var ballpit = ballpit || {};
 
+/**
+ * @namespace {string} Event
+ * @memberof ballpit
+ */
+
 ballpit.Event = ballpit.Event || {};
 
+/**
+ * @event ON_FINISH_POPUP_INPUT
+ * @memberof Event
+ */
 ballpit.Event.ON_FINISH_POPUP_INPUT = "on_finish_popup_input";
 
+/**
+ * @namespace {String} FinishInputs
+ * @memberof ballpit
+ */
 ballpit.FinishInputs = ballpit.FinishInputs || {};
 
+/**
+ * @namespace FinishInputs
+ */
+let FinishInputs = {}// for documentation purposes
+ballpit.FinishInputs.Buttons = FinishInputs;
+
+/**
+ * @property REDO
+ * @memberof FinishInputs
+ */
 ballpit.FinishInputs.REDO = "redo";
+
+/**
+ * @property HIGHSCORE
+ * @memberof FinishInputs
+ */
 ballpit.FinishInputs.HIGHSCORE = "highscore";
+
+/**
+ * @property CROSS
+ * @memberof FinishInputs
+ */
 ballpit.FinishInputs.CROSS = "cross";
 
 ballpit.FinishPopup = (function(){
 
      /**
-     * @class finishpopup
+     * @class FinishPopup
      * @extends Popup
      * @constructor
      * @param {Function} callback
@@ -31,79 +64,129 @@ ballpit.FinishPopup = (function(){
     function FinishPopup(callback, gameTimer, coach, scoreHolder){
         ADCore.Popup.call(this, callback);
 
-        /** @property {Timer}  */
+        /** @property {Timer}  
+         * @public
+         */
         this.gameTimer = gameTimer;
 
-        /** @property {CoachModel}  */
+        /** @property {CoachModel}           
+         *  @public
+         */
         this.coach = coach;
         
-        /** @property {ScoreHolder}  */
+        /** @property {ScoreHolder} 
+         *  @public
+         */
         this.scoreHolder = scoreHolder;
     
-        /** @property {Interface}  */
+        /** @property {Interface}  
+         *  @public
+         */
         this.background = null;
 
-        /** @property {Interface}  */
+        /** @property {Interface}  
+         * @public
+         */
         this.finishlogo = null;
 
-        /** @property {Button}  */
+        /** @property {Button}  
+         * @public
+        */
         this.highscoreButton = null;
 
-        /** @property {Button}  */
+        /** @property {Button}  
+         * @public
+        */
         this.restartButton = null;
 
-        /** @property {Interface}  */
+        /** @property {Interface}  
+         * @public
+        */
         this.quitButton = null;
 
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.resulttext = null;
 
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.taskscompletedtext = null;
 
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.timeplayedtext = null;
         
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.combotext = null;
 
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.finalscoretext = null;
 
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.finalscore_value = -1;
 
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.finalscore_current = -1;
 
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.finalscore = null;
         
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.timeplayed_value  = -1;
 
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.timeplayed_current = -1;
         
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.timeplayed = null;
 
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.combo_value = -1;
 
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.combo_current = -1;
 
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.combo = null;
 
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.tasks_value = -1;
 
-        /** @property {Integer}  */
+        /** @property {Integer}  
+         * @public
+        */
         this.tasks_current = -1;
 
-        /** @property {Text}  */
+        /** @property {Text}  
+         * @public
+        */
         this.tasks = null;
 
          this._initialize();
@@ -112,6 +195,11 @@ ballpit.FinishPopup = (function(){
     FinishPopup.prototype.constructor = FinishPopup;
     var p = FinishPopup.prototype;
 
+    /**
+     * @method _Initialize
+     * @memberof FinishInputs
+     * @private
+     */
     p._initialize = function () {
         this.background = new ADCore.Interface(new Vector2(Config.Core.Dimensions.width / 2, Config.Core.Dimensions.height / 2),"scorebord"); 
         this.background.anchor.set(0.5, 0.5);
@@ -267,10 +355,11 @@ ballpit.FinishPopup = (function(){
 
      /**
      * @method Dispose
-     * @memberof OptionsPopup
+     * @memberof FinishInputs
      * @public
      */
     p.__popup_dispose = p.Dispose;
+    
     p.Dispose = function () {
         delete this.gameTimer;
         delete this.coach;

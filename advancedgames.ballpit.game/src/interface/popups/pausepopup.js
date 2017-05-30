@@ -13,6 +13,12 @@ var ballpit = ballpit || {};
 ballpit.PauseInputs = ballpit.PauseInputs || {};
 
 /**
+ * @namespace  PauseInputs
+ */
+let PauseInputs = {};
+ballpit.PauseInputs.Buttons = PauseInputs;
+
+/**
  * @property PLAY
  * @memberof PauseInputs
  */
