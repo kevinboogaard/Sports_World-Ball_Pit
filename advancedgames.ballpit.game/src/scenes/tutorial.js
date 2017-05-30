@@ -349,6 +349,7 @@ scene.Tutorial = (function () {
                                         TweenLite.to(this.trainer, 0.5, { alpha: 0 });
                                         this.overlay.TransitionOut( function () {
                                             this.inTutorial = false;
+                                            this.started = true;
                                             this.gameTimer.multiplier = 5;
                                             Input.paused = false;
                                         }.bind(this));
@@ -430,7 +431,7 @@ scene.Tutorial = (function () {
             var timeout = this.timeouts[i];
             clearTimeout(timeout);
             this.timeouts.splice(i, 1);
-        };
+        }
     };
 
     /**

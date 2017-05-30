@@ -43,6 +43,9 @@ scene.Highscore = (function () {
          */
         this.highscoreBackground = null;
 
+        // Play in-game music.
+        this.music_identifier = soundSystem.PlayMusic("music_endscreen", 1, true);
+
         net.GET_HIGHSCORES.Send( {"amount": Settings.HighscoreScene.AMOUNT_SCORES_SHOWN}, this._initialize.bind(this));
     }
     Highscore.prototype = Object.create(Phaser.Group.prototype);
@@ -211,7 +214,7 @@ scene.Highscore = (function () {
 
 
     p.Dispose = function () {
-
+        this.music_identifier.audio.pause();
     };
 
     return Highscore;

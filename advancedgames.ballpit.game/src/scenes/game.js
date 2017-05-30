@@ -51,7 +51,6 @@ scene.Game = (function () {
                 soundSystem.PlaySound("sound_timerdone", 1, false);
                 setTimeout(function() {
                     this._onGameDone();
-                    //Listener.Dispatch(scene.Event.ON_SCENE_SWITCH, this, { "scene": scene.Names.MAINMENU });
                 }.bind(this), 1000);
             }.bind(this));
         }.bind(this), Settings.Game.TIME, 1);
